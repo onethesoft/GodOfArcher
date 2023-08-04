@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35141495e044da942b8349990ee82f70, type: 3}
+  m_Name: IAP_ItemPackage_L
+  m_EditorClassIdentifier: 
+  _DisplayName: "\uC0C1\uAE09\uC790 \uC7A5\uBE44 \uD328\uD0A4\uC9C0"
+  _Description: 
+  _ItemId: iap_itempackage_l
+  _ItemClass: IAPItem
+  _ItemInstanceId: 
+  _unitCurrency: 
+  _unitPrice: 0
+  _isStackable: 1
+  _contents:
+  - Item: {fileID: 11400000, guid: 6f5b52681fd102148a7c50757e56e597, type: 2}
+    Amount: 1
+  - Item: {fileID: 11400000, guid: 238ea1cef9defc64ab1ef9d4db817fe8, type: 2}
+    Amount: 1
+  - Item: {fileID: 11400000, guid: cd6d0e35435c8ed4c91e3648a9200ac9, type: 2}
+    Amount: 1
+  - Item: {fileID: 11400000, guid: 57c7aa1619fb2d94c98cc6bc222b9add, type: 2}
+    Amount: 1
+  _currencyList:
+  - Currency: {fileID: 11400000, guid: 37e1aaa5440b6b94a9b3b63c092c27bd, type: 2}
+    Amount: 250000

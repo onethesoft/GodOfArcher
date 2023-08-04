@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be3d70760efc7f1438948cb4572bb372, type: 3}
+  m_Name: GoldPigStageSpawner
+  m_EditorClassIdentifier: 
+  _monsterHPGenerator: {fileID: 11400000, guid: a2a9c9e6769559e478d5307576ffb0dd,
+    type: 2}
+  _pos: {x: 5.34, y: -1.06, z: 0}
+  _mosterPrefab: {fileID: 3445225831580440420, guid: fe51bd3ee42a80e4dbb8e8e0254c9e8c,
+    type: 3}

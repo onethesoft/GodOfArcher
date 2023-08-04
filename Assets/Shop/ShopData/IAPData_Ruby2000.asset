@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64865bbdac7a0b428504b26cf57cf90, type: 3}
+  m_Name: IAPData_Ruby2000
+  m_EditorClassIdentifier: 
+  _type: 1
+  _displayName: "\uB8E8\uBE44 2000"
+  _background: {fileID: 21300000, guid: 415c470e8eddc8c45a4354582a9ebc13, type: 3}
+  _icon: {fileID: 21300000, guid: 14eed0b3f39c90b4f94ae94cf45183a8, type: 3}
+  _subicon: {fileID: 0}
+  _backcurrencyIcon: {fileID: 21300000, guid: 365861fc1402da44f81bbee7a11d3263, type: 3}
+  _currencyIcon: {fileID: 21300000, guid: 0f695343df521bc49b7ffcdb17f78710, type: 3}
+  _item: {fileID: 11400000, guid: 852bc5dfdb4c00442b2d92e53a8199fc, type: 2}
+  _description: "\uCCAB \uAD6C\uB9E4\uC2DC \uB8E8\uBE44 2\uBC30 \uC9C0\uAE09\\n\uB8E8\uBE44x4000"
+  _descriptionColor: {r: 1, g: 0.72156864, b: 0, a: 1}
+  _PriceText: "1,000\uC6D0"

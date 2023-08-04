@@ -1,0 +1,2538 @@
+﻿{
+  "activeQuests": [
+    {
+      "CodeName": "BossMonsterKill_5",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        5000
+      ]
+    },
+    {
+      "CodeName": "BossMonsterKill_6",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        5567
+      ]
+    },
+    {
+      "CodeName": "BossMonsterKill_7",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        5567
+      ]
+    },
+    {
+      "CodeName": "BossMonsterKill_8",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        5567
+      ]
+    },
+    {
+      "CodeName": "BossMonsterKill_9",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        5567
+      ]
+    },
+    {
+      "CodeName": "BossMonsterKill_10",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        5567
+      ]
+    },
+    {
+      "CodeName": "BossMonsterKill_11",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        5567
+      ]
+    },
+    {
+      "CodeName": "BossMonsterKill_12",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        5567
+      ]
+    },
+    {
+      "CodeName": "BossMonsterKill_13",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        5567
+      ]
+    },
+    {
+      "CodeName": "BossMonsterKill_14",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        5567
+      ]
+    },
+    {
+      "CodeName": "BossMonsterKill_15",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        5567
+      ]
+    },
+    {
+      "CodeName": "BossMonsterKill_16",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        5567
+      ]
+    },
+    {
+      "CodeName": "Daily_Checkout_1",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Daily_Checkout_2",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Daily_Checkout_3",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Daily_Checkout_4",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Daily_Checkout_5",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Daily_Checkout_6",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Daily_Checkout_7",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Daily_Checkout_8",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Daily_Checkout_9",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Daily_Checkout_10",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Daily_Checkout_11",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Daily_Checkout_12",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Daily_Checkout_13",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Daily_Checkout_14",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Daily_Checkout_15",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Daily_3",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        0
+      ]
+    },
+    {
+      "CodeName": "Daily_4",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        0
+      ]
+    },
+    {
+      "CodeName": "Daily_5",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        0
+      ]
+    },
+    {
+      "CodeName": "Daily_6",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        0
+      ]
+    },
+    {
+      "CodeName": "Daily_7",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        0
+      ]
+    },
+    {
+      "CodeName": "Daily_8",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        0
+      ]
+    },
+    {
+      "CodeName": "Daily_9",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        0
+      ]
+    },
+    {
+      "CodeName": "GambleArmor_0",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        50
+      ]
+    },
+    {
+      "CodeName": "GambleArmor_1",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        66
+      ]
+    },
+    {
+      "CodeName": "GambleArmor_2",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        66
+      ]
+    },
+    {
+      "CodeName": "GambleArmor_3",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        66
+      ]
+    },
+    {
+      "CodeName": "GambleArmor_4",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        66
+      ]
+    },
+    {
+      "CodeName": "GambleArmor_5",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        66
+      ]
+    },
+    {
+      "CodeName": "GambleArmor_6",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        66
+      ]
+    },
+    {
+      "CodeName": "GambleArmor_7",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        66
+      ]
+    },
+    {
+      "CodeName": "GambleBow_4",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1000
+      ]
+    },
+    {
+      "CodeName": "GambleCloak_0",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "GambleCloak_1",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "GambleCloak_2",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "GambleCloak_3",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "GambleCloak_4",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "GambleCloak_5",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "GambleCloak_6",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "GambleCloak_7",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "GamblePet_7",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        6379
+      ]
+    },
+    {
+      "CodeName": "StageClear_16",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        50000
+      ]
+    },
+    {
+      "CodeName": "StageClear_17",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "StageClear_18",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "StageClear_19",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "StageClear_20",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "StageClear_21",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "StageClear_22",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "MonsterKill_7",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        22271
+      ]
+    },
+    {
+      "CodeName": "MonsterKill_8",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        22271
+      ]
+    },
+    {
+      "CodeName": "MonsterKill_9",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        22271
+      ]
+    },
+    {
+      "CodeName": "MonsterKill_10",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        22271
+      ]
+    },
+    {
+      "CodeName": "MonsterKill_11",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        22271
+      ]
+    },
+    {
+      "CodeName": "MonsterKill_12",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        22271
+      ]
+    },
+    {
+      "CodeName": "MonsterKill_13",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        22271
+      ]
+    },
+    {
+      "CodeName": "MonsterKill_14",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        22271
+      ]
+    },
+    {
+      "CodeName": "MonsterKill_15",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        22271
+      ]
+    },
+    {
+      "CodeName": "MonsterKill_16",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        22271
+      ]
+    },
+    {
+      "CodeName": "MonsterKill_17",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        22271
+      ]
+    },
+    {
+      "CodeName": "MonsterKill_18",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        22271
+      ]
+    },
+    {
+      "CodeName": "PlayTime_5",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        342
+      ]
+    },
+    {
+      "CodeName": "PlayTime_6",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        342
+      ]
+    },
+    {
+      "CodeName": "PlayTime_7",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        342
+      ]
+    },
+    {
+      "CodeName": "PlayTime_8",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        342
+      ]
+    },
+    {
+      "CodeName": "PlayTime_9",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        342
+      ]
+    },
+    {
+      "CodeName": "PlayTime_10",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        342
+      ]
+    },
+    {
+      "CodeName": "PlayTime_11",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        342
+      ]
+    },
+    {
+      "CodeName": "PlayTime_12",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        342
+      ]
+    },
+    {
+      "CodeName": "free_14000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        14000
+      ]
+    },
+    {
+      "CodeName": "pass_14000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        14000,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_16000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        16000
+      ]
+    },
+    {
+      "CodeName": "pass_16000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        16000,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_18000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        18000
+      ]
+    },
+    {
+      "CodeName": "pass_18000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        18000,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_20000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        20000
+      ]
+    },
+    {
+      "CodeName": "pass_20000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        20000,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_23000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        23000
+      ]
+    },
+    {
+      "CodeName": "pass_23000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        23000,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_26000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        26000
+      ]
+    },
+    {
+      "CodeName": "pass_26000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        26000,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_29000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        29000
+      ]
+    },
+    {
+      "CodeName": "pass_29000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        29000,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_32000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        32000
+      ]
+    },
+    {
+      "CodeName": "pass_32000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        32000,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_35000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        35000
+      ]
+    },
+    {
+      "CodeName": "pass_35000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        35000,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_40000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        40000
+      ]
+    },
+    {
+      "CodeName": "pass_40000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        40000,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_45000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        45000
+      ]
+    },
+    {
+      "CodeName": "pass_45000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        45000,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_50000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        50000
+      ]
+    },
+    {
+      "CodeName": "pass_50000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        50000,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_55000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        55000
+      ]
+    },
+    {
+      "CodeName": "pass_55000",
+      "state": 4,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        55000,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_60000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_60000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_65000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_65000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_70000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_70000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_75000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_75000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_80000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_80000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_90000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_90000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_100000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_100000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_110000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_110000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_120000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_120000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_130000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_130000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_140000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_140000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_150000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_150000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_160000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_160000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_170000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_170000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_180000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_180000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_190000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_190000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_200000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_200000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_210000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_210000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_220000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_220000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_230000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_230000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_240000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_240000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_250000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_250000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_260000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_260000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_270000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_270000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_280000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_280000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_290000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_290000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_300000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775
+      ]
+    },
+    {
+      "CodeName": "pass_300000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        57775,
+        1
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_1",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_2",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_3",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_4",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_5",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_6",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_7",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_8",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_9",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_10",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_11",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_12",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_13",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_14",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_15",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_16",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_17",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_18",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_19",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_20",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_21",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2
+      ]
+    },
+    {
+      "CodeName": "Upgrade Artifact",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        0
+      ]
+    },
+    {
+      "CodeName": "Clear MainStage 1000",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        0
+      ]
+    },
+    {
+      "CodeName": "Purchase Pet RandomBox",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        0
+      ]
+    },
+    {
+      "CodeName": "Equip Pet",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        0
+      ]
+    },
+    {
+      "CodeName": "Upgrade AttackSpeed Stat lv10",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        0
+      ]
+    },
+    {
+      "CodeName": "Upgrade CriticalHitRate Stat Lv10",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        0
+      ]
+    },
+    {
+      "CodeName": "Open Info Popup",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        0
+      ]
+    },
+    {
+      "CodeName": "Open Ranking Popup",
+      "state": 1,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        0
+      ]
+    }
+  ],
+  "completedQuests": [
+    {
+      "CodeName": "Daily_Checkout_0",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "BossMonsterKill_0",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        25
+      ]
+    },
+    {
+      "CodeName": "MonsterKill_0",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        100
+      ]
+    },
+    {
+      "CodeName": "PlayTime_0",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        10
+      ]
+    },
+    {
+      "CodeName": "TrollStageClear_0",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "StageClear_0",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        100
+      ]
+    },
+    {
+      "CodeName": "BossMonsterKill_1",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        125
+      ]
+    },
+    {
+      "CodeName": "MonsterKill_1",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        500
+      ]
+    },
+    {
+      "CodeName": "PlayTime_1",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        30
+      ]
+    },
+    {
+      "CodeName": "Upgrade Attack Stat Lv 10",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        10
+      ]
+    },
+    {
+      "CodeName": "Upgrade CricitalHit Stat Lv10",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        10
+      ]
+    },
+    {
+      "CodeName": "GambleHelmet_0",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        50
+      ]
+    },
+    {
+      "CodeName": "GambleHelmet_1",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        100
+      ]
+    },
+    {
+      "CodeName": "GambleHelmet_2",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        250
+      ]
+    },
+    {
+      "CodeName": "GambleHelmet_3",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        500
+      ]
+    },
+    {
+      "CodeName": "GambleHelmet_4",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1000
+      ]
+    },
+    {
+      "CodeName": "GambleHelmet_5",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2500
+      ]
+    },
+    {
+      "CodeName": "GambleHelmet_6",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        5000
+      ]
+    },
+    {
+      "CodeName": "free_100",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        100
+      ]
+    },
+    {
+      "CodeName": "free_200",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        200
+      ]
+    },
+    {
+      "CodeName": "free_300",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        300
+      ]
+    },
+    {
+      "CodeName": "free_400",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        400
+      ]
+    },
+    {
+      "CodeName": "free_500",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        500
+      ]
+    },
+    {
+      "CodeName": "free_600",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        600
+      ]
+    },
+    {
+      "CodeName": "free_700",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        700
+      ]
+    },
+    {
+      "CodeName": "free_800",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        800
+      ]
+    },
+    {
+      "CodeName": "free_900",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        900
+      ]
+    },
+    {
+      "CodeName": "free_1000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1000
+      ]
+    },
+    {
+      "CodeName": "pass_100",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        100,
+        1
+      ]
+    },
+    {
+      "CodeName": "pass_200",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        200,
+        1
+      ]
+    },
+    {
+      "CodeName": "pass_400",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        400,
+        1
+      ]
+    },
+    {
+      "CodeName": "pass_500",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        500,
+        1
+      ]
+    },
+    {
+      "CodeName": "pass_700",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        700,
+        1
+      ]
+    },
+    {
+      "CodeName": "pass_800",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        800,
+        1
+      ]
+    },
+    {
+      "CodeName": "pass_1000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1000,
+        1
+      ]
+    },
+    {
+      "CodeName": "pass_900",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        900,
+        1
+      ]
+    },
+    {
+      "CodeName": "pass_600",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        600,
+        1
+      ]
+    },
+    {
+      "CodeName": "pass_300",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        300,
+        1
+      ]
+    },
+    {
+      "CodeName": "free_2000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2000
+      ]
+    },
+    {
+      "CodeName": "free_3000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        3000
+      ]
+    },
+    {
+      "CodeName": "free_4000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        4000
+      ]
+    },
+    {
+      "CodeName": "free_5000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        5000
+      ]
+    },
+    {
+      "CodeName": "free_6000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        6000
+      ]
+    },
+    {
+      "CodeName": "free_7000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        7000
+      ]
+    },
+    {
+      "CodeName": "free_9000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        9000
+      ]
+    },
+    {
+      "CodeName": "free_10000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        10000
+      ]
+    },
+    {
+      "CodeName": "free_8000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        8000
+      ]
+    },
+    {
+      "CodeName": "pass_10000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        10000,
+        1
+      ]
+    },
+    {
+      "CodeName": "pass_9000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        9000,
+        1
+      ]
+    },
+    {
+      "CodeName": "pass_8000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        8000,
+        1
+      ]
+    },
+    {
+      "CodeName": "pass_7000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        7000,
+        1
+      ]
+    },
+    {
+      "CodeName": "pass_6000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        6000,
+        1
+      ]
+    },
+    {
+      "CodeName": "pass_5000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        5000,
+        1
+      ]
+    },
+    {
+      "CodeName": "pass_4000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        4000,
+        1
+      ]
+    },
+    {
+      "CodeName": "pass_3000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        3000,
+        1
+      ]
+    },
+    {
+      "CodeName": "pass_2000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2000,
+        1
+      ]
+    },
+    {
+      "CodeName": "GambleRune_0",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        50
+      ]
+    },
+    {
+      "CodeName": "GambleRune_1",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        100
+      ]
+    },
+    {
+      "CodeName": "GambleRune_2",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        250
+      ]
+    },
+    {
+      "CodeName": "GambleRune_3",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        500
+      ]
+    },
+    {
+      "CodeName": "GambleRune_4",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1000
+      ]
+    },
+    {
+      "CodeName": "StageClear_1",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        250
+      ]
+    },
+    {
+      "CodeName": "StageClear_2",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        500
+      ]
+    },
+    {
+      "CodeName": "StageClear_3",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1000
+      ]
+    },
+    {
+      "CodeName": "StageClear_4",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1500
+      ]
+    },
+    {
+      "CodeName": "StageClear_5",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2000
+      ]
+    },
+    {
+      "CodeName": "StageClear_6",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2500
+      ]
+    },
+    {
+      "CodeName": "StageClear_7",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        3000
+      ]
+    },
+    {
+      "CodeName": "StageClear_8",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        3500
+      ]
+    },
+    {
+      "CodeName": "StageClear_9",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        4000
+      ]
+    },
+    {
+      "CodeName": "StageClear_10",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        4500
+      ]
+    },
+    {
+      "CodeName": "StageClear_11",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        5000
+      ]
+    },
+    {
+      "CodeName": "StageClear_12",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        10000
+      ]
+    },
+    {
+      "CodeName": "MonsterKill_2",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1000
+      ]
+    },
+    {
+      "CodeName": "GambleRune_5",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2500
+      ]
+    },
+    {
+      "CodeName": "GambleRune_6",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        5000
+      ]
+    },
+    {
+      "CodeName": "Daily_0",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1000
+      ]
+    },
+    {
+      "CodeName": "GambleBow_0",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        50
+      ]
+    },
+    {
+      "CodeName": "GambleBow_1",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        100
+      ]
+    },
+    {
+      "CodeName": "GambleBow_2",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        250
+      ]
+    },
+    {
+      "CodeName": "GambleBow_3",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        500
+      ]
+    },
+    {
+      "CodeName": "GambleBow_5",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2500
+      ]
+    },
+    {
+      "CodeName": "GambleBow_6",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        5000
+      ]
+    },
+    {
+      "CodeName": "GambleBow_7",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        10000
+      ]
+    },
+    {
+      "CodeName": "Purchase Rune RandomBox",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "GambleHelmet_7",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        10000
+      ]
+    },
+    {
+      "CodeName": "Daily_1",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Equip Rune",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Purchase Bow Randombox",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Equip Bow",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Purchase Helmet Randombox",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Equip Helmet",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Purchase Armor RandomBox",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Equip Armor",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Purchase Cloak RandomBox",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "Equip Cloak",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "GambleRune_7",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        10000
+      ]
+    },
+    {
+      "CodeName": "GamblePet_0",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        50
+      ]
+    },
+    {
+      "CodeName": "GamblePet_1",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        100
+      ]
+    },
+    {
+      "CodeName": "GamblePet_2",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        250
+      ]
+    },
+    {
+      "CodeName": "GamblePet_3",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        500
+      ]
+    },
+    {
+      "CodeName": "GamblePet_4",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1000
+      ]
+    },
+    {
+      "CodeName": "GamblePet_5",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2500
+      ]
+    },
+    {
+      "CodeName": "GamblePet_6",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        5000
+      ]
+    },
+    {
+      "CodeName": "Purchase Artifact RandomBox",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1
+      ]
+    },
+    {
+      "CodeName": "free_12000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        12000
+      ]
+    },
+    {
+      "CodeName": "pass_12000",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        12000,
+        1
+      ]
+    },
+    {
+      "CodeName": "BossMonsterKill_2",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        500
+      ]
+    },
+    {
+      "CodeName": "MonsterKill_3",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2500
+      ]
+    },
+    {
+      "CodeName": "PlayTime_2",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        60
+      ]
+    },
+    {
+      "CodeName": "Daily_2",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2000
+      ]
+    },
+    {
+      "CodeName": "StageClear_13",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        15000
+      ]
+    },
+    {
+      "CodeName": "StageClear_14",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        20000
+      ]
+    },
+    {
+      "CodeName": "StageClear_15",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        30000
+      ]
+    },
+    {
+      "CodeName": "BossMonsterKill_3",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        1000
+      ]
+    },
+    {
+      "CodeName": "BossMonsterKill_4",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2500
+      ]
+    },
+    {
+      "CodeName": "MonsterKill_4",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        5000
+      ]
+    },
+    {
+      "CodeName": "MonsterKill_5",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        10000
+      ]
+    },
+    {
+      "CodeName": "MonsterKill_6",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        2500
+      ]
+    },
+    {
+      "CodeName": "PlayTime_3",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        120
+      ]
+    },
+    {
+      "CodeName": "PlayTime_4",
+      "state": 2,
+      "TaskGroupIndex": 0,
+      "TaskSuccessCount": [
+        240
+      ]
+    }
+  ]
+}

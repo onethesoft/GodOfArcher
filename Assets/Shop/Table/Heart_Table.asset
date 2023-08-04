@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a39da69e8575b409bfd39e68446705, type: 3}
+  m_Name: Heart_Table
+  m_EditorClassIdentifier: 
+  _DisplayName: 
+  _Description: 
+  _ItemId: Heart_Table
+  _ItemClass: Table
+  _ItemInstanceId: 
+  _unitCurrency: 
+  _unitPrice: 0
+  _isStackable: 1
+  _items:
+  - _item: {fileID: 11400000, guid: 1fab22d721884ef469ee4abf97086436, type: 2}
+    _count: 1
+  - _item: {fileID: 11400000, guid: 550fc0795e52a8742bdbe0ef9a52f276, type: 2}
+    _count: 1
+  - _item: {fileID: 11400000, guid: 47a6d8560d729574c95657dad5f341f9, type: 2}
+    _count: 1
+  - _item: {fileID: 11400000, guid: acacf7b43e47bc448990704e5b12743c, type: 2}
+    _count: 1
+  - _item: {fileID: 11400000, guid: 3c2a55f751a40cd4b91bc511c4c53363, type: 2}
+    _count: 1

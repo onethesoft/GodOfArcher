@@ -1,0 +1,15 @@
+ID,CodeName,LevelText,IncrementStatText,MaxLevelText,StatText,Icon,BackIcon,CurrencyIcon,LevelupButtonText,LevelupCostText,TotalLevelupButtonText
+1000,Attack,1,15,29,30,StatPopup/set_icon_role_assassin,StatPopup/Frame_ItemFrame02_Color_Gay,Currency/StatusBarIcon_Gold,44,{0},48
+1001,AttackSpeed,2,16,29,31,StatPopup/Icon_Arrow_1_Up,StatPopup/Frame_ItemFrame02_Color_Green,Currency/StatusBarIcon_Gold,44,{0},48
+1002,CriticalHit,3,17,29,32,StatPopup/set_icon_role_paladin,StatPopup/Frame_ItemFrame02_Color_Purple,Currency/StatusBarIcon_Gold,44,{0},48
+1003,CriticalHitRate,4,18,29,33,StatPopup/set_icon_role_warrior,StatPopup/Frame_ItemFrame02_Color_Yellow,Currency/StatusBarIcon_Gold,44,{0},48
+1004,CraftAttack,5,19,29,34,StatPopup/set_icon_role_assassin,StatPopup/Frame_ItemFrame02_Color_Gay,Currency/StatusBarIcon_Energy,45,{0},48
+1005,CraftAttackSpeed,6,20,29,35,StatPopup/Icon_Arrow_1_Up,StatPopup/Frame_ItemFrame02_Color_Green,Currency/StatusBarIcon_Energy,45,{0},48
+1006,CraftCriticalHit,7,21,29,36,StatPopup/set_icon_role_paladin,StatPopup/Frame_ItemFrame02_Color_Purple,Currency/StatusBarIcon_Energy,45,{0},48
+1007,CraftCriticalHitRate,8,22,29,37,StatPopup/set_icon_role_warrior,StatPopup/Frame_ItemFrame02_Color_Yellow,Currency/StatusBarIcon_Energy,45,{0},48
+1008,GoldDropRate,9,23,29,38,StatPopup/Icon_Dollar_Symbol,StatPopup/Frame_ItemFrame02_Color_Yellow,Currency/StatusBarIcon_Gem,46,{0},48
+1009,CraftDropRate,10,24,29,39,StatPopup/ClanIcon_Symbol_Large4,StatPopup/Frame_ItemFrame02_Color_Green,Currency/StatusBarIcon_Gem,46,{0},48
+1010,JumpingRate,11,25,29,40,StatPopup/Icon_Grade,StatPopup/Frame_ItemFrame02_Color_Purple,Currency/StatusBarIcon_Gem,46,{0},48
+1011,JumpingCount,12,26,29,41,StatPopup/btn_icon_rocket,StatPopup/Frame_ItemFrame02_Color_Gay,Currency/StatusBarIcon_Gem,46,{0},48
+1012,SkillAttack,13,27,29,42,StatPopup/btn_icon_knight,StatPopup/Frame_ItemFrame02_Color_Yellow,Currency/status_icon_star,47,{0},48
+1013,SkillMaxLevelLimit,14,28,29,43,StatPopup/btn_icon_shine,StatPopup/Frame_ItemFrame02_Color_Green,Currency/StatusBarIcon_Gem,46,{0},48

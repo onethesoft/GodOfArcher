@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a39da69e8575b409bfd39e68446705, type: 3}
+  m_Name: Bow_Table
+  m_EditorClassIdentifier: 
+  _DisplayName: "\uD65C \uD14C\uC774\uBE14"
+  _Description: 
+  _ItemId: Bow_Table
+  _ItemClass: Table
+  _ItemInstanceId: 
+  _unitCurrency: 
+  _unitPrice: 0
+  _isStackable: 1
+  _items:
+  - _item: {fileID: 11400000, guid: 32a82739054a90a488cd768cd3e1b3a9, type: 2}
+    _count: 9000000
+  - _item: {fileID: 11400000, guid: 7041ff9c43b9cf140bfcbf6605ae068d, type: 2}
+    _count: 500000
+  - _item: {fileID: 11400000, guid: ededce09f305d1e408430533ecaa5369, type: 2}
+    _count: 250000
+  - _item: {fileID: 11400000, guid: e94fb47ac515c86429bce3c9a192a899, type: 2}
+    _count: 150000
+  - _item: {fileID: 11400000, guid: 183cf24a0f8435545bd9f94ae1c67298, type: 2}
+    _count: 90000
+  - _item: {fileID: 11400000, guid: 172f882739a3686479082dd24d5df8a1, type: 2}
+    _count: 9000
+  - _item: {fileID: 11400000, guid: 11bd67a35a212b34e8d878aff48feccf, type: 2}
+    _count: 1000
+  - _item: {fileID: 11400000, guid: 6f5b52681fd102148a7c50757e56e597, type: 2}
+    _count: 100
+  - _item: {fileID: 11400000, guid: b9c2285f6b64f7a458f87e059534bf0b, type: 2}
+    _count: 10
+  - _item: {fileID: 11400000, guid: 961377b0c449f4e4bb87fe12e49ed86d, type: 2}
+    _count: 1

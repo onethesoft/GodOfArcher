@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a39da69e8575b409bfd39e68446705, type: 3}
+  m_Name: Armor_Table
+  m_EditorClassIdentifier: 
+  _DisplayName: 
+  _Description: 
+  _ItemId: Armor_Table
+  _ItemClass: 
+  _ItemInstanceId: 
+  _unitCurrency: 
+  _unitPrice: 0
+  _isStackable: 1
+  _items:
+  - _item: {fileID: 11400000, guid: 7df64288a8f298b419803c46385f0d47, type: 2}
+    _count: 9000000
+  - _item: {fileID: 11400000, guid: f1f9de3d98e57414ab8ad2f9a4a3a763, type: 2}
+    _count: 500000
+  - _item: {fileID: 11400000, guid: ed9d3662062a9ad4d80a45224b1bed45, type: 2}
+    _count: 250000
+  - _item: {fileID: 11400000, guid: 07dc54131973b9645ae0fc6bdf4dae31, type: 2}
+    _count: 150000
+  - _item: {fileID: 11400000, guid: dbc2e00d30f268b4090f2f7995c3a0fb, type: 2}
+    _count: 90000
+  - _item: {fileID: 11400000, guid: 65afd93af9612c54a87a561aefd8f7a7, type: 2}
+    _count: 9000
+  - _item: {fileID: 11400000, guid: 297bfd16ac94765408a4c7a1449c1eaa, type: 2}
+    _count: 1000
+  - _item: {fileID: 11400000, guid: 238ea1cef9defc64ab1ef9d4db817fe8, type: 2}
+    _count: 100
+  - _item: {fileID: 11400000, guid: 4806abdb3c548ab4387e431ed5841ea5, type: 2}
+    _count: 10
+  - _item: {fileID: 11400000, guid: 98671339f815368418e5be036f4e084a, type: 2}
+    _count: 1

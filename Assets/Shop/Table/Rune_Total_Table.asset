@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a39da69e8575b409bfd39e68446705, type: 3}
+  m_Name: Rune_Total_Table
+  m_EditorClassIdentifier: 
+  _DisplayName: "F~S \uB8EC \uD14C\uC774\uBE14"
+  _Description: 
+  _ItemId: Rune_Total_Table
+  _ItemClass: Table
+  _ItemInstanceId: 
+  _unitCurrency: 
+  _unitPrice: 0
+  _isStackable: 1
+  _items:
+  - _item: {fileID: 11400000, guid: 613224e9c8e867e4dbaecba0976b0959, type: 2}
+    _count: 75000
+  - _item: {fileID: 11400000, guid: 6fcaad38e9b794441a78472a53ae51cf, type: 2}
+    _count: 13000
+  - _item: {fileID: 11400000, guid: d863a5532c2c63d46bde7a0023af2276, type: 2}
+    _count: 7000
+  - _item: {fileID: 11400000, guid: d29ae9e640b75b749809976132128dd0, type: 2}
+    _count: 3000
+  - _item: {fileID: 11400000, guid: a61fa8613f85f39469aae430a6dc64da, type: 2}
+    _count: 1500
+  - _item: {fileID: 11400000, guid: 6c888cc973ea49c40998ce1b9ea33b52, type: 2}
+    _count: 400
+  - _item: {fileID: 11400000, guid: 23b1fa76ea6a8a74ea9c07d76873e492, type: 2}
+    _count: 100
+  - _item: {fileID: 11400000, guid: fa0d5823a376bed4fb91b61e12484cac, type: 2}
+    _count: 30
+  - _item: {fileID: 11400000, guid: ad4cee81decc9e5419c7a1c0dc144da7, type: 2}
+    _count: 10
+  - _item: {fileID: 11400000, guid: 900cd7f90874eab409c7234518b11230, type: 2}
+    _count: 3

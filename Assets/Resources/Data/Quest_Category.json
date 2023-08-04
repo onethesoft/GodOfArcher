@@ -1,0 +1,28 @@
+﻿{
+  "data": [
+    {
+      "Column1": "CodeName",
+      "Column2": "DisplayName"
+    },
+    {
+      "Column1": "ClearStage",
+      "Column2": "스테이지 클리어"
+    },
+    {
+      "Column1": "KillMonster",
+      "Column2": "몬스터 처치"
+    },
+    {
+      "Column1": "KillBossMonster",
+      "Column2": "보스 몬스터 처치"
+    },
+    {
+      "Column1": "PlayTime",
+      "Column2": "게임 플레이 시간"
+    },
+    {
+      "Column1": "ClearDongeon",
+      "Column2": "잠맘보 던전 클리어"
+    }
+  ]
+}

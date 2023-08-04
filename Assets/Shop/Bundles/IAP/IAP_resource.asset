@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35141495e044da942b8349990ee82f70, type: 3}
+  m_Name: IAP_resource
+  m_EditorClassIdentifier: 
+  _DisplayName: "\uC601\uAD6C \uC790\uC6D0 \uD328\uD0A4\uC9C0"
+  _Description: 
+  _ItemId: iap_resource
+  _ItemClass: IAPItem
+  _ItemInstanceId: 
+  _unitCurrency: 
+  _unitPrice: 0
+  _isStackable: 1
+  _contents: []
+  _currencyList:
+  - Currency: {fileID: 11400000, guid: 37e1aaa5440b6b94a9b3b63c092c27bd, type: 2}
+    Amount: 50000
+  _dailyContents:
+  - Item: {fileID: 11400000, guid: ee05465609887be48ac6b8da0bddfcbf, type: 2}
+    Amount: 1
+  - Item: {fileID: 11400000, guid: 2f8d0651019ed9741a7da1ec97712c8b, type: 2}
+    Amount: 1
+  - Item: {fileID: 11400000, guid: 34c11ec3bad5bdb4ca5eabe6172330aa, type: 2}
+    Amount: 1
+  _daillyCurrencyList: []

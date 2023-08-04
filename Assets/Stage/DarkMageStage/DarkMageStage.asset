@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8fa9d689e7d2e843b2b4c0e99e89aac, type: 3}
+  m_Name: DarkMageStage
+  m_EditorClassIdentifier: 
+  _type: 1
+  _icon: {fileID: 21300000, guid: de0ff7056bc64024897c2634203de0bd, type: 3}
+  _NameBackground: {fileID: 21300000, guid: df3cc454457cea141a3b56f79da1adc8, type: 3}
+  _subDescriptionBackground: {fileID: 21300000, guid: fb2a8d2ec1e40cf4c8ff17b931b899ab,
+    type: 3}
+  _name: "\uACE0\uB300\uB9C8\uBC95\uC0AC\uC758 \uC11C\uC2DD\uC9C0"
+  _description: "*F~S \uB4F1\uAE09\uC758 \uB8EC \uD68D\uB4DD \uAC00\uB2A5"
+  _EnterCondition:
+    Count: 1
+    Item: {fileID: 11400000, guid: f063b5187c518b94e84ad7d5f29bbbd3, type: 2}
+  _Count_Daily_Free_Pass: 3
+  _monsterHPGenerator: {fileID: 0}
+  _Timeout: 30
+  _mosterPrefabs:
+  - min: 0
+    max: 0
+    Unit: {fileID: 1955016999701501210, guid: 38096fed8bcbf3447b1b492e2b950763, type: 3}
+  - min: 0
+    max: 0
+    Unit: {fileID: 612462783070494465, guid: ac7684b70b3087b4891b7404ef4be67b, type: 3}
+  - min: 0
+    max: 0
+    Unit: {fileID: 737314001091645398, guid: 11e1230a687dcc245907a4a6515720f9, type: 3}
+  _backgroundPrefabs:
+  - min: 1
+    max: 9999999
+    Unit: {fileID: 2824901990738451516, guid: 5ce929faf88364c4a95a4a6fdde43d9d, type: 3}
+  _rewardList:
+  - {fileID: 11400000, guid: 1fc22641136d30f4e87324ad996ddd73, type: 2}
+  - {fileID: 11400000, guid: df76ffc2f742d1e40ab62ac10d1197a7, type: 2}
+  - {fileID: 11400000, guid: f3afcdd5fc159bd4e8a16b0a089c3fa6, type: 2}
+  - {fileID: 11400000, guid: ad89ca38e4b8f8445a3b6eb092ba6e59, type: 2}
+  - {fileID: 11400000, guid: 3c222fa1ba03bd94487c2d643cb94cd6, type: 2}
+  - {fileID: 11400000, guid: 19a0a480f3c38fd41bd23f3713c471a0, type: 2}
+  - {fileID: 11400000, guid: 70d56202869a7a94abff9c6f2c66aa95, type: 2}
+  _spawner: {fileID: 11400000, guid: 796c560fdc289424bbd72baf65a01d52, type: 2}

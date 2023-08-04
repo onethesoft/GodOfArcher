@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64865bbdac7a0b428504b26cf57cf90, type: 3}
+  m_Name: IAPData_ItemPackage_A
+  m_EditorClassIdentifier: 
+  _type: 0
+  _displayName: "\uCD08\uAE09\uC790 \uC7A5\uBE44 \uD328\uD0A4\uC9C0"
+  _background: {fileID: 21300000, guid: 415c470e8eddc8c45a4354582a9ebc13, type: 3}
+  _icon: {fileID: 0}
+  _subicon: {fileID: 0}
+  _itemIcon:
+  - {fileID: 11400000, guid: 172f882739a3686479082dd24d5df8a1, type: 2}
+  - {fileID: 11400000, guid: 65afd93af9612c54a87a561aefd8f7a7, type: 2}
+  - {fileID: 11400000, guid: b682be75714b9bc41a5269cb14654eb3, type: 2}
+  - {fileID: 11400000, guid: bffbfca6ef2da3442b8f6e1f554f675b, type: 2}
+  _backcurrencyIcon: {fileID: 21300000, guid: 365861fc1402da44f81bbee7a11d3263, type: 3}
+  _currencyIcon: {fileID: 21300000, guid: 0f695343df521bc49b7ffcdb17f78710, type: 3}
+  _item: {fileID: 11400000, guid: 88b25e9a99f7228478c58d149e01ee01, type: 2}
+  _description: "A\uB4F1\uAE09 \uD65C, \uD22C\uAD6C, \uAC11\uC637 , \uB9DD\uD1A0
+    \uC9C0\uAE09\\n\uBCF4\uB108\uC2A4 \uB8E8\uBE44 \uC9C0\uAE09"
+  _descriptionColor: {r: 1, g: 0.72156864, b: 0, a: 1}
+  _PriceText: "5000\uC6D0"
+  _isBlock: 1

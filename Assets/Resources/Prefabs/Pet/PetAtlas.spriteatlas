@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PetAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 64b85010ace3b0649b040787c7a4aa79, type: 3}
+    - {fileID: 2800000, guid: a06644899ac5401498c8d64a246776c7, type: 3}
+    - {fileID: 2800000, guid: b808dfbeba9120c44a62758d7215dd7d, type: 3}
+    - {fileID: 2800000, guid: 2045a7fc76efb7d469066112f7972a57, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 6882371640200617258, guid: 64b85010ace3b0649b040787c7a4aa79, type: 3}
+  - {fileID: -1828946549344447192, guid: 64b85010ace3b0649b040787c7a4aa79, type: 3}
+  - {fileID: -7252215782646672311, guid: 64b85010ace3b0649b040787c7a4aa79, type: 3}
+  - {fileID: -5673618120071735642, guid: 64b85010ace3b0649b040787c7a4aa79, type: 3}
+  - {fileID: -1381065623766834176, guid: 64b85010ace3b0649b040787c7a4aa79, type: 3}
+  - {fileID: 7747752229143381957, guid: 64b85010ace3b0649b040787c7a4aa79, type: 3}
+  - {fileID: 6882371640200617258, guid: a06644899ac5401498c8d64a246776c7, type: 3}
+  - {fileID: -1828946549344447192, guid: a06644899ac5401498c8d64a246776c7, type: 3}
+  - {fileID: -7252215782646672311, guid: a06644899ac5401498c8d64a246776c7, type: 3}
+  - {fileID: -5673618120071735642, guid: a06644899ac5401498c8d64a246776c7, type: 3}
+  - {fileID: -1381065623766834176, guid: a06644899ac5401498c8d64a246776c7, type: 3}
+  - {fileID: 7747752229143381957, guid: a06644899ac5401498c8d64a246776c7, type: 3}
+  - {fileID: -5890888257780047973, guid: 2045a7fc76efb7d469066112f7972a57, type: 3}
+  - {fileID: 2640329124585140612, guid: 2045a7fc76efb7d469066112f7972a57, type: 3}
+  - {fileID: -524195514793821918, guid: 2045a7fc76efb7d469066112f7972a57, type: 3}
+  - {fileID: -1828946549344447192, guid: 2045a7fc76efb7d469066112f7972a57, type: 3}
+  - {fileID: -7252215782646672311, guid: 2045a7fc76efb7d469066112f7972a57, type: 3}
+  - {fileID: -5673618120071735642, guid: 2045a7fc76efb7d469066112f7972a57, type: 3}
+  - {fileID: -1381065623766834176, guid: 2045a7fc76efb7d469066112f7972a57, type: 3}
+  - {fileID: -5890888257780047973, guid: b808dfbeba9120c44a62758d7215dd7d, type: 3}
+  - {fileID: 2640329124585140612, guid: b808dfbeba9120c44a62758d7215dd7d, type: 3}
+  - {fileID: -524195514793821918, guid: b808dfbeba9120c44a62758d7215dd7d, type: 3}
+  - {fileID: -1828946549344447192, guid: b808dfbeba9120c44a62758d7215dd7d, type: 3}
+  - {fileID: -7252215782646672311, guid: b808dfbeba9120c44a62758d7215dd7d, type: 3}
+  - {fileID: -5673618120071735642, guid: b808dfbeba9120c44a62758d7215dd7d, type: 3}
+  - {fileID: -1381065623766834176, guid: b808dfbeba9120c44a62758d7215dd7d, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - LegFront
+  - HeadNormal
+  - HeadAngry
+  - Body
+  - HeadDead
+  - LegBack
+  - LegFront
+  - HeadNormal
+  - HeadAngry
+  - Body
+  - HeadDead
+  - LegBack
+  - Tail
+  - Wing
+  - Leg
+  - HeadNormal
+  - HeadAngry
+  - Body
+  - HeadDead
+  - Tail
+  - Wing
+  - Leg
+  - HeadNormal
+  - HeadAngry
+  - Body
+  - HeadDead
+  m_RenderDataMap: {}
+  m_Tag: PetAtlas
+  m_IsVariant: 0

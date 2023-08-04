@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 807f09c88153fbb4793619cdf9e34fe3, type: 3}
+  m_Name: "\uD5EC\uBA67E"
+  m_EditorClassIdentifier: 
+  _DisplayName: "\uD5E4\uB974\uBA54\uC2A4\uC758 \uD22C\uAD6C"
+  _Description: "\uACF5\uACA9\uC18D\uB3C4 10% \uC99D\uAC00\\n\uC2A4\uD0AC \uACF5\uACA9\uB825
+    10% \uC99D\uAC00\\n\uC2A4\uD0AC \uCFE8\uD0C0\uC784 10% \uAC10\uC18C"
+  _ItemId: Helmet_E
+  _ItemClass: Helmet
+  _ItemInstanceId: 
+  _unitCurrency: 
+  _unitPrice: 0
+  _isStackable: 1
+  _EquipCount: 0
+  _Level: 1
+  _Icon: {fileID: 21300000, guid: 27b71ee3ba4347cd82a5197182c5c1b3, type: 3}
+  _IconBackground: {fileID: 21300000, guid: abe3a4ed43bcdcf4da3b2b774f89e41d, type: 3}
+  _Background: {fileID: 21300000, guid: 588347e9818e95d42b569efe56c72eaf, type: 3}
+  _IconBackgroundOutline:
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+    EffectDistance: {x: 1, y: -1}
+  _DescriptionBackgroundSprite: {fileID: 21300000, guid: 588347e9818e95d42b569efe56c72eaf,
+    type: 3}
+  _DescriptionBackgroundTexture: {fileID: 21300000, guid: b9fae683c3d4222439b0f1d3626068da,
+    type: 3}
+  _DescriptionBackgroundOutline:
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    EffectDistance: {x: 0, y: 0}
+  _DescriptionBackgroundColor: {r: 0.39215687, g: 0.39215687, b: 0.78431374, a: 1}
+  _SpriteCollectionId: FantasyHeroes.Basic.Helmet.HunterHat2
+  _DisplayNameOutLine:
+    OutlineColor: {r: 0, g: 0.19607843, b: 1, a: 1}
+    EffectDistance: {x: 1, y: -1}
+  _statModifiers:
+  - _codeName: SkillAttack
+    _description: "\uC2A4\uD0AC \uACF5\uACA9\uB825 %s% \uC99D\uAC00"
+    _value: 10
+    _type: 0
+  - _codeName: SkillCoolTime
+    _description: "\uC2A4\uD0AC \uCFE8\uD0C0\uC784 %s% \uAC10\uC18C"
+    _value: 10
+    _type: 0

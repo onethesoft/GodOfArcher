@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8e1310817324ed4386450a434148be0, type: 3}
+  m_Name: RuneUpgradeTable
+  m_EditorClassIdentifier: 
+  _tasks:
+  - {fileID: 11400000, guid: 1efadc91385acaf409910daf14d72522, type: 2}
+  - {fileID: 11400000, guid: 3a8de02838320d64f8f4944a1b0e2912, type: 2}
+  - {fileID: 11400000, guid: ce6e3cd19fc3f2e4d97bf3bda903baf2, type: 2}
+  - {fileID: 11400000, guid: 6eca43a3f056745459464d1fef71ef64, type: 2}
+  - {fileID: 11400000, guid: fafe72bcb7305104dba490cb5188de75, type: 2}
+  - {fileID: 11400000, guid: d83ecaa268538be43aa88a4eed79db3d, type: 2}
+  - {fileID: 11400000, guid: b84b28c0a10577a4f9b7fb49dff1b3ff, type: 2}
+  - {fileID: 11400000, guid: e2e3585284a9f7b4f9c32323aa4c5713, type: 2}
+  - {fileID: 11400000, guid: 801a40eaebff1c34399c2aaf404f14ea, type: 2}
+  - {fileID: 11400000, guid: e10687f0cc3083a428d817354495d315, type: 2}
+  - {fileID: 11400000, guid: bdaebc5044ca9174886f59488f3084f7, type: 2}
+  - {fileID: 11400000, guid: 1403ee0be7187fa4785897e8b69c9c30, type: 2}
+  - {fileID: 11400000, guid: af6b11d4c3b5fd1469158845aedd64d4, type: 2}
+  - {fileID: 11400000, guid: 3f08c65a2fe397e4a872e52ffcfcb555, type: 2}
+  - {fileID: 11400000, guid: d25f380c35b6ce04c8d0eafe6fd3e5f9, type: 2}
+  - {fileID: 11400000, guid: 7b483c940c6f61a469aa693eff807fae, type: 2}
+  - {fileID: 11400000, guid: 5a3d20dc8e2b33647a426be2397d42b5, type: 2}
+  - {fileID: 11400000, guid: e78e0ddc880c83b4b8ed11662cd82a47, type: 2}
+  - {fileID: 11400000, guid: 79c07c8389550e54caaf3c8dff6de6ef, type: 2}
+  - {fileID: 11400000, guid: 6934567e5a7d7564987f03078c60058d, type: 2}
+  - {fileID: 11400000, guid: 994c5fefe5e37b64dbd475907349a202, type: 2}

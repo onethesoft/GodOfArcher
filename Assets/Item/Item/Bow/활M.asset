@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1656a1e13ed4d6d448d2126ef7bab09e, type: 3}
+  m_Name: "\uD65CM"
+  m_EditorClassIdentifier: 
+  _DisplayName: "\uD3EC\uC138\uC774\uB3C8\uC758 \uD65C"
+  _Description: "\uACF5\uACA9\uB825 3000% \uC99D\uAC00"
+  _ItemId: Bow_M
+  _ItemClass: Bow
+  _ItemInstanceId: 
+  _unitCurrency: 
+  _unitPrice: 0
+  _isStackable: 1
+  _EquipCount: 0
+  _Level: 8
+  _Icon: {fileID: 21300000, guid: 69c12eabb19ffc9428011e36d0adb59b, type: 3}
+  _IconBackground: {fileID: 21300000, guid: 1682f76c5737f3342a2919865b2c4401, type: 3}
+  _Background: {fileID: 21300000, guid: 88e3ebb5e20336341a8bf2305d13c131, type: 3}
+  _IconBackgroundOutline:
+    OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+    EffectDistance: {x: 2, y: -2}
+  _DescriptionBackgroundSprite: {fileID: 21300000, guid: 88e3ebb5e20336341a8bf2305d13c131,
+    type: 3}
+  _DescriptionBackgroundTexture: {fileID: 21300000, guid: 88e3ebb5e20336341a8bf2305d13c131,
+    type: 3}
+  _DescriptionBackgroundOutline:
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+    EffectDistance: {x: 1, y: -1}
+  _DescriptionBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  _SpriteCollectionId: Extensions.Legendary.Bow.CherufeArc
+  _DisplayNameOutLine:
+    OutlineColor: {r: 1, g: 0, b: 0, a: 1}
+    EffectDistance: {x: 1, y: -1}
+  _statModifiers:
+  - _codeName: Attack
+    _description: "\uACF5\uACA9\uB825 %s% \uC99D\uAC00"
+    _value: 6000
+    _type: 0
+  - _codeName: AttackSpeed
+    _description: "\uACF5\uACA9\uC18D\uB3C4 %s% \uC99D\uAC00"
+    _value: 200
+    _type: 0

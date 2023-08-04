@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8fa9d689e7d2e843b2b4c0e99e89aac, type: 3}
+  m_Name: TrollStage
+  m_EditorClassIdentifier: 
+  _type: 2
+  _icon: {fileID: 21300000, guid: ae6a517726c68fd40a3c19f0192a59ac, type: 3}
+  _NameBackground: {fileID: 21300000, guid: 16b1cdca92374d343933ecb9c8df03c3, type: 3}
+  _subDescriptionBackground: {fileID: 21300000, guid: fb2a8d2ec1e40cf4c8ff17b931b899ab,
+    type: 3}
+  _name: "\uD2B8\uB864\uC758 \uC11C\uC2DD\uC9C0"
+  _description: "*\uD2B8\uB864\uC758 \uC815\uC218 \uD68D\uB4DD \uAC00\uB2A5"
+  _EnterCondition:
+    Count: 0
+    Item: {fileID: 0}
+  _Count_Daily_Free_Pass: 0
+  _maxStage: 500
+  _monsterHPGenerator: {fileID: 11400000, guid: 1efd6b02c7cd2c24ab267bcf119e11bc,
+    type: 2}
+  _Timeout: 30
+  _mosterPrefabs:
+  - min: 0
+    max: 0
+    Unit: {fileID: 7479472616188774822, guid: ce7b5c5b2feb78e4d915a758bff8e7d7, type: 3}
+  - min: 0
+    max: 0
+    Unit: {fileID: 4648680226314578027, guid: 7fe214b6c3610e140a2cd0f124b47ee4, type: 3}
+  - min: 0
+    max: 0
+    Unit: {fileID: 3970982680854506916, guid: 8e4491a3ab28bee43ae87852fe960a46, type: 3}
+  - min: 0
+    max: 0
+    Unit: {fileID: 3168369169286935218, guid: e113ed6873f95264aab508454b508593, type: 3}
+  - min: 0
+    max: 0
+    Unit: {fileID: 1136792462698428289, guid: e8191e722078fdf43a7b53f980c6a323, type: 3}
+  _backgroundPrefabs:
+  - min: 1
+    max: 2500
+    Unit: {fileID: 7790895695678564443, guid: 3e121b3cd1aa9b645852fa7ab5465471, type: 3}
+  _rewardList:
+  - {fileID: 11400000, guid: 881c9968792edac499427b8fdd9f2a53, type: 2}
+  - {fileID: 11400000, guid: 165521cc7fef5ff46b56e283014bb0b1, type: 2}
+  - {fileID: 11400000, guid: 62cffb5067486f44da5bae8e59ae6b69, type: 2}
+  - {fileID: 11400000, guid: 3a01106a426a53146b6e76ada1ccf397, type: 2}
+  - {fileID: 11400000, guid: 1cdbc9e4199e86b4e87fe06d5a52c7e0, type: 2}
+  _spawner: {fileID: 11400000, guid: 2b9d44edc1db27b418e9f8f29654ce7d, type: 2}

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da31947750c7ce40abb19809855bea4, type: 3}
+  m_Name: 4000
+  m_EditorClassIdentifier: 
+  _category: {fileID: 11400000, guid: 946945c496441484882e91dd3ccd74f0, type: 2}
+  _codeName: StageClear
+  _description: "\uC2A4\uD14C\uC774\uC9C0 \uD074\uB9AC\uC5B4"
+  _action: {fileID: 11400000, guid: 7db694636709f9746b37cc92608cecca, type: 2}
+  _targets:
+  - {fileID: 11400000, guid: 178e95778a9a19745b136d8c2a566901, type: 2}
+  _needSuccessToComplete: 4000
+  _initialSuccessValue: {fileID: 0}
+  _canReceiveReportDuringCompletion: 0

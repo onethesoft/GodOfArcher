@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c199e072a32d14eb40a1602abbb340, type: 3}
+  m_Name: DarkMageStageSpawner
+  m_EditorClassIdentifier: 
+  _mosterPrefabs:
+  - {fileID: 1955016999701501210, guid: 38096fed8bcbf3447b1b492e2b950763, type: 3}
+  - {fileID: 612462783070494465, guid: ac7684b70b3087b4891b7404ef4be67b, type: 3}
+  - {fileID: 737314001091645398, guid: 11e1230a687dcc245907a4a6515720f9, type: 3}
+  _spawnPos: {x: 2.34, y: -2.06, z: 0}

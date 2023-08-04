@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf27088d47547fe49b2d9c3fb28b3967, type: 3}
+  m_Name: "5_\uBC31\uC791"
+  m_EditorClassIdentifier: 
+  _rank: 5
+  _conditionStage: 30000
+  _iconObject: {fileID: 8636860877497465724, guid: 52f241a37e977174dbad687b1c8c155d,
+    type: 3}
+  _statModifiers:
+  - _codeName: JumpingRate
+    _description: 
+    _value: 70
+    _type: 0
+  - _codeName: JumpingCount
+    _description: 
+    _value: 3
+    _type: 0
+  - _codeName: ExtraHit
+    _description: 
+    _value: 1
+    _type: 0
+  _pierceCount: 1
+  _ranktext: "\uBC31\uC791"
+  _pierceRate: 100
+  _petSlotCount: 3
+  _runeSlotCount: 6

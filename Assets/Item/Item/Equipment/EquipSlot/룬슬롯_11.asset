@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e4296de5a082fb429b195aa4825ce82, type: 3}
+  m_Name: "\uB8EC\uC2AC\uB86F_11"
+  m_EditorClassIdentifier: 
+  _DisplayName: "\uB8EC\uC2AC\uB86F 11"
+  _Description: "\uCD94\uAC00 \uB8EC\uC2AC\uB86F \uAD6C\uB9E4 \uAC00\uB2A5"
+  _ItemId: RuneSlot_11
+  _ItemClass: ItemSlot
+  _ItemInstanceId: 
+  _unitCurrency: 
+  _unitPrice: 200000
+  _isStackable: 1
+  _index: 11
+  _category: {fileID: 11400000, guid: 79fccf28a11f6d145a8e8895f138d6d6, type: 2}
+  _parent: {fileID: 11400000, guid: 62a5daedbe34a184d91edb0683519dd1, type: 2}
+  _DescriptionFontSize: 15
+  _IsLock: 1
+  _isEquip: 0
+  _item: {fileID: 0}
+  _condition:
+  - {fileID: 11400000, guid: 020a138cfcf255446a690f7263aeda17, type: 2}
+  - {fileID: 11400000, guid: 1a4d5e567e0641344bac4ca0a6399e51, type: 2}
+  _itemprefabPos: {x: 0, y: 0, z: 0}

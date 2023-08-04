@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f3799f9b547403479da63c882162f60, type: 3}
+  m_Name: ShopDatabase
+  m_EditorClassIdentifier: 
+  _randomBoxLists:
+  - {fileID: 11400000, guid: 2016ec20b60b2ff458d725cd5bd07152, type: 2}
+  - {fileID: 11400000, guid: b63ab204fd0fef74fa3a96a2bac5be5a, type: 2}
+  - {fileID: 11400000, guid: 2b75afaa3f366ac4a94761153b9725a5, type: 2}
+  - {fileID: 11400000, guid: 300f0bc620d588f4e88ee1a12979c39f, type: 2}
+  - {fileID: 11400000, guid: 410ccce25761a2344bab263dc8b0b2cd, type: 2}
+  - {fileID: 11400000, guid: f3d5d7b3fd9b225499556a992ddfc632, type: 2}
+  - {fileID: 11400000, guid: 744d3102814a5ae4db9cbf93c314654d, type: 2}
+  _iapLists:
+  - {fileID: 11400000, guid: 12282e748cbcd66459ed834c31e10905, type: 2}
+  - {fileID: 11400000, guid: 207b5598ece54f34c99806ec20db9b0d, type: 2}
+  - {fileID: 11400000, guid: ef8aae0a6593e914ca743f5bb374cf6c, type: 2}
+  - {fileID: 11400000, guid: 15f57c3d4f9758248a185e8a3c54288d, type: 2}
+  - {fileID: 11400000, guid: eddb4c51910778c459fda3f63a6f6c48, type: 2}
+  - {fileID: 11400000, guid: 39c8e2f8422c02a4186311cc979c7dde, type: 2}
+  - {fileID: 11400000, guid: 2942a7a520cbb2f4ebf23d4376be9921, type: 2}
+  _rubyLists:
+  - {fileID: 11400000, guid: 4d4c92ff24825b749a148d98267b273b, type: 2}
+  - {fileID: 11400000, guid: 34be946fcff65ce46b765e358b307a7b, type: 2}
+  - {fileID: 11400000, guid: b2fa27f8bb66232409da733b596339fa, type: 2}
+  - {fileID: 11400000, guid: 90309b186f870694e8006e4e2128ea7f, type: 2}
+  - {fileID: 11400000, guid: 8c9da1031453d6c4e90b500220b36a22, type: 2}
+  - {fileID: 11400000, guid: e87cdd6ac64f44041b745eedc8cdc81e, type: 2}
+  _seasonpass: {fileID: 11400000, guid: ec490bff86ba7cd49a6f0521c82c9972, type: 2}
+  _seasonpass2: {fileID: 11400000, guid: ec99282acfed55e4d97ce3faccbbbf6a, type: 2}

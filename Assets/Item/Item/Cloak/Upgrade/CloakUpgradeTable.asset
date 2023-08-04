@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1980327086549e0409a806a69faee69f, type: 3}
+  m_Name: CloakUpgradeTable
+  m_EditorClassIdentifier: 
+  _tasks:
+  - {fileID: 11400000, guid: f91700022c45f3e45a342246f4d66a8f, type: 2}
+  - {fileID: 11400000, guid: 279038e7c561d594faeb35db8d90c472, type: 2}
+  - {fileID: 11400000, guid: d0e59011326ab744ab5377ff358c906b, type: 2}
+  - {fileID: 11400000, guid: d70da927c7629f14589d91121b61d43b, type: 2}
+  - {fileID: 11400000, guid: a53b1b9e3dbcfc74eb4cca2f3bc53e68, type: 2}
+  - {fileID: 11400000, guid: 811f238d74f4a434f80c64444d23be84, type: 2}
+  - {fileID: 11400000, guid: 7e8b0551812061d4cb3407d12bff6c44, type: 2}
+  - {fileID: 11400000, guid: 0a3ac1bfd6a693743999ae69cc035e5c, type: 2}
+  - {fileID: 11400000, guid: 466cea434fe82a84ebafe8969248ddfc, type: 2}

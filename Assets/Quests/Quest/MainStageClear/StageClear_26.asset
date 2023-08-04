@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2579609f92354489e4eeffcb55002f, type: 3}
+  m_Name: StageClear_26
+  m_EditorClassIdentifier: 
+  _category: {fileID: 11400000, guid: 946945c496441484882e91dd3ccd74f0, type: 2}
+  _icon: {fileID: 21300000, guid: 0f695343df521bc49b7ffcdb17f78710, type: 3}
+  _codeName: StageClear_26
+  _description: "500000 \uC2A4\uD14C\uC774\uC9C0 \uD074\uB9AC\uC5B4"
+  _displayName: 
+  _taskGroups:
+  - _tasks:
+    - {fileID: 11400000, guid: aff5602cbc3b0344bbe70633864319d4, type: 2}
+  _rewards:
+  - {fileID: 11400000, guid: cd9b188f718f1184cbd856a4da851f79, type: 2}
+  _useAutoComplete: 0
+  _isCancelable: 0
+  _isSavable: 1
+  _isRepeatable: 0
+  _acceptionconditions: []
+  _cancelconditions: []
+  _helper: {fileID: 0}

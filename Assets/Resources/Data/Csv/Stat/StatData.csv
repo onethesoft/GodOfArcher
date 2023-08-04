@@ -1,0 +1,15 @@
+﻿ID,CodeName,InitLevel,MaxLevel,InitStat,IncrementStatPerLevel,InitCost,IncrementCostOperator,IncrementCostPerLevel,CurrencyID,IsOpenned,LevelText,IncrementStatText,MaxLevelText,StatText,Icon,BackIcon
+1000,Attack,1,50000,1,1,10,mul,1.001,Gold,1,1,15,29,30,StatPopup/set_icon_role_assassin,StatPopup/Frame_ItemFrame02_Color_Gay
+1001,AttackSpeed,1,50,1,1,10,mul,2,Gold,1,2,16,29,31,StatPopup/Icon_Arrow_1_Up,StatPopup/Frame_ItemFrame02_Color_Green
+1002,CriticalHit,1,50000,1,1,10,mul,1.001,Gold,1,3,17,29,32,StatPopup/set_icon_role_paladin,StatPopup/Frame_ItemFrame02_Color_Purple
+1003,CriticalHitRate,1,50,5,5,10,mul,2,Gold,1,4,18,29,33,StatPopup/set_icon_role_warrior,StatPopup/Frame_ItemFrame02_Color_Yellow
+1004,CraftAttack,1,50000,1,1,10,mul,1.001,CP,1,5,19,29,34,StatPopup/set_icon_role_assassin,StatPopup/Frame_ItemFrame02_Color_Gay
+1005,CraftAttackSpeed,1,50,1,1,10,mul,2,CP,1,6,20,29,35,StatPopup/Icon_Arrow_1_Up,StatPopup/Frame_ItemFrame02_Color_Green
+1006,CraftCriticalHit,1,50000,1,10,10,mul,1.001,CP,1,7,21,29,36,StatPopup/set_icon_role_paladin,StatPopup/Frame_ItemFrame02_Color_Purple
+1007,CraftCriticalHitRate,1,50,5,5,10,mul,2,CP,1,8,22,29,37,StatPopup/set_icon_role_warrior,StatPopup/Frame_ItemFrame02_Color_Yellow
+1008,GoldDropRate,1,300,1,1,1,sum,1,Ruby,1,9,23,29,38,StatPopup/Icon_Dollar_Symbol,StatPopup/Frame_ItemFrame02_Color_Yellow
+1009,CraftDropRate,1,300,1,1,1,sum,1,Ruby,1,10,24,29,39,StatPopup/ClanIcon_Symbol_Large4,StatPopup/Frame_ItemFrame02_Color_Green
+1010,JumpingRate,1,30,1,1,100,sum,100,Ruby,1,11,25,29,40,StatPopup/Icon_Grade,StatPopup/Frame_ItemFrame02_Color_Purple
+1011,JumpingCount,1,10,0,1,1,sum,1,Ruby,1,12,26,29,41,StatPopup/btn_icon_rocket,StatPopup/Frame_ItemFrame02_Color_Gay
+1012,SkillAttack,0,100,0,1,1,sum,0,SP,1,13,27,29,42,StatPopup/btn_icon_knight,StatPopup/Frame_ItemFrame02_Color_Yellow
+1013,SkillMaxLevelLimit,0,10,100,100,200000,sum,100000,Ruby,0,14,28,29,43,StatPopup/btn_icon_shine,StatPopup/Frame_ItemFrame02_Color_Green

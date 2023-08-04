@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94da5fa4a8efadd4e80abc27005f2d95, type: 3}
+  m_Name: "\uD654\uC774\uD2B8\uD558\uD2B8"
+  m_EditorClassIdentifier: 
+  _DisplayName: "\uD558\uC580 \uD2B8\uB864\uC758 \uD558\uD2B8"
+  _Description: "\uD658\uC0DDP\uD68D\uB4DD\uB960 \uC99D\uAC00"
+  _ItemId: Heart_White
+  _ItemClass: Heart
+  _ItemInstanceId: 
+  _unitCurrency: 
+  _unitPrice: 0
+  _isStackable: 1
+  _type: 4
+  _icon: {fileID: 21300000, guid: d5656e081426e634b9f765712cd8e85a, type: 3}
+  _Background: {fileID: 21300000, guid: dea5478f36529914bb1869385325a93e, type: 3}
+  _BackgroundColor: {r: 1, g: 0.78431374, b: 0, a: 1}
+  _incrementstatPerLevel: 2
+  _maxLevel: 500
+  _statModifier:
+    _codeName: CraftDropRate
+    _value: 0
+    _type: 0

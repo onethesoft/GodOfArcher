@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2579609f92354489e4eeffcb55002f, type: 3}
+  m_Name: "17.\uD3AB\uC7A5\uCC29"
+  m_EditorClassIdentifier: 
+  _category: {fileID: 11400000, guid: 9ffe6c2a187a15c449999043748fecef, type: 2}
+  _icon: {fileID: 21300000, guid: 0f695343df521bc49b7ffcdb17f78710, type: 3}
+  _codeName: Equip Pet
+  _description: "\uD3AB \uC7A5\uCC29\uD558\uAE30"
+  _displayName: 
+  _taskGroups:
+  - _tasks:
+    - {fileID: 11400000, guid: f7e3c8c2203e8524cadb165e87ae877a, type: 2}
+  _rewards:
+  - {fileID: 11400000, guid: 6572fa693c3bc0340846ed9d6acd1a88, type: 2}
+  _useAutoComplete: 0
+  _isCancelable: 0
+  _isSavable: 1
+  _isRepeatable: 0
+  _acceptionconditions:
+  - {fileID: 11400000, guid: abc520d2a9553be42b6724ce7a7e66df, type: 2}
+  _cancelconditions: []
+  _helper: {fileID: 11400000, guid: 5ebeba6c121734f46abf97458767709a, type: 2}

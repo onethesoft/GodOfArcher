@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a39da69e8575b409bfd39e68446705, type: 3}
+  m_Name: Pet_F_Table
+  m_EditorClassIdentifier: 
+  _DisplayName: "F\uB4F1\uAE09 \uD3AB \uD14C\uC774\uBE14"
+  _Description: 
+  _ItemId: Pet_F_Table
+  _ItemClass: Table
+  _ItemInstanceId: 
+  _unitCurrency: 
+  _unitPrice: 0
+  _isStackable: 1
+  _items:
+  - _item: {fileID: 11400000, guid: c1fc218e9a51b6b4b8f5d4425feeb983, type: 2}
+    _count: 1
+  - _item: {fileID: 11400000, guid: e9dbf802e190fff42b47e8b9638e37c1, type: 2}
+    _count: 1

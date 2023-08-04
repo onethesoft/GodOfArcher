@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3643e9a8765ec438726da1a1c46375, type: 3}
+  m_Name: "\uAD11\uACE0_CP"
+  m_EditorClassIdentifier: 
+  _DisplayName: "\uAD11\uACE0 \uBCF4\uC0C1 CP \uD68D\uB4DD\uB960 \uBC84\uD504"
+  _Description: "\uD68D\uB4DD CP\\n"
+  _ItemId: Buff_CPDropRate_AD
+  _ItemClass: Buff
+  _ItemInstanceId: 
+  _unitCurrency: 
+  _unitPrice: 0
+  _isStackable: 1
+  _type: 5
+  _rating: 0
+  _icon: {fileID: 0}
+  _OnBackground: {fileID: 0}
+  _OffBackground: {fileID: 0}
+  _OnOutline:
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    EffectDistance: {x: 0, y: 0}
+  _OffOutline:
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    EffectDistance: {x: 0, y: 0}
+  _fontSize: 0
+  _Minutes: 0
+  _statModifier:
+  - _codeName: CraftDropRate
+    _value: 2
+    _type: 0

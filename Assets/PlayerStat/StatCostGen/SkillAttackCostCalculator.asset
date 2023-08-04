@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d6ceecc03cce6246b07a5b1a10386f5, type: 3}
+  m_Name: SkillAttackCostCalculator
+  m_EditorClassIdentifier: 
+  _costCalucations:
+  - minLevel: 0
+    maxLevel: 100
+    Generator: {fileID: 11400000, guid: 6ed82b184be96fc4e92d1635b9510e2b, type: 2}
+  - minLevel: 100
+    maxLevel: 200
+    Generator: {fileID: 11400000, guid: 2a1a74131320cb240aa57bc2835a97ff, type: 2}
+  - minLevel: 200
+    maxLevel: 300
+    Generator: {fileID: 11400000, guid: 776bd0a4d2a176143b913752ce5258ff, type: 2}
+  - minLevel: 300
+    maxLevel: 400
+    Generator: {fileID: 11400000, guid: 5d05e9616835c084e914d9e109e2c2c6, type: 2}
+  - minLevel: 400
+    maxLevel: 500
+    Generator: {fileID: 11400000, guid: 5db9e358f8dd0f24aadef09ac9e01499, type: 2}
+  - minLevel: 500
+    maxLevel: 600
+    Generator: {fileID: 11400000, guid: d4d9e9653432a7d4e81b911ed29024b2, type: 2}
+  - minLevel: 600
+    maxLevel: 700
+    Generator: {fileID: 11400000, guid: c9eefa62c66594844bc82ec2b539e131, type: 2}
+  - minLevel: 700
+    maxLevel: 800
+    Generator: {fileID: 11400000, guid: 935893c40b59a97468baa15af51273a1, type: 2}
+  - minLevel: 800
+    maxLevel: 900
+    Generator: {fileID: 11400000, guid: 79f3381937deff041a50d9dca0138a12, type: 2}
+  - minLevel: 900
+    maxLevel: 1000
+    Generator: {fileID: 11400000, guid: 01263a6253012cc45bc8868d38858740, type: 2}
+  - minLevel: 1000
+    maxLevel: 1100
+    Generator: {fileID: 11400000, guid: 01263a6253012cc45bc8868d38858740, type: 2}

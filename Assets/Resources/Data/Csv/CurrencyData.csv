@@ -1,0 +1,5 @@
+﻿ID,CodeName,Description,Icon
+0,Gold,Currency_Gold,Currency/StatusBarIcon_Gold
+1,CP,Currency_CP,Currency/StatusBarIcon_Energy
+2,Ruby,Currency_Ruby,Currency/StatusBarIcon_Gem
+3,SP,Currency_SP,Currency/status_icon_star

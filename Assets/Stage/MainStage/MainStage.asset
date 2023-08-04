@@ -1,0 +1,173 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8fa9d689e7d2e843b2b4c0e99e89aac, type: 3}
+  m_Name: MainStage
+  m_EditorClassIdentifier: 
+  _type: 3
+  _icon: {fileID: 0}
+  _NameBackground: {fileID: 0}
+  _subDescriptionBackground: {fileID: 0}
+  _name: 
+  _description: 
+  _EnterCondition:
+    Count: 0
+    Item: {fileID: 0}
+  _Count_Daily_Free_Pass: 0
+  _maxStage: 500000
+  _monsterHPGenerator: {fileID: 11400000, guid: a2a9c9e6769559e478d5307576ffb0dd,
+    type: 2}
+  _Timeout: 60
+  _mosterPrefabs:
+  - min: 1
+    max: 199
+    Unit: {fileID: 1017972782247820554, guid: cb746713156db954f9aba1d8cda74255, type: 3}
+  - min: 200
+    max: 399
+    Unit: {fileID: 1519650381636670473, guid: f2f1238919259b744ba383fdf6f37f20, type: 3}
+  - min: 400
+    max: 599
+    Unit: {fileID: 4080229724381779274, guid: a6fe3b6f65536c041919e1c8eb647ae9, type: 3}
+  - min: 600
+    max: 799
+    Unit: {fileID: 802741541595261772, guid: 242b958184ed16d4bb6e0f082cc9cb70, type: 3}
+  - min: 800
+    max: 999
+    Unit: {fileID: 1624722249717026818, guid: 6422f53ef6210854ba49de777aab96c8, type: 3}
+  - min: 1000
+    max: 1999
+    Unit: {fileID: 2887029571973652381, guid: 98c27e665bfca1a4b86a96803ae84820, type: 3}
+  - min: 2000
+    max: 2999
+    Unit: {fileID: 8820681084919546797, guid: ff63293f03a94044687e3fddc5713f6b, type: 3}
+  - min: 3000
+    max: 3999
+    Unit: {fileID: 1621807374181190293, guid: b424ae2bc83a8be4398ed77598c4184a, type: 3}
+  - min: 4000
+    max: 4999
+    Unit: {fileID: 8251185458845723465, guid: f79e6b23690a9834ba7294054e838bb9, type: 3}
+  - min: 5000
+    max: 6999
+    Unit: {fileID: 4372341988337725585, guid: f265e498c1c2d0d4bba9fdadaf4a5d6c, type: 3}
+  - min: 7000
+    max: 8999
+    Unit: {fileID: 2741825974617915113, guid: 46c67ec09811f874fb930fe8c4d06879, type: 3}
+  - min: 9000
+    max: 9999
+    Unit: {fileID: 51053065634697170, guid: f7dc95989e008d64493ce5268da76f42, type: 3}
+  - min: 10000
+    max: 11999
+    Unit: {fileID: 6094072852741645292, guid: 179b9dba52f2b3b42979844e45df6652, type: 3}
+  - min: 12000
+    max: 13999
+    Unit: {fileID: 1669783621547240750, guid: 7414154b4c53bc2499927159de572d5b, type: 3}
+  - min: 14000
+    max: 14999
+    Unit: {fileID: 2105409905264775815, guid: d5e5d998e0ad3f0469c93ba474d3f27c, type: 3}
+  - min: 15000
+    max: 16999
+    Unit: {fileID: 1969652526129267918, guid: 0546c955f63f89c4cb0ef94890477486, type: 3}
+  - min: 17000
+    max: 18999
+    Unit: {fileID: 1498389466635470069, guid: 71bb70b5c76386544a4486f52ebb87db, type: 3}
+  - min: 19000
+    max: 19999
+    Unit: {fileID: 5775500304225147738, guid: a5441589b36b5064c82292ef54c117e5, type: 3}
+  - min: 20000
+    max: 21999
+    Unit: {fileID: 4860747566164530784, guid: a8da9ab6a47d69347967585f861e2d1f, type: 3}
+  - min: 22000
+    max: 23999
+    Unit: {fileID: 8256115912684004916, guid: 86ae335e893168c4d84d600e4bc5b63b, type: 3}
+  - min: 24000
+    max: 25999
+    Unit: {fileID: 3766757868930276814, guid: c9a369a7e57b0f14faf1d518f0b0309f, type: 3}
+  - min: 26000
+    max: 27999
+    Unit: {fileID: 2977385902043724897, guid: 3c8f157f2890467428ce6df66c8c8335, type: 3}
+  - min: 28000
+    max: 29999
+    Unit: {fileID: 5118534141737120656, guid: 0b6eda4c0cf932448b2e9981cce005c9, type: 3}
+  - min: 30000
+    max: 37999
+    Unit: {fileID: 2389026234568142167, guid: 132bab8490425a34e9c4edb729af3124, type: 3}
+  - min: 38000
+    max: 45999
+    Unit: {fileID: 3799039219099373744, guid: 1243bdd6dfdf8f040a19a2b7b5228b16, type: 3}
+  - min: 46000
+    max: 49999
+    Unit: {fileID: 7210820634451873232, guid: 2f18dad4ec53d394a884a54fb1be359d, type: 3}
+  - min: 50000
+    max: 59999
+    Unit: {fileID: 1084408568361195601, guid: 442a42c9e9062bc4f8350346b21e8b46, type: 3}
+  - min: 60000
+    max: 69999
+    Unit: {fileID: 8479403376090215866, guid: 1767e13e5a85b8440903822d013ded0b, type: 3}
+  - min: 70000
+    max: 74999
+    Unit: {fileID: 7039342000024384047, guid: 32b1b28f061dd1f49a11b46596c2f162, type: 3}
+  - min: 75000
+    max: 84999
+    Unit: {fileID: 8154462109486485325, guid: c173313e12ea73048b5ac7045e4115d6, type: 3}
+  - min: 85000
+    max: 94999
+    Unit: {fileID: 2870558278720309628, guid: 6845e74e328aecf428096b6d1b3a2047, type: 3}
+  - min: 95000
+    max: 99999
+    Unit: {fileID: 5257237981275466418, guid: 79c623f26e789f2419f20d586684bd8a, type: 3}
+  - min: 100000
+    max: 119999
+    Unit: {fileID: 8694836542125116525, guid: 848602c26b0935d45a50ed558cac1071, type: 3}
+  - min: 120000
+    max: 129999
+    Unit: {fileID: 2423515479114760678, guid: 5cc24490e103a3946b538ee2acd64585, type: 3}
+  - min: 130000
+    max: 139999
+    Unit: {fileID: 6223573632144783987, guid: 5eea8fafd27d52e469ef797ad0faba8a, type: 3}
+  - min: 140000
+    max: 149999
+    Unit: {fileID: 1310399312274778216, guid: dbed17385a2757640b1eaf8c0eeec429, type: 3}
+  - min: 150000
+    max: 169999
+    Unit: {fileID: 7699753546570077606, guid: 4a7f5cfc21419e94b80d4eed0286963a, type: 3}
+  - min: 170000
+    max: 189999
+    Unit: {fileID: 8101879648857245255, guid: 41736ffa7ab018a4b85016608758b6ad, type: 3}
+  - min: 190000
+    max: 199999
+    Unit: {fileID: 293116818773931849, guid: cbf3e2d881d16a047b0fbe9410640ebd, type: 3}
+  - min: 200000
+    max: 219999
+    Unit: {fileID: 8295200689308442209, guid: d4209ee2d8060764cb2780ddb729128c, type: 3}
+  - min: 220000
+    max: 239999
+    Unit: {fileID: 3248629401357505053, guid: c8ea59d0a5f49cf469ad491f946d5a4e, type: 3}
+  - min: 240000
+    max: 249999
+    Unit: {fileID: 1590542450094800107, guid: 7c19b5f7bc838cc4da9071d3323c48fc, type: 3}
+  - min: 250000
+    max: 269999
+    Unit: {fileID: 430069711946910332, guid: 09cde2df3375e054ab026ac978dc4b05, type: 3}
+  - min: 270000
+    max: 289999
+    Unit: {fileID: 2849885987330682532, guid: f18ac6e353c58b64888bd14775750d48, type: 3}
+  - min: 290000
+    max: 299999
+    Unit: {fileID: 955189788030313294, guid: b925cfb3a493bec49aac97207cf0f73f, type: 3}
+  - min: 300000
+    max: 9999999
+    Unit: {fileID: 8194149395577901770, guid: 17ddfd87469e18a44a1e6cbd19fd27b6, type: 3}
+  _backgroundPrefabs:
+  - min: 1
+    max: 999
+    Unit: {fileID: 6656484473034800928, guid: 0ff1a42f6b73c7345a8cd0d6f314309d, type: 3}
+  _rewardList: []
+  _spawner: {fileID: 11400000, guid: de1aa74d452964044b3cb33a084c80c1, type: 2}

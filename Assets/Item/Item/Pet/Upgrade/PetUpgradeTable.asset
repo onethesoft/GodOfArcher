@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3787c05db24a0664baaf6e67327d4fe8, type: 3}
+  m_Name: PetUpgradeTable
+  m_EditorClassIdentifier: 
+  _tasks:
+  - {fileID: 11400000, guid: 7d30a5cc6fd6e254d9302cc6299b1ce9, type: 2}
+  - {fileID: 11400000, guid: 6bc4fd6cafb17124eb17faf10e9c2891, type: 2}
+  - {fileID: 11400000, guid: cbfad3b2485e3df4da1d8c1b51bc215c, type: 2}
+  - {fileID: 11400000, guid: 49f3fc3175418a84aa55a71debcfdd44, type: 2}
+  - {fileID: 11400000, guid: 7c17d8057cfa62a4fa62de4bfe846b4b, type: 2}
+  - {fileID: 11400000, guid: 1501772e185234648aca86f3f4cc45ec, type: 2}
+  - {fileID: 11400000, guid: 7d7da842bbecca04b96f8e36492f5057, type: 2}
+  - {fileID: 11400000, guid: de719c7a9471e2745aed92c485408179, type: 2}
+  - {fileID: 11400000, guid: 0fbdce3f62d11654aaa9288ebc7bd12f, type: 2}
+  - {fileID: 11400000, guid: bbe38ccdd0854d7458953dbdf1ef3b38, type: 2}
+  - {fileID: 11400000, guid: af769af2433e68849be20be561104218, type: 2}
+  - {fileID: 11400000, guid: 7b9967c2777c2fc49abe8ecd47cd7832, type: 2}
+  - {fileID: 11400000, guid: fcce19e39963c584ea38bb0701d116e6, type: 2}
+  - {fileID: 11400000, guid: 7c384d60a38e8ec47accdc35ecc6f00b, type: 2}
+  - {fileID: 11400000, guid: 373ec45c6969f674183ca71163006bd3, type: 2}

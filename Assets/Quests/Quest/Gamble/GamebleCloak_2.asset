@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2579609f92354489e4eeffcb55002f, type: 3}
+  m_Name: GamebleCloak_2
+  m_EditorClassIdentifier: 
+  _category: {fileID: 11400000, guid: c896efa46256e7240b3b85d6222823b8, type: 2}
+  _icon: {fileID: 21300000, guid: 288a6a74c8754ea48a49c2bcd21f65b7, type: 3}
+  _codeName: GambleCloak_2
+  _description: "250 \uB2EC\uC131"
+  _displayName: LV 3
+  _taskGroups:
+  - _tasks:
+    - {fileID: 11400000, guid: af150f2b12f40a54c9ed974b392ed26f, type: 2}
+  _rewards:
+  - {fileID: 11400000, guid: 0a7b7a8ab5d69ad468508c78d2f1281d, type: 2}
+  _useAutoComplete: 0
+  _isCancelable: 0
+  _isSavable: 1
+  _isRepeatable: 0
+  _acceptionconditions:
+  - {fileID: 11400000, guid: ca9b7194ec80cba4d92e04b6dc4db0de, type: 2}
+  _cancelconditions: []
+  _helper: {fileID: 0}

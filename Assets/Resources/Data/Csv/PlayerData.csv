@@ -1,0 +1,11 @@
+﻿ID,Level,LevelText,Condition,StatType,StatMaxLevel,JumpingCount,JumpingRate,AdditionalAttackCount,RuneSlotCount,PetSlotCount
+1,1,평민,0,SkillAttack,10,0,50,0,1,0
+2,2,기사,10,SkillAttack,20,1,50,1,2,1
+3,3,준남작,50,SkillAttack,30,2,50,1,3,1
+4,4,남작,100,SkillAttack,40,3,50,1,4,2
+5,5,자작,500,SkillAttack,50,4,50,1,5,2
+6,6,백작,1000,SkillAttack,60,5,50,1,6,3
+7,7,후작,1500,SkillAttack,70,6,50,2,7,3
+8,8,공작,2000,SkillAttack,80,7,50,2,8,4
+9,9,황태자,2500,SkillAttack,90,8,50,3,9,5
+10,10,황제,3000,SkillAttack,100,9,50,4,10,6

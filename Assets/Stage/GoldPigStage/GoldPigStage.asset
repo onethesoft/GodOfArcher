@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8fa9d689e7d2e843b2b4c0e99e89aac, type: 3}
+  m_Name: GoldPigStage
+  m_EditorClassIdentifier: 
+  _type: 0
+  _icon: {fileID: 21300000, guid: e77d6d661c4027d4893915b9f170d3d4, type: 3}
+  _NameBackground: {fileID: 21300000, guid: 5a9d0c99958f65f499ed1855e0cc0cf1, type: 3}
+  _subDescriptionBackground: {fileID: 21300000, guid: 7e7222652bef06a4d9d568bbfe210042,
+    type: 3}
+  _name: "\uD669\uAE08 \uB3FC\uC9C0\uC758 \uC11C\uC2DD\uC9C0"
+  _description: "*\uD604\uC7AC \uC2A4\uD14C\uC774\uC9C0 1\uC2DC\uAC04 \uB3D9\uC548\uC758
+    \uC790\uB3D9\uC0AC\uB0E5 \uACE8\uB4DC \uD68D\uB4DD"
+  _EnterCondition:
+    Count: 1
+    Item: {fileID: 11400000, guid: cf47087d2ad4dd2408da7284b0f7fe63, type: 2}
+  _Count_Daily_Free_Pass: 3
+  _maxStage: 500000
+  _monsterHPGenerator: {fileID: 11400000, guid: a2a9c9e6769559e478d5307576ffb0dd,
+    type: 2}
+  _Timeout: 30
+  _mosterPrefabs:
+  - min: 1
+    max: 300000
+    Unit: {fileID: 3445225831580440420, guid: fe51bd3ee42a80e4dbb8e8e0254c9e8c, type: 3}
+  _backgroundPrefabs:
+  - min: 0
+    max: 0
+    Unit: {fileID: 7755854632654547887, guid: 60b732901d1c54b4a839f95f7ffd02ff, type: 3}
+  _rewardList: []
+  _spawner: {fileID: 11400000, guid: 6a943420f5f7dc04ea31e37c1f482676, type: 2}

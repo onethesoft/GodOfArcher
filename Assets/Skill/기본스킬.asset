@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e2d02feefa2ce747a8f31cb9406b92e, type: 3}
+  m_Name: "\uAE30\uBCF8\uC2A4\uD0AC"
+  m_EditorClassIdentifier: 
+  _name: Default
+  _currentCoolTime: 0
+  _maxCooltime: 45
+  _minCcooltime: 2
+  _status: 0
+  _effect: {fileID: 335701130982456756, guid: be80cb1231c587a4e8caf03393089eb9, type: 3}
+  _activator: {fileID: 11400000, guid: fb7374cd30f65a947913bd5aae694c88, type: 2}

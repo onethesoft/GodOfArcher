@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da31947750c7ce40abb19809855bea4, type: 3}
+  m_Name: GamebleBow_1
+  m_EditorClassIdentifier: 
+  _category: {fileID: 11400000, guid: 11ad506ac35d07d468384d8d68462a0c, type: 2}
+  _codeName: 
+  _description: 
+  _action: {fileID: 11400000, guid: 1e72ece2ae4473a428851aa53b5aa672, type: 2}
+  _targets:
+  - {fileID: 11400000, guid: 2320ba027fc1527469c821abc4d92f71, type: 2}
+  _needSuccessToComplete: 100
+  _initialSuccessValue: {fileID: 0}
+  _canReceiveReportDuringCompletion: 0

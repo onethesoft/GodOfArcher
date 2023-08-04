@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ef0474c05ddea14b96e747a2a718abb, type: 3}
+  m_Name: "8_CP\uCE58\uBA85\uD655\uB960"
+  m_EditorClassIdentifier: 
+  CodeName: CraftCriticalHitRate
+  Description: "\uCE58\uBA85\uD655\uB960 \uC99D\uAC00"
+  Value: 5
+  _Type: 2
+  _maxLevel: 50
+  _minLevel: 1
+  _Level: 1
+  _isUnlock: 1
+  _unlockCondition: {fileID: 0}
+  UnLockString: 
+  _iconBackground: {fileID: 21300000, guid: 8b4dca0b28688a346850bfc64d0c4103, type: 3}
+  _icon: {fileID: 21300000, guid: ad7a5eed86a2c3140b72b599c129cc6f, type: 3}
+  _currencyCodeName: CP
+  _incrementValuePerLevel: 5
+  _condition: {fileID: 11400000, guid: 3978c6faa57cc75469ef4f5c297e12f3, type: 2}
+  _valueGenerator: {fileID: 11400000, guid: 6b39cee391fb75744a78f918b046876a, type: 2}

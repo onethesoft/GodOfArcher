@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ef0474c05ddea14b96e747a2a718abb, type: 3}
+  m_Name: "6_CP\uACF5\uC18D"
+  m_EditorClassIdentifier: 
+  CodeName: CraftAttackSpeed
+  Description: "\uACF5\uACA9\uC18D\uB3C4 \uC99D\uAC00"
+  Value: 1
+  _Type: 2
+  _maxLevel: 50
+  _minLevel: 1
+  _Level: 1
+  _isUnlock: 1
+  _unlockCondition: {fileID: 0}
+  UnLockString: 
+  _iconBackground: {fileID: 21300000, guid: c5c1d2b65e7099e41aa748fead54aba2, type: 3}
+  _icon: {fileID: 21300000, guid: 4442e2ba8c1c6ea4fadff91facac9f50, type: 3}
+  _currencyCodeName: CP
+  _incrementValuePerLevel: 1
+  _condition: {fileID: 11400000, guid: aca69527c17e64c4a9ca55d0ec4e72ac, type: 2}
+  _valueGenerator: {fileID: 11400000, guid: b68ed8c18f64aa541a13b1cb48c9b56c, type: 2}

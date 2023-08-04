@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2579609f92354489e4eeffcb55002f, type: 3}
+  m_Name: "4.\uB8EC\uC7A5\uCC29\uD558\uAE30"
+  m_EditorClassIdentifier: 
+  _category: {fileID: 11400000, guid: 9ffe6c2a187a15c449999043748fecef, type: 2}
+  _icon: {fileID: 21300000, guid: 0f695343df521bc49b7ffcdb17f78710, type: 3}
+  _codeName: Equip Rune
+  _description: "\uB8EC \uC7A5\uCC29\uD558\uAE30"
+  _displayName: 
+  _taskGroups:
+  - _tasks:
+    - {fileID: 11400000, guid: b35f0ae64a53b0342808b43dbb167aa6, type: 2}
+  _rewards:
+  - {fileID: 11400000, guid: 4ddbe7bd2b136904a83dacb108df688f, type: 2}
+  _useAutoComplete: 0
+  _isCancelable: 0
+  _isSavable: 1
+  _isRepeatable: 0
+  _acceptionconditions:
+  - {fileID: 11400000, guid: 189a2d2514a09cf408abba97ca7f2330, type: 2}
+  _cancelconditions: []
+  _helper: {fileID: 11400000, guid: 6007f0998b639784f804cdf99cb442bc, type: 2}

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278bdd7d7da30c549ad2882c5f221bf3, type: 3}
+  m_Name: "\uD29C\uD1A0\uB9AC\uC5BC"
+  m_EditorClassIdentifier: 
+  _questList:
+  - {fileID: 11400000, guid: 9fb4f3a6b24c8ba4bbee37cd3cf10fd6, type: 2}
+  - {fileID: 11400000, guid: 67412018936126f439e17611c09e729e, type: 2}
+  - {fileID: 11400000, guid: 6708d17281c4f5c4e85f13179627b593, type: 2}
+  - {fileID: 11400000, guid: 5cd52e0e132ac1a45870b762b0fcb851, type: 2}
+  - {fileID: 11400000, guid: c43e0d9464f5bf545a7873c1ceb0dae2, type: 2}
+  - {fileID: 11400000, guid: 073d9468d0db8034f9ca54fc2ca4648c, type: 2}
+  - {fileID: 11400000, guid: 183f206b2f9b2f14896c1d09b75d710a, type: 2}
+  - {fileID: 11400000, guid: d2e112aa07980484685184fffa250cb2, type: 2}
+  - {fileID: 11400000, guid: be81b7eb4fbb9fa479922d0d4ad69de6, type: 2}
+  - {fileID: 11400000, guid: b61171c9f41b3a2499f1daa4eb9eff16, type: 2}
+  - {fileID: 11400000, guid: dab7717bec52a3e459050331959ff355, type: 2}
+  - {fileID: 11400000, guid: d721adc6f52b1574fb7f902a5c0ccfe5, type: 2}
+  - {fileID: 11400000, guid: 6af2c7c449fa97a49a9ff1aacce13a15, type: 2}
+  - {fileID: 11400000, guid: 68c4c6463f8171549aaf55f06aedc7d7, type: 2}
+  - {fileID: 11400000, guid: 7231dff5c5ce90d499999fe41da1dd1d, type: 2}
+  - {fileID: 11400000, guid: 8288e6008ea2dc1439c51b4606662c64, type: 2}
+  - {fileID: 11400000, guid: 77c09f576754a3e42852cc2cf89490eb, type: 2}
+  - {fileID: 11400000, guid: 8fa95e45ab7f9a64f88fbaa69e0698fa, type: 2}
+  - {fileID: 11400000, guid: 24b3f60b2a7792e48abffc4c1126c01e, type: 2}
+  - {fileID: 11400000, guid: 81680ce237a418f4dac196005957973c, type: 2}
+  - {fileID: 11400000, guid: 9661fa3794cb1a2408294b96f0356637, type: 2}
+  _progress: 0
+  _groupMode: 0
+  _type: 6
+  _mode: 0
+  _codeName: TutorialQuest

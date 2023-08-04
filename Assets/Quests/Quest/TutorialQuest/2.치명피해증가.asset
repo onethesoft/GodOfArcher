@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2579609f92354489e4eeffcb55002f, type: 3}
+  m_Name: "2.\uCE58\uBA85\uD53C\uD574\uC99D\uAC00"
+  m_EditorClassIdentifier: 
+  _category: {fileID: 11400000, guid: 9ffe6c2a187a15c449999043748fecef, type: 2}
+  _icon: {fileID: 21300000, guid: 0f695343df521bc49b7ffcdb17f78710, type: 3}
+  _codeName: Upgrade CricitalHit Stat Lv10
+  _description: "\uCE58\uBA85\uD53C\uD574\uC99D\uAC00 Lv10"
+  _displayName: 
+  _taskGroups:
+  - _tasks:
+    - {fileID: 11400000, guid: ec4b9c14688bcc4429664466aa9b743d, type: 2}
+  _rewards:
+  - {fileID: 11400000, guid: 8a0d3872af4427442b5c004274304c10, type: 2}
+  _useAutoComplete: 0
+  _isCancelable: 0
+  _isSavable: 1
+  _isRepeatable: 0
+  _acceptionconditions:
+  - {fileID: 11400000, guid: 0bd27ffee873b0149883627783cade4b, type: 2}
+  _cancelconditions: []
+  _helper: {fileID: 11400000, guid: db74c994f2b76e442b70704dfa12e7e1, type: 2}

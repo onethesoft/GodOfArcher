@@ -1,0 +1,24 @@
+{
+    "name": "Beebyte",
+    "rootNamespace": "",
+    "references": [
+        "GUID:5bd1d9b1dfdca684bbac1cfb97b74e41"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Beebyte.Cecil.dll",
+        "Beebyte.Cecil.Mdb.dll",
+        "Beebyte.Cecil.Pdb.dll",
+        "Beebyte.Cecil.Rocks.dll",
+        "obfuscator.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

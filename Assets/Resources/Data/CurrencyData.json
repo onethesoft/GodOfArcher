@@ -1,0 +1,28 @@
+﻿{
+  "data": [
+    {
+      "ID": "0",
+      "CodeName": "Gold",
+      "Description": "Currency_Gold",
+      "Icon": "Currency/StatusBarIcon_Gold"
+    },
+    {
+      "ID": "1",
+      "CodeName": "CP",
+      "Description": "Currency_CP",
+      "Icon": "Currency/StatusBarIcon_Energy"
+    },
+    {
+      "ID": "2",
+      "CodeName": "Ruby",
+      "Description": "Currency_Ruby",
+      "Icon": "Currency/StatusBarIcon_Gem"
+    },
+    {
+      "ID": "3",
+      "CodeName": "SP",
+      "Description": "Currency_SP",
+      "Icon": "Currency/status_icon_star"
+    }
+  ]
+}

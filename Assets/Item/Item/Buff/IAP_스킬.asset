@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3643e9a8765ec438726da1a1c46375, type: 3}
+  m_Name: "IAP_\uC2A4\uD0AC"
+  m_EditorClassIdentifier: 
+  _DisplayName: "\uD328\uD0A4\uC9C0 \uC2A4\uD0AC \uBC84\uD504"
+  _Description: "\uC2A4\uD0AC\uCFE8\uD0C0\uC784\\n\uC2A4\uD0AC\uACF5\uACA9\uB825\\n"
+  _ItemId: Buff_Skill_IAP
+  _ItemClass: Buff
+  _ItemInstanceId: 
+  _unitCurrency: 
+  _unitPrice: 0
+  _isStackable: 1
+  _type: 3
+  _rating: 2
+  _icon: {fileID: 0}
+  _OnBackground: {fileID: 0}
+  _OffBackground: {fileID: 0}
+  _OnOutline:
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    EffectDistance: {x: 0, y: 0}
+  _OffOutline:
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    EffectDistance: {x: 0, y: 0}
+  _fontSize: 0
+  _Minutes: 0
+  _statModifier:
+  - _codeName: SkillAttack
+    _description: 
+    _value: 2
+    _type: 0
+  - _codeName: SkillCoolTime
+    _description: 
+    _value: 2
+    _type: 0

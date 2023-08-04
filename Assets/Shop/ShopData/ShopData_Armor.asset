@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34fa0898723fa4943b4348fc4ae110ad, type: 3}
+  m_Name: ShopData_Armor
+  m_EditorClassIdentifier: 
+  _displayName: "\uAC11\uC637 \uBF51\uAE30"
+  _itemClass: Armor
+  _codeName: Shop_Item
+  _icon: {fileID: 21300000, guid: de725626169d7944e82b5cd25bb974c4, type: 3}
+  _btnDatas:
+  - ButtonText: "\uBF51\uAE30 10\uD68C"
+    Icon: {fileID: 21300000, guid: 7119caa200549514299f645f205eb840, type: 3}
+    PurchaseItem: {fileID: 11400000, guid: 075086034fd44c6429a55de4d978c92d, type: 2}
+    Currency: Ruby
+    Price: 0
+  - ButtonText: "\uBF51\uAE30 1\uD68C"
+    Icon: {fileID: 21300000, guid: 0f695343df521bc49b7ffcdb17f78710, type: 3}
+    PurchaseItem: {fileID: 11400000, guid: e27053b8651f78045b4561db1e7cdcd1, type: 2}
+    Currency: Ruby
+    Price: 500
+  - ButtonText: "\uBF51\uAE30 11\uD68C"
+    Icon: {fileID: 21300000, guid: 0f695343df521bc49b7ffcdb17f78710, type: 3}
+    PurchaseItem: {fileID: 11400000, guid: 4c0169ac7c9d0e349b87dcd593fcdfc3, type: 2}
+    Currency: Ruby
+    Price: 5000
+  - ButtonText: "\uBF51\uAE30 33\uD68C"
+    Icon: {fileID: 21300000, guid: 0f695343df521bc49b7ffcdb17f78710, type: 3}
+    PurchaseItem: {fileID: 11400000, guid: c2421a074f946e64bac305db4c30ebfe, type: 2}
+    Currency: Ruby
+    Price: 15000

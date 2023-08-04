@@ -1,0 +1,95 @@
+﻿Id,Category,Icon,CodeName,Description,GroupId,Target,NeedSuccessToComplete,RewardId,RewardText
+1001,StageClear,Currency/StatusBarIcon_Gem,100 스테이지 클리어,100 스테이지 클리어,Quest_Stage,Stage,100,루비X1000,루비X1000
+1002,StageClear,Currency/StatusBarIcon_Gem,250 스테이지 클리어,250 스테이지 클리어,Quest_Stage,Stage,250,룬 뽑기권 X10,룬 뽑기권 X10
+1003,StageClear,Currency/StatusBarIcon_Gem,500 스테이지 클리어,500 스테이지 클리어,Quest_Stage,Stage,500,루비X2000,루비X2000
+1004,StageClear,Currency/StatusBarIcon_Gem,1000 스테이지 클리어,1000 스테이지 클리어,Quest_Stage,Stage,1000,펫 뽑기권 X10,펫 뽑기권 X10
+1005,StageClear,Currency/StatusBarIcon_Gem,1500 스테이지 클리어,1500 스테이지 클리어,Quest_Stage,Stage,1500,루비X3000,루비X3000
+1006,StageClear,Currency/StatusBarIcon_Gem,2000 스테이지 클리어,2000 스테이지 클리어,Quest_Stage,Stage,2000,룬 뽑기권 X20,룬 뽑기권 X20
+1007,StageClear,Currency/StatusBarIcon_Gem,2500 스테이지 클리어,2500 스테이지 클리어,Quest_Stage,Stage,2500,루비X5000,루비X5000
+1008,StageClear,Currency/StatusBarIcon_Gem,3000 스테이지 클리어,3000 스테이지 클리어,Quest_Stage,Stage,3000,펫 뽑기권 X20,펫 뽑기권 X20
+1009,StageClear,Currency/StatusBarIcon_Gem,3500 스테이지 클리어,3500 스테이지 클리어,Quest_Stage,Stage,3500,루비X10000,루비X10000
+1010,StageClear,Currency/StatusBarIcon_Gem,4000 스테이지 클리어,4000 스테이지 클리어,Quest_Stage,Stage,4000,룬 뽑기권 X30,룬 뽑기권 X30
+1011,StageClear,Currency/StatusBarIcon_Gem,4500 스테이지 클리어,4500 스테이지 클리어,Quest_Stage,Stage,4500,루비X15000,루비X15000
+1012,StageClear,Currency/StatusBarIcon_Gem,5000 스테이지 클리어,5000 스테이지 클리어,Quest_Stage,Stage,5000,펫 뽑기권 X30,펫 뽑기권 X30
+1013,StageClear,Currency/StatusBarIcon_Gem,10000 스테이지 클리어,10000 스테이지 클리어,Quest_Stage,Stage,10000,루비X20000,루비X20000
+1014,StageClear,Currency/StatusBarIcon_Gem,15000 스테이지 클리어,15000 스테이지 클리어,Quest_Stage,Stage,15000,룬 뽑기권 X50,룬 뽑기권 X50
+1015,StageClear,Currency/StatusBarIcon_Gem,20000 스테이지 클리어,20000 스테이지 클리어,Quest_Stage,Stage,20000,루비X30000,루비X30000
+1016,StageClear,Currency/StatusBarIcon_Gem,30000 스테이지 클리어,30000 스테이지 클리어,Quest_Stage,Stage,30000,펫 뽑기권 X50,펫 뽑기권 X50
+1017,StageClear,Currency/StatusBarIcon_Gem,50000 스테이지 클리어,50000 스테이지 클리어,Quest_Stage,Stage,50000,루비X50000,루비X50000
+1018,StageClear,Currency/StatusBarIcon_Gem,80000 스테이지 클리어,80000 스테이지 클리어,Quest_Stage,Stage,80000,루비X80000,루비X100000
+1019,StageClear,Currency/StatusBarIcon_Gem,100000 스테이지 클리어,100000 스테이지 클리어,Quest_Stage,Stage,100000,레전드 혼합형 룬  X1,레전드 룬 뽑기권 X1
+1020,StageClear,Currency/StatusBarIcon_Gem,150000 스테이지 클리어,150000 스테이지 클리어,Quest_Stage,Stage,150000,레전드 혼합형 펫 X1,레전드 펫 뽑기권 X1
+1021,StageClear,Currency/StatusBarIcon_Gem,200000 스테이지 클리어,200000 스테이지 클리어,Quest_Stage,Stage,200000,루비X100000,루비X100000
+1022,StageClear,Currency/StatusBarIcon_Gem,250000 스테이지 클리어,250000 스테이지 클리어,Quest_Stage,Stage,250000,루비X100000,루비X100000
+1023,StageClear,Currency/StatusBarIcon_Gem,300000 스테이지 클리어,300000 스테이지 클리어,Quest_Stage,Stage,300000,루비X100000,루비X100000
+2001,MonsterKill,Currency/StatusBarIcon_Gem,몬스터 100마리 처치,몬스터 100마리 처치,Quest_KillMonsterCount,Normal,100,루비X5000,루비X5000
+2002,MonsterKill,Currency/StatusBarIcon_Gem,몬스터 500마리 처치,몬스터 500마리 처치,Quest_KillMonsterCount,Normal,500,루비X5000,루비X5000
+2003,MonsterKill,Currency/StatusBarIcon_Gem,몬스터 1000마리 처치,몬스터 1000마리 처치,Quest_KillMonsterCount,Normal,1000,루비X5000,루비X5000
+2004,MonsterKill,Currency/StatusBarIcon_Gem,몬스터 2500마리 처치,몬스터 2500마리 처치,Quest_KillMonsterCount,Normal,2500,루비X10000,루비X10000
+2005,MonsterKill,Currency/StatusBarIcon_Gem,몬스터 5000마리 처치,몬스터 5000마리 처치,Quest_KillMonsterCount,Normal,5000,루비X10000,루비X10000
+2006,MonsterKill,Currency/StatusBarIcon_Gem,몬스터 10000마리 처치,몬스터 10000마리 처치,Quest_KillMonsterCount,Normal,10000,루비X10000,루비X10000
+2007,MonsterKill,Currency/StatusBarIcon_Gem,몬스터 25000마리 처치,몬스터 25000마리 처치,Quest_KillMonsterCount,Normal,25000,루비X15000,루비X15000
+2008,MonsterKill,Currency/StatusBarIcon_Gem,몬스터 50000마리 처치,몬스터 50000마리 처치,Quest_KillMonsterCount,Normal,50000,루비X15000,루비X15000
+2009,MonsterKill,Currency/StatusBarIcon_Gem,몬스터 100000마리 처치,몬스터 100000마리 처치,Quest_KillMonsterCount,Normal,100000,루비X15000,루비X15000
+2010,MonsterKill,Currency/StatusBarIcon_Gem,몬스터 250000마리 처치,몬스터 250000마리 처치,Quest_KillMonsterCount,Normal,250000,루비X20000,루비X20000
+2011,MonsterKill,Currency/StatusBarIcon_Gem,몬스터 500000마리 처치,몬스터 500000마리 처치,Quest_KillMonsterCount,Normal,500000,루비X20000,루비X20000
+2012,MonsterKill,Currency/StatusBarIcon_Gem,몬스터 1000000마리 처치,몬스터 1000000마리 처치,Quest_KillMonsterCount,Normal,1000000,루비X30000,루비X30000
+2013,MonsterKill,Currency/StatusBarIcon_Gem,몬스터 2000000마리 처치,몬스터 2000000마리 처치,Quest_KillMonsterCount,Normal,2000000,루비X30000,루비X30000
+2014,MonsterKill,Currency/StatusBarIcon_Gem,몬스터 3000000마리 처치,몬스터 3000000마리 처치,Quest_KillMonsterCount,Normal,3000000,루비X40000,루비X40000
+2015,MonsterKill,Currency/StatusBarIcon_Gem,몬스터 4000000마리 처치,몬스터 4000000마리 처치,Quest_KillMonsterCount,Normal,4000000,루비X40000,루비X40000
+2016,MonsterKill,Currency/StatusBarIcon_Gem,몬스터 5000000마리 처치,몬스터 5000000마리 처치,Quest_KillMonsterCount,Normal,5000000,루비X50000,루비X50000
+2017,MonsterKill,Currency/StatusBarIcon_Gem,몬스터 10000000마리 처치,몬스터 10000000마리 처치,Quest_KillMonsterCount,Normal,10000000,루비X50000,루비X50000
+2018,MonsterKill,Currency/StatusBarIcon_Gem,몬스터 20000000마리 처치,몬스터 20000000마리 처치,Quest_KillMonsterCount,Normal,20000000,루비X100000,루비X100000
+2019,MonsterKill,Currency/StatusBarIcon_Gem,몬스터 30000000마리 처치,몬스터 30000000마리 처치,Quest_KillMonsterCount,Normal,30000000,루비X100000,루비X100000
+3000,MonsterKill,Currency/StatusBarIcon_Gem,보스 25마리 처치,보스 25마리 처치,Quest_KillBossMonsterCount,Boss,25,루비X5000,루비X5000
+3001,MonsterKill,Currency/StatusBarIcon_Gem,보스 125마리 처치,보스 125마리 처치,Quest_KillBossMonsterCount,Boss,125,루비X5000,루비X5000
+3002,MonsterKill,Currency/StatusBarIcon_Gem,보스 500마리 처치,보스 500마리 처치,Quest_KillBossMonsterCount,Boss,500,루비X10000,루비X10000
+3003,MonsterKill,Currency/StatusBarIcon_Gem,보스를 1000마리 처치,보스를 1000마리 처치,Quest_KillBossMonsterCount,Boss,1000,루비X10000,루비X10000
+3004,MonsterKill,Currency/StatusBarIcon_Gem,보스를 2500마리 처치,보스를 2500마리 처치,Quest_KillBossMonsterCount,Boss,2500,루비X15000,루비X15000
+3005,MonsterKill,Currency/StatusBarIcon_Gem,보스를 5000마리 처치,보스를 5000마리 처치,Quest_KillBossMonsterCount,Boss,5000,루비X15000,루비X15000
+3006,MonsterKill,Currency/StatusBarIcon_Gem,보스를10000마리 처치,보스를10000마리 처치,Quest_KillBossMonsterCount,Boss,10000,루비X15000,루비X15000
+3007,MonsterKill,Currency/StatusBarIcon_Gem,보스를25000마리 처치,보스를25000마리 처치,Quest_KillBossMonsterCount,Boss,25000,루비X20000,루비X20000
+3008,MonsterKill,Currency/StatusBarIcon_Gem,보스를 50000마리 처치,보스를 50000마리 처치,Quest_KillBossMonsterCount,Boss,50000,루비X20000,루비X20000
+3009,MonsterKill,Currency/StatusBarIcon_Gem,보스를 100000마리 처치,보스를 100000마리 처치,Quest_KillBossMonsterCount,Boss,100000,루비X30000,루비X30000
+3010,MonsterKill,Currency/StatusBarIcon_Gem,보스를 250000마리 처치,보스를 250000마리 처치,Quest_KillBossMonsterCount,Boss,250000,루비X30000,루비X30000
+3011,MonsterKill,Currency/StatusBarIcon_Gem,보스를 500000마리 처치,보스를 500000마리 처치,Quest_KillBossMonsterCount,Boss,500000,루비X40000,루비X40000
+3012,MonsterKill,Currency/StatusBarIcon_Gem,보스를 1000000마리 처치,보스를 1000000마리 처치,Quest_KillBossMonsterCount,Boss,1000000,루비X40000,루비X40000
+3013,MonsterKill,Currency/StatusBarIcon_Gem,보스를 2000000마리 처치,보스를 2000000마리 처치,Quest_KillBossMonsterCount,Boss,2000000,루비X50000,루비X50000
+3014,MonsterKill,Currency/StatusBarIcon_Gem,보스를 3000000마리 처치,보스를 3000000마리 처치,Quest_KillBossMonsterCount,Boss,3000000,루비X50000,루비X50000
+3015,MonsterKill,Currency/StatusBarIcon_Gem,보스를 4000000마리 처치,보스를 4000000마리 처치,Quest_KillBossMonsterCount,Boss,4000000,루비X100000,루비X100000
+3016,MonsterKill,Currency/StatusBarIcon_Gem,보스를 5000000마리 처치,보스를 5000000마리 처치,Quest_KillBossMonsterCount,Boss,5000000,루비X100000,루비X100000
+4000,PlayTime,Currency/StatusBarIcon_Gem,게임 플레이 타임 10분 돌파,게임 플레이 타임 10분 돌파,Quest_PlayTime,PlayTime,10,루비X5000,루비X5000
+4001,PlayTime,Currency/StatusBarIcon_Gem,게임 플레이 타임 30분 돌파,게임 플레이 타임 30분 돌파,Quest_PlayTime,PlayTime,30,루비X10000,루비X10000
+4002,PlayTime,Currency/StatusBarIcon_Gem,게임 플레이 타임 60분 돌파,게임 플레이 타임 60분 돌파,Quest_PlayTime,PlayTime,60,루비X20000,루비X20000
+4003,PlayTime,Currency/StatusBarIcon_Gem,게임 플레이 타임 120분 돌파,게임 플레이 타임 120분 돌파,Quest_PlayTime,PlayTime,120,루비X30000,루비X30000
+4004,PlayTime,Currency/StatusBarIcon_Gem,게임 플레이 타임 240분 돌파,게임 플레이 타임 240분 돌파,Quest_PlayTime,PlayTime,240,루비X50000,루비X50000
+4005,PlayTime,Currency/StatusBarIcon_Gem,게임 플레이 타임 1200분 돌파,게임 플레이 타임 1200분 돌파,Quest_PlayTime,PlayTime,1200,루비X60000,루비X60000
+4006,PlayTime,Currency/StatusBarIcon_Gem,게임 플레이 타임 2400분 돌파,게임 플레이 타임 2400분 돌파,Quest_PlayTime,PlayTime,2400,루비X70000,루비X70000
+4007,PlayTime,Currency/StatusBarIcon_Gem,게임 플레이 타임 10000분 돌파,게임 플레이 타임 10000분 돌파,Quest_PlayTime,PlayTime,10000,루비X80000,루비X80000
+4008,PlayTime,Currency/StatusBarIcon_Gem,게임 플레이 타임 20000분 돌파,게임 플레이 타임 20000분 돌파,Quest_PlayTime,PlayTime,20000,루비X90000,루비X90000
+4009,PlayTime,Currency/StatusBarIcon_Gem,게임 플레이 타임 30000분 돌파,게임 플레이 타임 30000분 돌파,Quest_PlayTime,PlayTime,30000,루비X100000,루비X100000
+4010,PlayTime,Currency/StatusBarIcon_Gem,게임 플레이 타임 40000분 돌파,게임 플레이 타임 40000분 돌파,Quest_PlayTime,PlayTime,40000,루비X100000,루비X100000
+4011,PlayTime,Currency/StatusBarIcon_Gem,게임 플레이 타임 50000분 돌파,게임 플레이 타임 50000분 돌파,Quest_PlayTime,PlayTime,50000,루비X100000,루비X100000
+4012,PlayTime,Currency/StatusBarIcon_Gem,게임 플레이 타임 100000분 돌파,게임 플레이 타임 100000분 돌파,Quest_PlayTime,PlayTime,100000,루비X300000,루비X300000
+5000,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 1층 클리어,잠만보의 서식지 1층 클리어,Quest_DragonHabitat,Dongeon,1,유물 뽑기권 X 1,유물 뽑기권 X 1
+5001,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 10층 클리어,잠만보의 서식지 10층 클리어,Quest_DragonHabitat,Dongeon,10,루비X5000,루비X5000
+5002,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 25층 클리어,잠만보의 서식지 25층 클리어,Quest_DragonHabitat,Dongeon,25,유물 뽑기권 X 10,유물 뽑기권 X 10
+5003,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 50층 클리어,잠만보의 서식지 50층 클리어,Quest_DragonHabitat,Dongeon,50,루비X10000,루비X10000
+5004,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 75층 클리어,잠만보의 서식지 75층 클리어,Quest_DragonHabitat,Dongeon,75,유물 뽑기권 X 20,유물 뽑기권 X 20
+5005,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 100층 클리어,잠만보의 서식지 100층 클리어,Quest_DragonHabitat,Dongeon,100,루비X20000,루비X20000
+5006,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 125층 클리어,잠만보의 서식지 125층 클리어,Quest_DragonHabitat,Dongeon,125,유물 뽑기권 X 30,유물 뽑기권 X 30
+5007,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 150층 클리어,잠만보의 서식지 150층 클리어,Quest_DragonHabitat,Dongeon,150,루비X30000,루비X30000
+5008,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 175층 클리어,잠만보의 서식지 175층 클리어,Quest_DragonHabitat,Dongeon,175,유물 뽑기권 X 40,유물 뽑기권 X 40
+5009,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 200층 클리어,잠만보의 서식지 200층 클리어,Quest_DragonHabitat,Dongeon,200,루비X40000,루비X40000
+5010,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 225층 클리어,잠만보의 서식지 225층 클리어,Quest_DragonHabitat,Dongeon,225,유물 뽑기권 X 50,유물 뽑기권 X 50
+5011,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 250층 클리어,잠만보의 서식지 250층 클리어,Quest_DragonHabitat,Dongeon,250,루비X50000,루비X50000
+5012,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 275층 클리어,잠만보의 서식지 275층 클리어,Quest_DragonHabitat,Dongeon,275,유물 뽑기권 X 50,유물 뽑기권 X 50
+5013,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 300층 클리어,잠만보의 서식지 300층 클리어,Quest_DragonHabitat,Dongeon,300,루비X60000,루비X60000
+5014,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 325층 클리어,잠만보의 서식지 325층 클리어,Quest_DragonHabitat,Dongeon,325,유물 뽑기권 X 50,유물 뽑기권 X 50
+5015,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 350층 클리어,잠만보의 서식지 350층 클리어,Quest_DragonHabitat,Dongeon,350,루비X70000,루비X70000
+5016,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 375층 클리어,잠만보의 서식지 375층 클리어,Quest_DragonHabitat,Dongeon,375,유물 뽑기권 X 50,유물 뽑기권 X 50
+5017,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 400층 클리어,잠만보의 서식지 400층 클리어,Quest_DragonHabitat,Dongeon,400,루비X80000,루비X80000
+5018,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 425층 클리어,잠만보의 서식지 425층 클리어,Quest_DragonHabitat,Dongeon,425,유물 뽑기권 X 50,유물 뽑기권 X 50
+5019,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 450층 클리어,잠만보의 서식지 450층 클리어,Quest_DragonHabitat,Dongeon,450,루비X90000,루비X90000
+5020,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 475층 클리어,잠만보의 서식지 475층 클리어,Quest_DragonHabitat,Dongeon,475,유물 뽑기권 X 50,유물 뽑기권 X 50
+5021,StageClear,Currency/StatusBarIcon_Gem,잠만보의 서식지 500층 클리어,잠만보의 서식지 500층 클리어,Quest_DragonHabitat,Dongeon,500,루비X100000,루비X100000

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64865bbdac7a0b428504b26cf57cf90, type: 3}
+  m_Name: IAPData_Seasonpass2
+  m_EditorClassIdentifier: 
+  _type: 0
+  _displayName: "\uC2DC\uC98C\uD328\uC2A42"
+  _background: {fileID: 0}
+  _icon: {fileID: 0}
+  _subicon: {fileID: 0}
+  _itemIcon: []
+  _backcurrencyIcon: {fileID: 0}
+  _currencyIcon: {fileID: 0}
+  _item: {fileID: 11400000, guid: 7d712eee4336fd141a489e1cf4e5b60f, type: 2}
+  _description: 
+  _descriptionColor: {r: 0, g: 0, b: 0, a: 0}
+  _PriceText: "100000\uC6D0"

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ef0474c05ddea14b96e747a2a718abb, type: 3}
+  m_Name: "9_\uACE8\uB4DC\uD68D\uB4DD\uB960"
+  m_EditorClassIdentifier: 
+  CodeName: GoldDropRate
+  Description: "\uACE8\uB4DC\uD68D\uB4DD\uB960 \uC99D\uAC00"
+  Value: 1
+  _Type: 1
+  _maxLevel: 500
+  _minLevel: 1
+  _Level: 1
+  _isUnlock: 1
+  _unlockCondition: {fileID: 0}
+  UnLockString: 
+  _iconBackground: {fileID: 21300000, guid: 8b4dca0b28688a346850bfc64d0c4103, type: 3}
+  _icon: {fileID: 21300000, guid: cb30f374059fdca40940333956ca0fe0, type: 3}
+  _currencyCodeName: Ruby
+  _incrementValuePerLevel: 1
+  _condition: {fileID: 11400000, guid: 2f4799179f0e6e143910f6fd29ad1439, type: 2}
+  _valueGenerator: {fileID: 11400000, guid: ff551608dac67a24d83916a35b150ed3, type: 2}

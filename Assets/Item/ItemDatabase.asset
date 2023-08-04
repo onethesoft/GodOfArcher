@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769f8f4dc8fa526499081ab538744a4a, type: 3}
+  m_Name: ItemDatabase
+  m_EditorClassIdentifier: 
+  _bowList: []
+  _runeList:
+  - {fileID: 11400000, guid: ceefbc6c5419e8a4d9ed14e8e52dc7c8, type: 2}
+  - {fileID: 11400000, guid: 007ca357fac4b6e42b61818111a15df2, type: 2}
+  - {fileID: 11400000, guid: 16ff80cff144b3d4aaf0f1aa9d47f1b2, type: 2}
+  - {fileID: 11400000, guid: f55e6db712ebb81499a251d8e546cb32, type: 2}
+  - {fileID: 11400000, guid: 3d05397c40c2d17469627bf521c0bfd6, type: 2}
+  - {fileID: 11400000, guid: 1b61d8a1dee5a904fa649f3645b33cbe, type: 2}
+  - {fileID: 11400000, guid: 8b2cf845fb7af0c4e8f2f34c47791aec, type: 2}
+  - {fileID: 11400000, guid: 71b8db12eafb2e343b9d0323ca1372ea, type: 2}
+  - {fileID: 11400000, guid: 9c1dd9ae9f3659f4c8c83710ae18a68e, type: 2}
+  - {fileID: 11400000, guid: f14988a76c591444fa41b33593f9bc07, type: 2}
+  - {fileID: 11400000, guid: fe12f1271aa62e24ba606ca47192a4b7, type: 2}
+  - {fileID: 11400000, guid: 0d12ef1032d8a604abfc47008111607a, type: 2}
+  - {fileID: 11400000, guid: ee758dbe944fdc14ba5d693ba8761a9e, type: 2}
+  - {fileID: 11400000, guid: cab3fe7ff92aeec478ff624a6aea27e2, type: 2}
+  - {fileID: 11400000, guid: a0bc94ca5736bdf478c38120bff7f11e, type: 2}
+  - {fileID: 11400000, guid: ae4601119569051498c74c11d0e20810, type: 2}
+  - {fileID: 11400000, guid: bf8b64f716a02b545858526a1693b17c, type: 2}
+  - {fileID: 11400000, guid: e4a11b9b1383db64d9357f94255f961f, type: 2}
+  - {fileID: 11400000, guid: 4f01c832f2abfc541b6e91fbeeb95013, type: 2}
+  - {fileID: 11400000, guid: b58f1f8ab9aee344f8b2bd4c794d6301, type: 2}
+  - {fileID: 11400000, guid: a40d65f09af0d584582c29b61b4fffdf, type: 2}
+  - {fileID: 11400000, guid: fa0d5823a376bed4fb91b61e12484cac, type: 2}
+  - {fileID: 11400000, guid: ad4cee81decc9e5419c7a1c0dc144da7, type: 2}
+  - {fileID: 11400000, guid: 900cd7f90874eab409c7234518b11230, type: 2}
+  _runeSlotList:
+  - {fileID: 11400000, guid: 4b6d75d9f9b83674e939cebb2c937f9e, type: 2}
+  - {fileID: 11400000, guid: 059c52d8e4640254d8ce9982baa78b43, type: 2}
+  - {fileID: 11400000, guid: 8edd89b19d9a22d4ebe5299cb3f0e7bd, type: 2}
+  - {fileID: 11400000, guid: 6c657146fe53ef04fafb4db1ccdcddf8, type: 2}
+  - {fileID: 11400000, guid: 240a870e997e45a40b9c954cb1e4cca3, type: 2}
+  - {fileID: 11400000, guid: 6001fdc4d81d47047854768ad2e38d3c, type: 2}
+  - {fileID: 11400000, guid: fbdf60b8c4fb96f45a056b9cbfbec460, type: 2}
+  - {fileID: 11400000, guid: 0f1dfe541f32c494aa9fd8d603129be8, type: 2}
+  - {fileID: 11400000, guid: 32d1f8443a2a02e4c92a9e36d2dd290e, type: 2}
+  - {fileID: 11400000, guid: 6e16a4b7346aa364598933cc139054b1, type: 2}
+  - {fileID: 11400000, guid: e22929045b53cb047ab88367b8513594, type: 2}
+  - {fileID: 11400000, guid: 8897358f6678ad24498203e6de012dc7, type: 2}
+  _petSlotList:
+  - {fileID: 11400000, guid: 24f1dea2717faca4fae0ce55db0301f0, type: 2}
+  - {fileID: 11400000, guid: 366f04bdd0a58f743be52a7e68ce7ecf, type: 2}
+  - {fileID: 11400000, guid: 03770ea43232005469fa31af7e6faa7e, type: 2}
+  - {fileID: 11400000, guid: 24d56e1ec8dfc8a48aafc192b16bbe0f, type: 2}
+  - {fileID: 11400000, guid: 3308b26e4feeea544b005eb9b1b25112, type: 2}
+  - {fileID: 11400000, guid: 82f12e12b0ba3f944b9b824123663391, type: 2}
+  - {fileID: 11400000, guid: d1de81bd849c1414998ecdac2d4f9450, type: 2}
+  - {fileID: 11400000, guid: 997a34daa625b0045a381230bb8f0c2b, type: 2}
+  _petList: []
+  _spriteCollection: {fileID: 11400000, guid: 620e7b0c742440a4be6c065493edd0eb, type: 2}

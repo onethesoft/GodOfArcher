@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a39da69e8575b409bfd39e68446705, type: 3}
+  m_Name: Rune_C_Table
+  m_EditorClassIdentifier: 
+  _DisplayName: "C\uB4F1\uAE09 \uB8EC \uD14C\uC774\uBE14"
+  _Description: 
+  _ItemId: Rune_C_Table
+  _ItemClass: Table
+  _ItemInstanceId: 
+  _unitCurrency: 
+  _unitPrice: 0
+  _isStackable: 1
+  _items:
+  - _item: {fileID: 11400000, guid: 8b2cf845fb7af0c4e8f2f34c47791aec, type: 2}
+    _count: 1
+  - _item: {fileID: 11400000, guid: 71b8db12eafb2e343b9d0323ca1372ea, type: 2}
+    _count: 1
+  - _item: {fileID: 11400000, guid: 9c1dd9ae9f3659f4c8c83710ae18a68e, type: 2}
+    _count: 1

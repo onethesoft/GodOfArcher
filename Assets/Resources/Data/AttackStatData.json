@@ -1,0 +1,284 @@
+﻿{
+  "data": [
+    {
+      "Level": "1",
+      "Increment": "1",
+      "TotalIncrement": "1",
+      "Cost": "10",
+      "TotalCost": "10"
+    },
+    {
+      "Level": "2",
+      "Increment": "1",
+      "TotalIncrement": "2",
+      "Cost": "10",
+      "TotalCost": "20"
+    },
+    {
+      "Level": "3",
+      "Increment": "1",
+      "TotalIncrement": "3",
+      "Cost": "10",
+      "TotalCost": "30"
+    },
+    {
+      "Level": "4",
+      "Increment": "1",
+      "TotalIncrement": "4",
+      "Cost": "10",
+      "TotalCost": "40"
+    },
+    {
+      "Level": "5",
+      "Increment": "1",
+      "TotalIncrement": "5",
+      "Cost": "10",
+      "TotalCost": "50"
+    },
+    {
+      "Level": "6",
+      "Increment": "1",
+      "TotalIncrement": "6",
+      "Cost": "10",
+      "TotalCost": "60"
+    },
+    {
+      "Level": "7",
+      "Increment": "1",
+      "TotalIncrement": "7",
+      "Cost": "10",
+      "TotalCost": "70"
+    },
+    {
+      "Level": "8",
+      "Increment": "1",
+      "TotalIncrement": "8",
+      "Cost": "10",
+      "TotalCost": "80"
+    },
+    {
+      "Level": "9",
+      "Increment": "1",
+      "TotalIncrement": "9",
+      "Cost": "10",
+      "TotalCost": "90"
+    },
+    {
+      "Level": "10",
+      "Increment": "1",
+      "TotalIncrement": "10",
+      "Cost": "10",
+      "TotalCost": "100"
+    },
+    {
+      "Level": "11",
+      "Increment": "1",
+      "TotalIncrement": "11",
+      "Cost": "10",
+      "TotalCost": "110"
+    },
+    {
+      "Level": "12",
+      "Increment": "1",
+      "TotalIncrement": "12",
+      "Cost": "10",
+      "TotalCost": "120"
+    },
+    {
+      "Level": "13",
+      "Increment": "1",
+      "TotalIncrement": "13",
+      "Cost": "10",
+      "TotalCost": "130"
+    },
+    {
+      "Level": "14",
+      "Increment": "1",
+      "TotalIncrement": "14",
+      "Cost": "10",
+      "TotalCost": "140"
+    },
+    {
+      "Level": "15",
+      "Increment": "1",
+      "TotalIncrement": "15",
+      "Cost": "10",
+      "TotalCost": "150"
+    },
+    {
+      "Level": "16",
+      "Increment": "1",
+      "TotalIncrement": "16",
+      "Cost": "10",
+      "TotalCost": "160"
+    },
+    {
+      "Level": "17",
+      "Increment": "1",
+      "TotalIncrement": "17",
+      "Cost": "10",
+      "TotalCost": "170"
+    },
+    {
+      "Level": "18",
+      "Increment": "1",
+      "TotalIncrement": "18",
+      "Cost": "10",
+      "TotalCost": "180"
+    },
+    {
+      "Level": "19",
+      "Increment": "1",
+      "TotalIncrement": "19",
+      "Cost": "10",
+      "TotalCost": "190"
+    },
+    {
+      "Level": "20",
+      "Increment": "1",
+      "TotalIncrement": "20",
+      "Cost": "10",
+      "TotalCost": "200"
+    },
+    {
+      "Level": "21",
+      "Increment": "1",
+      "TotalIncrement": "21",
+      "Cost": "10",
+      "TotalCost": "210"
+    },
+    {
+      "Level": "22",
+      "Increment": "1",
+      "TotalIncrement": "22",
+      "Cost": "10",
+      "TotalCost": "220"
+    },
+    {
+      "Level": "23",
+      "Increment": "1",
+      "TotalIncrement": "23",
+      "Cost": "10",
+      "TotalCost": "230"
+    },
+    {
+      "Level": "24",
+      "Increment": "1",
+      "TotalIncrement": "24",
+      "Cost": "10",
+      "TotalCost": "240"
+    },
+    {
+      "Level": "25",
+      "Increment": "1",
+      "TotalIncrement": "25",
+      "Cost": "10",
+      "TotalCost": "250"
+    },
+    {
+      "Level": "26",
+      "Increment": "1",
+      "TotalIncrement": "26",
+      "Cost": "10",
+      "TotalCost": "260"
+    },
+    {
+      "Level": "27",
+      "Increment": "1",
+      "TotalIncrement": "27",
+      "Cost": "10",
+      "TotalCost": "270"
+    },
+    {
+      "Level": "28",
+      "Increment": "1",
+      "TotalIncrement": "28",
+      "Cost": "10",
+      "TotalCost": "280"
+    },
+    {
+      "Level": "29",
+      "Increment": "1",
+      "TotalIncrement": "29",
+      "Cost": "10",
+      "TotalCost": "290"
+    },
+    {
+      "Level": "30",
+      "Increment": "1",
+      "TotalIncrement": "30",
+      "Cost": "10",
+      "TotalCost": "300"
+    },
+    {
+      "Level": "31",
+      "Increment": "1",
+      "TotalIncrement": "31",
+      "Cost": "10",
+      "TotalCost": "310"
+    },
+    {
+      "Level": "32",
+      "Increment": "1",
+      "TotalIncrement": "32",
+      "Cost": "10",
+      "TotalCost": "320"
+    },
+    {
+      "Level": "33",
+      "Increment": "1",
+      "TotalIncrement": "33",
+      "Cost": "10",
+      "TotalCost": "330"
+    },
+    {
+      "Level": "34",
+      "Increment": "1",
+      "TotalIncrement": "34",
+      "Cost": "10",
+      "TotalCost": "340"
+    },
+    {
+      "Level": "35",
+      "Increment": "1",
+      "TotalIncrement": "35",
+      "Cost": "10",
+      "TotalCost": "350"
+    },
+    {
+      "Level": "36",
+      "Increment": "1",
+      "TotalIncrement": "36",
+      "Cost": "10",
+      "TotalCost": "360"
+    },
+    {
+      "Level": "37",
+      "Increment": "1",
+      "TotalIncrement": "37",
+      "Cost": "10",
+      "TotalCost": "370"
+    },
+    {
+      "Level": "38",
+      "Increment": "1",
+      "TotalIncrement": "38",
+      "Cost": "10",
+      "TotalCost": "380"
+    },
+    {
+      "Level": "39",
+      "Increment": "1",
+      "TotalIncrement": "39",
+      "Cost": "10",
+      "TotalCost": "390"
+    },
+    {
+      "Level": "40",
+      "Increment": "1",
+      "TotalIncrement": "40",
+      "Cost": "10",
+      "TotalCost": "400"
+    }
+  ]
+}

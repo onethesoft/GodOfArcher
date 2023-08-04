@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a39da69e8575b409bfd39e68446705, type: 3}
+  m_Name: Pet_Total_Table
+  m_EditorClassIdentifier: 
+  _DisplayName: 
+  _Description: 
+  _ItemId: Pet_Total_Table
+  _ItemClass: Table
+  _ItemInstanceId: 
+  _unitCurrency: 
+  _unitPrice: 0
+  _isStackable: 1
+  _items:
+  - _item: {fileID: 11400000, guid: 85a4647328a60fc468aa1710148076ca, type: 2}
+    _count: 75000
+  - _item: {fileID: 11400000, guid: 98f4e14f5b0dc7f43aab0afcc88789e7, type: 2}
+    _count: 13000
+  - _item: {fileID: 11400000, guid: 3b93b89b3f3c14540bd44aa65854c129, type: 2}
+    _count: 7000
+  - _item: {fileID: 11400000, guid: ff54ae6ccffc98a4d9fe5b90106b9813, type: 2}
+    _count: 3000
+  - _item: {fileID: 11400000, guid: 0ce51cffd30ff65488cf7b739b2d062d, type: 2}
+    _count: 1500
+  - _item: {fileID: 11400000, guid: 8f3b59f445f4d2640a7e77a28735dd4f, type: 2}
+    _count: 400
+  - _item: {fileID: 11400000, guid: b08552c2dd66d90459cfcedb7dc6dd0b, type: 2}
+    _count: 100
+  - _item: {fileID: 11400000, guid: 30342ac3da01fa944be9d601dad8d6d2, type: 2}
+    _count: 30
+  - _item: {fileID: 11400000, guid: 4dcae6a9e1841ce42911b79860a1e114, type: 2}
+    _count: 10
+  - _item: {fileID: 11400000, guid: 7326fe014429ec74597395ce4e353829, type: 2}
+    _count: 3
