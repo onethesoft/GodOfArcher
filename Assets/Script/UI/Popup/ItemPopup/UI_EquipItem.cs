@@ -1,9 +1,10 @@
+using PolyAndCode.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_EquipItem : UI_Base 
+public class UI_EquipItem : UI_Base, ICell
 {
     public delegate void SelectHandler(UI_EquipItem item);
     public event SelectHandler onSelect = null;
@@ -16,7 +17,7 @@ public class UI_EquipItem : UI_Base
 
 
 
-    [SerializeField]
+
     EquipableItem _item;
 
     EquipmentSlot _slot;
@@ -49,12 +50,141 @@ public class UI_EquipItem : UI_Base
         UpgradeButton ,
         EquipButton
     }
-    public void Setup(EquipableItem item)
+
+    [SerializeField]
+    private Text DisplayName;
+
+    [SerializeField]
+    private Text Level;
+
+    [SerializeField]
+    private Text Count;
+
+    [SerializeField]
+    private Text EquipButtonText;
+
+    [SerializeField]
+    private Text Description;
+
+
+    [SerializeField]
+    private Image Icon;
+
+    [SerializeField]
+    private Image IconBackground;
+
+    [SerializeField]
+    private Image IconBackgroundSprite;
+
+    [SerializeField]
+    private Button UpgradeButton;
+
+    [SerializeField]
+    private Button EquipButton;
+
+    [SerializeField]
+    private GameObject SelectedIcon;
+
+
+    public int GetLevel()
+    {
+        if (_item != null)
+            return _item.Level;
+        return 0;
+    }
+    public string GetItemClass()
+    {
+        if (_item != null)
+            return _item.ItemClass;
+        return string.Empty;
+    }
+    public void Setup(EquipableItem item, EquipmentSlot slot)
     {
         _item = item;
+        _slot = slot;
+
+        if (_item != null && _slot != null)
+        {
+            DisplayName.text = _item.DisplayName;
+            _item.DisplayNameOutLine.AddOutline(DisplayName.gameObject);
+
+            string _itemDescription = "장착효과 : ";
+            foreach (StatModifier _stat in _item.StatModifiers)
+            {
+                if (_stat.CodeName == "CriticalHitRate")
+                    _itemDescription += _stat.Description.Replace("\\n", System.Environment.NewLine).Replace("%s", (_stat.Value / 10).ToString()) + System.Environment.NewLine;
+                else
+                    _itemDescription += _stat.Description.Replace("\\n", System.Environment.NewLine).Replace("%s", _stat.Value.ToString()) + System.Environment.NewLine;
+            }
+
+            Description.text = _itemDescription;
+
+            if (_item.ItemClass == "Bow")
+                Level.text = $"{((Bow.Rank)_item.Level).ToString()} 등급";
+            if (_item.ItemClass == "Armor")
+                Level.text = $"{((Armor.Rank)_item.Level).ToString()} 등급";
+            if (_item.ItemClass == "Helmet")
+                Level.text = $"{((Helmet.Rank)_item.Level).ToString()} 등급";
+            if (_item.ItemClass == "Cloak")
+                Level.text = $"{((Cloak.Rank)_item.Level).ToString()} 등급";
+
+            gameObject.GetComponent<Image>().sprite = _item.DescriptionBackgroundTexture;
+            gameObject.GetComponent<Image>().color = _item.DescriptionBackgroundColor;
+
+            _item.DescriptionBackgroundOutline.AddOutline(gameObject);
+
+
+            Icon.sprite = _item.Icon;
+            IconBackground.sprite = _item.IconBackground;
+            IconBackgroundSprite.sprite = _item.DescriptionBackground;
+
+            _item.IconBackgroundOutline.AddOutline(IconBackground.gameObject);
+
+            UpdateSlot();
+
+            Managers.Game.GetInventory().OnItemChanged -= UpdateCountText;
+            Managers.Game.GetInventory().OnItemChanged += UpdateCountText;
+
+
+            EquipButton.onClick.AddListener(() => {
+                EquipableItem _getItem = Managers.Game.GetInventory().Find(x => x.ItemId == _item.ItemId) as EquipableItem;
+                if (_getItem == null)
+                    return;
+
+                if (_slot.IsEquip)
+                {
+                    if (_slot.GetItem.ItemId == _item.ItemId)
+                    {
+                        _slot.UnEquip();
+                    }
+                    else
+                    {
+                        _slot.UnEquip();
+                        _slot.Equip(_getItem);
+                    }
+                }
+                else
+                    _slot.Equip(_getItem);
+
+                UpdateSlot();
+                OnEquip?.Invoke(this);
+            });
+
+            UpgradeButton.onClick.AddListener(() => {
+                if (Managers.Item.UpgradeOneItem(_item, false))
+                    OnUpgrade?.Invoke(this);
+                UpdateCountText();
+            });
+        }
+    }
+    private void OnEnable()
+    {
+        if (_item != null && _slot != null)
+            UpdateSlot();
     }
     public override void Init()
     {
+        /*
         Bind<GameObject>(typeof(GameObjects));
         Bind<Text>(typeof(Texts));
         Bind<Image>(typeof(Images));
@@ -150,6 +280,7 @@ public class UI_EquipItem : UI_Base
 
 
         }
+        */
 
     }
 
@@ -175,49 +306,44 @@ public class UI_EquipItem : UI_Base
     public void UpdateCountText()
     {
         EquipableItem _GetItem = Managers.Game.GetInventory().GetItem(_item.ItemId) as EquipableItem;
-        if(_GetItem == null)
-            GetText((int)Texts.Count).text = $"보유 : {0}";
+
+        if (_GetItem == null)
+            Count.text = $"보유 : {0}";
         else
-            GetText((int)Texts.Count).text = $"보유 : {_GetItem.GetUsableCount()}";
+            Count.text = $"보유 : {_GetItem.GetUsableCount()}";
     }
 
     public void UpdateEquipText()
     {
-        if (GetText((int)Texts.EquipButtonText) == null)
-            return;
-
-        if(_slot.IsEquip)
+        if (_slot.IsEquip)
         {
             if (_slot.GetItem.ItemId == _item.ItemId)
-                GetText((int)Texts.EquipButtonText).text = UnEquipText;
+                EquipButtonText.text = UnEquipText;
             else
-                GetText((int)Texts.EquipButtonText).text = EquipText;
+                EquipButtonText.text = EquipText;
         }
         else
         {
-            GetText((int)Texts.EquipButtonText).text = EquipText;
+            EquipButtonText.text = EquipText;
         }
-        
+
     }
 
     public void UpdateEquipIcon()
     {
-        if (Get<GameObject>((int)GameObjects.SelectedIcon) == null)
-            return;
-
         if (_slot.IsEquip)
         {
-            if(_slot.GetItem.ItemId == _item.ItemId)
-                Get<GameObject>((int)GameObjects.SelectedIcon).SetActive(true);
+            if (_slot.GetItem.ItemId == _item.ItemId)
+                SelectedIcon.SetActive(true);
             else
-                Get<GameObject>((int)GameObjects.SelectedIcon).SetActive(false);
+                SelectedIcon.SetActive(false);
         }
         else
         {
-            Get<GameObject>((int)GameObjects.SelectedIcon).SetActive(false);
+            SelectedIcon.SetActive(false);
         }
 
-       
+
     }
 
 }
