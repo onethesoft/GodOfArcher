@@ -84,6 +84,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: d3d11ca458efee947b5caa251c75d2de, type: 3}
   - {fileID: 21300000, guid: c69372c4296862f4c82ec38c06404d12, type: 3}
   - {fileID: 21300000, guid: e95ea4f465c9e6649b74b84d209b6044, type: 3}
+  - {fileID: 21300000, guid: 161f06f4694a9bf4a945d3c49b11ea9f, type: 3}
   - {fileID: 21300000, guid: 097d69054be80fb44a67320321d8bc15, type: 3}
   - {fileID: 21300000, guid: f3d3d15584e36f1498c11bfff972c51d, type: 3}
   - {fileID: 21300000, guid: 3dbef4b58d00cff4786625595935b3ca, type: 3}
@@ -189,6 +190,7 @@ SpriteAtlas:
   - label_ribbon_00
   - Icon_Target
   - Pet_I
+  - Icon_PictoIcon_Next02
   - frame_itemframe_01_n_orange
   - StatusBarIcon_Gold
   - Icon_Gem02_Hexagon_Green

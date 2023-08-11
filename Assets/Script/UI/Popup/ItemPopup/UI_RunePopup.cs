@@ -18,12 +18,14 @@ public class UI_RunePopup : UI_Popup
         Exit,
         RandomboxButton,
         TotalUpgradeButton,
-        HelpButton
+        HelpButton,
+        ConvertButton
     }
 
     List<UI_RuneItem> _runeItems;
     List<UI_EquipmentSlot> _slotItems;
     UI_EquipmentSlot _selected;
+    BlockerGroup[] _blockerGroups;
 
     string _isUpdateKey; // Key 를 비교하여 다르면 서버에 업데이트한다.
 
@@ -78,6 +80,9 @@ public class UI_RunePopup : UI_Popup
 
                 _item.OnUprade -= SaveEquipment;
                 _item.OnUprade += SaveEquipment;
+
+                _item.OnUprade -= Block;
+                _item.OnUprade += Block;
                 _runeItems.Add(_item);
                
             }
@@ -90,12 +95,16 @@ public class UI_RunePopup : UI_Popup
 
                 _item.OnUprade -= SaveEquipment;
                 _item.OnUprade += SaveEquipment;
+
+                _item.OnUprade -= Block;
+                _item.OnUprade += Block;
                 _runeItems.Add(_item);
             }
 
             ItemCount++;
 
         }
+        _blockerGroups = GetComponentsInChildren<BlockerGroup>();
 
         AddUIEvent(GetButton((int)Buttons.Close).gameObject, (data) => { 
             ClosePopupUI();
@@ -108,6 +117,7 @@ public class UI_RunePopup : UI_Popup
             if (Managers.Item.UpgradeAllItems("Rune") == true )
             {
                 SaveEquipment();
+                Block();
             }
         });
         AddUIEvent(GetButton((int)Buttons.RandomboxButton).gameObject, (data) => 
@@ -119,6 +129,10 @@ public class UI_RunePopup : UI_Popup
         AddUIEvent(GetButton((int)Buttons.HelpButton).gameObject, (data) =>
         {
             Managers.UI.ShowPopupUI<UI_Help>();
+        });
+        AddUIEvent(GetButton((int)Buttons.ConvertButton).gameObject, (data) =>
+        {
+            Managers.UI.ShowPopupUI<UI_Convert>().ConvertItemType = UI_Convert.ItemType.Rune;
         });
     }
 
@@ -152,7 +166,11 @@ public class UI_RunePopup : UI_Popup
             _isUpdateKey = JsonUtility.ToJson(Managers.Game.GetEquipment("Rune").ToSaveData());
         }
     }
-
+    void Block()
+    {
+        foreach (BlockerGroup blockgroup in _blockerGroups)
+            blockgroup.Block();
+    }
     void OnEquipHandler(Rune rune)
     {
         if(_selected != null)
@@ -205,11 +223,7 @@ public class UI_RunePopup : UI_Popup
         }
         _slotItems.Clear();
 
-        foreach (UI_RuneItem item in _runeItems)
-        {
-            item.OnEquipRune = null;
-            item.OnUprade = null;
-        }
+      
         _runeItems.Clear();
 
         

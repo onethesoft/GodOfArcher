@@ -34,11 +34,7 @@ public class UI_PetItem : UI_Base
         OneUpgradeButton,
         AllUpgradeButton
     }
-    [SerializeField]
-    UI_ButtonBlocker _oneUpgradeButtonBlocker;
-
-    [SerializeField]
-    UI_ButtonBlocker _allUpgradeButtonBlocker;
+    
 
     public override void Init()
     {
@@ -95,7 +91,7 @@ public class UI_PetItem : UI_Base
                 if (Managers.Item.UpgradeOneItem(_pet, true) == true)
                 {
                     OnUprade?.Invoke();
-                    _oneUpgradeButtonBlocker.StartBlocker();
+                    
                 }
                 UpdateCountText();
 
@@ -106,7 +102,7 @@ public class UI_PetItem : UI_Base
                 if (Managers.Item.UpgradeOneItem(_pet) == true)
                 {
                     OnUprade?.Invoke();
-                    _allUpgradeButtonBlocker.StartBlocker();
+                    
                 }
                 UpdateCountText();
             });
@@ -127,5 +123,6 @@ public class UI_PetItem : UI_Base
     {
         Managers.Game.GetInventory().OnItemChanged -= UpdateCountText;
         OnUprade = null;
+        OnEquipPet = null;
     }
 }

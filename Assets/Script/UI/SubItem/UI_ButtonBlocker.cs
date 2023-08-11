@@ -8,9 +8,6 @@ public class UI_ButtonBlocker : MonoBehaviour
 {
 
     [SerializeField]
-    Button _button;
-
-    [SerializeField]
     float _blockSecond = 1.0f;
 
     float duration;

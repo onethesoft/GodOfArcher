@@ -17,11 +17,13 @@ public class UI_PetPopup : UI_Popup
         Exit,
         RandomboxButton,
         TotalUpgradeButton,
-        HelpButton
+        HelpButton,
+        ConvertButton
     }
     UI_EquipmentSlot _selected;
     List<UI_EquipmentSlot> _slotItems;
     List<UI_PetItem> _petItems;
+    BlockerGroup[] _blockerGroups;
 
     string _isUpdateKey; // Key 를 비교하여 다르면 서버에 업데이트한다.
     public override void Init()
@@ -82,9 +84,14 @@ public class UI_PetPopup : UI_Popup
 
             _item.OnUprade -= SaveEquipment;
             _item.OnUprade += SaveEquipment;
+
+            _item.OnUprade -= Block;
+            _item.OnUprade += Block;
             ItemCount++;
 
         }
+
+        _blockerGroups = GetComponentsInChildren<BlockerGroup>();
 
         AddUIEvent(GetButton((int)Buttons.Close).gameObject, (data) => { ClosePopupUI(); });
         AddUIEvent(GetButton((int)Buttons.Exit).gameObject, (data) => { ClosePopupUI(); });
@@ -93,6 +100,7 @@ public class UI_PetPopup : UI_Popup
             if (Managers.Item.UpgradeAllItems("Pet") == true )
             {
                 SaveEquipment();
+                Block();
 
             }
         });
@@ -105,6 +113,10 @@ public class UI_PetPopup : UI_Popup
         AddUIEvent(GetButton((int)Buttons.HelpButton).gameObject, (data) =>
         {
             Managers.UI.ShowPopupUI<UI_Help>();
+        });
+        AddUIEvent(GetButton((int)Buttons.ConvertButton).gameObject, (data) =>
+        {
+            Managers.UI.ShowPopupUI<UI_Convert>().ConvertItemType = UI_Convert.ItemType.Pet;
         });
     }
     private void Start()
@@ -122,7 +134,11 @@ public class UI_PetPopup : UI_Popup
         _selected = selected;
     }
 
-    
+    void Block()
+    {
+        foreach (BlockerGroup blockgroup in _blockerGroups)
+            blockgroup.Block();
+    }
 
     void OnEquipHandler(Pet pet)
     {
@@ -165,11 +181,7 @@ public class UI_PetPopup : UI_Popup
         }
         _slotItems.Clear();
 
-        foreach (UI_PetItem item in _petItems)
-        {
-            item.OnEquipPet = null;
-            item.OnUprade = null;
-        }
+       
         _petItems.Clear();
 
        

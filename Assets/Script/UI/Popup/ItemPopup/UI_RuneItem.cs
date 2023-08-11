@@ -41,11 +41,7 @@ public class UI_RuneItem : UI_Base
         AllUpgradeButtonBlocker
     }
 
-    [SerializeField]
-    UI_ButtonBlocker _oneUpgradeButtonBlocker;
-
-    [SerializeField]
-    UI_ButtonBlocker _allUpgradeButtonBlocker;
+    
     UI_RunePopup _parent;
     public override void Init()
     {
@@ -89,7 +85,7 @@ public class UI_RuneItem : UI_Base
                 if (Managers.Item.UpgradeOneItem(_rune, true) == true)
                 {
                     OnUprade?.Invoke();
-                    _oneUpgradeButtonBlocker.StartBlocker();
+                  
                 }
               
                 UpdateCountText();
@@ -101,7 +97,7 @@ public class UI_RuneItem : UI_Base
                 if (Managers.Item.UpgradeOneItem(_rune) == true)
                 {
                     OnUprade?.Invoke();
-                    _allUpgradeButtonBlocker.StartBlocker();
+                   
                 }
               
 
@@ -122,6 +118,8 @@ public class UI_RuneItem : UI_Base
     public void OnDestroy()
     {
         Managers.Game.GetInventory().OnItemChanged -= UpdateCountText;
+        OnEquipRune = null;
+        OnUprade = null;
     }
 
     
