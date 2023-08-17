@@ -32,6 +32,7 @@ public class PlayerInfo
         DPS,
         StageInfo,
         ReviveInfo,
+        RouletteInfo
 
     }
 
@@ -65,7 +66,8 @@ public class PlayerInfo
     public enum CurrencyKey
     {
         RB, // 루비 재화만 골드 및 환생포인트는 UserData 에 저장된다.
-        SP
+        SP,
+        CN
     }
 
     public string PlayfabId;
@@ -170,7 +172,7 @@ public class PlayerInfo
             else
                 Payload.UserVirtualCurrency.Add(CurrencyKey.RB.ToString(), (int)amount);
         }
-        else // SP
+        else if (_currencyId == Define.CurrencyID.SP)
         {
             int currentAmount;
             if (Payload.UserVirtualCurrency.TryGetValue(CurrencyKey.SP.ToString(), out currentAmount))
@@ -179,6 +181,16 @@ public class PlayerInfo
             }
             else
                 Payload.UserVirtualCurrency.Add(CurrencyKey.SP.ToString(), (int)amount);
+        }
+        else
+        {
+            int currentAmount;
+            if (Payload.UserVirtualCurrency.TryGetValue(CurrencyKey.CN.ToString(), out currentAmount))
+            {
+                Payload.UserVirtualCurrency[CurrencyKey.CN.ToString()] += (int)amount;
+            }
+            else
+                Payload.UserVirtualCurrency.Add(CurrencyKey.CN.ToString(), (int)amount);
         }
     }
     public void SubstractCurrency(Define.CurrencyID _currencyId, System.Numerics.BigInteger amount)
@@ -220,7 +232,7 @@ public class PlayerInfo
             }
             
         }
-        else // SP
+        else if (_currencyId == Define.CurrencyID.SP)
         {
             int currentAmount;
             if (Payload.UserVirtualCurrency.TryGetValue(CurrencyKey.SP.ToString(), out currentAmount))
@@ -230,6 +242,16 @@ public class PlayerInfo
                     Payload.UserVirtualCurrency[CurrencyKey.SP.ToString()] = 0;
             }
             
+        }
+        else
+        {
+            int currentAmount;
+            if (Payload.UserVirtualCurrency.TryGetValue(CurrencyKey.CN.ToString(), out currentAmount))
+            {
+                Payload.UserVirtualCurrency[CurrencyKey.CN.ToString()] -= (int)amount;
+                if (Payload.UserVirtualCurrency[CurrencyKey.CN.ToString()] < 0)
+                    Payload.UserVirtualCurrency[CurrencyKey.CN.ToString()] = 0;
+            }
         }
     }
     public SessionInfo CreateSession()

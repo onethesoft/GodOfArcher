@@ -29,7 +29,7 @@ public class UI_Main : UI_Scene
         SeasonPass2Button,
         RankHelp,
         RubyPurchaseButton,
-
+        RouletteButton,
         // Tests
 
 
@@ -116,9 +116,10 @@ public class UI_Main : UI_Scene
         AddUIEvent(GetButton((int)Buttons.Ranking).gameObject, (data) => { Managers.UI.ShowPopupUI<UI_Ranking>(); });
 
         AddUIEvent(GetButton((int)Buttons.RubyPurchaseButton).gameObject, (data) => { Managers.UI.ShowPopupUI<UI_ShopPopup>().Setup(UI_ShopPopup.Panel.RubyView); });
+        AddUIEvent(GetButton((int)Buttons.RouletteButton).gameObject, (data) => { Managers.UI.ShowPopupUI<UI_Roulette>(); });
 
-        
-        
+
+
 
 
 #if ENABLE_LOG

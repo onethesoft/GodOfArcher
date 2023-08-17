@@ -423,6 +423,7 @@ GameObject:
   - component: {fileID: 9197471723376679572}
   - component: {fileID: 9197471723376679573}
   - component: {fileID: 9197471723376679562}
+  - component: {fileID: 1320712764179605300}
   m_Layer: 5
   m_Name: UI_ShopItem
   m_TagString: Untagged
@@ -522,6 +523,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &1320712764179605300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9197471723376679560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55483a030962b50478803f8313db7c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shopdata: {fileID: 0}
 --- !u!1001 &792674548836957562
 PrefabInstance:
   m_ObjectHideFlags: 0

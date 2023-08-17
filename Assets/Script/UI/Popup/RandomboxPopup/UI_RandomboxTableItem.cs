@@ -24,43 +24,12 @@ public class UI_RandomboxTableItem : UI_Base
             "90%","5%","2.5%","1.5%","0.9%","0.09%","0.03%","0.01%","0.003%","0.001%"
         } };
 
-    public void Set(int level , UI_RandomboxTable.Mode mode )
+    public void Set(int level , Sprite sprite, UI_RandomboxTable.Mode mode )
     {
         _level = level;
         _mode = mode;
-        switch (level)
-        {
-            case 0:
-                _sprite = Managers.Resource.Load<Sprite>("Sprites/Item/frame_itemframe_01_n_green");
-                break;
-            case 1:
-                _sprite = Managers.Resource.Load<Sprite>("Sprites/Item/frame_itemframe_01_n_blue");
-                break;
-            case 2:
-                _sprite = Managers.Resource.Load<Sprite>("Sprites/Item/frame_itemframe_01_n_purple");
-                break;
-            case 3:
-                _sprite = Managers.Resource.Load<Sprite>("Sprites/Item/frame_itemframe_01_n_red");
-                break;
-            case 4:
-                _sprite = Managers.Resource.Load<Sprite>("Sprites/Item/frame_itemframe_01_n_orange");
-                break;
-            case 5:
-                _sprite = Managers.Resource.Load<Sprite>("Sprites/Item/Frame_ItemFrame01_Color_Green");
-                break;
-            case 6:
-                _sprite = Managers.Resource.Load<Sprite>("Sprites/Item/Frame_ItemFrame01_Color_Blue");
-                break;
-            case 7:
-                _sprite = Managers.Resource.Load<Sprite>("Sprites/Item/Frame_ItemFrame01_Color_Purple");
-                break;
-            case 8:
-                _sprite = Managers.Resource.Load<Sprite>("Sprites/Item/Frame_ItemFrame01_Color_Red");
-                break;
-            case 9:
-                _sprite = Managers.Resource.Load<Sprite>("Sprites/Item/Frame_ItemFrame01_Color_Yellow");
-                break;
-        }
+        _sprite = sprite;
+       
 
         _text = $"{((Rune.Rank)level).ToString()}±ﬁ {(mode == UI_RandomboxTable.Mode.RuneAndPet ? "∑È,∆Í" :"¿Â∫Ò")}";
 

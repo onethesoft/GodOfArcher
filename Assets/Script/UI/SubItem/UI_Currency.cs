@@ -8,6 +8,8 @@ public class UI_Currency : UI_Base
     [SerializeField]
     Define.CurrencyID _currencyId;
 
+    [SerializeField]
+    bool _isSpawnCurrencyText = true;
 
     enum Texts
     {
@@ -32,28 +34,31 @@ public class UI_Currency : UI_Base
         {
             GetText((int)Texts.AmountText).text = Util.GetBigIntegerUnit(Managers.Game.GetCurrency(_currencyId.ToString()));
 
-            System.Numerics.BigInteger _amount = System.Numerics.BigInteger.Parse(amount);
-            string _amountText;
-            if(_amount > 0)
+            if (_isSpawnCurrencyText)
             {
-                _amountText = "+" + Util.GetBigIntegerUnit(_amount);
-            }
-            else
-            {
-                _amount = System.Numerics.BigInteger.Abs(_amount);
-                _amountText = "-" + Util.GetBigIntegerUnit(_amount);
+                System.Numerics.BigInteger _amount = System.Numerics.BigInteger.Parse(amount);
+                string _amountText;
+                if (_amount > 0)
+                {
+                    _amountText = "+" + Util.GetBigIntegerUnit(_amount);
+                }
+                else
+                {
+                    _amount = System.Numerics.BigInteger.Abs(_amount);
+                    _amountText = "-" + Util.GetBigIntegerUnit(_amount);
 
-            }
-            
-            UI_AnimatedCurrency _animationText =  Util.GetOrAddComponent<UI_AnimatedCurrency>(Managers.Resource.Instantiate("UI/SubItem/UI_AnimatedCurrency" , gameObject.transform));
-            
-            _animationText.Text = _amountText;
-            _animationText.gameObject.transform.position = gameObject.transform.position;
+                }
 
-            if (_currencyId == Define.CurrencyID.Gold)
-                _animationText.SetTextColor(Color.yellow);
-            else if (_currencyId == Define.CurrencyID.Ruby)
-                _animationText.SetTextColor(Color.red);
+                UI_AnimatedCurrency _animationText = Util.GetOrAddComponent<UI_AnimatedCurrency>(Managers.Resource.Instantiate("UI/SubItem/UI_AnimatedCurrency", gameObject.transform));
+
+                _animationText.Text = _amountText;
+                _animationText.gameObject.transform.position = gameObject.transform.position;
+
+                if (_currencyId == Define.CurrencyID.Gold)
+                    _animationText.SetTextColor(Color.yellow);
+                else if (_currencyId == Define.CurrencyID.Ruby)
+                    _animationText.SetTextColor(Color.red);
+            }
             
         }
     }

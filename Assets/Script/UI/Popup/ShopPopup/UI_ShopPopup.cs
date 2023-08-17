@@ -40,13 +40,15 @@ public class UI_ShopPopup : UI_Popup
         Bind<GameObject>(typeof(GameObjects));
         Bind<Button>(typeof(Buttons));
 
-        
 
-        foreach(ShopDate _item in Managers.Shop.Database.RandomBoxItems)
+        //20230803 프리팹에서 직접 입력하는것으로 수정
+        /*
+        foreach (ShopDate _item in Managers.Shop.Database.RandomBoxItems)
         {
             UI_ShopItem _shopItem = Util.GetOrAddComponent<UI_ShopItem>(Managers.Resource.Instantiate("UI/SubItem/ShopPopup/UI_ShopItem", Get<GameObject>((int)GameObjects.ShopContent).transform));
             _shopItem.Data = _item;
         }
+        */
 
         foreach (IAPData _item in Managers.Shop.Database.IAPItems)
         {

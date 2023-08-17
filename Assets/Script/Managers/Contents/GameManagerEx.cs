@@ -411,7 +411,7 @@ public class GameManagerEx
 
         if(IsUpdate == true)
         {
-            if (_id == Define.CurrencyID.Ruby || _id == Define.CurrencyID.SP)
+            if (_id == Define.CurrencyID.Ruby || _id == Define.CurrencyID.SP || _id == Define.CurrencyID.Coin)
             {
                 Currency _currency = PlayerData.Currency.ToList().Where(x => x.Key == _id.ToString()).FirstOrDefault().Value;
                 PlayerInfo.CurrencyKey _shortName = (PlayerInfo.CurrencyKey)Enum.Parse(typeof(PlayerInfo.CurrencyKey), _currency.ShortCodeName);
@@ -439,7 +439,7 @@ public class GameManagerEx
 
         if (IsUpdate == true)
         {
-            if (_id == Define.CurrencyID.Ruby || _id == Define.CurrencyID.SP)
+            if (_id == Define.CurrencyID.Ruby || _id == Define.CurrencyID.SP || _id == Define.CurrencyID.Coin)
             {
                 Currency _currency = PlayerData.Currency.ToList().Where(x => x.Key == _id.ToString()).FirstOrDefault().Value;
                 PlayerInfo.CurrencyKey _shortName = (PlayerInfo.CurrencyKey)Enum.Parse(typeof(PlayerInfo.CurrencyKey), _currency.ShortCodeName);
@@ -1059,6 +1059,7 @@ public class GameManagerEx
             if (IsJumping)
             {
                 int gainSPAmount = 0;
+                int gainCoinAmount = 0;
                 System.Numerics.BigInteger _gainGoldAmount = 0;
                 for (int i = PlayerData.Stage; i < PlayerData.Stage + 1 + GetJumpingCount; i++)
                 {
@@ -1068,9 +1069,16 @@ public class GameManagerEx
                     {
                         gainSPAmount++;
                     }
+                    int CoinGainRate = UnityEngine.Random.Range(0, 1000);
+                    if (CoinGainRate < 1)
+                    {
+                        gainCoinAmount++;
+                    }
                 }
                 if (gainSPAmount > 0)
                     AddCurrency(Define.CurrencyID.SP.ToString(), (System.Numerics.BigInteger)(gainSPAmount), IsUpdate: Managers.Network.IS_ENABLE_NETWORK);
+                if (gainCoinAmount > 0)
+                    AddCurrency(Define.CurrencyID.Coin.ToString(), (System.Numerics.BigInteger)(gainCoinAmount), IsUpdate: Managers.Network.IS_ENABLE_NETWORK);
 
                 AddCurrency(Define.CurrencyID.Gold.ToString(), _gainGoldAmount, IsApplyDropRate: true);
                 PlayerData.Stage += 1 + GetJumpingCount;
@@ -1083,6 +1091,10 @@ public class GameManagerEx
                 int SPGainRate = UnityEngine.Random.Range(0, 1000);
                 if (SPGainRate < 1)
                     AddCurrency(Define.CurrencyID.SP.ToString(), 1 , IsUpdate : Managers.Network.IS_ENABLE_NETWORK);
+
+                int CoinGainRate = UnityEngine.Random.Range(0, 1000);
+                if (CoinGainRate < 1)
+                    AddCurrency(Define.CurrencyID.Coin.ToString(), 1, IsUpdate: Managers.Network.IS_ENABLE_NETWORK);
                 PlayerData.Stage += 1;
             }
 

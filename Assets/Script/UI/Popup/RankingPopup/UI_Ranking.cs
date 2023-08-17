@@ -22,6 +22,11 @@ public class UI_Ranking : UI_Popup , IRecyclableScrollRectDataSource
     [SerializeField]
     RecyclableScrollRect _scrollview;
 
+    [SerializeField]
+    List<Sprite> _rankerIcons;
+
+    public List<Sprite> RankerIcons => _rankerIcons;
+
     public override void Init()
     {
         base.Init();

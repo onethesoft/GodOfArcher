@@ -242,7 +242,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1176037319740648876}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.06768718
+  m_Size: 0.06792059
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -780,6 +780,7 @@ GameObject:
   - component: {fileID: 3068546925026468464}
   - component: {fileID: 3068546925026468471}
   - component: {fileID: 3068546925026468470}
+  - component: {fileID: 3816653361259831353}
   m_Layer: 5
   m_Name: UI_Agreement
   m_TagString: Untagged
@@ -868,6 +869,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3816653361259831353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3068546925026468469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cabc3dbcf2132e42a8b611f88d7b212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CheckBoxOffSprite: {fileID: 21300000, guid: 31a74bdcd041e9e4abe8723aa49f86f0, type: 3}
+  CheckBoxONSprite: {fileID: 21300000, guid: bfa2847da4fe482478728c21f9413019, type: 3}
 --- !u!1 &3068546925045381394
 GameObject:
   m_ObjectHideFlags: 0

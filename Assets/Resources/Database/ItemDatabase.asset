@@ -340,6 +340,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 49b13df3b6331224e98ac42658d8166d, type: 2}
   - {fileID: 11400000, guid: 894e6eabf536d6f4e8661fd44bba6e47, type: 2}
   - {fileID: 11400000, guid: 4f55e92ff64701247aa0fbd1a7bb6839, type: 2}
+  - {fileID: 11400000, guid: cc4d07d17dea8b94e80fd9997282fcb0, type: 2}
+  - {fileID: 11400000, guid: 5370d0c6045a8044a9b5ee1f9b1c492d, type: 2}
+  - {fileID: 11400000, guid: b9d2ea5a04dcc764eacb09cf87e380d7, type: 2}
   _runeUpgradeSystem: {fileID: 11400000, guid: 07abfc5686908ef4e8b97c8eb8301fcc, type: 2}
   _petUpgradeSystem: {fileID: 11400000, guid: 164a897096396d44686eb5403afbb0ba, type: 2}
   _bowUpgradeSystem: {fileID: 11400000, guid: 85975eeacf31ebd44b9adcc0256fd808, type: 2}

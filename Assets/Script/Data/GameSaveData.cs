@@ -305,3 +305,24 @@ public class ItemSaveData
 }
 
 #endregion 
+
+[System.Serializable]
+public class RouletteInfo
+{
+    public int PlayRouletteCount = 0;
+
+    public int GetCoinToPlayRoulette => (PlayRouletteCount / 10) + 1;
+    public string ToJson()
+    {
+        JObject obj = new JObject();
+        obj.Add("PlayRouletteCount", PlayRouletteCount);
+        return obj.ToString();
+    }
+
+    public static RouletteInfo FromJson(string json)
+    {
+        var obj = JObject.Parse(json);
+        RouletteInfo _info = new RouletteInfo { PlayRouletteCount = obj["PlayRouletteCount"].Value<int>() };
+        return _info;
+    }
+}

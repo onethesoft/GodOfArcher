@@ -15,6 +15,12 @@ public class UI_Agreement : UI_Popup
     const string CheckBoxOff = "Sprites/TitleScene/toggle_checkbox_off";
     const string CheckBoxOn = "Sprites/TitleScene/toggle_checkbox_on";
 
+    [SerializeField]
+    Sprite CheckBoxOffSprite;
+
+    [SerializeField]
+    Sprite CheckBoxONSprite;
+
     bool IsTermsOfUseAgree = false;
     bool IsPrivacypolicy = false;
     public System.Action OnExit = null;
@@ -25,15 +31,14 @@ public class UI_Agreement : UI_Popup
 
         AddUIEvent(GetButton((int)Buttons.TermsOfUse_CheckBox).gameObject, (data) => {
             IsTermsOfUseAgree = !IsTermsOfUseAgree;
-            GetButton((int)Buttons.TermsOfUse_CheckBox).gameObject.GetComponent<Image>().sprite = IsTermsOfUseAgree ?  Managers.Resource.Load<Sprite>(CheckBoxOn) : Managers.Resource.Load<Sprite>(CheckBoxOff);
+            GetButton((int)Buttons.TermsOfUse_CheckBox).gameObject.GetComponent<Image>().sprite = IsTermsOfUseAgree ? CheckBoxONSprite : CheckBoxOffSprite;
 
-           
         });
         AddUIEvent(GetButton((int)Buttons.Privacypolicy_CheckBox).gameObject, (data) => {
             IsPrivacypolicy = !IsPrivacypolicy;
-            GetButton((int)Buttons.Privacypolicy_CheckBox).gameObject.GetComponent<Image>().sprite = IsPrivacypolicy ? Managers.Resource.Load<Sprite>(CheckBoxOn) : Managers.Resource.Load<Sprite>(CheckBoxOff);
+            GetButton((int)Buttons.Privacypolicy_CheckBox).gameObject.GetComponent<Image>().sprite = IsPrivacypolicy ? CheckBoxONSprite : CheckBoxOffSprite;
 
-           
+
         });
 
         AddUIEvent(GetButton((int)Buttons.AgreeButton).gameObject, (data) => {

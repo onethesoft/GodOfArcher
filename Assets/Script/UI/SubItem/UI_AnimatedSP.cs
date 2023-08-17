@@ -6,46 +6,66 @@ using UnityEngine.UI;
 
 public class UI_AnimatedSP : UI_Base
 {
-    enum Images{
-        Image
-    }
-    enum Texts
-    {
-        Text
-    }
+    [SerializeField]
+    Define.CurrencyID _currency;
+
+    [SerializeField]
+    Image image;
+
+    [SerializeField]
+    Text text;
+
+    [HideInInspector]
+    DOTweenAnimation _imageTweener;
+
+    [HideInInspector]
+    DOTweenAnimation _textTweener;
     public override void Init()
     {
-        Bind<Image>(typeof(Images));
-        Bind<Text>(typeof(Texts));
 
         Managers.Game.OnCurrencyChanged -= UpdateCurrency;
         Managers.Game.OnCurrencyChanged += UpdateCurrency;
 
-        GetImage((int)Images.Image).color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
-        GetText((int)Texts.Text).color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+        _imageTweener = image.GetComponent<DOTweenAnimation>();
+        _textTweener = text.GetComponent<DOTweenAnimation>();
+
+        // image.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+        // text.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+
+        gameObject.SetActive(false);
 
     }
-   
-    public void UpdateCurrency(Define.CurrencyID id , string amount)
+
+    private void OnEnable()
     {
-        if(id == Define.CurrencyID.SP)
+        if (_imageTweener != null)
         {
-            GetImage((int)Images.Image).DOFade(1.0f, 0.5f).OnComplete(() =>
-            {
-                GetImage((int)Images.Image).DOFade(0.0f, 0.5f).OnComplete(() =>
-                {
-
-                });
-            }).Restart() ;
-
-            GetText((int)Texts.Text).DOFade(1.0f, 0.5f).OnComplete(() =>
-            {
-                GetText((int)Texts.Text).DOFade(0.0f, 0.5f).OnComplete(() =>
-                {
-
-                });
-            }).Restart();
+            _imageTweener.DORestart();
         }
+
+
+        if (_textTweener != null)
+        {
+            _textTweener.DORestart();
+        }
+
+    }
+
+    public void UpdateCurrency(Define.CurrencyID id, string amount)
+    {
+        if (id == _currency)
+        {
+
+            if (gameObject.activeSelf)
+            {
+                _imageTweener.DORestart();
+                _textTweener.DORestart();
+            }
+            else
+                gameObject.SetActive(true);
+
+        }
+
     }
     private void OnDestroy()
     {

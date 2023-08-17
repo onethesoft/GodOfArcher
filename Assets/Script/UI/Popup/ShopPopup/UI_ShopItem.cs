@@ -7,7 +7,9 @@ using UnityEngine.UI;
 
 public class UI_ShopItem : UI_Base
 {
+    [SerializeField]
     ShopDate _shopdata;
+
     public ShopDate Data { set { _shopdata = value; } }
 
     Quest _quest;

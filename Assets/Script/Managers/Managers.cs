@@ -12,7 +12,6 @@ public class Managers : MonoBehaviour
     public static string Name { get { return "@Managers"; } }
     GameManagerEx _game = new GameManagerEx();
     QuestManager _quest = new QuestManager();
-    CurrencyManager _currency = new CurrencyManager();
     ItemManager _item = new ItemManager();
     ShopManager _shop = new ShopManager();
     SettingManager _setting = new SettingManager();
@@ -23,7 +22,6 @@ public class Managers : MonoBehaviour
 
     public static GameManagerEx Game { get { return Instance._game; } }
     public static QuestManager Quest { get { return Instance._quest; } }
-    public static CurrencyManager Currency { get { return Instance._currency; } }
     public static ItemManager Item { get { return Instance._item; } }
     public static ShopManager Shop { get { return Instance._shop; } }
     public static SettingManager Setting { get { return Instance._setting; } }
@@ -98,7 +96,6 @@ public class Managers : MonoBehaviour
             s_Instance._quest.Init();
             s_Instance._item.Init();
             s_Instance._shop.Init();
-            s_Instance._currency.Init();
             s_Instance._game.Init();
             s_Instance._ad.Init();
             s_Instance._network.Init();

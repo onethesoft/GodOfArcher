@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 1764550241833674676}
   - component: {fileID: 1764550241833674677}
   - component: {fileID: 1764550241833674674}
+  - component: {fileID: 3678386395814767655}
   m_Layer: 5
   m_Name: UI_RandomboxTable
   m_TagString: Untagged
@@ -281,6 +282,29 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3678386395814767655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764550241833674675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c74af8840975dfd4fbba3ba7e877346a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemSprites:
+  - {fileID: 21300000, guid: e823a166e2f932c43a2680a32a4ba789, type: 3}
+  - {fileID: 21300000, guid: 588347e9818e95d42b569efe56c72eaf, type: 3}
+  - {fileID: 21300000, guid: 5d7d2db207c3bac478596e82573571de, type: 3}
+  - {fileID: 21300000, guid: fea4cd06ddf0b6146aef534aefe3b51a, type: 3}
+  - {fileID: 21300000, guid: 097d69054be80fb44a67320321d8bc15, type: 3}
+  - {fileID: 21300000, guid: c7f261fecc8fc6c45b9b34473c0f7c9e, type: 3}
+  - {fileID: 21300000, guid: b9fae683c3d4222439b0f1d3626068da, type: 3}
+  - {fileID: 21300000, guid: 7765327c9213f9f4793c60246860ea5f, type: 3}
+  - {fileID: 21300000, guid: 88e3ebb5e20336341a8bf2305d13c131, type: 3}
+  - {fileID: 21300000, guid: dea5478f36529914bb1869385325a93e, type: 3}
 --- !u!1 &1764550242059347414
 GameObject:
   m_ObjectHideFlags: 0

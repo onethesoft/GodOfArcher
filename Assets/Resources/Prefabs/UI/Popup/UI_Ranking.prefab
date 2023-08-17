@@ -115,6 +115,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scrollview: {fileID: 6977885677195655828}
+  _rankerIcons:
+  - {fileID: 21300000, guid: 3d3c3eb911165ff489f0395b01ef7fb1, type: 3}
+  - {fileID: 21300000, guid: 2a07251134a54834abc41fad87e60e6e, type: 3}
+  - {fileID: 21300000, guid: de33f3b9b8a76f54697bda57e82530ed, type: 3}
 --- !u!1 &1703849481254523711
 GameObject:
   m_ObjectHideFlags: 0

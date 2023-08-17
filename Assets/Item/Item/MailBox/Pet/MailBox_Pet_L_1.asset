@@ -21,7 +21,7 @@ MonoBehaviour:
   _unitPrice: 0
   _isStackable: 0
   _background: {fileID: 21300000, guid: 365861fc1402da44f81bbee7a11d3263, type: 3}
-  _icon: {fileID: 21300000, guid: 4218543ddc7abc24aa6c0068f81a3c34, type: 3}
+  _icon: {fileID: 21300000, guid: 513c0c919222eba4c87b893af1e2f7f1, type: 3}
   _grantedItems:
     Count: 1
     Item: {fileID: 11400000, guid: 30342ac3da01fa944be9d601dad8d6d2, type: 2}

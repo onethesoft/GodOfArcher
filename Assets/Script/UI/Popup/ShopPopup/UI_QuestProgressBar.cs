@@ -89,20 +89,7 @@ public class UI_QuestProgressBar : UI_Base
         if (GetImage((int)Images.LeftImage) != null)
             GetImage((int)Images.LeftImage).sprite = _quest.Icon;
 
-        if(GetButton((int)Buttons.Button) != null)
-        {
-
-            if (_quest.Category == Define.QuestType.GamblePet.ToString())
-            {
-               
-                GetButton((int)Buttons.Button).GetComponent<Image>().sprite = Managers.Resource.Load<Sprite>("Sprites/ShopPopup/shop_img_chest_close_s_03");
-                
-            }
-            else if (_quest.Category == Define.QuestType.GambleRune.ToString())
-                GetButton((int)Buttons.Button).GetComponent<Image>().sprite = Managers.Resource.Load<Sprite>("Sprites/ShopPopup/shop_img_chest_close_s_02");
-            else
-                GetButton((int)Buttons.Button).GetComponent<Image>().sprite = Managers.Resource.Load<Sprite>("Sprites/ShopPopup/shop_img_chest_close_s_04");
-        }
+        
         
 
     }

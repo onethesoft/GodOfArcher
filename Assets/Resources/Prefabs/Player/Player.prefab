@@ -5693,6 +5693,8 @@ MonoBehaviour:
   TrollStage: 0
   ReviveInfo:
     ReviveCount: 0
+  RouletteInfo:
+    PlayRouletteCount: 0
   Rune: {fileID: 0}
   Pet: {fileID: 0}
   Bow: {fileID: 0}

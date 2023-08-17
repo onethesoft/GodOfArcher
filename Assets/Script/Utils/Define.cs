@@ -6,7 +6,7 @@ public class Define
 {
     public static readonly ServiceVersion APPVersion = new ServiceVersion() 
     { 
-        Major = 2 , Minor = 2 , Patch = 0 
+        Major = 2 , Minor = 4 , Patch = 0 
     };
    
     public enum UIEvent
@@ -175,8 +175,9 @@ public class Define
         Gold,
         CP,
         Ruby,
-        SP
-        
+        SP,
+        Coin
+
     }
     public enum QuestGroupType
     {

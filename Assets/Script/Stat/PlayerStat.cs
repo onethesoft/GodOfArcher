@@ -146,7 +146,10 @@ public class PlayerStat : ScriptableObject
         get
         {
             if (ID == (int)Define.StatID.SkillAttack)
-                return string.Format(_valueDescription, Managers.Currency.GetCurrency((Define.CurrencyID)_currencyId).Amount);
+            {
+                string id = ((Define.CurrencyID)_currencyId).ToString();
+                return string.Format(_valueDescription, Managers.Game.GetCurrency(id));
+            }
             else if(ID == (int)Define.StatID.SkillMaxLevelLimit)
             {
                 return string.Format(_valueDescription, Value , Value + IncrementValuePerLevel);
@@ -156,29 +159,7 @@ public class PlayerStat : ScriptableObject
         }
     }
 
-    public void Set(StatData data)
-    {
-        _id = data.ID;
-        _codeName = data.CodeName;
-        _MaxLevel = data.MaxLevel;
-        _IncrementValuePerLevel = data.IncrementStatPerLevel;
-
-        Define.CurrencyID currencyId = (Define.CurrencyID)Enum.Parse(typeof(Define.CurrencyID), data.CurrencyID);
-        _currencyId = (int)currencyId;
-
-
-        _Upgrader = new StatUpgrader(data.InitLevel, data.InitStat, data.InitCost, data.IncrementStatPerLevel, data.IncrementCostPerLevel, data.IncrementCostOperator);
-
-        _Icon = Managers.Resource.Load<Sprite>($"Sprites/{data.Icon}");
-        _backIcon = Managers.Resource.Load<Sprite>($"Sprites/{data.BackIcon}");
-
-
-        _LevelDescription = Managers.Data.TextData[data.LevelText].Kor;
-        _IncrementValueDescription = Managers.Data.TextData[data.IncrementStatText].Kor;
-        _maxLevelDescription = Managers.Data.TextData[data.MaxLevelText].Kor;
-        _valueDescription = Managers.Data.TextData[data.StatText].Kor;
-
-    }
+   
 
     // PlayerLevel 1 ~ 10
     public void UpdateMaxLevel(int PlayerLevel)

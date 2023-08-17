@@ -84,6 +84,8 @@ public class GameData : MonoBehaviour
     [SerializeField]
     public ReviveInfo ReviveInfo;
 
+    public RouletteInfo RouletteInfo;
+
     public EquipmentSystem Rune;
     public EquipmentSystem Pet;
     public EquipmentSystem Bow;
@@ -324,10 +326,17 @@ public class GameData : MonoBehaviour
             else
                 data.Payload.UserData[key.ToString()].Value = ReviveInfo.ToJson();
         }
-        
-        
+        else if (key == PlayerInfo.UserDataKey.RouletteInfo)
+        {
+            if (data.Payload.UserData.ContainsKey(key.ToString()) == false)
+                data.Payload.UserData.Add(key.ToString(), new PlayFab.ClientModels.UserDataRecord { Value = RouletteInfo.ToJson() });
+            else
+                data.Payload.UserData[key.ToString()].Value = RouletteInfo.ToJson();
+        }
 
-        
+
+
+
     }
     public void UpdateData(PlayerInfo.CurrencyKey key , PlayerInfo data)
     {
@@ -480,6 +489,15 @@ public class GameData : MonoBehaviour
         else
         {
             ReviveInfo = ReviveInfo.Create();
+        }
+
+        if (data.Payload.UserData.ContainsKey(PlayerInfo.UserDataKey.RouletteInfo.ToString()))
+        {
+            RouletteInfo = RouletteInfo.FromJson(data.Payload.UserData[PlayerInfo.UserDataKey.RouletteInfo.ToString()].Value);
+        }
+        else
+        {
+            RouletteInfo = new RouletteInfo { PlayRouletteCount = 0 };
         }
 
         OnLoaded();

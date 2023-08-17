@@ -81,18 +81,19 @@ public class UI_RankingItem : UI_Base, ICell
     PlayFab.ClientModels.PlayerLeaderboardEntry _entry;
     PlayerInfo _playerinfo;
     Mode _mode = Mode.RankerItem;
-
-    readonly string[] _ranker = new string[] { "Icon_ImageIcon_Medal_Gold", "Icon_ImageIcon_Medal_Silver", "Icon_ImageIcon_Medal_Bronze" };
-
+    UI_Ranking _parentPopup;
+    
 
     public void Setup(PlayFab.ClientModels.PlayerLeaderboardEntry entry)
     {
+        _parentPopup = GetComponentInParent<UI_Ranking>();
         _entry = entry;
         _mode = Mode.RankerItem;
         UpdateRankingItem();
     }
     public void Setup(PlayerInfo player)
     {
+        _parentPopup = GetComponentInParent<UI_Ranking>();
         _playerinfo = player;
         _mode = Mode.PlayerItem;
         UpdateRankingItem();
@@ -258,8 +259,8 @@ public class UI_RankingItem : UI_Base, ICell
             {
                 PositionText.gameObject.SetActive(false);
                 PositionImage.gameObject.SetActive(true);
-
-                PositionImage.sprite = Managers.Resource.Load<Sprite>($"Sprites/RankingPopup/{_ranker[_entry.Position]}");
+                PositionImage.sprite = _parentPopup.RankerIcons[_entry.Position];
+                //PositionImage.sprite = Managers.Resource.Load<Sprite>($"Sprites/RankingPopup/{_ranker[_entry.Position]}");
                 /*
                 GetText((int)Texts.PositionText).gameObject.SetActive(false);
                 GetImage((int)Images.PositionImage).gameObject.SetActive(true);
@@ -304,7 +305,8 @@ public class UI_RankingItem : UI_Base, ICell
                 {
                     PositionText.gameObject.SetActive(false);
                     PositionImage.gameObject.SetActive(true);
-                    PositionImage.sprite = Managers.Resource.Load<Sprite>($"Sprites/RankingPopup/{_ranker[_playerEntry.Position]}");
+                    PositionImage.sprite = _parentPopup.RankerIcons[_playerEntry.Position];
+                    //PositionImage.sprite = Managers.Resource.Load<Sprite>($"Sprites/RankingPopup/{_ranker[_playerEntry.Position]}");
                     /*
 
                     GetText((int)Texts.PositionText).gameObject.SetActive(false);
