@@ -25,8 +25,9 @@ MonoBehaviour:
   _Background: {fileID: 21300000, guid: dea5478f36529914bb1869385325a93e, type: 3}
   _BackgroundColor: {r: 1, g: 0.78431374, b: 0, a: 1}
   _incrementstatPerLevel: 2
-  _maxLevel: 500
+  _maxLevel: 1000
   _statModifier:
     _codeName: CraftDropRate
+    _description: 
     _value: 0
     _type: 0

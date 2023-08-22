@@ -1,4 +1,5 @@
 using Assets.HeroEditor.Common.CharacterScripts;
+
 using HeroEditor.Common;
 using HeroEditor.Common.Enums;
 using System;

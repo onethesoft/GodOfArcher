@@ -248,13 +248,20 @@ public class GameDataUpdater : MonoBehaviour
                         Managers.Network.UpdateSessionInfo(Managers.Player.GetPlayer(Managers.Game.PlayerId).Session);
 
                         Managers.Game.Save(new PlayerInfo.StatisticsDataKey[] { PlayerInfo.StatisticsDataKey.Level, PlayerInfo.StatisticsDataKey.Stage, PlayerInfo.StatisticsDataKey.ClearStage, PlayerInfo.StatisticsDataKey.MaxClearStage });
-                        
+
+#if !ENABLE_LOG
                         if(_data.ReviveInfo.DoReset())
                             Managers.Game.Save(new PlayerInfo.UserDataKey[] { PlayerInfo.UserDataKey.Gold, PlayerInfo.UserDataKey.DPS , PlayerInfo.UserDataKey.ReviveInfo });
                         else
                             Managers.Game.Save(new PlayerInfo.UserDataKey[] { PlayerInfo.UserDataKey.Gold, PlayerInfo.UserDataKey.DPS });
-                        
-                        
+#else
+
+                        if (_data.ReviveInfo.DoReset())
+                            Managers.Game.Save(new PlayerInfo.UserDataKey[] { PlayerInfo.UserDataKey.Gold,  PlayerInfo.UserDataKey.ReviveInfo });
+                        else
+                            Managers.Game.Save(new PlayerInfo.UserDataKey[] { PlayerInfo.UserDataKey.Gold });
+#endif
+
 
                         Managers.Quest.Save(new PlayerInfo.UserDataKey[] { PlayerInfo.UserDataKey.MainQuest , PlayerInfo.UserDataKey.SubQuest });
 

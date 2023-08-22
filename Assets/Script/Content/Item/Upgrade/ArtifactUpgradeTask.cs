@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "æ∆¿Ã≈€/ArtifactUpgradeTask", fileName = "UpgradeTask")]
 public class ArtifactUpgradeTask : UpgradeTask
 {
+    
+
     public override bool Upgrade(Inventory inventory, bool once = true)
     {
         int UpgradeCount = GetMaxUpgradeCount(inventory.ToList());

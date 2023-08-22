@@ -1,4 +1,4 @@
-using Assets.HeroEditor.Common.CharacterScripts;
+//using Assets.HeroEditor.Common.CharacterScripts;
 using HeroEditor.Common;
 using HeroEditor.Common.Enums;
 using PlayFab.ClientModels;
@@ -10,6 +10,8 @@ using System.Linq;
 using UnityEngine;
 using Newtonsoft.Json.Linq;
 using Google.Play.Review;
+
+using Assets.HeroEditor.Common.CharacterScripts;
 
 struct HitInfo
 {

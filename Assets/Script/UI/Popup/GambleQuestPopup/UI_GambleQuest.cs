@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -66,6 +67,8 @@ public class UI_GambleQuest : UI_Popup
             CreateItems(questType);
         }
 
+        Managers.Quest.onQuestCompleted -= OnQuestComplete;
+        Managers.Quest.onQuestCompleted += OnQuestComplete;
 
         AddUIEvent(GetButton((int)Buttons.RuneButton).gameObject, (data) => {
             _type = Define.QuestType.GambleRune;
@@ -104,7 +107,22 @@ public class UI_GambleQuest : UI_Popup
 
 
     }
-
+    void OnQuestComplete(Quest quest)
+    {
+        if(quest.Category == _type.ToString())
+        {
+            if (!Managers.Quest.ActiveQuests.Any(x => x.Category == _type.ToString()))
+            {
+                Invoke("ResetQuest", 0.1f);
+            }
+        }
+        
+    }
+    void ResetQuest()
+    {
+        Managers.Quest.ResetQuests(new string[] { _type.ToString() });
+        
+    }
     public void CreateItems(Define.QuestType category)
     {
         foreach (Quest quest in Managers.Quest.FindQuestByCategory(category.ToString()))
@@ -127,5 +145,12 @@ public class UI_GambleQuest : UI_Popup
                 item.gameObject.SetActive(false);
         }
     }
-    
+
+    public override void ClosePopupUI()
+    {
+        Managers.Quest.onQuestCompleted -= OnQuestComplete;
+        base.ClosePopupUI();
+
+    }
+
 }

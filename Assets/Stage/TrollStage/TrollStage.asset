@@ -23,7 +23,7 @@ MonoBehaviour:
     Count: 0
     Item: {fileID: 0}
   _Count_Daily_Free_Pass: 0
-  _maxStage: 500
+  _maxStage: 1000
   _monsterHPGenerator: {fileID: 11400000, guid: 1efd6b02c7cd2c24ab267bcf119e11bc,
     type: 2}
   _Timeout: 30

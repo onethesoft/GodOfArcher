@@ -36,7 +36,7 @@ public class Artifact : BaseItem
 
     [SerializeField]
     int _incrementstatPerLevel;
-    public int IncrementstatPerLevel => _incrementstatPerLevel;
+    public int IncrementstatPerLevel => CalculateIncrement();
 
 
     [SerializeField]
@@ -64,18 +64,15 @@ public class Artifact : BaseItem
         
         return _ret;
     }
+   
 
     public override void Add(int Count)
     {
         base.Add(Count);
         if (Count > 0)
         {
-            Debug.Log("Add Artifact Count : " + Count);
-            int GetValue = _statModifier.Value;
-            int newValue = (IncrementstatPerLevel * _RemainingUses.GetValueOrDefault());
             StatModifier _current = _statModifier;
-            Debug.Log("Add Artifact Count : "+ ItemId + " , " + _RemainingUses.GetValueOrDefault());
-            _statModifier = new StatModifier(_current.CodeName, newValue, _current.Mode);
+            _statModifier = new StatModifier(_current.CodeName, CalculateStatValue(), _current.Mode);
         }
 
     }
@@ -84,10 +81,9 @@ public class Artifact : BaseItem
         base.Setup(data);
         if(_RemainingUses.GetValueOrDefault() > 0)
         {
-            int statValue = IncrementstatPerLevel * _RemainingUses.Value;
-
+          
             StatModifier _current = _statModifier;
-            _statModifier = new StatModifier(_current.CodeName, statValue, _current.Mode);
+            _statModifier = new StatModifier(_current.CodeName, CalculateStatValue(), _current.Mode);
         }
         
 
@@ -97,12 +93,73 @@ public class Artifact : BaseItem
         base.Setup(item);
         if (_RemainingUses.GetValueOrDefault() > 0)
         {
-            int statValue = IncrementstatPerLevel * _RemainingUses.Value;
 
             StatModifier _current = _statModifier;
-            _statModifier = new StatModifier(_current.CodeName, statValue, _current.Mode);
+            _statModifier = new StatModifier(_current.CodeName, CalculateStatValue(), _current.Mode);
         }
 
+    }
+    public int CalculateIncrement()
+    {
+        if (ItemClass == "Heart")
+        {
+            if (Level >= 1 && Level <= 500)
+            {
+                return _incrementstatPerLevel;
+            }
+            else
+            {
+                return _incrementstatPerLevel * 2;
+            }
+        }
+        else if (ItemClass == "Essence")
+        {
+            if (Level >= 1 && Level <= 100)
+            {
+                return _incrementstatPerLevel;
+            }
+            else
+            {
+                return _incrementstatPerLevel * 2;
+            }
+        }
+        else
+            return _incrementstatPerLevel;
+    }
+
+    public int CalculateStatValue()
+    {
+        int newValue = (_incrementstatPerLevel * _RemainingUses.GetValueOrDefault());
+      
+
+        if (ItemClass == "Heart")
+        {
+            if (_RemainingUses >= 1 && _RemainingUses <= 500)
+            {
+                newValue = (_incrementstatPerLevel * _RemainingUses.GetValueOrDefault());
+            }
+            else
+            {
+                newValue = (_incrementstatPerLevel * 500) + (_incrementstatPerLevel * 2 * (_RemainingUses.GetValueOrDefault() - 500));
+                
+                
+            }
+        }
+        else if (ItemClass == "Essence")
+        {
+            if (_RemainingUses >= 1 && _RemainingUses <= 100)
+            {
+                newValue = (_incrementstatPerLevel * _RemainingUses.GetValueOrDefault());
+            }
+            else
+            {
+                newValue = (_incrementstatPerLevel * 100) + (_incrementstatPerLevel * 2 * (_RemainingUses.GetValueOrDefault() - 100));
+               
+            }
+        }
+        
+
+        return newValue;
     }
 
 

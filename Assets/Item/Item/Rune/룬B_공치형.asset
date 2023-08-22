@@ -47,6 +47,6 @@ MonoBehaviour:
     _type: 0
   - _codeName: CriticalHit
     _description: "\uCE58\uBA85\uD53C\uD574 %s% \uC99D\uAC00"
-    _value: 50
+    _value: 75
     _type: 0
   _Type: 2

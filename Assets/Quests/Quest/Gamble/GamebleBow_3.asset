@@ -25,7 +25,7 @@ MonoBehaviour:
   _useAutoComplete: 0
   _isCancelable: 0
   _isSavable: 1
-  _isRepeatable: 0
+  _isRepeatable: 1
   _acceptionconditions:
   - {fileID: 11400000, guid: f7369adcd6bf5d14c80e9a6821ffc784, type: 2}
   _cancelconditions: []

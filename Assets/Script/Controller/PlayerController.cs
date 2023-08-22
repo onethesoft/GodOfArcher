@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using Assets.HeroEditor.Common.CharacterScripts;
 using HeroEditor.Common;
 using System;
 using System.Linq;
-
+using Assets.HeroEditor.Common.CharacterScripts;
 
 public class PlayerController : BaseController
 {

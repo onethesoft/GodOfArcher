@@ -652,6 +652,13 @@ public class DataTransformer : EditorWindow
         AssetDatabase.Refresh();
     }
 
+    
+    [MenuItem("Tools/Test")]
+    static void Test()
+    {
+       
+    }
+
 
 
 

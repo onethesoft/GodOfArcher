@@ -53,4 +53,8 @@ public class MonsterStatCalculator : ScriptableObject
         }
         return _intervalGen[0].GetFirst();
     }
+    public void Setup(List<IntervalGenerator> invervalList)
+    {
+        _intervalGen = invervalList;
+    }
 }

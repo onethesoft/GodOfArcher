@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using HeroEditor.Common;
+
 [CreateAssetMenu(menuName = "Quest/Task/TaskAction/SimpleCount", fileName = "TaskAction_")]
 public class SimpleCount : TaskAction
 {

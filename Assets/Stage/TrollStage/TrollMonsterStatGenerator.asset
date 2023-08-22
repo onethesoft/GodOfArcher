@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _intervalGen:
   - min: 1
-    max: 500
+    max: 1000
     generator: {fileID: 11400000, guid: 49e3e4f9c04f54c499b516ac88c1b307, type: 2}

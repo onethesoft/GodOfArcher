@@ -20,12 +20,14 @@ MonoBehaviour:
   _unitCurrency: 
   _unitPrice: 0
   _isStackable: 1
+  _type: 0
   _icon: {fileID: 21300000, guid: b9c9ed6a758acd2459f81fdd3f187f51, type: 3}
   _Background: {fileID: 21300000, guid: 88e3ebb5e20336341a8bf2305d13c131, type: 3}
   _BackgroundColor: {r: 1, g: 0.78431374, b: 0, a: 1}
   _incrementstatPerLevel: 5
-  _maxLevel: 100
+  _maxLevel: 200
   _statModifier:
     _codeName: Attack
+    _description: 
     _value: 0
     _type: 0

@@ -25,8 +25,9 @@ MonoBehaviour:
   _Background: {fileID: 21300000, guid: 88e3ebb5e20336341a8bf2305d13c131, type: 3}
   _BackgroundColor: {r: 1, g: 0.78431374, b: 0, a: 1}
   _incrementstatPerLevel: 10
-  _maxLevel: 100
+  _maxLevel: 200
   _statModifier:
     _codeName: CriticalHit
+    _description: 
     _value: 0
     _type: 0

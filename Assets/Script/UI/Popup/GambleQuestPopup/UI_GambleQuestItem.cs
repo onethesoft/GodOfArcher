@@ -73,6 +73,9 @@ public class UI_GambleQuestItem : UI_Base
         _quest.onCompleted -= OnComplete;
         _quest.onCompleted += OnComplete;
 
+        _quest.OnReseted -= OnReset;
+        _quest.OnReseted += OnReset;
+
         AddUIEvent(GetButton((int)Buttons.RewardButton).gameObject, (data) => {
             if(_quest.IsCompletable)
                 _quest.Complete();
@@ -85,9 +88,18 @@ public class UI_GambleQuestItem : UI_Base
         if(quest == _quest)
             GetImage((int)Images.Blocker).gameObject.SetActive(true);
     }
+    public void OnReset(Quest quest)
+    {
+        if (quest == _quest)
+        {
+            GetText((int)Texts.DescriptionText).text = $"({_quest.TaskGroups.First().Tasks.First().CurrentSuccess}/{_quest.Description})";
+            GetImage((int)Images.Blocker).gameObject.SetActive(false);
+        }
+    }
     private void OnDestroy()
     {
         _quest.onCompleted -= OnComplete;
+        _quest.OnReseted -= OnReset;
     }
 
 }

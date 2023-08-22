@@ -280,6 +280,8 @@ MonoBehaviour:
   includeCompilationPipelineAssemblies: 0
   assemblies:
   - Assembly-CSharp.dll
+  - Script.dll
+  - Tests.dll
   compiledAssemblies: []
   extraAssemblyDirectories: []
   referencedAssemblies: []
