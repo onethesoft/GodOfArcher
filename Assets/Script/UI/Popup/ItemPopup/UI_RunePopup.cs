@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,6 +30,12 @@ public class UI_RunePopup : UI_Popup
 
     string _isUpdateKey; // Key 를 비교하여 다르면 서버에 업데이트한다.
 
+    [SerializeField]
+    List<UI_RuneItemData> _runeItemViewDataList;
+    public void SetupItemViewData(List<UI_RuneItemData> itemList)
+    {
+        _runeItemViewDataList = itemList;
+    }
     public override void Init()
     {
         base.Init();
@@ -57,12 +64,12 @@ public class UI_RunePopup : UI_Popup
 
         int ItemCount = 0;
         GameObject ItemPanel = null;
-        foreach (Rune rune in Managers.Item.Database.RuneList)
+        foreach(UI_RuneItemData runeItemData in _runeItemViewDataList)
         {
             if (ItemCount % 3 == 0)
             {
                 ItemPanel = Managers.Resource.Instantiate("UI/SubItem/ItemPopup/UI_RuneItemPanel", Get<GameObject>((int)GameObjects.Content).transform);
-                if (rune.Level <= 6)
+                if (runeItemData.Level <= 6)
                     ItemPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(1900, 300);
                 else
                     ItemPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(1900, 420);
@@ -71,39 +78,25 @@ public class UI_RunePopup : UI_Popup
             }
 
             UI_RuneItem _item;
-            if (rune.Level <= 6)
-            {
-                _item = Util.GetOrAddComponent<UI_RuneItem>(Managers.Resource.Instantiate("UI/SubItem/ItemPopup/UI_RuneItem_normal", ItemPanel.transform));
-                _item.Rune = rune;
-                _item.OnEquipRune -= OnEquipHandler;
-                _item.OnEquipRune += OnEquipHandler;
+          
+            _item = Util.GetOrAddComponent<UI_RuneItem>(Managers.Resource.Instantiate("UI/SubItem/ItemPopup/UI_RuneItem_normal", ItemPanel.transform));
+            _item.Setup(runeItemData);
 
-                _item.OnUprade -= SaveEquipment;
-                _item.OnUprade += SaveEquipment;
+            _item.OnEquipRune -= OnEquipHandler;
+            _item.OnEquipRune += OnEquipHandler;
 
-                _item.OnUprade -= Block;
-                _item.OnUprade += Block;
-                _runeItems.Add(_item);
-               
-            }
-            else
-            {
-                _item = Util.GetOrAddComponent<UI_RuneItem>(Managers.Resource.Instantiate("UI/SubItem/ItemPopup/UI_RuneItem_Big", ItemPanel.transform));
-                _item.Rune = rune;
-                _item.OnEquipRune -= OnEquipHandler;
-                _item.OnEquipRune += OnEquipHandler;
+            _item.OnUprade -= SaveEquipment;
+            _item.OnUprade += SaveEquipment;
 
-                _item.OnUprade -= SaveEquipment;
-                _item.OnUprade += SaveEquipment;
+            _item.OnUprade -= Block;
+            _item.OnUprade += Block;
+            _runeItems.Add(_item);
 
-                _item.OnUprade -= Block;
-                _item.OnUprade += Block;
-                _runeItems.Add(_item);
-            }
-
+            
             ItemCount++;
-
         }
+
+
         _blockerGroups = GetComponentsInChildren<BlockerGroup>();
 
         AddUIEvent(GetButton((int)Buttons.Close).gameObject, (data) => { 

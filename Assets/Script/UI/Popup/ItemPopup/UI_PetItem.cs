@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,10 @@ public class UI_PetItem : UI_Base
 {
     Pet _pet;
     public Pet Pet { set { _pet = value; } }
+
+    UI_PetItemData _itemData;
+
+    
 
     public delegate void EquipHandler(Pet pet);
     public EquipHandler OnEquipPet;
@@ -34,23 +39,42 @@ public class UI_PetItem : UI_Base
         OneUpgradeButton,
         AllUpgradeButton
     }
-    
+    [SerializeField]
+    Image EquipBackground;
 
-    public override void Init()
+    [SerializeField]
+    Image DescriptionBackground;
+
+    [SerializeField]
+    Text ItemCountText;
+
+    [SerializeField]
+    Text DescriptionText;
+
+    [SerializeField]
+    UI_BaseItem UI_ItemPrefab;
+
+    [SerializeField]
+    Button EquipButton;
+
+    [SerializeField]
+    Button OneUpgradeButton;
+
+    [SerializeField]
+    Button AllUpgradeButton;
+
+    public void Setup(UI_PetItemData itemData)
     {
-        Bind<Image>(typeof(Images));
-        Bind<Text>(typeof(Texts));
-        Bind<Button>(typeof(Buttons));
-
-        if (_pet != null)
+        Pet FindPet = Managers.Item.Database.ItemList.Where(x => x.ItemId == itemData.ItemId).FirstOrDefault() as Pet;
+        if(FindPet != null)
         {
-            
-            GetImage((int)Images.Background).sprite = _pet.Background;
-            GetImage((int)Images.DescriptionBackground).sprite = _pet.DescriptionBackground;
-            GetImage((int)Images.EquipBackground).sprite = _pet.DescriptionBackground;
+            _itemData = itemData;
+
+            EquipBackground.sprite = _itemData.EquipBackgroundSprite;
+            DescriptionBackground.sprite = _itemData.DescriptionBackgroundSprite;
 
             string _itemDescription = "";
-            foreach (StatModifier _stat in _pet.StatModifiers)
+            foreach (StatModifier _stat in FindPet.StatModifiers)
             {
                 if (_stat.CodeName == "CriticalHitRate")
                 {
@@ -61,51 +85,55 @@ public class UI_PetItem : UI_Base
                     _itemDescription += _stat.Description.Replace("\\n", System.Environment.NewLine).Replace("%s", _stat.Value.ToString()) + System.Environment.NewLine;
                 }
             }
-            
+            DescriptionText.text = _itemDescription;
+            if (FindPet.type == Pet.Type.Drop)
+                DescriptionText.fontSize = 20;
 
-            GetText((int)Texts.Description).text = _itemDescription;
+            UI_ItemPrefab.Item = FindPet;
 
-            if (_pet.type == Pet.Type.Drop)
-                GetText((int)Texts.Description).fontSize = 20;
+            UpdateCountText();
 
-            GetImage((int)Images.Icon).sprite = _pet.Icon;
-            GetImage((int)Images.IconBackground).sprite = _pet.IconBackground;
+            EquipButton.onClick.RemoveAllListeners();
+            EquipButton.onClick.AddListener(() => {
+                if (Managers.Game.GetInventory().Find(x => x.ItemId == _itemData.ItemId) != null)
+                    OnEquipPet?.Invoke(Managers.Game.GetInventory().Find(x => x.ItemId == _itemData.ItemId) as Pet);
+                UpdateCountText();
+            });
 
-            if (_pet.Level > 6)
-            {
-                GetImage((int)Images.Icon).gameObject.SetActive(false);
-            }
+            OneUpgradeButton.onClick.RemoveAllListeners();
+            OneUpgradeButton.onClick.AddListener(() => {
+                if (Managers.Item.UpgradeOneItem(Managers.Item.Database.ItemList.Where(x => x.ItemId == _itemData.ItemId).FirstOrDefault(), true) == true)
+                {
+                    OnUprade?.Invoke();
 
-            GetText((int)Texts.DisplayName).text = _pet.DisplayName;
-            GetText((int)Texts.CountText).text = $"º¸À¯ °¹¼ö : {(Managers.Game.GetInventory().Find(_pet) == null ? 0 : Managers.Game.GetInventory().Find(_pet).GetUsableCount())} / 3";
+                }
+                UpdateCountText();
+            });
+
+            AllUpgradeButton.onClick.RemoveAllListeners();
+            AllUpgradeButton.onClick.AddListener(() => {
+                if (Managers.Item.UpgradeOneItem(Managers.Item.Database.ItemList.Where(x => x.ItemId == _itemData.ItemId).FirstOrDefault()) == true)
+                {
+                    OnUprade?.Invoke();
+
+                }
+                UpdateCountText();
+            });
 
             Managers.Game.GetInventory().OnItemChanged -= UpdateCountText;
             Managers.Game.GetInventory().OnItemChanged += UpdateCountText;
+        }
+        
+    }
+    public override void Init()
+    {
+        Bind<Image>(typeof(Images));
+        Bind<Text>(typeof(Texts));
+        Bind<Button>(typeof(Buttons));
 
-            AddUIEvent(GetButton((int)Buttons.EquipButton).gameObject, (data) => {
-                if (Managers.Game.GetInventory().Find(_pet) != null)
-                    OnEquipPet?.Invoke(Managers.Game.GetInventory().Find(_pet) as Pet);
-                UpdateCountText();
-            });
-            AddUIEvent(GetButton((int)Buttons.OneUpgradeButton).gameObject, (data) => {
-                if (Managers.Item.UpgradeOneItem(_pet, true) == true)
-                {
-                    OnUprade?.Invoke();
-                    
-                }
-                UpdateCountText();
-
-
-            });
-
-            AddUIEvent(GetButton((int)Buttons.AllUpgradeButton).gameObject, (data) => {
-                if (Managers.Item.UpgradeOneItem(_pet) == true)
-                {
-                    OnUprade?.Invoke();
-                    
-                }
-                UpdateCountText();
-            });
+        if (_pet != null)
+        {
+           
 
         }
 
@@ -113,11 +141,13 @@ public class UI_PetItem : UI_Base
 
     public void UpdateCountText()
     {
-        //Debug.Log(Managers.Game.GetInventory().Find(_rune) != null ? Managers.Game.GetInventory().Find(_rune).RemainingUses : -1);
-        // Debug.Log($"{_rune.ItemId} : {(Managers.Game.GetInventory().Find(x => x.ItemId == _rune.ItemId) == null ? -1 : (Managers.Game.GetInventory().Find(_rune) as EquipableItem).EquipCount)}");
-        //Debug.Log($"{_pet.ItemId} : {(Managers.Game.GetInventory().Find(x => x.ItemId == _pet.ItemId) == null ? -1 : (Managers.Game.GetInventory().Find(_pet) as EquipableItem).RemainingUses)}");
-        GetText((int)Texts.CountText).text = $"º¸À¯ °¹¼ö : {(Managers.Game.GetInventory().Find(_pet) == null ? 0 : Managers.Game.GetInventory().Find(_pet).GetUsableCount())} / 3";
+        
+        ItemCountText.text = $"º¸À¯ °¹¼ö : {(Managers.Game.GetInventory().Find(x=>x.ItemId == _itemData.ItemId) == null ? 0 : Managers.Game.GetInventory().Find(x => x.ItemId == _itemData.ItemId).GetUsableCount())} / 3";
     }
+
+   
+
+    
 
     public void OnDestroy()
     {

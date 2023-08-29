@@ -42,9 +42,10 @@ public class UI_BaseItem : UI_Base
     {
         FX_Circle
     }
-
     [SerializeField]
-    GameObject Particle;
+    Sprite Rune_G_Bottom;
+
+  
 
     [SerializeField]
     TextMeshProUGUI DisplayName;
@@ -83,18 +84,36 @@ public class UI_BaseItem : UI_Base
             EquipableItem.Rank _itemRank = (EquipableItem.Rank)rune.Level;
             LevelText.text = $"{_itemRank.ToString()}등급";
 
-            if (rune.Level > (int)Rune.Rank.S )
+            if (rune.Level > (int)Rune.Rank.S && rune.Level < (int)Rune.Rank.U)
             {
                 Icon.SetActive(false);
-                //LevelText.gameObject.SetActive(false);
-                if(_mode == Mode.RandomBox || _mode == Mode.Equip)
-                    Particle.SetActive(true);
-                else
-                    Particle.SetActive(false);
+
+                
+               
 
             }
-            else
-                Particle.SetActive(false);
+            else if (rune.Level == (int)Rune.Rank.U)
+            {
+                DisplayNameBackground.gameObject.SetActive(false);
+                DisplayName.gameObject.SetActive(false);
+
+                Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -35, y = -45 };
+                IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -20, y = -20 };
+                //IconBackground.GetComponent<RectTransform>().siz
+                // IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = 100, y = 100 };
+                // Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = 120, y = 120 };
+            }
+            else if (rune.Level == (int)Rune.Rank.G)
+            {
+                DisplayNameBackground.GetComponent<Image>().sprite = Rune_G_Bottom;
+                DisplayName.gameObject.SetActive(false);
+
+                Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -35, y = -45 };
+                IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -20, y = -20 };
+                //  IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = 100, y = 100 };
+                //Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = 120, y = 120 };
+            }
+
 
             /*
             GetImage((int)Images.IconBackground).sprite = rune.IconBackground;
@@ -128,14 +147,35 @@ public class UI_BaseItem : UI_Base
             DisplayName.text = pet.DisplayName;
             EquipableItem.Rank _itemRank = (EquipableItem.Rank)pet.Level;
             LevelText.text = $"{_itemRank.ToString()}등급";
-            Particle.SetActive(false);
+           
 
-            if (pet.Level > (int)Pet.Rank.S )
+            if (pet.Level > (int)Pet.Rank.S && pet.Level < (int)Pet.Rank.U)
             {
                 Icon.SetActive(false);
                 //LevelText.gameObject.SetActive(false);
             }
-           
+            else if (pet.Level == (int)Pet.Rank.U)
+            {
+                DisplayNameBackground.gameObject.SetActive(false);
+                DisplayName.gameObject.SetActive(false);
+
+                Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -35, y = -45 };
+                IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -20, y = -20 };
+                //IconBackground.GetComponent<RectTransform>().siz
+                // IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = 100, y = 100 };
+                // Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = 120, y = 120 };
+            }
+            else if (pet.Level == (int)Pet.Rank.G)
+            {
+                DisplayNameBackground.GetComponent<Image>().sprite = Rune_G_Bottom;
+                DisplayName.gameObject.SetActive(false);
+
+                Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -35, y = -45 };
+                IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -20, y = -20 };
+                //  IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = 100, y = 100 };
+                //Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = 120, y = 120 };
+            }
+
             /*
             GetImage((int)Images.IconBackground).sprite = pet.IconBackground;
             GetImage((int)Images.Icon).sprite = pet.Icon;
@@ -168,7 +208,7 @@ public class UI_BaseItem : UI_Base
             EquipableItem.Rank _itemRank = (EquipableItem.Rank)bow.Level;
             LevelText.text = $"{_itemRank.ToString()}등급";
 
-            Particle.SetActive(false);
+            
 
             if (bow.Level > (int)Bow.Rank.S)
             {
@@ -207,7 +247,7 @@ public class UI_BaseItem : UI_Base
             EquipableItem.Rank _itemRank = (EquipableItem.Rank)armor.Level;
             LevelText.text = $"{_itemRank.ToString()}등급";
 
-            Particle.SetActive(false);
+           
 
             if (armor.Level > (int)Armor.Rank.S)
             {
@@ -230,8 +270,7 @@ public class UI_BaseItem : UI_Base
             EquipableItem.Rank _itemRank = (EquipableItem.Rank)helmet.Level;
             LevelText.text = $"{_itemRank.ToString()}등급";
 
-            Particle.SetActive(false);
-
+          
             if (helmet.Level > (int)Armor.Rank.S)
             {
                 //LevelText.gameObject.SetActive(false);
@@ -250,7 +289,7 @@ public class UI_BaseItem : UI_Base
             EquipableItem.Rank _itemRank = (EquipableItem.Rank)cloak.Level;
             LevelText.text = $"{_itemRank.ToString()}등급";
 
-            Particle.SetActive(false);
+          
 
             if (cloak.Level > (int)Cloak.Rank.S)
             {
@@ -271,8 +310,7 @@ public class UI_BaseItem : UI_Base
 
             DisplayName.text = essence.DisplayName;
             LevelText.gameObject.SetActive(false);
-            Particle.SetActive(false);
-
+          
 
 
             //GetText((int)Texts.DisplayName).text = essence.DisplayName;
@@ -292,8 +330,7 @@ public class UI_BaseItem : UI_Base
             DisplayName.text = heart.DisplayName;
             DisplayName.fontSize = 17;
             LevelText.gameObject.SetActive(false);
-            Particle.SetActive(false);
-
+            
             // GetText((int)Texts.DisplayName).text = heart.DisplayName;
             //GetText((int)Texts.DisplayName).fontSize = 17;
             //GetText((int)Texts.LevelText).gameObject.SetActive(false);

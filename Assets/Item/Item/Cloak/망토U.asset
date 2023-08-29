@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3e262a26a51b146b6fade6785f485f, type: 3}
+  m_Name: "\uB9DD\uD1A0U"
+  m_EditorClassIdentifier: 
+  _DisplayName: "\uD5EC\uB9AC\uC624\uC2A4\uC758 \uB9DD\uD1A0"
+  _Description: "\uACE8\uB4DC\uD68D\uB4DD\uB960 10000% \uC99D\uAC00\\n\uD658\uC0DD
+    P \uD68D\uB4DD\uB960 10000% \uC99D\uAC00\\n\uBAA8\uB4E0 \uD53C\uD574 2\uBC30
+    \uC99D\uD3ED"
+  _ItemId: Cloak_U
+  _ItemClass: Cloak
+  _ItemInstanceId: 
+  _unitCurrency: 
+  _unitPrice: 0
+  _isStackable: 1
+  _EquipCount: 0
+  _Level: 10
+  _Icon: {fileID: 21300000, guid: ec080ad4d664d314a80940976c5989cf, type: 3}
+  _IconBackground: {fileID: 21300000, guid: 8288a758be17792458b51c23fbf0422d, type: 3}
+  _Background: {fileID: 21300000, guid: 36d17e0b05967974ba41f768d6568d65, type: 3}
+  _IconBackgroundOutline:
+    OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+    EffectDistance: {x: 2, y: -2}
+  _DescriptionBackgroundSprite: {fileID: 21300000, guid: 36d17e0b05967974ba41f768d6568d65,
+    type: 3}
+  _DescriptionBackgroundTexture: {fileID: 21300000, guid: c501a3674da612547a2f08e64cb21dae,
+    type: 3}
+  _DescriptionBackgroundOutline:
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+    EffectDistance: {x: 1, y: -1}
+  _DescriptionBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  _SpriteCollectionId: Extensions.Legendary.Cape.DragonTempestBack
+  _DisplayNameOutLine:
+    OutlineColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+    EffectDistance: {x: 1, y: -1}
+  _statModifiers:
+  - _codeName: GoldDropRate
+    _description: "\\n\uACE8\uB4DC\uD68D\uB4DD\uB960 %s% \uC99D\uAC00"
+    _value: 10000
+    _type: 0
+  - _codeName: CraftDropRate
+    _description: "\uD658\uC0DD P \uD68D\uB4DD\uB960 %s% \uC99D\uAC00"
+    _value: 10000
+    _type: 0

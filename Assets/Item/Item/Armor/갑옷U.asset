@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f6f13397dade3d4393690247e99c8c4, type: 3}
+  m_Name: "\uAC11\uC637U"
+  m_EditorClassIdentifier: 
+  _DisplayName: "\uD5EC\uB9AC\uC624\uC2A4\uC758 \uAC11\uC637"
+  _Description: 
+  _ItemId: Armor_U
+  _ItemClass: Armor
+  _ItemInstanceId: 
+  _unitCurrency: 
+  _unitPrice: 0
+  _isStackable: 1
+  _EquipCount: 0
+  _Level: 10
+  _Icon: {fileID: 21300000, guid: 9f1d015b39cccaa46a860ba29a928ae8, type: 3}
+  _IconBackground: {fileID: 21300000, guid: 8288a758be17792458b51c23fbf0422d, type: 3}
+  _Background: {fileID: 21300000, guid: 36d17e0b05967974ba41f768d6568d65, type: 3}
+  _IconBackgroundOutline:
+    OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+    EffectDistance: {x: 2, y: -2}
+  _DescriptionBackgroundSprite: {fileID: 21300000, guid: 36d17e0b05967974ba41f768d6568d65,
+    type: 3}
+  _DescriptionBackgroundTexture: {fileID: 21300000, guid: c501a3674da612547a2f08e64cb21dae,
+    type: 3}
+  _DescriptionBackgroundOutline:
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+    EffectDistance: {x: 1, y: -1}
+  _DescriptionBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  _SpriteCollectionId: Extensions.Legendary.Armor.SeraphimMail
+  _DisplayNameOutLine:
+    OutlineColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+    EffectDistance: {x: 1, y: -1}
+  _statModifiers:
+  - _codeName: CriticalHit
+    _description: "\uCE58\uBA85\uD53C\uD574 %s% \uC99D\uAC00"
+    _value: 100000
+    _type: 0
+  - _codeName: CriticalHitRate
+    _description: "\uCE58\uBA85\uD655\uB960 %s% \uC99D\uAC00"
+    _value: 500
+    _type: 0

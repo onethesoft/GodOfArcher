@@ -146,18 +146,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579774422982159869}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8005003557161403414}
-  m_Father: {fileID: 244607553249939871}
-  m_RootOrder: 2
+  m_Father: {fileID: 8135749847768273125}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 316.7}
-  m_SizeDelta: {x: 0, y: 633.4}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2960087454402615789
 CanvasRenderer:
@@ -523,6 +523,82 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1056202650918589516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8135749847768273125}
+  - component: {fileID: 7267370253548973086}
+  - component: {fileID: 5758207378431811813}
+  m_Layer: 5
+  m_Name: ItemPanelCanvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8135749847768273125
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056202650918589516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4202255224286151892}
+  m_Father: {fileID: 244607553249939871}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 316.7}
+  m_SizeDelta: {x: 0, y: 633.4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &7267370253548973086
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056202650918589516}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &5758207378431811813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056202650918589516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1426663654719109358
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,7 +1173,7 @@ RectTransform:
   m_Children:
   - {fileID: 5966650543322313651}
   - {fileID: 1645155178651977055}
-  - {fileID: 4202255224286151892}
+  - {fileID: 8135749847768273125}
   m_Father: {fileID: 2757705294275157108}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1380,6 +1456,7 @@ GameObject:
   - component: {fileID: 4132284800691452708}
   - component: {fileID: 4607833652436758545}
   - component: {fileID: 1069578611570592285}
+  - component: {fileID: 2109498630118217953}
   m_Layer: 5
   m_Name: UI_PetPopup
   m_TagString: Untagged
@@ -1469,6 +1546,152 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2109498630118217953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6571690094779185848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe7b4d27c03fb9458761867bf7ac3e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _petItemViewDataList:
+  - ItemId: Pet_F_Drop
+    ItemClass: Pet
+    Level: 0
+    EquipBackgroundSprite: {fileID: 21300000, guid: c716737c416af8d408d85caed8f6e59c,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: c716737c416af8d408d85caed8f6e59c,
+      type: 3}
+  - ItemId: Pet_F_Buff
+    ItemClass: Pet
+    Level: 0
+    EquipBackgroundSprite: {fileID: 21300000, guid: c716737c416af8d408d85caed8f6e59c,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: c716737c416af8d408d85caed8f6e59c,
+      type: 3}
+  - ItemId: Pet_E_Drop
+    ItemClass: Pet
+    Level: 1
+    EquipBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+  - ItemId: Pet_E_Buff
+    ItemClass: Pet
+    Level: 1
+    EquipBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+  - ItemId: Pet_D_Drop
+    ItemClass: Pet
+    Level: 2
+    EquipBackgroundSprite: {fileID: 21300000, guid: 60e3013e45b85c448b959a9a2d0ba565,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 60e3013e45b85c448b959a9a2d0ba565,
+      type: 3}
+  - ItemId: Pet_D_Buff
+    ItemClass: Pet
+    Level: 2
+    EquipBackgroundSprite: {fileID: 21300000, guid: 60e3013e45b85c448b959a9a2d0ba565,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 60e3013e45b85c448b959a9a2d0ba565,
+      type: 3}
+  - ItemId: Pet_C_Drop
+    ItemClass: Pet
+    Level: 3
+    EquipBackgroundSprite: {fileID: 21300000, guid: 0a913556d6d8fae44bd6072c8fbe4966,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 0a913556d6d8fae44bd6072c8fbe4966,
+      type: 3}
+  - ItemId: Pet_C_Buff
+    ItemClass: Pet
+    Level: 3
+    EquipBackgroundSprite: {fileID: 21300000, guid: 0a913556d6d8fae44bd6072c8fbe4966,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 0a913556d6d8fae44bd6072c8fbe4966,
+      type: 3}
+  - ItemId: Pet_B_Drop
+    ItemClass: Pet
+    Level: 4
+    EquipBackgroundSprite: {fileID: 21300000, guid: 4cb95281950f0fb4b9bc86e17c4d3a4b,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 4cb95281950f0fb4b9bc86e17c4d3a4b,
+      type: 3}
+  - ItemId: Pet_B_Buff
+    ItemClass: Pet
+    Level: 4
+    EquipBackgroundSprite: {fileID: 21300000, guid: 4cb95281950f0fb4b9bc86e17c4d3a4b,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 4cb95281950f0fb4b9bc86e17c4d3a4b,
+      type: 3}
+  - ItemId: Pet_A_Drop
+    ItemClass: Pet
+    Level: 5
+    EquipBackgroundSprite: {fileID: 21300000, guid: c716737c416af8d408d85caed8f6e59c,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: c716737c416af8d408d85caed8f6e59c,
+      type: 3}
+  - ItemId: Pet_A_Buff
+    ItemClass: Pet
+    Level: 5
+    EquipBackgroundSprite: {fileID: 21300000, guid: c716737c416af8d408d85caed8f6e59c,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: c716737c416af8d408d85caed8f6e59c,
+      type: 3}
+  - ItemId: Pet_S_Drop
+    ItemClass: Pet
+    Level: 6
+    EquipBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+  - ItemId: Pet_S_Buff
+    ItemClass: Pet
+    Level: 6
+    EquipBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+  - ItemId: Pet_L
+    ItemClass: Pet
+    Level: 7
+    EquipBackgroundSprite: {fileID: 21300000, guid: 60e3013e45b85c448b959a9a2d0ba565,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 60e3013e45b85c448b959a9a2d0ba565,
+      type: 3}
+  - ItemId: Pet_M
+    ItemClass: Pet
+    Level: 8
+    EquipBackgroundSprite: {fileID: 21300000, guid: 0a913556d6d8fae44bd6072c8fbe4966,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 0a913556d6d8fae44bd6072c8fbe4966,
+      type: 3}
+  - ItemId: Pet_I
+    ItemClass: Pet
+    Level: 9
+    EquipBackgroundSprite: {fileID: 21300000, guid: 4cb95281950f0fb4b9bc86e17c4d3a4b,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 4cb95281950f0fb4b9bc86e17c4d3a4b,
+      type: 3}
+  - ItemId: Pet_U
+    ItemClass: Pet
+    Level: 10
+    EquipBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+  - ItemId: Pet_G
+    ItemClass: Pet
+    Level: 11
+    EquipBackgroundSprite: {fileID: 21300000, guid: 0a913556d6d8fae44bd6072c8fbe4966,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 0a913556d6d8fae44bd6072c8fbe4966,
+      type: 3}
 --- !u!1 &6861020061992601835
 GameObject:
   m_ObjectHideFlags: 0

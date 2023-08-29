@@ -222,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -238,6 +238,106 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8105784190702692557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4939596910305718029}
+  - component: {fileID: 1746371842227573242}
+  - component: {fileID: 3953719895889065309}
+  - component: {fileID: 6180496202810221582}
+  m_Layer: 5
+  m_Name: ScrollPanelCanvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4939596910305718029
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8105784190702692557}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8249033042931543229}
+  m_Father: {fileID: 8249033042686665736}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -8.22876, y: -132}
+  m_SizeDelta: {x: -64.0193, y: -344}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &1746371842227573242
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8105784190702692557}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &3953719895889065309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8105784190702692557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!114 &6180496202810221582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8105784190702692557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &8249033041238881782
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +527,873 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9954182d1324ba447a8f04b0c20c773e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _itemViewDataList:
+  - ItemId: Bow_F
+    ItemClass: Bow
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0, g: 1, b: 0.19607843, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 98c3009295b1410082ef375ab1a278c2, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: e823a166e2f932c43a2680a32a4ba789,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 25201872538f06546ad3fa45592884e9, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+    BackgroundSprite: {fileID: 21300000, guid: c7f261fecc8fc6c45b9b34473c0f7c9e, type: 3}
+    BackgroundColor: {r: 1, g: 0.5882353, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      EffectDistance: {x: 0, y: 0}
+  - ItemId: Bow_E
+    ItemClass: Bow
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0, g: 0.19607843, b: 1, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: cb23dca86fef4828b74cb76fcd91cbb7, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 588347e9818e95d42b569efe56c72eaf,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: abe3a4ed43bcdcf4da3b2b774f89e41d, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+    BackgroundSprite: {fileID: 21300000, guid: b9fae683c3d4222439b0f1d3626068da, type: 3}
+    BackgroundColor: {r: 0.39215687, g: 0.39215687, b: 0.78431374, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      EffectDistance: {x: 0, y: 0}
+  - ItemId: Bow_D
+    ItemClass: Bow
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0.5882353, g: 0, b: 1, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: b6a818ef96f74851a0655890eb4241a7, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 5d7d2db207c3bac478596e82573571de,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 8c164c528aef62b48a02fa20b5f853e6, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+    BackgroundSprite: {fileID: 21300000, guid: 7765327c9213f9f4793c60246860ea5f, type: 3}
+    BackgroundColor: {r: 0.5882353, g: 0.5882353, b: 0.98039216, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      EffectDistance: {x: 0, y: 0}
+  - ItemId: Bow_C
+    ItemClass: Bow
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: a71a14d8e2c513d4a9b34961a2b868bc, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: fea4cd06ddf0b6146aef534aefe3b51a,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 1682f76c5737f3342a2919865b2c4401, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+    BackgroundSprite: {fileID: 21300000, guid: 88e3ebb5e20336341a8bf2305d13c131, type: 3}
+    BackgroundColor: {r: 0.5882353, g: 0.39215687, b: 0.98039216, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      EffectDistance: {x: 0, y: 0}
+  - ItemId: Bow_B
+    ItemClass: Bow
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0.49019608, b: 0, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: bfced7af3179499a87980dc461d0e1b8, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 097d69054be80fb44a67320321d8bc15,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 1674466874d36d94fb0890b7d7edc62b, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+    BackgroundSprite: {fileID: 21300000, guid: dea5478f36529914bb1869385325a93e, type: 3}
+    BackgroundColor: {r: 0.5882353, g: 0.78431374, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      EffectDistance: {x: 0, y: 0}
+  - ItemId: Bow_A
+    ItemClass: Bow
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0, g: 1, b: 0.22745098, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 2e81e5ff35d78b1469c965795ed9c273, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: c7f261fecc8fc6c45b9b34473c0f7c9e,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 25201872538f06546ad3fa45592884e9, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: c7f261fecc8fc6c45b9b34473c0f7c9e, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Bow_S
+    ItemClass: Bow
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0, g: 0, b: 1, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: abb181116de75af4daff3d4bdff7ef4f, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: b9fae683c3d4222439b0f1d3626068da,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: abe3a4ed43bcdcf4da3b2b774f89e41d, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: b9fae683c3d4222439b0f1d3626068da, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Bow_L
+    ItemClass: Bow
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0, b: 1, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 547340e78cc3db14cb95509725b3f508, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 7765327c9213f9f4793c60246860ea5f,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 8c164c528aef62b48a02fa20b5f853e6, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: 7765327c9213f9f4793c60246860ea5f, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Bow_M
+    ItemClass: Bow
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 69c12eabb19ffc9428011e36d0adb59b, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 88e3ebb5e20336341a8bf2305d13c131,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 1682f76c5737f3342a2919865b2c4401, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: 88e3ebb5e20336341a8bf2305d13c131, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Bow_I
+    ItemClass: Bow
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0.49019608, b: 0, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 8a155c24e59fdec48b24d54db9371c37, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: dea5478f36529914bb1869385325a93e,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 1674466874d36d94fb0890b7d7edc62b, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: dea5478f36529914bb1869385325a93e, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Bow_U
+    ItemClass: Bow
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 23ce518e721a2e44fb989a5af680a51d, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 36d17e0b05967974ba41f768d6568d65,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 8288a758be17792458b51c23fbf0422d, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: c501a3674da612547a2f08e64cb21dae, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Bow_G
+    ItemClass: Bow
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0.85490197, b: 0, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: c90643d1f2f932747991d76a5be7c0bb, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: a99fb353db9ea2b459979455d420f6c9,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: c399f2a5c3c09024ba99609aa7b4470a, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: 07393ba2bbe29c64e84d9ce567a098b6, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Helmet_F
+    ItemClass: Helmet
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0, g: 1, b: 0.19607843, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 0ec7106d9fa84de9a25c337c5127046a, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: e823a166e2f932c43a2680a32a4ba789,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 25201872538f06546ad3fa45592884e9, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+    BackgroundSprite: {fileID: 21300000, guid: c7f261fecc8fc6c45b9b34473c0f7c9e, type: 3}
+    BackgroundColor: {r: 1, g: 0.5882353, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      EffectDistance: {x: 0, y: 0}
+  - ItemId: Helmet_E
+    ItemClass: Helmet
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0, g: 0.19607843, b: 1, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 27b71ee3ba4347cd82a5197182c5c1b3, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 588347e9818e95d42b569efe56c72eaf,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: abe3a4ed43bcdcf4da3b2b774f89e41d, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+    BackgroundSprite: {fileID: 21300000, guid: b9fae683c3d4222439b0f1d3626068da, type: 3}
+    BackgroundColor: {r: 0.39215687, g: 0.39215687, b: 0.78431374, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      EffectDistance: {x: 0, y: 0}
+  - ItemId: Helmet_D
+    ItemClass: Helmet
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0.5882353, g: 0, b: 1, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 8336311f5ada44d7bd7d345be02bde57, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 5d7d2db207c3bac478596e82573571de,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 8c164c528aef62b48a02fa20b5f853e6, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+    BackgroundSprite: {fileID: 21300000, guid: 7765327c9213f9f4793c60246860ea5f, type: 3}
+    BackgroundColor: {r: 0.5882353, g: 0.5882353, b: 0.98039216, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      EffectDistance: {x: 0, y: 0}
+  - ItemId: Helmet_C
+    ItemClass: Helmet
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: b2819bcf3b4841cc9556a792d6395b6e, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: fea4cd06ddf0b6146aef534aefe3b51a,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 1682f76c5737f3342a2919865b2c4401, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+    BackgroundSprite: {fileID: 21300000, guid: 88e3ebb5e20336341a8bf2305d13c131, type: 3}
+    BackgroundColor: {r: 0.5882353, g: 0.39215687, b: 0.98039216, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      EffectDistance: {x: 0, y: 0}
+  - ItemId: Helmet_B
+    ItemClass: Helmet
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0.49019608, b: 0, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: b28ddad61e2942779cd87c2f2dffd694, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 097d69054be80fb44a67320321d8bc15,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 1674466874d36d94fb0890b7d7edc62b, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+    BackgroundSprite: {fileID: 21300000, guid: dea5478f36529914bb1869385325a93e, type: 3}
+    BackgroundColor: {r: 0.5882353, g: 0.78431374, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      EffectDistance: {x: 0, y: 0}
+  - ItemId: Helmet_A
+    ItemClass: Helmet
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0, g: 1, b: 0.22745098, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: a81e8f54fa01bbd4abc8284a93e9e7c5, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: c7f261fecc8fc6c45b9b34473c0f7c9e,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 25201872538f06546ad3fa45592884e9, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: c7f261fecc8fc6c45b9b34473c0f7c9e, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Helmet_S
+    ItemClass: Helmet
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0, g: 0, b: 1, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 096fe7c6e679e6a43bef10898c556cae, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: b9fae683c3d4222439b0f1d3626068da,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: abe3a4ed43bcdcf4da3b2b774f89e41d, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: b9fae683c3d4222439b0f1d3626068da, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Helmet_L
+    ItemClass: Helmet
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0, b: 1, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: de06f8ade24aac84c8c4f4d338df257d, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 7765327c9213f9f4793c60246860ea5f,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 8c164c528aef62b48a02fa20b5f853e6, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: 7765327c9213f9f4793c60246860ea5f, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Helmet_M
+    ItemClass: Helmet
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 39391bda726167048ad43067c9c82f92, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 88e3ebb5e20336341a8bf2305d13c131,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 1682f76c5737f3342a2919865b2c4401, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: 88e3ebb5e20336341a8bf2305d13c131, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Helmet_I
+    ItemClass: Helmet
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0.49019608, b: 0, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 924c3d2b41afdf446b6db12af397df80, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: dea5478f36529914bb1869385325a93e,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 1674466874d36d94fb0890b7d7edc62b, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: dea5478f36529914bb1869385325a93e, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Helmet_U
+    ItemClass: Helmet
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: fb96db0926015fd4b9f34825a0060737, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 36d17e0b05967974ba41f768d6568d65,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 8288a758be17792458b51c23fbf0422d, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: c501a3674da612547a2f08e64cb21dae, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Helmet_G
+    ItemClass: Helmet
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0.85490197, b: 0, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: cdf6aa2757b7fb44ea5f543b5be4d615, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: a99fb353db9ea2b459979455d420f6c9,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: c399f2a5c3c09024ba99609aa7b4470a, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: 07393ba2bbe29c64e84d9ce567a098b6, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Armor_F
+    ItemClass: Armor
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0, g: 1, b: 0.19607843, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 8efa4f063d8879d4b9876dbd53d438e2, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: e823a166e2f932c43a2680a32a4ba789,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 25201872538f06546ad3fa45592884e9, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+    BackgroundSprite: {fileID: 21300000, guid: c7f261fecc8fc6c45b9b34473c0f7c9e, type: 3}
+    BackgroundColor: {r: 1, g: 0.5882353, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      EffectDistance: {x: 0, y: 0}
+  - ItemId: Armor_E
+    ItemClass: Armor
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0, g: 0.19607843, b: 1, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 6fa65d80587c48f7ab7140b2fe0ab53b, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 588347e9818e95d42b569efe56c72eaf,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: abe3a4ed43bcdcf4da3b2b774f89e41d, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+    BackgroundSprite: {fileID: 21300000, guid: b9fae683c3d4222439b0f1d3626068da, type: 3}
+    BackgroundColor: {r: 0.39215687, g: 0.39215687, b: 0.78431374, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      EffectDistance: {x: 0, y: 0}
+  - ItemId: Armor_D
+    ItemClass: Armor
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0.5882353, g: 0, b: 1, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 66e1337a85a646dc84e8bbd4a69a0530, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 5d7d2db207c3bac478596e82573571de,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 8c164c528aef62b48a02fa20b5f853e6, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+    BackgroundSprite: {fileID: 21300000, guid: 7765327c9213f9f4793c60246860ea5f, type: 3}
+    BackgroundColor: {r: 0.5882353, g: 0.5882353, b: 0.98039216, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      EffectDistance: {x: 0, y: 0}
+  - ItemId: Armor_C
+    ItemClass: Armor
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 36911bf931264d840bf2adb3007396b2, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: fea4cd06ddf0b6146aef534aefe3b51a,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 1682f76c5737f3342a2919865b2c4401, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+    BackgroundSprite: {fileID: 21300000, guid: 88e3ebb5e20336341a8bf2305d13c131, type: 3}
+    BackgroundColor: {r: 0.5882353, g: 0.39215687, b: 0.98039216, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      EffectDistance: {x: 0, y: 0}
+  - ItemId: Armor_B
+    ItemClass: Armor
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0.49019608, b: 0, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 108da7d48f7c4a5d81e158077e9d6bff, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 097d69054be80fb44a67320321d8bc15,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 1674466874d36d94fb0890b7d7edc62b, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+    BackgroundSprite: {fileID: 21300000, guid: dea5478f36529914bb1869385325a93e, type: 3}
+    BackgroundColor: {r: 0.5882353, g: 0.78431374, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      EffectDistance: {x: 0, y: 0}
+  - ItemId: Armor_A
+    ItemClass: Armor
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0, g: 1, b: 0.22745098, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 9482e76281c07eb4caf202871fe57e59, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: c7f261fecc8fc6c45b9b34473c0f7c9e,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 25201872538f06546ad3fa45592884e9, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: c7f261fecc8fc6c45b9b34473c0f7c9e, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Armor_S
+    ItemClass: Armor
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0, g: 0, b: 1, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: bb363d59b2eb61d41a8b1eb291cb1124, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: b9fae683c3d4222439b0f1d3626068da,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: abe3a4ed43bcdcf4da3b2b774f89e41d, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: b9fae683c3d4222439b0f1d3626068da, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Armor_L
+    ItemClass: Armor
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0, b: 1, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 08e2e0169a18b8946a1bd92f23adb5ce, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 7765327c9213f9f4793c60246860ea5f,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 8c164c528aef62b48a02fa20b5f853e6, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: 7765327c9213f9f4793c60246860ea5f, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Armor_M
+    ItemClass: Armor
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 0579e257ad53adb4587f99c8dfdca046, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 88e3ebb5e20336341a8bf2305d13c131,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 1682f76c5737f3342a2919865b2c4401, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: 88e3ebb5e20336341a8bf2305d13c131, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Armor_I
+    ItemClass: Armor
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0.49019608, b: 0, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 4d168ec5d3e30f348b1a8feddfc737bc, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: dea5478f36529914bb1869385325a93e,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 1674466874d36d94fb0890b7d7edc62b, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: dea5478f36529914bb1869385325a93e, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Armor_U
+    ItemClass: Armor
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 9f1d015b39cccaa46a860ba29a928ae8, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 36d17e0b05967974ba41f768d6568d65,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 8288a758be17792458b51c23fbf0422d, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: c501a3674da612547a2f08e64cb21dae, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Armor_G
+    ItemClass: Armor
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0.85490197, b: 0, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 73c32216f01e42643a60c8b6403b69d7, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: a99fb353db9ea2b459979455d420f6c9,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: c399f2a5c3c09024ba99609aa7b4470a, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: 07393ba2bbe29c64e84d9ce567a098b6, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Cloak_F
+    ItemClass: Cloak
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0, g: 1, b: 0.19607843, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 76366e09114f44cab89522c7efcb8829, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: e823a166e2f932c43a2680a32a4ba789,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 25201872538f06546ad3fa45592884e9, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+    BackgroundSprite: {fileID: 21300000, guid: c7f261fecc8fc6c45b9b34473c0f7c9e, type: 3}
+    BackgroundColor: {r: 1, g: 0.5882353, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      EffectDistance: {x: 0, y: 0}
+  - ItemId: Cloak_E
+    ItemClass: Cloak
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0, g: 0.19607843, b: 1, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 10479db90f694ed8b45618ea65e5d8bb, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 588347e9818e95d42b569efe56c72eaf,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: abe3a4ed43bcdcf4da3b2b774f89e41d, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+    BackgroundSprite: {fileID: 21300000, guid: b9fae683c3d4222439b0f1d3626068da, type: 3}
+    BackgroundColor: {r: 0.39215687, g: 0.39215687, b: 0.78431374, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      EffectDistance: {x: 0, y: 0}
+  - ItemId: Cloak_D
+    ItemClass: Cloak
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0.5882353, g: 0, b: 1, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 4515200a18a721f4cac747768efae3f4, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 5d7d2db207c3bac478596e82573571de,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 8c164c528aef62b48a02fa20b5f853e6, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+    BackgroundSprite: {fileID: 21300000, guid: 7765327c9213f9f4793c60246860ea5f, type: 3}
+    BackgroundColor: {r: 0.5882353, g: 0.5882353, b: 0.98039216, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      EffectDistance: {x: 0, y: 0}
+  - ItemId: Cloak_C
+    ItemClass: Cloak
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 54cdd0ab77b3665479336e13ba3c2424, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: fea4cd06ddf0b6146aef534aefe3b51a,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 1682f76c5737f3342a2919865b2c4401, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+    BackgroundSprite: {fileID: 21300000, guid: 88e3ebb5e20336341a8bf2305d13c131, type: 3}
+    BackgroundColor: {r: 0.5882353, g: 0.39215687, b: 0.98039216, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      EffectDistance: {x: 0, y: 0}
+  - ItemId: Cloak_B
+    ItemClass: Cloak
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0.49019608, b: 0, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: dd32cf18d06d698419963a236cc39880, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 097d69054be80fb44a67320321d8bc15,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 1674466874d36d94fb0890b7d7edc62b, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+    BackgroundSprite: {fileID: 21300000, guid: dea5478f36529914bb1869385325a93e, type: 3}
+    BackgroundColor: {r: 0.5882353, g: 0.78431374, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      EffectDistance: {x: 0, y: 0}
+  - ItemId: Cloak_A
+    ItemClass: Cloak
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0, g: 1, b: 0.22745098, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: d5e2ce95156ae2543a8a99deb2a53a00, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: c7f261fecc8fc6c45b9b34473c0f7c9e,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 25201872538f06546ad3fa45592884e9, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: c7f261fecc8fc6c45b9b34473c0f7c9e, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Cloak_S
+    ItemClass: Cloak
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0, g: 0, b: 1, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: ec080ad4d664d314a80940976c5989cf, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: b9fae683c3d4222439b0f1d3626068da,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: abe3a4ed43bcdcf4da3b2b774f89e41d, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: b9fae683c3d4222439b0f1d3626068da, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Cloak_L
+    ItemClass: Cloak
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0, b: 1, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 3b1faef6d584f3149b34d2b62697a33b, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 7765327c9213f9f4793c60246860ea5f,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 8c164c528aef62b48a02fa20b5f853e6, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: 7765327c9213f9f4793c60246860ea5f, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Cloak_M
+    ItemClass: Cloak
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: fdbac7a21b611e242a6b2536882f7b27, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 88e3ebb5e20336341a8bf2305d13c131,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 1682f76c5737f3342a2919865b2c4401, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: 88e3ebb5e20336341a8bf2305d13c131, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Cloak_I
+    ItemClass: Cloak
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0.49019608, b: 0, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: b62be846f0c27b648905a13fc1ed0468, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: dea5478f36529914bb1869385325a93e,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 1674466874d36d94fb0890b7d7edc62b, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: dea5478f36529914bb1869385325a93e, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Cloak_U
+    ItemClass: Cloak
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: ec080ad4d664d314a80940976c5989cf, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: 36d17e0b05967974ba41f768d6568d65,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: 8288a758be17792458b51c23fbf0422d, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: c501a3674da612547a2f08e64cb21dae, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
+  - ItemId: Cloak_G
+    ItemClass: Cloak
+    DisplayName: 
+    DisplayNameOutline:
+      OutlineColor: {r: 1, g: 0.85490197, b: 0, a: 1}
+      EffectDistance: {x: 1, y: -1}
+    IconSprite: {fileID: 21300000, guid: 4515200a18a721f4cac747768efae3f4, type: 3}
+    IconWrapperSprite: {fileID: 21300000, guid: a99fb353db9ea2b459979455d420f6c9,
+      type: 3}
+    ItemPanelSprite: {fileID: 21300000, guid: c399f2a5c3c09024ba99609aa7b4470a, type: 3}
+    ItemPanelOutline:
+      OutlineColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 2, y: -2}
+    BackgroundSprite: {fileID: 21300000, guid: 07393ba2bbe29c64e84d9ce567a098b6, type: 3}
+    BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    BackgroundOutline:
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
+      EffectDistance: {x: 1, y: -1}
   _scrollView: {fileID: 361236295408106267}
+  _selectType: 0
 --- !u!1 &8249033041538182259
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,7 +1453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -696,7 +1662,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -238.49}
+  m_AnchoredPosition: {x: 0, y: -228}
   m_SizeDelta: {x: -20, y: 152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8249033041551015176
@@ -747,7 +1713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1900,7 +2866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2086,7 +3052,7 @@ RectTransform:
   m_Children:
   - {fileID: 8249033042745678325}
   - {fileID: 8249033041551015179}
-  - {fileID: 8249033042931543229}
+  - {fileID: 4939596910305718029}
   m_Father: {fileID: 8249033041297954144}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2395,18 +3361,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8249033042931543230}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5490014186267268939}
-  m_Father: {fileID: 8249033042686665736}
-  m_RootOrder: 2
+  m_Father: {fileID: 4939596910305718029}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -8.22876, y: -137.36252}
-  m_SizeDelta: {x: -64.01929, y: -354.72504}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8249033043004563111
 GameObject:

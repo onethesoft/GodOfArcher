@@ -108,6 +108,181 @@ public class DataTransformer : EditorWindow
 
 
     }
+
+    [MenuItem("Tools/아이템 팝업 신데이트 적용")]
+    static void ApplyItemPopupData()
+    {
+        ItemDatabase db = null;
+        UI_Item _itempopup = null;
+        List<UI_EquipItemData> _updateList = new List<UI_EquipItemData>();
+        string [] guid  = AssetDatabase.FindAssets($"t:{typeof(ItemDatabase)}");
+        foreach(string path in guid)
+        {
+            string assetPath = AssetDatabase.GUIDToAssetPath(path);
+            Debug.Log(assetPath);
+            if (assetPath.Contains("Resources"))
+                db = AssetDatabase.LoadAssetAtPath<ItemDatabase>(assetPath);
+        }
+
+        GameObject UI_itemPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Resources/Prefabs/UI/Popup/UI_Item.prefab", typeof(GameObject));
+        _itempopup = UI_itemPrefab.GetComponent<UI_Item>();
+
+
+       
+        foreach (EquipableItem item in db.ItemList.Where(x => x.ItemClass == "Bow").OrderBy(x => (x as EquipableItem).Level))
+        {
+            UI_EquipItemData d = new UI_EquipItemData();
+            d.ItemId = item.ItemId;
+            d.ItemClass = item.ItemClass;
+            d.IconSprite = item.Icon;
+            d.IconWrapperSprite = item.DescriptionBackground;
+            d.DisplayNameOutline = item.DisplayNameOutLine.Copy();
+
+            d.ItemPanelSprite = item.IconBackground;
+            d.ItemPanelOutline = item.IconBackgroundOutline.Copy();
+
+            d.BackgroundSprite = item.DescriptionBackgroundTexture;
+            d.BackgroundColor = item.DescriptionBackgroundColor;
+            d.BackgroundOutline = item.DescriptionBackgroundOutline.Copy();
+            _updateList.Add(d);
+
+
+        }
+        foreach (EquipableItem item in db.ItemList.Where(x => x.ItemClass == "Helmet").OrderBy(x => (x as EquipableItem).Level))
+        {
+            UI_EquipItemData d = new UI_EquipItemData();
+            d.ItemId = item.ItemId;
+            d.ItemClass = item.ItemClass;
+            d.IconSprite = item.Icon;
+            d.IconWrapperSprite = item.DescriptionBackground;
+            d.DisplayNameOutline = item.DisplayNameOutLine.Copy();
+
+            d.ItemPanelSprite = item.IconBackground;
+            d.ItemPanelOutline = item.IconBackgroundOutline.Copy();
+
+            d.BackgroundSprite = item.DescriptionBackgroundTexture;
+            d.BackgroundColor = item.DescriptionBackgroundColor;
+            d.BackgroundOutline = item.DescriptionBackgroundOutline.Copy();
+            _updateList.Add(d);
+
+
+        }
+        foreach (EquipableItem item in db.ItemList.Where(x => x.ItemClass == "Armor").OrderBy(x => (x as EquipableItem).Level))
+        {
+            UI_EquipItemData d = new UI_EquipItemData();
+            d.ItemId = item.ItemId;
+            d.ItemClass = item.ItemClass;
+            d.IconSprite = item.Icon;
+            d.IconWrapperSprite = item.DescriptionBackground;
+            d.DisplayNameOutline = item.DisplayNameOutLine.Copy();
+
+            d.ItemPanelSprite = item.IconBackground;
+            d.ItemPanelOutline = item.IconBackgroundOutline.Copy();
+
+            d.BackgroundSprite = item.DescriptionBackgroundTexture;
+            d.BackgroundColor = item.DescriptionBackgroundColor;
+            d.BackgroundOutline = item.DescriptionBackgroundOutline.Copy();
+            _updateList.Add(d);
+
+
+        }
+        foreach (EquipableItem item in db.ItemList.Where(x => x.ItemClass == "Cloak").OrderBy(x => (x as EquipableItem).Level))
+        {
+            UI_EquipItemData d = new UI_EquipItemData();
+            d.ItemId = item.ItemId;
+            d.ItemClass = item.ItemClass;
+            d.IconSprite = item.Icon;
+            d.IconWrapperSprite = item.DescriptionBackground;
+            d.DisplayNameOutline = item.DisplayNameOutLine.Copy();
+
+            d.ItemPanelSprite = item.IconBackground;
+            d.ItemPanelOutline = item.IconBackgroundOutline.Copy();
+
+            d.BackgroundSprite = item.DescriptionBackgroundTexture;
+            d.BackgroundColor = item.DescriptionBackgroundColor;
+            d.BackgroundOutline = item.DescriptionBackgroundOutline.Copy();
+            _updateList.Add(d);
+
+
+        }
+        _itempopup.SetupItemViewData(_updateList);
+        EditorUtility.SetDirty(_itempopup);
+        
+
+
+    }
+
+    [MenuItem("Tools/펫 팝업 신데이트 적용")]
+    static void ApplyPetPopupData()
+    {
+        ItemDatabase db = null;
+        UI_PetPopup _itempopup = null;
+        List<UI_PetItemData> _updateList = new List<UI_PetItemData>();
+        string [] guid  = AssetDatabase.FindAssets($"t:{typeof(ItemDatabase)}");
+        foreach(string path in guid)
+        {
+            string assetPath = AssetDatabase.GUIDToAssetPath(path);
+            Debug.Log(assetPath);
+            if (assetPath.Contains("Resources"))
+                db = AssetDatabase.LoadAssetAtPath<ItemDatabase>(assetPath);
+        }
+
+        GameObject UI_itemPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Resources/Prefabs/UI/Popup/UI_PetPopup.prefab", typeof(GameObject));
+        _itempopup = UI_itemPrefab.GetComponent<UI_PetPopup>();
+
+
+        foreach (EquipableItem item in db.ItemList.Where(x => x.ItemClass == "Pet").OrderBy(x => (x as EquipableItem).Level))
+        {
+            UI_PetItemData d = new UI_PetItemData();
+            d.ItemId = item.ItemId;
+            d.ItemClass = item.ItemClass;
+            d.Level = item.Level;
+            d.DescriptionBackgroundSprite = item.DescriptionBackground;
+            d.EquipBackgroundSprite = item.DescriptionBackground;
+            _updateList.Add(d);
+
+
+        }
+       
+        _itempopup.SetupItemViewData(_updateList);
+        EditorUtility.SetDirty(_itempopup);
+    }
+
+    [MenuItem("Tools/룬 팝업 신데이트 적용")]
+    static void ApplyRunePopupData()
+    {
+        ItemDatabase db = null;
+        UI_RunePopup _itempopup = null;
+        List<UI_RuneItemData> _updateList = new List<UI_RuneItemData>();
+        string[] guid = AssetDatabase.FindAssets($"t:{typeof(ItemDatabase)}");
+        foreach (string path in guid)
+        {
+            string assetPath = AssetDatabase.GUIDToAssetPath(path);
+            Debug.Log(assetPath);
+            if (assetPath.Contains("Resources"))
+                db = AssetDatabase.LoadAssetAtPath<ItemDatabase>(assetPath);
+        }
+
+        GameObject UI_itemPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Resources/Prefabs/UI/Popup/UI_RunePopup.prefab", typeof(GameObject));
+        _itempopup = UI_itemPrefab.GetComponent<UI_RunePopup>();
+
+
+        foreach (EquipableItem item in db.ItemList.Where(x => x.ItemClass == "Rune").OrderBy(x => (x as EquipableItem).Level))
+        {
+            UI_RuneItemData d = new UI_RuneItemData();
+            d.ItemId = item.ItemId;
+            d.ItemClass = item.ItemClass;
+            d.Level = item.Level;
+            d.DescriptionBackgroundSprite = item.DescriptionBackground;
+            d.EquipBackgroundSprite = item.DescriptionBackground;
+            _updateList.Add(d);
+
+
+        }
+
+        _itempopup.SetupItemViewData(_updateList);
+        EditorUtility.SetDirty(_itempopup);
+    }
     #region Create CSV File
     [MenuItem("Tools/스테이지 테이블 CSV 생성")]
     static void CreateStageCSVfile()

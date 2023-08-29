@@ -23,7 +23,7 @@ SpriteAtlas:
     platformSettings:
     - serializedVersion: 3
       m_BuildTarget: Android
-      m_MaxTextureSize: 2048
+      m_MaxTextureSize: 4096
       m_ResizeAlgorithm: 0
       m_TextureFormat: 47
       m_TextureCompression: 1
@@ -55,8 +55,10 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 94c86f50c133d4a47b685a963aa774be, type: 3}
   - {fileID: 21300000, guid: 194e9c606ef11e740b9a9a5e75854f63, type: 3}
   - {fileID: 21300000, guid: 21d61890bb625ad40ac2f3450b158caa, type: 3}
+  - {fileID: 21300000, guid: ee347a90b3d27824cb4935dc9b8e3846, type: 3}
   - {fileID: 21300000, guid: 2ed9ca905898d0545a075c69fc733c07, type: 3}
   - {fileID: 21300000, guid: 03625fd022166d641aa98ad12bab0f9f, type: 3}
+  - {fileID: 21300000, guid: d699b7e0f85d8f047b1c881264507edc, type: 3}
   - {fileID: 21300000, guid: 39109ff0daf022a429df44464da1b773, type: 3}
   - {fileID: 21300000, guid: 5e080e01ea3aba04bafa544fbbc3a569, type: 3}
   - {fileID: 21300000, guid: ddbcd67121f221b45b91458343c1f304, type: 3}
@@ -70,12 +72,14 @@ SpriteAtlas:
   - {fileID: 21300000, guid: fa0330720083aa94f8a97ed08f0d0e19, type: 3}
   - {fileID: 21300000, guid: 25201872538f06546ad3fa45592884e9, type: 3}
   - {fileID: 21300000, guid: 7119caa200549514299f645f205eb840, type: 3}
+  - {fileID: 21300000, guid: 07393ba2bbe29c64e84d9ce567a098b6, type: 3}
   - {fileID: 21300000, guid: 5d7d2db207c3bac478596e82573571de, type: 3}
   - {fileID: 21300000, guid: 7c4b6db2ba28e854d832b034d9db5b24, type: 3}
   - {fileID: 21300000, guid: 0a51d7f2696b2d144b7a95c4d16bc716, type: 3}
   - {fileID: 21300000, guid: 917802039dc7e6448b16989174200e19, type: 3}
   - {fileID: 21300000, guid: 6f3507032bf2f474c9510562003ac6af, type: 3}
   - {fileID: 21300000, guid: 0d0e253369b982b479b3b585c853ed12, type: 3}
+  - {fileID: 21300000, guid: a99fb353db9ea2b459979455d420f6c9, type: 3}
   - {fileID: 21300000, guid: b9fae683c3d4222439b0f1d3626068da, type: 3}
   - {fileID: 21300000, guid: 2b878f839daac4c41b76403b766b51a9, type: 3}
   - {fileID: 21300000, guid: 14eed0b3f39c90b4f94ae94cf45183a8, type: 3}
@@ -84,15 +88,18 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 5a5488947f47f8f4a89685232df86817, type: 3}
   - {fileID: 21300000, guid: fa49399412f8af24d8ed8d30ba2b158b, type: 3}
   - {fileID: 21300000, guid: d3d11ca458efee947b5caa251c75d2de, type: 3}
+  - {fileID: 21300000, guid: 59181db43293abb499edcadff4e03f52, type: 3}
   - {fileID: 21300000, guid: c69372c4296862f4c82ec38c06404d12, type: 3}
   - {fileID: 21300000, guid: e95ea4f465c9e6649b74b84d209b6044, type: 3}
   - {fileID: 21300000, guid: 161f06f4694a9bf4a945d3c49b11ea9f, type: 3}
   - {fileID: 21300000, guid: 097d69054be80fb44a67320321d8bc15, type: 3}
   - {fileID: 21300000, guid: f3d3d15584e36f1498c11bfff972c51d, type: 3}
+  - {fileID: 21300000, guid: c399f2a5c3c09024ba99609aa7b4470a, type: 3}
   - {fileID: 21300000, guid: 3dbef4b58d00cff4786625595935b3ca, type: 3}
   - {fileID: 21300000, guid: 88e3ebb5e20336341a8bf2305d13c131, type: 3}
   - {fileID: 21300000, guid: dbf219d54dc85a445a91786bf6d5b374, type: 3}
   - {fileID: 21300000, guid: fea4cd06ddf0b6146aef534aefe3b51a, type: 3}
+  - {fileID: 21300000, guid: 0e628e36472b4384ba48eff4f7d2be06, type: 3}
   - {fileID: 21300000, guid: 0a913556d6d8fae44bd6072c8fbe4966, type: 3}
   - {fileID: 21300000, guid: e823a166e2f932c43a2680a32a4ba789, type: 3}
   - {fileID: 21300000, guid: ea684376a53c7d94bb27918f08470fd9, type: 3}
@@ -102,11 +109,14 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 802cbb27a609703428432b039855862f, type: 3}
   - {fileID: 21300000, guid: cb249c57a4cfe4047b0bec6744a40f67, type: 3}
   - {fileID: 21300000, guid: a0e2bf57cfcc71c499fe82dc57c9541e, type: 3}
+  - {fileID: 21300000, guid: c501a3674da612547a2f08e64cb21dae, type: 3}
   - {fileID: 21300000, guid: 624446b7fb5e64e46b08191176d9b310, type: 3}
   - {fileID: 21300000, guid: 0f41b4d729ae24e4c9f4ef2c60ba482a, type: 3}
   - {fileID: 21300000, guid: fb5077e741d435a48853245428506b8c, type: 3}
   - {fileID: 21300000, guid: d5656e081426e634b9f765712cd8e85a, type: 3}
+  - {fileID: 21300000, guid: 8288a758be17792458b51c23fbf0422d, type: 3}
   - {fileID: 21300000, guid: 1674466874d36d94fb0890b7d7edc62b, type: 3}
+  - {fileID: 21300000, guid: 3c471b68194f271489bf041abb179aa9, type: 3}
   - {fileID: 21300000, guid: c175a5781b2c0f14892fbec20b40c26c, type: 3}
   - {fileID: 21300000, guid: d8cc3b8811fc5004d8ca6dd493045d9c, type: 3}
   - {fileID: 21300000, guid: 355149b8c0f45394f8dfd98097e0e97f, type: 3}
@@ -124,6 +134,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: b9c9ed6a758acd2459f81fdd3f187f51, type: 3}
   - {fileID: 21300000, guid: 8cc33f6a82c6ea347ace7554e45bc3ca, type: 3}
   - {fileID: 21300000, guid: 30d6e19a1865b794198ebf8e4af76520, type: 3}
+  - {fileID: 21300000, guid: 36d17e0b05967974ba41f768d6568d65, type: 3}
   - {fileID: 21300000, guid: bd52eb2b7851aef49934f8a5ae8e2451, type: 3}
   - {fileID: 21300000, guid: a567bc6b2b7b3584a9a546737bbf66c6, type: 3}
   - {fileID: 21300000, guid: 6172d18b55757df4ebb4e208f6aa7d6d, type: 3}
@@ -145,6 +156,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 4218543ddc7abc24aa6c0068f81a3c34, type: 3}
   - {fileID: 21300000, guid: ff249b3d3f3622846aa0f887c2a24e9b, type: 3}
   - {fileID: 21300000, guid: a431075d650576a4ca374bc814a2be8b, type: 3}
+  - {fileID: 21300000, guid: 90acf86d283fb2a42928a794556b5c65, type: 3}
   - {fileID: 21300000, guid: f90752bd4817ef04b967fe484258bb05, type: 3}
   - {fileID: 21300000, guid: abe3a4ed43bcdcf4da3b2b774f89e41d, type: 3}
   - {fileID: 21300000, guid: 134a66ed355494c4084121393decf024, type: 3}
@@ -164,8 +176,10 @@ SpriteAtlas:
   - Pet_I_Mail
   - shop_img_chest_close_s_04
   - Pet_S_Drop
+  - Pet_U
   - frame_stageframe_03_purple
   - slider_edgetype_02_frame_back
+  - Pet_G
   - Item_ShopIcon_Coin01
   - Icon_Gem04_Octagon_Yellow
   - icon_itemicon_jewel1_green
@@ -179,12 +193,14 @@ SpriteAtlas:
   - icon_itemicon_jewel1_blue
   - Frame_UserPictureFrame04_Green
   - group_image_tv1
+  - frame_stageframe_00_White_s
   - frame_itemframe_01_n_purple
   - Pet_S_Buff
   - L_Rune_Quest
   - btn_icon_clear
   - btn_icon_mark_exclamation
   - frame_stageframe_03_yellow
+  - frame_iconframe_square_00_frame_red
   - Frame_ItemFrame01_Color_Blue
   - Icon_Gem04_Octagon_Red
   - Icon_ShopIcon_Gem0
@@ -193,15 +209,18 @@ SpriteAtlas:
   - Play_Skill_1
   - Pet_M
   - label_ribbon_00
+  - ShieldOfLoneWolf
   - Icon_Target
   - Pet_I
   - Icon_PictoIcon_Next02
   - frame_itemframe_01_n_orange
   - StatusBarIcon_Gold
+  - Frame_BasicFrame_Square10
   - Icon_Gem02_Hexagon_Green
   - Frame_ItemFrame01_Color_Red
   - set_icon_menu05_battle
   - frame_itemframe_01_n_red
+  - ShieldOfRagingCrux
   - Frame_UserPictureFrame04_Red
   - frame_itemframe_01_n_green
   - icon_itemicon_jewel1_white
@@ -211,11 +230,14 @@ SpriteAtlas:
   - frame_itemframe_00_s2
   - Pet_D_Buff
   - Pet_B_Drop
+  - frame_stageframe_00_s1
   - Play_Roulette_Arrow
   - Icon_ShopIcon_Gem4
   - Frame_IconFrame_Hexagon04_Gold4
   - Icon_Gem04_Octagon_White
+  - Frame_BarFrame_Top02_Navy2
   - Frame_UserPictureFrame04_Orange
+  - Yellow Stars
   - Pet_A_Buff
   - S_Rune_Quest
   - Icon_Gem03_Diamond_Blue
@@ -233,6 +255,7 @@ SpriteAtlas:
   - icon_itemicon_jewel1_red
   - Pet_B_Buff
   - Pet_C_Drop
+  - frame_iconframe_square_00_frame_blue
   - Pet_E_Drop
   - icon_itemicon_arrow
   - icon_itemicon_ax
@@ -254,6 +277,7 @@ SpriteAtlas:
   - L_Pet_Quest
   - slider_icontype_05_icon2
   - icon_itemicon_jewel2_white
+  - Orange Stars
   - shop_img_chest_close_s_03
   - Frame_UserPictureFrame04_Blue
   - Pet_C_Buff

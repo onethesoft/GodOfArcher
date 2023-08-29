@@ -15,7 +15,9 @@ public class EquipableItem : BaseItem
         S,
         L,
         M,
-        I
+        I,
+        U,
+        G
     }
 
     [SerializeField]

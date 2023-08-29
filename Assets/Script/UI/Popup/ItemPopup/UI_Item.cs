@@ -34,7 +34,22 @@ public class UI_Item : UI_Popup, IRecyclableScrollRectDataSource
         CloakContent
     }
 
-  
+    enum ItemType
+    {
+        Bow,
+        Helmet,
+        Armor,
+        Cloak
+    }
+    [SerializeField]
+    List<UI_EquipItemData> _itemViewDataList;
+
+    public void SetupItemViewData(List<UI_EquipItemData> list)
+    {
+        _itemViewDataList = list;
+    }
+    
+
 
     List<UI_EquipItem> _bowItems;
     List<UI_EquipItem> _helmetItems;
@@ -44,13 +59,7 @@ public class UI_Item : UI_Popup, IRecyclableScrollRectDataSource
     List<UI_EquipItem> _selectItemList;
 
     UI_SelectButton[] _selectors;
-    int _selectId;
-    bool _isUpdate = false;
-
-    string _isUpdateBow;
-    string _isUpdateHelmet;
-    string _isUpdateArmor;
-    string _isUpdateCloak;
+   
 
     [SerializeField]
     RecyclableScrollRect _scrollView;
@@ -58,7 +67,10 @@ public class UI_Item : UI_Popup, IRecyclableScrollRectDataSource
     // 팝업창이 종료될때 각 장착창을 서버에 저장하기 위해 사용된다.
     List<PlayerInfo.UserDataKey> _updateKeys;
 
-    string selectItem = "Bow";
+    [SerializeField]
+    ItemType _selectType = ItemType.Bow;
+
+    string[] _equipmentSaveData;
 
     public override void Init()
     {
@@ -67,7 +79,7 @@ public class UI_Item : UI_Popup, IRecyclableScrollRectDataSource
         Bind<Button>(typeof(Buttons));
         Bind<GameObject>(typeof(GameObjects));
 
-        _isUpdate = false;
+
 
         _bowItems = new List<UI_EquipItem>();
         _helmetItems = new List<UI_EquipItem>();
@@ -76,11 +88,10 @@ public class UI_Item : UI_Popup, IRecyclableScrollRectDataSource
 
         _updateKeys = new List<PlayerInfo.UserDataKey>();
 
-        _isUpdateBow = JsonUtility.ToJson(Managers.Game.GetEquipment("Bow").ToSaveData());
-        _isUpdateHelmet = JsonUtility.ToJson(Managers.Game.GetEquipment("Helmet").ToSaveData());
-        _isUpdateArmor = JsonUtility.ToJson(Managers.Game.GetEquipment("Armor").ToSaveData());
-        _isUpdateCloak = JsonUtility.ToJson(Managers.Game.GetEquipment("Cloak").ToSaveData());
-
+        _equipmentSaveData = new string[Enum.GetValues(typeof(ItemType)).Length];
+        foreach (ItemType itemtype in Enum.GetValues(typeof(ItemType)))
+            _equipmentSaveData[(int)itemtype] = JsonUtility.ToJson(Managers.Game.GetEquipment(itemtype.ToString()).ToSaveData());
+        
         _selectItemList = new List<UI_EquipItem>();
 
         _selectors = new UI_SelectButton[4];
@@ -102,7 +113,8 @@ public class UI_Item : UI_Popup, IRecyclableScrollRectDataSource
             (data) => 
             {
                 GetButton((int)Buttons.BowButton).gameObject.GetComponent<DG.Tweening.DOTweenAnimation>().DORestart();
-                selectItem = "Bow";
+                
+                _selectType = ItemType.Bow;
                 _selectItemList.Clear();
                 _scrollView.ReloadData();
 
@@ -111,7 +123,8 @@ public class UI_Item : UI_Popup, IRecyclableScrollRectDataSource
             (data) => 
             {
                 GetButton((int)Buttons.HelmetButton).gameObject.GetComponent<DG.Tweening.DOTweenAnimation>().DORestart();
-                selectItem = "Helmet";
+
+                _selectType = ItemType.Helmet;
                 _selectItemList.Clear();
                 _scrollView.ReloadData();
             });
@@ -119,7 +132,8 @@ public class UI_Item : UI_Popup, IRecyclableScrollRectDataSource
             (data) => 
             {
                 GetButton((int)Buttons.ArmorButton).gameObject.GetComponent<DG.Tweening.DOTweenAnimation>().DORestart();
-                selectItem = "Armor";
+          
+                _selectType = ItemType.Armor;
                 _selectItemList.Clear();
                 _scrollView.ReloadData();
             });
@@ -127,57 +141,20 @@ public class UI_Item : UI_Popup, IRecyclableScrollRectDataSource
             (data) => 
             {
                 GetButton((int)Buttons.CloakButton).gameObject.GetComponent<DG.Tweening.DOTweenAnimation>().DORestart();
-                selectItem = "Cloak";
+
+                _selectType = ItemType.Cloak;
                 _selectItemList.Clear();
                 _scrollView.ReloadData();
             });
 
 
         AddUIEvent(GetButton((int)Buttons.TotalUpgradeButton).gameObject, (data) => {
-            if (selectItem == "Bow")
+            if(Managers.Item.UpgradeAllItems(_selectType.ToString()))
             {
-                if (Managers.Item.UpgradeAllItems(selectItem))
-                {
-                    if (Managers.Item.CanSavableEquipment(_isUpdateBow, selectItem))
-                    {
-                        Managers.Game.Save(PlayerInfo.UserDataKey.Bow);
-                        _isUpdateBow = JsonUtility.ToJson(Managers.Game.GetEquipment("Bow").ToSaveData());
-                    }
-                }
+                SaveEquipment(_selectType);
             }
-            else if (selectItem == "Armor")
-            {
-                if (Managers.Item.UpgradeAllItems(selectItem))
-                {
-                    if (Managers.Item.CanSavableEquipment(_isUpdateArmor, selectItem))
-                    {
-                        Managers.Game.Save(PlayerInfo.UserDataKey.Armor);
-                        _isUpdateArmor = JsonUtility.ToJson(Managers.Game.GetEquipment("Armor").ToSaveData());
-                    }
-                }
-            }
-            else if (selectItem == "Helmet")
-            {
-                if (Managers.Item.UpgradeAllItems(selectItem))
-                {
-                    if (Managers.Item.CanSavableEquipment(_isUpdateHelmet, selectItem))
-                    {
-                        Managers.Game.Save(PlayerInfo.UserDataKey.Helmet);
-                        _isUpdateHelmet = JsonUtility.ToJson(Managers.Game.GetEquipment("Helmet").ToSaveData());
-                    }
-                }
-            }
-            else if (selectItem == "Cloak")
-            {
-                if (Managers.Item.UpgradeAllItems(selectItem))
-                {
-                    if (Managers.Item.CanSavableEquipment(_isUpdateCloak, selectItem))
-                    {
-                        Managers.Game.Save(PlayerInfo.UserDataKey.Cloak);
-                        _isUpdateCloak = JsonUtility.ToJson(Managers.Game.GetEquipment("Cloak").ToSaveData());
-                    }
-                }
-            }
+
+            
 
         });
         AddUIEvent(GetButton((int)Buttons.ShopButton).gameObject, (data) => {
@@ -194,38 +171,8 @@ public class UI_Item : UI_Popup, IRecyclableScrollRectDataSource
 
     void OnUpgradeItem(UI_EquipItem sender)
     {
-        if (selectItem == "Bow")
-        {
-            if (Managers.Item.CanSavableEquipment(_isUpdateBow, selectItem))
-            {
-                Managers.Game.Save(PlayerInfo.UserDataKey.Bow);
-                _isUpdateBow = JsonUtility.ToJson(Managers.Game.GetEquipment(selectItem).ToSaveData());
-            }
-        }
-        else if (selectItem == "Helmet")
-        {
-            if (Managers.Item.CanSavableEquipment(_isUpdateHelmet, selectItem))
-            {
-                Managers.Game.Save(PlayerInfo.UserDataKey.Helmet);
-                _isUpdateHelmet = JsonUtility.ToJson(Managers.Game.GetEquipment(selectItem).ToSaveData());
-            }
-        }
-        else if (selectItem == "Armor")
-        {
-            if (Managers.Item.CanSavableEquipment(_isUpdateArmor, selectItem))
-            {
-                Managers.Game.Save(PlayerInfo.UserDataKey.Armor);
-                _isUpdateArmor = JsonUtility.ToJson(Managers.Game.GetEquipment(selectItem).ToSaveData());
-            }
-        }
-        else if (selectItem == "Cloak")
-        {
-            if (Managers.Item.CanSavableEquipment(_isUpdateCloak, selectItem))
-            {
-                Managers.Game.Save(PlayerInfo.UserDataKey.Cloak);
-                _isUpdateCloak = JsonUtility.ToJson(Managers.Game.GetEquipment(selectItem).ToSaveData());
-            }
-        }
+        SaveEquipment(_selectType);
+        
      
     }
     void OnEquipSlot(UI_EquipItem slot)
@@ -257,13 +204,13 @@ public class UI_Item : UI_Popup, IRecyclableScrollRectDataSource
     public override void ClosePopupUI()
     {
         _updateKeys.Clear();
-        if (Managers.Item.CanSavableEquipment(_isUpdateCloak, "Cloak"))
+        if (Managers.Item.CanSavableEquipment(_equipmentSaveData[(int)ItemType.Cloak], ItemType.Cloak.ToString()))
             _updateKeys.Add(PlayerInfo.UserDataKey.Cloak);
-        if (Managers.Item.CanSavableEquipment(_isUpdateArmor, "Armor"))
+        if (Managers.Item.CanSavableEquipment(_equipmentSaveData[(int)ItemType.Armor], ItemType.Armor.ToString()))
             _updateKeys.Add(PlayerInfo.UserDataKey.Armor);
-        if (Managers.Item.CanSavableEquipment(_isUpdateBow, "Bow"))
+        if (Managers.Item.CanSavableEquipment(_equipmentSaveData[(int)ItemType.Bow], ItemType.Bow.ToString()))
             _updateKeys.Add(PlayerInfo.UserDataKey.Bow);
-        if (Managers.Item.CanSavableEquipment(_isUpdateHelmet, "Helmet"))
+        if (Managers.Item.CanSavableEquipment(_equipmentSaveData[(int)ItemType.Helmet], ItemType.Helmet.ToString()))
             _updateKeys.Add(PlayerInfo.UserDataKey.Helmet);
 
         if(_updateKeys.Count > 0)
@@ -277,7 +224,7 @@ public class UI_Item : UI_Popup, IRecyclableScrollRectDataSource
 
 
         base.ClosePopupUI();
-
+        
         _bowItems.Clear();
         _helmetItems.Clear();
         _armorItems.Clear();
@@ -289,23 +236,31 @@ public class UI_Item : UI_Popup, IRecyclableScrollRectDataSource
 
     public int GetItemCount()
     {
-        return Managers.Item.Database.ItemList.Where(x => x.ItemClass == selectItem).Count();
+        return Managers.Item.Database.ItemList.Where(x => x.ItemClass == _selectType.ToString()).Count();
     }
 
     public void SetCell(ICell cell, int index)
     {
         UI_EquipItem item = cell as UI_EquipItem;
-        if (selectItem == "Bow")
-            item.Setup(Managers.Item.Database.ItemList.Where(x => x.ItemClass == selectItem).OrderBy(x => (x as Bow).Level).ElementAt(index) as EquipableItem, Managers.Game.GetEquipment(selectItem).SlotList[0]);
-        else if (selectItem == "Helmet")
-            item.Setup(Managers.Item.Database.ItemList.Where(x => x.ItemClass == selectItem).OrderBy(x => (x as Helmet).Level).ElementAt(index) as EquipableItem, Managers.Game.GetEquipment(selectItem).SlotList[0]);
-        else if (selectItem == "Cloak")
-            item.Setup(Managers.Item.Database.ItemList.Where(x => x.ItemClass == selectItem).OrderBy(x => (x as Cloak).Level).ElementAt(index) as EquipableItem, Managers.Game.GetEquipment(selectItem).SlotList[0]);
+        
+      
+        
+        item.Setup(_itemViewDataList.Where(x => x.ItemClass == _selectType.ToString()).ElementAt(index), Managers.Game.GetEquipment(_selectType.ToString()).SlotList[0]);
+        
+        
+        /*
+        if (_selectType == ItemType.Bow)
+            item.Setup(Managers.Item.Database.ItemList.Where(x => x.ItemClass == _selectType.ToString()).OrderBy(x => (x as Bow).Level).ElementAt(index) as EquipableItem, Managers.Game.GetEquipment(_selectType.ToString()).SlotList[0]);
+        else if (_selectType == ItemType.Helmet)
+            item.Setup(Managers.Item.Database.ItemList.Where(x => x.ItemClass == _selectType.ToString()).OrderBy(x => (x as Helmet).Level).ElementAt(index) as EquipableItem, Managers.Game.GetEquipment(_selectType.ToString()).SlotList[0]);
+        else if (_selectType == ItemType.Cloak)
+            item.Setup(Managers.Item.Database.ItemList.Where(x => x.ItemClass == _selectType.ToString()).OrderBy(x => (x as Cloak).Level).ElementAt(index) as EquipableItem, Managers.Game.GetEquipment(_selectType.ToString()).SlotList[0]);
         else
         {
-            item.Setup(Managers.Item.Database.ItemList.Where(x => x.ItemClass == selectItem).OrderBy(x => (x as Armor).Level).ElementAt(index) as EquipableItem, Managers.Game.GetEquipment(selectItem).SlotList[0]);
+            item.Setup(Managers.Item.Database.ItemList.Where(x => x.ItemClass == _selectType.ToString()).OrderBy(x => (x as Armor).Level).ElementAt(index) as EquipableItem, Managers.Game.GetEquipment(_selectType.ToString()).SlotList[0]);
 
         }
+        */
 
         item.OnEquip -= OnEquipSlot;
         item.OnEquip += OnEquipSlot;
@@ -315,5 +270,18 @@ public class UI_Item : UI_Popup, IRecyclableScrollRectDataSource
         _selectItemList.Add(item);
         //item.Setup
         return;
+    }
+
+    void SaveEquipment(ItemType itemtype)
+    {
+        if (Managers.Item.CanSavableEquipment(_equipmentSaveData[(int)itemtype], itemtype.ToString()))
+        {
+            PlayerInfo.UserDataKey _saveKey;
+            if (Enum.TryParse(itemtype.ToString(), out _saveKey))
+            {
+                Managers.Game.Save(_saveKey);
+                _equipmentSaveData[(int)itemtype] = JsonUtility.ToJson(Managers.Game.GetEquipment(itemtype.ToString()).ToSaveData());
+            }
+        }
     }
 }

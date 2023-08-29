@@ -436,7 +436,7 @@ RectTransform:
   m_Children:
   - {fileID: 4053040584850607220}
   - {fileID: 8945912568718768792}
-  - {fileID: 5810750877820402451}
+  - {fileID: 66593332255762709}
   m_Father: {fileID: 5528117574113502131}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -784,6 +784,82 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\uB8EC \uBF51\uAE30"
+--- !u!1 &3269439885765177695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 66593332255762709}
+  - component: {fileID: 4582565487147125154}
+  - component: {fileID: 2188934826725355863}
+  m_Layer: 5
+  m_Name: ItemPanelCanvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &66593332255762709
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3269439885765177695}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5810750877820402451}
+  m_Father: {fileID: 7608693823409630808}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -3.796997, y: 316.7}
+  m_SizeDelta: {x: -7.594, y: 633.4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &4582565487147125154
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3269439885765177695}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &2188934826725355863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3269439885765177695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &3320524017016119319
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,6 +963,7 @@ GameObject:
   - component: {fileID: 6028724370932270307}
   - component: {fileID: 6125132667496714198}
   - component: {fileID: 7216297032096970202}
+  - component: {fileID: 6954567946526566251}
   m_Layer: 5
   m_Name: UI_RunePopup
   m_TagString: Untagged
@@ -976,6 +1053,201 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6954567946526566251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3585378418777720191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4811af4c24274f4facb682dcb074519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _runeItemViewDataList:
+  - ItemId: Rune_F_Speed
+    ItemClass: Rune
+    Level: 0
+    EquipBackgroundSprite: {fileID: 21300000, guid: c716737c416af8d408d85caed8f6e59c,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: c716737c416af8d408d85caed8f6e59c,
+      type: 3}
+  - ItemId: Rune_F_Cri
+    ItemClass: Rune
+    Level: 0
+    EquipBackgroundSprite: {fileID: 21300000, guid: c716737c416af8d408d85caed8f6e59c,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: c716737c416af8d408d85caed8f6e59c,
+      type: 3}
+  - ItemId: Rune_F_Drop
+    ItemClass: Rune
+    Level: 0
+    EquipBackgroundSprite: {fileID: 21300000, guid: c716737c416af8d408d85caed8f6e59c,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: c716737c416af8d408d85caed8f6e59c,
+      type: 3}
+  - ItemId: Rune_E_Speed
+    ItemClass: Rune
+    Level: 1
+    EquipBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+  - ItemId: Rune_E_Cri
+    ItemClass: Rune
+    Level: 1
+    EquipBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+  - ItemId: Rune_E_Drop
+    ItemClass: Rune
+    Level: 1
+    EquipBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+  - ItemId: Rune_D_Speed
+    ItemClass: Rune
+    Level: 2
+    EquipBackgroundSprite: {fileID: 21300000, guid: 60e3013e45b85c448b959a9a2d0ba565,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 60e3013e45b85c448b959a9a2d0ba565,
+      type: 3}
+  - ItemId: Rune_D_Cri
+    ItemClass: Rune
+    Level: 2
+    EquipBackgroundSprite: {fileID: 21300000, guid: 60e3013e45b85c448b959a9a2d0ba565,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 60e3013e45b85c448b959a9a2d0ba565,
+      type: 3}
+  - ItemId: Rune_D_Drop
+    ItemClass: Rune
+    Level: 2
+    EquipBackgroundSprite: {fileID: 21300000, guid: 60e3013e45b85c448b959a9a2d0ba565,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 60e3013e45b85c448b959a9a2d0ba565,
+      type: 3}
+  - ItemId: Rune_C_Speed
+    ItemClass: Rune
+    Level: 3
+    EquipBackgroundSprite: {fileID: 21300000, guid: 0a913556d6d8fae44bd6072c8fbe4966,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 0a913556d6d8fae44bd6072c8fbe4966,
+      type: 3}
+  - ItemId: Rune_C_Cri
+    ItemClass: Rune
+    Level: 3
+    EquipBackgroundSprite: {fileID: 21300000, guid: 0a913556d6d8fae44bd6072c8fbe4966,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 0a913556d6d8fae44bd6072c8fbe4966,
+      type: 3}
+  - ItemId: Rune_C_Drop
+    ItemClass: Rune
+    Level: 3
+    EquipBackgroundSprite: {fileID: 21300000, guid: 0a913556d6d8fae44bd6072c8fbe4966,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 0a913556d6d8fae44bd6072c8fbe4966,
+      type: 3}
+  - ItemId: Rune_B_Speed
+    ItemClass: Rune
+    Level: 4
+    EquipBackgroundSprite: {fileID: 21300000, guid: 4cb95281950f0fb4b9bc86e17c4d3a4b,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 4cb95281950f0fb4b9bc86e17c4d3a4b,
+      type: 3}
+  - ItemId: Rune_B_Cri
+    ItemClass: Rune
+    Level: 4
+    EquipBackgroundSprite: {fileID: 21300000, guid: 4cb95281950f0fb4b9bc86e17c4d3a4b,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 4cb95281950f0fb4b9bc86e17c4d3a4b,
+      type: 3}
+  - ItemId: Rune_B_Drop
+    ItemClass: Rune
+    Level: 4
+    EquipBackgroundSprite: {fileID: 21300000, guid: 4cb95281950f0fb4b9bc86e17c4d3a4b,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 4cb95281950f0fb4b9bc86e17c4d3a4b,
+      type: 3}
+  - ItemId: Rune_A_Speed
+    ItemClass: Rune
+    Level: 5
+    EquipBackgroundSprite: {fileID: 21300000, guid: c716737c416af8d408d85caed8f6e59c,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: c716737c416af8d408d85caed8f6e59c,
+      type: 3}
+  - ItemId: Rune_A_Cri
+    ItemClass: Rune
+    Level: 5
+    EquipBackgroundSprite: {fileID: 21300000, guid: c716737c416af8d408d85caed8f6e59c,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: c716737c416af8d408d85caed8f6e59c,
+      type: 3}
+  - ItemId: Rune_A_Drop
+    ItemClass: Rune
+    Level: 5
+    EquipBackgroundSprite: {fileID: 21300000, guid: c716737c416af8d408d85caed8f6e59c,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: c716737c416af8d408d85caed8f6e59c,
+      type: 3}
+  - ItemId: Rune_S_Speed
+    ItemClass: Rune
+    Level: 6
+    EquipBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+  - ItemId: Rune_S_Cri
+    ItemClass: Rune
+    Level: 6
+    EquipBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+  - ItemId: Rune_S_Drop
+    ItemClass: Rune
+    Level: 6
+    EquipBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+  - ItemId: Rune_L
+    ItemClass: Rune
+    Level: 7
+    EquipBackgroundSprite: {fileID: 21300000, guid: 60e3013e45b85c448b959a9a2d0ba565,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 60e3013e45b85c448b959a9a2d0ba565,
+      type: 3}
+  - ItemId: Rune_M
+    ItemClass: Rune
+    Level: 8
+    EquipBackgroundSprite: {fileID: 21300000, guid: 0a913556d6d8fae44bd6072c8fbe4966,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 0a913556d6d8fae44bd6072c8fbe4966,
+      type: 3}
+  - ItemId: Rune_I
+    ItemClass: Rune
+    Level: 9
+    EquipBackgroundSprite: {fileID: 21300000, guid: 4cb95281950f0fb4b9bc86e17c4d3a4b,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 4cb95281950f0fb4b9bc86e17c4d3a4b,
+      type: 3}
+  - ItemId: Rune_U
+    ItemClass: Rune
+    Level: 10
+    EquipBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 4fbb67799e3ab7f4b9f25b4cc5bcd34f,
+      type: 3}
+  - ItemId: Rune_G
+    ItemClass: Rune
+    Level: 11
+    EquipBackgroundSprite: {fileID: 21300000, guid: 0a913556d6d8fae44bd6072c8fbe4966,
+      type: 3}
+    DescriptionBackgroundSprite: {fileID: 21300000, guid: 0a913556d6d8fae44bd6072c8fbe4966,
+      type: 3}
 --- !u!1 &3624752596155924118
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,7 +1615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1703,18 +1975,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7131804302974669370}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 425022460296248273}
-  m_Father: {fileID: 7608693823409630808}
-  m_RootOrder: 2
+  m_Father: {fileID: 66593332255762709}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -3.796997, y: 316.7}
-  m_SizeDelta: {x: -7.594, y: 633.4}
+  m_AnchoredPosition: {x: 0.00012207031, y: 316.7}
+  m_SizeDelta: {x: -0.000005722046, y: 633.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4892826902821021226
 CanvasRenderer:

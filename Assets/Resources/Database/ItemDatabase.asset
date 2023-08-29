@@ -343,6 +343,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cc4d07d17dea8b94e80fd9997282fcb0, type: 2}
   - {fileID: 11400000, guid: 5370d0c6045a8044a9b5ee1f9b1c492d, type: 2}
   - {fileID: 11400000, guid: b9d2ea5a04dcc764eacb09cf87e380d7, type: 2}
+  - {fileID: 11400000, guid: bad073596b05be343a1e7277d6b167c4, type: 2}
+  - {fileID: 11400000, guid: d230bc6cdbb6fe54eaac504424bd7298, type: 2}
+  - {fileID: 11400000, guid: 06399df1ab3fc8943a6ced7d29b35aa7, type: 2}
+  - {fileID: 11400000, guid: 64f7714e4bc944e43891c8f363643e3d, type: 2}
+  - {fileID: 11400000, guid: 11bb1456bd66aa940bfdd07e1630b70c, type: 2}
+  - {fileID: 11400000, guid: ad45d662aad01d14bbbeaff7f6be726a, type: 2}
+  - {fileID: 11400000, guid: 5fa783509645b8f4db1b7f94ebd62178, type: 2}
+  - {fileID: 11400000, guid: 3604386f467da89428c9f6bfd5b55cfb, type: 2}
+  - {fileID: 11400000, guid: 637ace6e3cd6b674f9c92fd1a4d58514, type: 2}
+  - {fileID: 11400000, guid: be672ebefe7b5ad4c9fbc82ae9fedca9, type: 2}
+  - {fileID: 11400000, guid: b24d7b41cd31f154589fae66c49c8349, type: 2}
+  - {fileID: 11400000, guid: 7018b4670d51d084d948ff31bac50d31, type: 2}
   _runeUpgradeSystem: {fileID: 11400000, guid: 07abfc5686908ef4e8b97c8eb8301fcc, type: 2}
   _petUpgradeSystem: {fileID: 11400000, guid: 164a897096396d44686eb5403afbb0ba, type: 2}
   _bowUpgradeSystem: {fileID: 11400000, guid: 85975eeacf31ebd44b9adcc0256fd808, type: 2}

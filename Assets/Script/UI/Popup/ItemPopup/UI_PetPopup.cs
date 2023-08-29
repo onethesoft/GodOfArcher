@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,6 +25,14 @@ public class UI_PetPopup : UI_Popup
     List<UI_EquipmentSlot> _slotItems;
     List<UI_PetItem> _petItems;
     BlockerGroup[] _blockerGroups;
+
+    [SerializeField]
+    List<UI_PetItemData> _petItemViewDataList;
+    public void SetupItemViewData(List<UI_PetItemData> itemList)
+    {
+        _petItemViewDataList = itemList;
+    }
+
 
     string _isUpdateKey; // Key 를 비교하여 다르면 서버에 업데이트한다.
     public override void Init()
@@ -52,11 +61,10 @@ public class UI_PetPopup : UI_Popup
 
         int ItemCount = 0;
         GameObject ItemPanel = null;
-       
-        foreach (Pet pet in Managers.Item.Database.PetList)
+        foreach(UI_PetItemData petItemData in _petItemViewDataList)
         {
             UI_PetItem _item;
-            if (pet.Level <= 6)
+            if (petItemData.Level <= 6)
             {
                 if (ItemCount % 2 == 0)
                 {
@@ -71,14 +79,13 @@ public class UI_PetPopup : UI_Popup
             else
             {
                 ItemPanel = Managers.Resource.Instantiate("UI/SubItem/ItemPopup/UI_PetItemPanel", Get<GameObject>((int)GameObjects.Content).transform);
-                _item = Util.GetOrAddComponent<UI_PetItem>(Managers.Resource.Instantiate("UI/SubItem/ItemPopup/UI_PetItem_Big", ItemPanel.transform));
-
+                _item = Util.GetOrAddComponent<UI_PetItem>(Managers.Resource.Instantiate("UI/SubItem/ItemPopup/UI_PetItem_normal", ItemPanel.transform));
             }
-
 
             _petItems.Add(_item);
 
-            _item.Pet = pet;
+            _item.Setup(petItemData);
+           
             _item.OnEquipPet -= OnEquipHandler;
             _item.OnEquipPet += OnEquipHandler;
 
@@ -88,9 +95,8 @@ public class UI_PetPopup : UI_Popup
             _item.OnUprade -= Block;
             _item.OnUprade += Block;
             ItemCount++;
-
         }
-
+       
         _blockerGroups = GetComponentsInChildren<BlockerGroup>();
 
         AddUIEvent(GetButton((int)Buttons.Close).gameObject, (data) => { ClosePopupUI(); });
