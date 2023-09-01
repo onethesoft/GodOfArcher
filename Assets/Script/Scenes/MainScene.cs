@@ -32,6 +32,21 @@ public class MainScene : BaseScene
 
         _sceneUI.IsBeginner = Managers.Game.BeforeBeginPlay();
 
+        List<string> questCategory = new List<string>();
+        foreach(Define.QuestType quest in System.Enum.GetValues(typeof(Define.QuestType)))
+        {
+            if (quest == Define.QuestType.GambleRune ||
+                quest == Define.QuestType.GamblePet ||
+                quest == Define.QuestType.GambleBow ||
+                quest == Define.QuestType.GambleArmor ||
+                quest == Define.QuestType.GambleHelmet ||
+                quest == Define.QuestType.GambleCloak
+                )
+                if(Managers.Quest.IsAllCearQuest(quest.ToString()))
+                    questCategory.Add(quest.ToString());
+        }
+        Managers.Quest.ResetQuests(questCategory.ToArray());
+
         //Managers.Resource.Instantiate("UI/UI_DebugPopup", _sceneUI.transform);
 
         Managers.Game.CreatePlayer();

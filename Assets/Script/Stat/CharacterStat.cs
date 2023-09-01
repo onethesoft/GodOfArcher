@@ -81,7 +81,7 @@ public class CharacterStat : BaseStat
     [SerializeField]
     int _incrementValuePerLevel;
 
-    public int IncrementValuePerLevel => _incrementValuePerLevel;
+    public int IncrementValuePerLevel => (int)_valueGenerator.GetIncrementStatValuePerLevel(_Level);
 
     [SerializeField]
     CharacterStatUpgradeCondition _condition;
@@ -200,7 +200,11 @@ public class CharacterStat : BaseStat
         _Level = data.Level;
         Value = CalculateValue(_Level);
         
-        _maxLevel = data.MaxLevel;
+        if(_maxLevel <= data.MaxLevel)
+        {
+            _maxLevel = data.MaxLevel;
+        }
+        
         _isUnlock = data.IsUnLock;
 
         UpdateIncrementValuePerLevel();

@@ -23,5 +23,5 @@ MonoBehaviour:
     max: 50000
     generator: {fileID: 11400000, guid: 528308d5270e6d84b834985d42b8d5e6, type: 2}
   - min: 50000
-    max: 600000
+    max: 1000000
     generator: {fileID: 11400000, guid: 6b0d4308b30cc7e4cb6cb0e8b282db9f, type: 2}

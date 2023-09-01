@@ -34,6 +34,10 @@ public class StatValueGenerator : ScriptableObject
         {
             return (int)generator.GetValue(targetLevel - min);
         }
+        public double GetR()
+        {
+            return generator.r;
+        }
     }
 
     [SerializeField]
@@ -53,6 +57,22 @@ public class StatValueGenerator : ScriptableObject
 
         }
         return _intervalGen[0].GetFirst();
+    }
+
+    public double GetIncrementStatValuePerLevel(int target)
+    {
+        foreach (IntervalGenerator _statGen in _intervalGen)
+        {
+            if (_statGen.IsContain(target))
+            {
+                //int re_targetLevel = target - _statGen.min + 1;
+                //return _statGen.GetValue(re_targetLevel);
+
+                return _statGen.GetR();
+            }
+
+        }
+        return _intervalGen[0].GetR();
     }
 
     

@@ -97,8 +97,9 @@ public class UI_BaseItem : UI_Base
                 DisplayNameBackground.gameObject.SetActive(false);
                 DisplayName.gameObject.SetActive(false);
 
-                Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -35, y = -45 };
-                IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -20, y = -20 };
+                Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -65, y = -75 };
+                IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -45, y = -45 };
+                gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = 165, y = 165 };
                 //IconBackground.GetComponent<RectTransform>().siz
                 // IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = 100, y = 100 };
                 // Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = 120, y = 120 };
@@ -108,8 +109,9 @@ public class UI_BaseItem : UI_Base
                 DisplayNameBackground.GetComponent<Image>().sprite = Rune_G_Bottom;
                 DisplayName.gameObject.SetActive(false);
 
-                Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -35, y = -45 };
-                IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -20, y = -20 };
+                Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -65, y = -75 };
+                IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -45, y = -45 };
+                gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = 165, y = 165 };
                 //  IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = 100, y = 100 };
                 //Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = 120, y = 120 };
             }
@@ -159,8 +161,10 @@ public class UI_BaseItem : UI_Base
                 DisplayNameBackground.gameObject.SetActive(false);
                 DisplayName.gameObject.SetActive(false);
 
-                Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -35, y = -45 };
-                IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -20, y = -20 };
+                Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -65, y = -75 };
+                IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -45, y = -45 };
+                gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = 165, y = 165 };
+
                 //IconBackground.GetComponent<RectTransform>().siz
                 // IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = 100, y = 100 };
                 // Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = 120, y = 120 };
@@ -170,8 +174,9 @@ public class UI_BaseItem : UI_Base
                 DisplayNameBackground.GetComponent<Image>().sprite = Rune_G_Bottom;
                 DisplayName.gameObject.SetActive(false);
 
-                Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -35, y = -45 };
-                IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -20, y = -20 };
+                Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -65, y = -75 };
+                IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -45, y = -45 };
+                gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = 165, y = 165 };
                 //  IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = 100, y = 100 };
                 //Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = 120, y = 120 };
             }

@@ -31,3 +31,6 @@ MonoBehaviour:
   - min: 50001
     max: 100000
     generator: {fileID: 11400000, guid: 631ed78a3ef5fa943a5aa795df8f7eca, type: 2}
+  - min: 100001
+    max: 200000
+    generator: {fileID: 11400000, guid: 3b4434f3b42309b4e866b45b4297786f, type: 2}

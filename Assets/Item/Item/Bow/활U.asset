@@ -49,3 +49,7 @@ MonoBehaviour:
     _description: "\uACF5\uACA9\uC18D\uB3C4 %s% \uC99D\uAC00"
     _value: 300
     _type: 0
+  - _codeName: AttackAmp
+    _description: "\uACF5\uACA9\uB825 %s% \uC99D\uD3ED"
+    _value: 100
+    _type: 0

@@ -48,18 +48,21 @@ public class UI_Shutdown : UI_Popup
 
 
     Color _buttneTextColor;
-    Coroutine _coroutine;
-    bool isExit = false;
+
+    GameData _playerData;
+  
     public override void Init()
     {
         base.Init();
         Bind<Text>(typeof(Texts));
         Bind<Button>(typeof(Buttons));
 
+        _playerData = FindObjectOfType<GameData>();
+
         _time = GlobalTime.Now.ToLocalTime();
         _gold = Managers.Game.GetCurrency(Define.CurrencyID.Gold.ToString());
         _Stage = Managers.Game.Stage;
-        _ruby = Managers.Game.Stage / 10;
+        _ruby = (Managers.Game.Stage / 10) + Managers.Game.PlyaerDataBase.GetReviveBonus(Managers.Game.Stage);
         _mainStageTask = Managers.Game.StageDataBase.StageList.Where(x => x.type == Define.Dongeon.Main).FirstOrDefault();
         clicked = 0;
         OnDemandRendering.renderFrameInterval = 3;
@@ -67,7 +70,7 @@ public class UI_Shutdown : UI_Popup
         _buttneTextColor = GetText((int)Texts.CloseText).color;
 
       
-        _coroutine = StartCoroutine(UpdateText());
+       
 
         AddUIEvent(GetButton((int)Buttons.Close).gameObject, (data) => {
             if(Time.time - clicktime < clickDelay)
@@ -100,14 +103,13 @@ public class UI_Shutdown : UI_Popup
       
 
         GetText((int)Texts.GoldText).text = $"{Util.GetBigIntegerUnit(Managers.Game.GetCurrency(Define.CurrencyID.Gold.ToString()) - _gold)}";
-        GetText((int)Texts.CPText).text = $"{Util.GetBigIntegerUnit(_mainStageTask.GetMonsterHP(Managers.Game.Stage))}";
-        GetText((int)Texts.RubyText).text = $"{_ruby}";
+        GetText((int)Texts.CPText).text = $"{Util.GetBigIntegerUnit(Managers.Game.CalculateDropRateAmount(Define.CurrencyID.CP, _mainStageTask.GetMonsterHP(Managers.Game.Stage)))}";
+        GetText((int)Texts.RubyText).text = $"환생 시 얻는 루비 : {Util.GetBigIntegerUnit(_playerData.GetReviveRubyAmount())}";
     }
 
     public override void ClosePopupUI()
     {
-        isExit = true;
-        StopCoroutine(_coroutine);
+      
         base.ClosePopupUI();
         OnDemandRendering.renderFrameInterval = 1;
     }
@@ -117,18 +119,14 @@ public class UI_Shutdown : UI_Popup
         Init();
     }
 
-    IEnumerator UpdateText()
+    private void Update()
     {
-        while (isExit == false)
-        {
-            yield return new WaitForSeconds(1.0f);
-            UpdatePlayer();
-        }
-
+        UpdatePlayer();
     }
 
     void UpdatePlayer()
     {
+        /*
         _beforeruby = _ruby;
         _ruby = Managers.Game.Stage / 10;
 
@@ -136,7 +134,7 @@ public class UI_Shutdown : UI_Popup
         {
             GetText((int)Texts.RubyText).DOCounter(_beforeruby, _ruby, 0.8f);
         }
-
+        */
         TimeSpan _diff = GlobalTime.Now.ToLocalTime() - _time;
 
 
@@ -148,7 +146,7 @@ public class UI_Shutdown : UI_Popup
         GetText((int)Texts.StageText).text = Managers.Game.Stage.ToString();
         GetText((int)Texts.GoldText).text = $"{Util.GetBigIntegerUnit(Managers.Game.GetCurrency(Define.CurrencyID.Gold.ToString()) - _gold)}";
         GetText((int)Texts.CPText).text = $"{Util.GetBigIntegerUnit(Managers.Game.CalculateDropRateAmount(Define.CurrencyID.CP, _mainStageTask.GetMonsterHP(Managers.Game.Stage)))}";
-        //GetText((int)Texts.RubyText).text = $"환생 시 얻는 루비 : {Util.GetBigIntegerUnit(Managers.Game.Stage / 10)}";
+        GetText((int)Texts.RubyText).text = $"환생 시 얻는 루비 : {Util.GetBigIntegerUnit(_playerData.GetReviveRubyAmount())}";
     }
 
 

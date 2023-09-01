@@ -44,10 +44,14 @@ MonoBehaviour:
     EffectDistance: {x: 1, y: -1}
   _statModifiers:
   - _codeName: GoldDropRate
-    _description: "\\n\uACE8\uB4DC\uD68D\uB4DD\uB960 %s% \uC99D\uAC00"
+    _description: "\uACE8\uB4DC\uD68D\uB4DD\uB960 %s% \uC99D\uAC00"
     _value: 10000
     _type: 0
   - _codeName: CraftDropRate
     _description: "\uD658\uC0DD P \uD68D\uB4DD\uB960 %s% \uC99D\uAC00"
     _value: 10000
+    _type: 0
+  - _codeName: AllAttackAmp
+    _description: "\uBAA8\uB4E0 \uD53C\uD574 %s% \uC99D\uD3ED"
+    _value: 100
     _type: 0

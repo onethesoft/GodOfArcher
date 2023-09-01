@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEditor;
 
 public class Tests : MonoBehaviour
 {
@@ -56,5 +57,18 @@ public class Tests : MonoBehaviour
         Assert.Pass(_trollStageCalculator.GetHP(999).ToString());
         Assert.Pass(_trollStageCalculator.GetHP(1000).ToString());
 
+    }
+
+    [Test]
+    public void ValidateMainStageMonsterSpawner()
+    {
+
+        MonsterStatCalculator _stat = AssetDatabase.LoadAssetAtPath<MonsterStatCalculator>("Assets/Stage/MainStage/MonsterHPGenerator.asset");
+        int satge = 999999;
+       
+        Assert.Pass(_stat.GetHP(satge).ToString());
+
+
+       
     }
 }

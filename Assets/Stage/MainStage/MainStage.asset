@@ -22,7 +22,7 @@ MonoBehaviour:
     Count: 0
     Item: {fileID: 0}
   _Count_Daily_Free_Pass: 0
-  _maxStage: 500000
+  _maxStage: 1000000
   _monsterHPGenerator: {fileID: 11400000, guid: a2a9c9e6769559e478d5307576ffb0dd,
     type: 2}
   _Timeout: 60
@@ -163,7 +163,7 @@ MonoBehaviour:
     max: 299999
     Unit: {fileID: 955189788030313294, guid: b925cfb3a493bec49aac97207cf0f73f, type: 3}
   - min: 300000
-    max: 9999999
+    max: 1000000
     Unit: {fileID: 8194149395577901770, guid: 17ddfd87469e18a44a1e6cbd19fd27b6, type: 3}
   _backgroundPrefabs:
   - min: 1

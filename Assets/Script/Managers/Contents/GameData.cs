@@ -785,7 +785,10 @@ public class GameData : MonoBehaviour
     {
         OnUpgradeStat?.Invoke(target, count);
     }
-
+    public int GetReviveRubyAmount()
+    {
+        return Math.Max(1, Stage / 10) + Managers.Game.PlyaerDataBase.GetReviveBonus(Stage);
+    }
     public void OnLoaded()
     {
         Dictionary<string, SpriteGroupEntry> spriteCollection;
@@ -873,6 +876,7 @@ public class GameData : MonoBehaviour
 
         if (item.ItemClass == "Bow")
         {
+            Debug.Log(item.SpriteCollectionId);
             spriteCollection = gameObject.GetComponent<Character>().SpriteCollection.Bow.ToDictionary(i => i.Id, i => i);
             gameObject.GetComponent<Character>().Equip(spriteCollection[item.SpriteCollectionId], EquipmentPart.Bow);
 

@@ -29,7 +29,9 @@ public class UI_Test : UI_Popup
         GiveBeginnerCouponTest,
         AutoTest,
         CharacterReset,
-        ShopQuestReset
+        ShopQuestReset,
+        GambleQuestComplete,
+        GambleQuestCompleteBefore100
     }
 
     enum InputFields
@@ -70,7 +72,7 @@ public class UI_Test : UI_Popup
             int _jumpStage = 1;
             if (!Int32.TryParse(_stageInput, out _jumpStage))
                 return;
-            if (_jumpStage <= 0 || _jumpStage > 500000)
+            if (_jumpStage <= 0 || _jumpStage > 999999)
                 return;
             Managers.Game.MoveStage(_jumpStage);
             ClosePopupUI();
@@ -204,6 +206,58 @@ public class UI_Test : UI_Popup
             FindObjectOfType<GameDataUpdater>().StopUpdate();
          
             StartCoroutine(ShopQuestReset());
+
+
+
+
+
+        });
+        AddUIEvent(GetButton((int)Buttons.GambleQuestComplete).gameObject, (data) => {
+
+            if (Managers.Network.IS_ENABLE_NETWORK == false)
+                return;
+
+            string[] category = new string[] { Define.QuestType.GambleArmor.ToString(), Define.QuestType.GambleBow.ToString(), Define.QuestType.GambleHelmet.ToString() };
+
+            List<Quest> _quest = new List<Quest>();
+            foreach(string questType in category)
+            {
+                _quest.AddRange(Managers.Quest.ActiveQuests.Where(x => x.Category == questType));
+
+            }
+            _quest.ForEach(x => x.Complete());
+
+
+
+
+
+
+        });
+
+        AddUIEvent(GetButton((int)Buttons.GambleQuestCompleteBefore100).gameObject, (data) => {
+
+            if (Managers.Network.IS_ENABLE_NETWORK == false)
+                return;
+
+            string[] category = new string[] { Define.QuestType.GambleArmor.ToString(), Define.QuestType.GambleBow.ToString(), Define.QuestType.GambleHelmet.ToString() };
+
+            List<Quest> _quest = new List<Quest>();
+            GameData _playerData = FindObjectOfType<GameData>();
+            int ItemCount = 0;
+            
+            
+            foreach(Quest quest in Managers.Quest.ActiveQuests.Where(x=>x.Category == Define.QuestType.GambleBow.ToString()))
+            {
+                if(quest != Managers.Quest.ActiveQuests.Where(x => x.Category == Define.QuestType.GambleBow.ToString()).LastOrDefault())
+                    ItemCount += quest.CurrentTaskGroup.Tasks.FirstOrDefault().NeedSuccessToComplete - quest.CurrentTaskGroup.Tasks.FirstOrDefault().CurrentSuccess;
+                else
+                    ItemCount += quest.CurrentTaskGroup.Tasks.FirstOrDefault().NeedSuccessToComplete - quest.CurrentTaskGroup.Tasks.FirstOrDefault().CurrentSuccess - 100;
+
+
+            }
+            _playerData.PurchaseItemClass("Armor", ItemCount);
+
+
 
 
 

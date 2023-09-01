@@ -12,6 +12,20 @@ using UnityEditor;
 [CreateAssetMenu(fileName = "PlayerDatabase", menuName = "«√∑π¿ÃæÓ/µ•¿Ã≈Õ∫£¿ÃΩ∫")]
 public class PlayerDatabase : ScriptableObject
 {
+    [System.Serializable]
+    public class KeyValuePair<K,V>
+    {
+        public K Key;
+        public V Value;
+    }
+
+    [System.Serializable]
+    public class ReviveBonusData
+    {
+        public int Stage;
+        public int RubyBonusCount;
+    }
+
     [Header("«√∑π¿ÃæÓ µÓ±ﬁ")]
     [SerializeField]
     List<PlayerRank> _listrank;
@@ -32,22 +46,7 @@ public class PlayerDatabase : ScriptableObject
     [SerializeField]
     List<BaseStat> _listArtifactStat;
 
-    [Header("»∞ Ω∫≈›")]
-    [SerializeField]
-    List<BaseStat> _listbowStat;
-
-    [Header("≈ı±∏ Ω∫≈›")]
-    [SerializeField]
-    List<BaseStat> _listhelmetStat;
-
-    [Header("∞©ø  Ω∫≈›")]
-    [SerializeField]
-    List<BaseStat> _listarmorStat;
-
-    [Header("∏¡≈‰ Ω∫≈›")]
-    [SerializeField]
-    List<BaseStat> _listcloakStat;
-
+  
     [Header("∑È Ω∫≈›")]
     [SerializeField]
     List<BaseStat> _listruneStat;
@@ -68,6 +67,14 @@ public class PlayerDatabase : ScriptableObject
     [SerializeField]
     List<SkillData> _listSkill;
 
+    [Header("»Øª˝ ∑Á∫Ò ∫∏≥ Ω∫")]
+    [SerializeField]
+    List<ReviveBonusData> _listReviveBonus;
+
+    [Header("»Øª˝ ¡¶«— »Ωºˆ")]
+    [SerializeField]
+    int _reviveCountLimit = 10;
+
     public CharacterStatUpgradeCondition Get => _listcondition[0];
 
     public IReadOnlyList<PlayerRank> RankList => _listrank;
@@ -83,13 +90,7 @@ public class PlayerDatabase : ScriptableObject
 
     public IReadOnlyList<BaseStat> ArtifactStatList => _listArtifactStat;
 
-    public IReadOnlyList<BaseStat> BowStatList => _listbowStat;
 
-    public IReadOnlyList<BaseStat> HelmetStatList => _listhelmetStat;
-
-    public IReadOnlyList<BaseStat> ArmorStatList => _listarmorStat;
-
-    public IReadOnlyList<BaseStat> CloakStatList => _listcloakStat;
 
 
     public IReadOnlyList<BaseStat> RuneStatList => _listruneStat;
@@ -100,6 +101,32 @@ public class PlayerDatabase : ScriptableObject
 
     public IReadOnlyList<BaseStat> ItemStatList => _listItemStat;
     public IReadOnlyList<SkillData> SkillList => _listSkill;
+
+    public int GetReviveCoutLimit => _reviveCountLimit;
+
+
+
+    public List<ReviveBonusData> ListRubyBonus => _listReviveBonus;
+    public int GetReviveBonus(int Stage)
+    {
+        if (_listReviveBonus.Count == 0)
+            return 0;
+
+        List<ReviveBonusData> _orderedList = _listReviveBonus.OrderBy(x => x.Stage).ToList();
+        if(_orderedList.FirstOrDefault().Stage > Stage)
+        {
+            return 0;
+        }
+
+        for(int i=0;i<_orderedList.Count;i++)
+        {
+            if (Stage < _orderedList[i].Stage)
+                return _orderedList[i - 1].RubyBonusCount;
+        }
+        return _orderedList.LastOrDefault().RubyBonusCount;
+        
+    }
+    
 
 #if UNITY_EDITOR
     [ContextMenu("FindCharacterStats")]

@@ -16,7 +16,7 @@ MonoBehaviour:
   Description: "\uCE58\uBA85\uD53C\uD574 \uC99D\uAC00"
   Value: 1
   _Type: 2
-  _maxLevel: 100000
+  _maxLevel: 200000
   _minLevel: 1
   _Level: 1
   _isUnlock: 1

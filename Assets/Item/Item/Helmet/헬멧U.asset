@@ -49,3 +49,7 @@ MonoBehaviour:
     _description: "\uC2A4\uD0AC \uCFE8\uD0C0\uC784 %s% \uAC10\uC18C"
     _value: 80
     _type: 0
+  - _codeName: SkillAttackAmp
+    _description: "\uC2A4\uD0AC \uACF5\uACA9\uB825 %s% \uC99D\uD3ED"
+    _value: 100
+    _type: 0

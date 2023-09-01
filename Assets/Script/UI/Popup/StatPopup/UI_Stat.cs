@@ -115,7 +115,7 @@ public class UI_Stat : UI_Popup
     public void LoadStatItem()
     {
         _Items = new Dictionary<Define.StatID, UI_StatItem>();
-        foreach(CharacterStat stat in Managers.Game.GetPlayerStat())
+        foreach(CharacterStat stat in Managers.Game.GetPlayerStatForUI())
         {
             Define.StatID _statId = (Define.StatID)Enum.Parse(typeof(Define.StatID), stat.CodeName);
             _Items.Add(_statId, Util.GetOrAddComponent<UI_StatItem>(Managers.Resource.Instantiate($"UI/SubItem/StatPopup/UI_StatItem", Get<GameObject>((int)GameObjects.StatItemPanel).transform)));

@@ -29,6 +29,7 @@ public class UI_RunePopup : UI_Popup
     BlockerGroup[] _blockerGroups;
 
     string _isUpdateKey; // Key 를 비교하여 다르면 서버에 업데이트한다.
+   
 
     [SerializeField]
     List<UI_RuneItemData> _runeItemViewDataList;
@@ -46,7 +47,8 @@ public class UI_RunePopup : UI_Popup
         _runeItems = new List<UI_RuneItem>();
         _slotItems = new List<UI_EquipmentSlot>();
 
-      
+
+       
         _isUpdateKey = JsonUtility.ToJson(Managers.Game.GetEquipment("Rune").ToSaveData());
 
         foreach (EquipmentSlot slot in Managers.Game.GetEquipment("Rune").SlotList)
@@ -223,4 +225,6 @@ public class UI_RunePopup : UI_Popup
         
        
     }
+
+    
 }

@@ -216,7 +216,7 @@ public class ReviveInfo
 
     public bool CanRevive()
     {
-        return ReviveCount < 5 ? true : false;
+        return ReviveCount < Managers.Game.PlyaerDataBase.GetReviveCoutLimit ? true : false;
     }
 }
 

@@ -49,3 +49,7 @@ MonoBehaviour:
     _description: "\uCE58\uBA85\uD655\uB960 %s% \uC99D\uAC00"
     _value: 500
     _type: 0
+  - _codeName: CriticalHitAmp
+    _description: "\uCE58\uBA85\uD53C\uD574 %s% \uC99D\uD3ED"
+    _value: 100
+    _type: 0

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _costCalucations:
   - minLevel: 1
-    maxLevel: 100000
+    maxLevel: 200000
     Generator: {fileID: 11400000, guid: 1d2cd1a4f06a8e246af4a0c2ff981c4c, type: 2}

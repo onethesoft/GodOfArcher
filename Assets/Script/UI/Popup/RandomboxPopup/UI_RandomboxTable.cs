@@ -48,7 +48,8 @@ public class UI_RandomboxTable : UI_Popup
 
         foreach(Rune.Rank _level in System.Enum.GetValues(typeof(Rune.Rank)))
         {
-            Util.GetOrAddComponent<UI_RandomboxTableItem>(Managers.Resource.Instantiate($"UI/SubItem/RandomboxPopup/UI_RandomboxTableItem", Get<GameObject>((int)GameObjects.ItemTable).transform)).Set((int)_level,_itemSprites[(int)_level], _mode);
+            if(_level < EquipableItem.Rank.U)
+                Util.GetOrAddComponent<UI_RandomboxTableItem>(Managers.Resource.Instantiate($"UI/SubItem/RandomboxPopup/UI_RandomboxTableItem", Get<GameObject>((int)GameObjects.ItemTable).transform)).Set((int)_level,_itemSprites[(int)_level], _mode);
 
         }
 

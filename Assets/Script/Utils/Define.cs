@@ -6,7 +6,7 @@ public class Define
 {
     public static readonly ServiceVersion APPVersion = new ServiceVersion() 
     { 
-        Major = 2 , Minor = 4 , Patch = 0 
+        Major = 2 , Minor = 5 , Patch = 0 
     };
    
     public enum UIEvent
@@ -167,7 +167,11 @@ public class Define
         SkillAttack ,
         SkillMaxLevelLimit,
         SkillCoolTime,
-        JumpingRate
+        JumpingRate,
+        AttackAmp,
+        CriticalHitAmp,
+        SkillAttackAmp,
+        AllAttackAmp,
     }
     #endregion
     public enum CurrencyID

@@ -137,16 +137,16 @@ public class GameManagerEx
         //PlayerData.PlayerStat.Get(Define.StatID.SkillMaxLevelLimit.ToString()).OnLevelChanged -= PlayerData.PlayerStat.Get(Define.StatID.SkillAttack.ToString()).OnChangedMaxLevel;
         //PlayerData.PlayerStat.Get(Define.StatID.SkillMaxLevelLimit.ToString()).OnLevelChanged += PlayerData.PlayerStat.Get(Define.StatID.SkillAttack.ToString()).OnChangedMaxLevel;
 
-        foreach (BaseStat _stat in _playerdatabase.ArtifactStatList)
+        foreach (BaseStat _stat in _playerdatabase.ItemStatList)
             PlayerData.ArtifactStat.Add(_stat.Clone());
         foreach (BaseStat _stat in _playerdatabase.ItemStatList)
             PlayerData.ItemStat.Add(_stat.Clone());
 
-        foreach (BaseStat _stat in _playerdatabase.RuneStatList)
+        foreach (BaseStat _stat in _playerdatabase.ItemStatList)
             PlayerData.RuneStat.Add(_stat.Clone());
-        foreach (BaseStat _stat in _playerdatabase.PetStatList)
+        foreach (BaseStat _stat in _playerdatabase.ItemStatList)
             PlayerData.PetStat.Add(_stat.Clone());
-        foreach (BaseStat _stat in _playerdatabase.BuffStatList)
+        foreach (BaseStat _stat in _playerdatabase.ItemStatList)
             PlayerData.BuffStat.Add(_stat.Clone());
 
 
@@ -258,8 +258,14 @@ public class GameManagerEx
         {
             foreach(PlayerInfo.UserDataKey key in SaveDataKeys)
                 PlayerData.UpdateData(key, Managers.Player.GetPlayer(PlayerId));
+#if ENABLE_LOG
 
+            PlayerInfo.UserDataKey[] _filteringSaveDataKeys = SaveDataKeys.Where(x => x != PlayerInfo.UserDataKey.DPS).ToArray();
+            Managers.Network.UpdateUserData(_filteringSaveDataKeys, Managers.Player.GetPlayer(PlayerId));
+#else
             Managers.Network.UpdateUserData(SaveDataKeys, Managers.Player.GetPlayer(PlayerId));
+#endif
+         
         }
     }
 
@@ -269,8 +275,14 @@ public class GameManagerEx
         {
             foreach (PlayerInfo.StatisticsDataKey key in SaveDataKeys)
                 PlayerData.UpdateData(key, Managers.Player.GetPlayer(PlayerId));
+#if ENABLE_LOG
 
+            PlayerInfo.StatisticsDataKey[] _filteringSaveDataKeys = SaveDataKeys.Where(x => x != PlayerInfo.StatisticsDataKey.MaxClearStage).ToArray();
+            Managers.Network.UpdateStatisticsData(_filteringSaveDataKeys, Managers.Player.GetPlayer(PlayerId));
+#else
             Managers.Network.UpdateStatisticsData(SaveDataKeys, Managers.Player.GetPlayer(PlayerId));
+#endif
+
         }
     }
 
@@ -392,7 +404,7 @@ public class GameManagerEx
     {
         return _playerdatabase.RankDic[PlayerData.Level].DisplayName;
     }
-    #region Currency
+#region Currency
     public System.Numerics.BigInteger GetCurrency(string Id)
     {
         return PlayerData.Currency[Id].Amount;
@@ -535,8 +547,8 @@ public class GameManagerEx
     }
 
     
-    #endregion
-    #region Stat
+#endregion
+#region Stat
 
     // ((치명데미지 * 치명확률) + (Damamge * (1- 치명확률)) * 공속 * 0.5
     // 공속 ~ 0.1 = 2 , 1.5 = 0.4         // -1.142 * GetAttackSpeed + 2.2
@@ -589,10 +601,21 @@ public class GameManagerEx
         get 
         {
             string attackString = Define.StatID.Attack.ToString();
-            return ((System.Numerics.BigInteger)(PlayerData.PlayerStat.GetStatValue(attackString) + PlayerData.PlayerStat.GetStatValue(attackString)  + PlayerData.PlayerStat.GetStatValue(Define.StatID.CraftAttack.ToString())) *
+
+            System.Numerics.BigInteger _damage = ((System.Numerics.BigInteger)(PlayerData.PlayerStat.GetStatValue(attackString) + PlayerData.PlayerStat.GetStatValue(attackString) + PlayerData.PlayerStat.GetStatValue(Define.StatID.CraftAttack.ToString())) *
                 (System.Numerics.BigInteger)Math.Max(1, PlayerData.RuneStat.GetStatValue(attackString) + PlayerData.ItemStat.GetStatValue(attackString)) * (System.Numerics.BigInteger)Math.Max(1, PlayerData.PetStat.GetStatValue(attackString)) *
                (System.Numerics.BigInteger)Math.Max(1, PlayerData.ArtifactStat.GetStatValue(attackString))) * Math.Max(1, PlayerData.BuffStat.GetStatValue(attackString));
-            } 
+
+
+            _damage *= (System.Numerics.BigInteger)(100 +  GetAttackAmp);
+            _damage /= 100;
+
+            _damage *= (System.Numerics.BigInteger)(100 + GetAllAttackAmp);
+            _damage /= 100;
+
+            return _damage;
+
+        } 
     }
     public int AttackSpeed
     {
@@ -655,12 +678,12 @@ public class GameManagerEx
         get
         {
             string criticalHitString = Define.StatID.CriticalHit.ToString();
-            System.Numerics.BigInteger _multifier = (System.Numerics.BigInteger)(PlayerData.PlayerStat.GetStatValue(criticalHitString) + PlayerData.PlayerStat.GetStatValue(criticalHitString) + PlayerData.PlayerStat.GetStatValue(Define.StatID.CraftCriticalHit.ToString())) *
+            System.Numerics.BigInteger _multifier = ((System.Numerics.BigInteger)(PlayerData.PlayerStat.GetStatValue(criticalHitString) + PlayerData.PlayerStat.GetStatValue(criticalHitString) + PlayerData.PlayerStat.GetStatValue(Define.StatID.CraftCriticalHit.ToString())) *
                 ((System.Numerics.BigInteger)Math.Max(1, PlayerData.RuneStat.GetStatValue(criticalHitString)) + (System.Numerics.BigInteger)Math.Max(1, PlayerData.ItemStat.GetStatValue(criticalHitString))) * (System.Numerics.BigInteger)Math.Max(1, PlayerData.PetStat.GetStatValue(criticalHitString)) *
-               (System.Numerics.BigInteger)Math.Max(1, PlayerData.ArtifactStat.GetStatValue(criticalHitString));
+               (System.Numerics.BigInteger)Math.Max(1, PlayerData.ArtifactStat.GetStatValue(criticalHitString))) ;
 
 
-            return _multifier;
+            return _multifier; 
         }
     }
     public System.Numerics.BigInteger CriticalHitDamage
@@ -671,8 +694,14 @@ public class GameManagerEx
             System.Numerics.BigInteger _multifier = CriticalHitMultiplier;
 
             _multifier += 100;
+            _multifier /= 100; // ( 1+ 0.x)
+
+            _multifier *= (System.Numerics.BigInteger)(100 + GetCriticalHitAmp);
             _multifier /= 100;
-            // ( 1+ 0.x)
+
+            _multifier *= (System.Numerics.BigInteger)(100 + GetAllAttackAmp);
+            _multifier /= 100;
+
 
 
 
@@ -716,20 +745,42 @@ public class GameManagerEx
             return PlayerData.PlayerStat.GetStatValue(Define.StatID.JumpingRate.ToString());
         }
     }
+    public int GetAttackAmp
+    {
+        get
+        {
+            return PlayerData.ItemStat.GetStatValue(Define.StatID.AttackAmp.ToString());
+        }
+    }
+    public int GetCriticalHitAmp
+    {
+        get
+        {
+            return PlayerData.ItemStat.GetStatValue(Define.StatID.CriticalHitAmp.ToString());
+        }
+    }
+    public int GetSkillAttackAmp
+    {
+        get
+        {
+            return PlayerData.ItemStat.GetStatValue(Define.StatID.SkillAttackAmp.ToString());
+        }
+    }
+    public int GetAllAttackAmp
+    {
+        get
+        {
+            return PlayerData.ItemStat.GetStatValue(Define.StatID.AllAttackAmp.ToString()) + PlayerData.RuneStat.GetStatValue(Define.StatID.AllAttackAmp.ToString());
+        }
+    }
     public int GetSkillMultipier
     {
         get
         {
             int GetSkillDamageStat = PlayerData.PlayerStat.GetStatValue(Define.StatID.SkillAttack.ToString()) + PlayerData.ItemStat.GetStatValue(Define.StatID.SkillAttack.ToString()) + PlayerData.PetStat.GetStatValue(Define.StatID.SkillAttack.ToString()) + PlayerData.RuneStat.GetStatValue(Define.StatID.SkillAttack.ToString()) + PlayerData.ArtifactStat.GetStatValue(Define.StatID.SkillAttack.ToString());
-         
-            if(PlayerData.BuffStat.GetStatValue(Define.StatID.SkillAttack.ToString()) == 0)
-            {
-                return 100 + GetSkillDamageStat;
-            }
-            else
-            {
-                return (100 + GetSkillDamageStat)*PlayerData.BuffStat.GetStatValue(Define.StatID.SkillAttack.ToString());
-            }
+
+            return (100 + GetSkillDamageStat) * Math.Max( 1, PlayerData.BuffStat.GetStatValue(Define.StatID.SkillAttack.ToString()));
+            
 
         }
     }
@@ -739,6 +790,12 @@ public class GameManagerEx
         {
             System.Numerics.BigInteger _getDamage = CriticalHitDamage;
             _getDamage *= (System.Numerics.BigInteger)GetSkillMultipier;
+            _getDamage /= 100;
+
+            _getDamage *= (System.Numerics.BigInteger)(100 + GetSkillAttackAmp);
+            _getDamage /= 100;
+
+            _getDamage *= (System.Numerics.BigInteger)(100 + GetAllAttackAmp);
             _getDamage /= 100;
             return _getDamage;
         }
@@ -806,7 +863,7 @@ public class GameManagerEx
     {
         get
         {
-            return PlayerData.PlayerStat.GetStatValue(Define.StatID.JumpingCount.ToString());
+            return PlayerData.PlayerStat.GetStatValue(Define.StatID.JumpingCount.ToString()) + PlayerData.PetStat.GetStatValue(Define.StatID.JumpingCount.ToString()) + PlayerData.RuneStat.GetStatValue(Define.StatID.JumpingCount.ToString());
         }
     }
     public int GetPierceCount
@@ -854,7 +911,7 @@ public class GameManagerEx
         PlayerData.PlayerStat.Reset(type);
     }
     
-    #endregion
+#endregion
     
     public bool IsAdSkipped
     {
@@ -863,7 +920,7 @@ public class GameManagerEx
             return PlayerData.IsAdSkip;
         }
     }
-
+    
 
     public void Revive(bool IsAdReward = false)
     {
@@ -873,7 +930,7 @@ public class GameManagerEx
         if (IsAdSkipped == true)
         {
             AddCurrency(Define.CurrencyID.CP.ToString(), _mainStageTask.GetMonsterHP(Managers.Game.Stage) , IsApplyDropRate: true);
-            AddCurrency(Define.CurrencyID.Ruby.ToString(), Math.Max(1, Managers.Game.Stage / 10) , IsUpdate: Managers.Network.IS_ENABLE_NETWORK);
+            AddCurrency(Define.CurrencyID.Ruby.ToString(), PlayerData.GetReviveRubyAmount(), IsUpdate: Managers.Network.IS_ENABLE_NETWORK);
             ResetStat();
             ResetStage();
             ResetCurrency(Define.CurrencyID.Gold.ToString());
@@ -887,7 +944,7 @@ public class GameManagerEx
             
                 
             AddCurrency(Define.CurrencyID.CP.ToString(),_mainStageTask.GetMonsterHP(Managers.Game.Stage) , IsApplyDropRate: true);
-            AddCurrency(Define.CurrencyID.Ruby.ToString(), Math.Max(1, Managers.Game.Stage / 10), IsUpdate: Managers.Network.IS_ENABLE_NETWORK);
+            AddCurrency(Define.CurrencyID.Ruby.ToString(), PlayerData.GetReviveRubyAmount(), IsUpdate: Managers.Network.IS_ENABLE_NETWORK);
             ResetStat();
             ResetStage();
             GetInventory().RemoveItem(Buff.Id.Buff_CPDropRate_AD.ToString());
@@ -965,9 +1022,9 @@ public class GameManagerEx
         return PlayerData.Inventory;
     }
 
-    public CharacterStat [] GetPlayerStat()
+    public CharacterStat [] GetPlayerStatForUI()
     {
-        return PlayerData.PlayerStat.StatList.ToArray();
+        return PlayerData.PlayerStat.StatList.Where(x => x.type != Define.StatType.None).ToArray();
     }
 
     public void GiveBuff(Buff buff)

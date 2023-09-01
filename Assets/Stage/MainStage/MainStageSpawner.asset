@@ -151,7 +151,7 @@ MonoBehaviour:
     max: 299999
     Unit: {fileID: 955189788030313294, guid: b925cfb3a493bec49aac97207cf0f73f, type: 3}
   - min: 300000
-    max: 600000
+    max: 9999999
     Unit: {fileID: 8194149395577901770, guid: 17ddfd87469e18a44a1e6cbd19fd27b6, type: 3}
   _pos:
   - min: 1
@@ -170,7 +170,7 @@ MonoBehaviour:
     - {x: 5.95, y: 0, z: 0}
     - {x: 5.95, y: -1.6, z: 0}
   - min: 200000
-    max: 600000
+    max: 1000000
     Unit:
     - {x: 3, y: 1.6, z: 0}
     - {x: 3, y: 0, z: 0}

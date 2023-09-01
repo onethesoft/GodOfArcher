@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class Util : MonoBehaviour
 {
-    static string[] unitSymbol = new string[] { "", "만", "억", "조", "경", "해" ,"자" , "양", "구" , "간" , "정", "재" , "극"};
+    static string[] unitSymbol = new string[] { "", "만", "억", "조", "경", "해" ,"자" , "양", "구" , "간" , "정", "재" , "극", "항" , "아", "나", "무"};
    
     static string unitySymbolPattern = "(극|재|정|간|구|양|자|해|경|조|억|만)";
 
@@ -35,8 +35,8 @@ public class Util : MonoBehaviour
         //return GetMoneyString(Number);
 
         int unitID = 0;
-
-        string number = string.Format("{0:# #### #### #### #### #### #### #### #### #### #### #### ####}", Number).TrimStart();
+        //                                무  나  아   항   극   재   정   간   구   양   자   해   경   조   억   만   
+        string number = string.Format("{0:# #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### ####}", Number).TrimStart();
         string[] splits = number.Split(' ');
 
         gStrBuilder.Clear();

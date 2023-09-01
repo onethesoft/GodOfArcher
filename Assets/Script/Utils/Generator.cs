@@ -45,6 +45,7 @@ public class Generator : ScriptableObject
         else
         {
             BigInteger initvalue = (BigInteger)InitialValue;
+          
             double _diffvalue = System.Math.Pow(r, n);
             BigInteger _ret = (BigInteger)_diffvalue;
             _ret *= initvalue;
@@ -77,9 +78,11 @@ public class Generator : ScriptableObject
         else
         {
 
+            
             double r_1 = r - 1;
             double numerator = (System.Math.Pow(r, n) - 1) * InitialValue;
             return (BigInteger)(numerator / r_1);
+            
         }
     }
 

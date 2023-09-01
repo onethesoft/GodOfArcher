@@ -36,7 +36,7 @@ MonoBehaviour:
     OutlineColor: {r: 0, g: 0, b: 0, a: 0.5019608}
     EffectDistance: {x: 1, y: -1}
   _DescriptionBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
-  _SpriteCollectionId: Extensions.Legendary.Bow.VaracityColdbow
+  _SpriteCollectionId: Extensions.Legendary.Bow.VeracityColdbow
   _DisplayNameOutLine:
     OutlineColor: {r: 1, g: 0.85490197, b: 0, a: 1}
     EffectDistance: {x: 1, y: -1}
@@ -48,4 +48,8 @@ MonoBehaviour:
   - _codeName: AttackSpeed
     _description: "\uACF5\uACA9\uC18D\uB3C4 %s% \uC99D\uAC00"
     _value: 300
+    _type: 0
+  - _codeName: AttackAmp
+    _description: "\uACF5\uACA9\uB825 %s% \uC99D\uD3ED"
+    _value: 200
     _type: 0

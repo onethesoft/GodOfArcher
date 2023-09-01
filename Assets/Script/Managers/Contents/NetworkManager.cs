@@ -599,6 +599,11 @@ public class NetworkManager
 
         foreach (PlayerInfo.UserDataKey dataKey in key)
         {
+#if ENABLE_LOG
+        if (dataKey == PlayerInfo.UserDataKey.DPS)
+            continue;
+       
+#endif
             if (userdata.Payload.UserData[dataKey.ToString()].Permission == PlayFab.ClientModels.UserDataPermission.Private)
                 privateData.Add(dataKey.ToString(), userdata.Payload.UserData[dataKey.ToString()].Value);
             else
@@ -658,6 +663,13 @@ public class NetworkManager
         {
             if (userdata.Payload.PlayerStatistics.Any(x=>x.StatisticName == dataKey.ToString()) == false)
                 continue;
+
+#if ENABLE_LOG
+            if (dataKey == PlayerInfo.StatisticsDataKey.MaxClearStage)
+                continue;
+            else if (dataKey == PlayerInfo.StatisticsDataKey.ItemEquipment)
+                continue;
+#endif
 
             PlayFab.ClientModels.StatisticValue _value = userdata.Payload.PlayerStatistics.Where(x => x.StatisticName == dataKey.ToString()).FirstOrDefault();
             _updateData.Add(new PlayFab.ClientModels.StatisticUpdate { StatisticName = dataKey.ToString(), Value = _value.Value  });

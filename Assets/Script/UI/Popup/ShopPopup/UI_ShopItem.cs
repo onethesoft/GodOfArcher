@@ -107,6 +107,7 @@ public class UI_ShopItem : UI_Base
            
         }
     }
+
     void UpdateProgress(Quest quest)
     {
         if(_quest == quest)
@@ -137,5 +138,7 @@ public class UI_ShopItem : UI_Base
     {
         if (_quest != null)
             _quest.onCompleted -= UpdateProgress;
+
+        Managers.Quest.onQuestReset -= ResetProgress;
     }
 }

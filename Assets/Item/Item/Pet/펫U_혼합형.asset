@@ -53,7 +53,7 @@ MonoBehaviour:
     _value: 2400
     _type: 0
   - _codeName: SkillAttack
-    _description: "\\n\uC2A4\uD0AC \uACF5\uACA9\uB825 %s% \uC99D\uAC00"
+    _description: "\uC2A4\uD0AC \uACF5\uACA9\uB825 %s% \uC99D\uAC00"
     _value: 90
     _type: 0
   - _codeName: SkillCoolTime
@@ -67,6 +67,10 @@ MonoBehaviour:
   - _codeName: CraftDropRate
     _description: "\uD658\uC0DD P \uD68D\uB4DD\uB960 %s% \uC99D\uAC00"
     _value: 300
+    _type: 0
+  - _codeName: JumpingCount
+    _description: "\uC810\uD551\uCE35 +1"
+    _value: 1
     _type: 0
   _prefab: {fileID: 4879778024254896243, guid: 909bb8b36f30d644cb47dca6aaca9136, type: 3}
   _Type: 2

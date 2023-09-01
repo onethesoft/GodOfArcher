@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2401474474980101771}
   - component: {fileID: 7875858958399644808}
   - component: {fileID: 4705486425654996813}
+  - component: {fileID: 4706199877270710264}
   m_Layer: 5
   m_Name: UI_RuneItemPanel
   m_TagString: Untagged
@@ -77,3 +78,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &4706199877270710264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990910400913785058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0905e77d27c7e4a4ebc8278c7532db1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

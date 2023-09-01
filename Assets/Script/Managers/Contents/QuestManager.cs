@@ -182,8 +182,8 @@ public class QuestManager
         ReceiveReport(category.CodeName, target.Value, successCount);
     }
 
-    
-    public void ResetQuests(string [] category)
+
+    public void ResetQuests(string[] category)
     {
         if (category == null || category.Length == 0)
             return;
@@ -191,7 +191,7 @@ public class QuestManager
         List<PlayerInfo.UserDataKey> _questKey = new List<PlayerInfo.UserDataKey>();
 
         // Category 에 해당하는 퀘스트를 모두 Reset 한다.
-        foreach(string it in category)
+        foreach (string it in category)
         {
             List<Quest> _resetableQuests = _completedQuests.Where(x => x.Category == it).ToList();
             _resetableQuests.AddRange(_activeQuests.Where(x => x.Category == it).ToList());
@@ -205,7 +205,7 @@ public class QuestManager
             if (_questKey.Any(x => x == _key) == false)
                 _questKey.Add(_key);
         }
-     
+
 
         // 서버에 저장
 
@@ -215,7 +215,7 @@ public class QuestManager
                 Save(update);
             }
 
-        
+
 
 
         // 이벤트 발생
@@ -228,7 +228,17 @@ public class QuestManager
 
 
     }
-    
+
+    public bool IsAllCearQuest(string category)
+    {
+        if (!Managers.Quest.ActiveQuests.Any(x => x.Category == category))
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+
     public void Save()
     {
         var root = new JObject();
