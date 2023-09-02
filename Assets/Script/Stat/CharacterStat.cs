@@ -199,11 +199,14 @@ public class CharacterStat : BaseStat
 
         _Level = data.Level;
         Value = CalculateValue(_Level);
+
+        // 20230902 스테이지 상승 및 스텟레벨 상승으로 인한 변경
+        if (CodeName != Define.StatID.Attack.ToString() &&
+            CodeName != Define.StatID.CriticalHit.ToString() &&
+            CodeName != Define.StatID.CraftAttack.ToString() &&
+            CodeName != Define.StatID.CraftCriticalHit.ToString())
+                _maxLevel = data.MaxLevel;
         
-        if(_maxLevel <= data.MaxLevel)
-        {
-            _maxLevel = data.MaxLevel;
-        }
         
         _isUnlock = data.IsUnLock;
 
