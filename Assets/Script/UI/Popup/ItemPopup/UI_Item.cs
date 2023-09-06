@@ -216,9 +216,10 @@ public class UI_Item : UI_Popup, IRecyclableScrollRectDataSource
         if(_updateKeys.Count > 0)
         {
             Managers.Game.Save(_updateKeys.ToArray());
-#if !ENABLE_LOG
+
             Managers.Game.Save(new PlayerInfo.StatisticsDataKey[] { PlayerInfo.StatisticsDataKey.ItemEquipment });
-#endif
+
+
         }
 
 

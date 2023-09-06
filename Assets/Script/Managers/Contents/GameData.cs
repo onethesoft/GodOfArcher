@@ -369,6 +369,23 @@ public class GameData : MonoBehaviour
         if (data.Payload.PlayerStatistics.Any(x => x.StatisticName == PlayerInfo.StatisticsDataKey.TrollStage.ToString()))
             TrollStage = data.Payload.PlayerStatistics.Where(x => x.StatisticName == PlayerInfo.StatisticsDataKey.TrollStage.ToString()).First().Value;
 
+#if ENABLE_LOG
+        if (PlayerPrefs.HasKey(PlayerInfo.StatisticsDataKey.Level.ToString()))
+            Level = PlayerPrefs.GetInt(PlayerInfo.StatisticsDataKey.Level.ToString());
+
+        if (PlayerPrefs.HasKey(PlayerInfo.StatisticsDataKey.Stage.ToString()))
+            Stage = PlayerPrefs.GetInt(PlayerInfo.StatisticsDataKey.Stage.ToString());
+
+        if (PlayerPrefs.HasKey(PlayerInfo.StatisticsDataKey.ClearStage.ToString()))
+            ClearStage = PlayerPrefs.GetInt(PlayerInfo.StatisticsDataKey.ClearStage.ToString());
+
+        if (PlayerPrefs.HasKey(PlayerInfo.StatisticsDataKey.MaxClearStage.ToString()))
+            MaxClearStage = PlayerPrefs.GetInt(PlayerInfo.StatisticsDataKey.MaxClearStage.ToString());
+
+        if (PlayerPrefs.HasKey(PlayerInfo.StatisticsDataKey.TrollStage.ToString()))
+            TrollStage = PlayerPrefs.GetInt(PlayerInfo.StatisticsDataKey.TrollStage.ToString());
+#endif
+
         if (data.Payload.UserData.ContainsKey(PlayerInfo.UserDataKey.DailyCheckoutQuestLastClearTime.ToString()))
             DailyCheckoutQuestLastClearTime = Util.TryParseDateTime(data.Payload.UserData[PlayerInfo.UserDataKey.DailyCheckoutQuestLastClearTime.ToString()].Value);
         

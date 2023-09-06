@@ -31,7 +31,8 @@ public class UI_Test : UI_Popup
         CharacterReset,
         ShopQuestReset,
         GambleQuestComplete,
-        GambleQuestCompleteBefore100
+        GambleQuestCompleteBefore100,
+        ManualSave
     }
 
     enum InputFields
@@ -263,6 +264,18 @@ public class UI_Test : UI_Popup
 
 
 
+        });
+        AddUIEvent(GetButton((int)Buttons.ManualSave).gameObject, (data) => { 
+            foreach(PlayerInfo.StatisticsDataKey key in Enum.GetValues(typeof(PlayerInfo.StatisticsDataKey)))
+            {
+                
+                PlayFab.ClientModels.StatisticValue _find = Managers.Player.GetPlayer(Managers.Game.PlayerId).Payload.PlayerStatistics.Where(x => x.StatisticName == key.ToString()).FirstOrDefault();
+                if (_find != null)
+                    PlayerPrefs.SetInt(key.ToString(), _find.Value);
+                
+
+            }
+            PlayerPrefs.Save();
         });
         AddUIEvent(GetButton((int)Buttons.Exit).gameObject, (data) => { ClosePopupUI(); });
         AddUIEvent(GetButton((int)Buttons.Close).gameObject, (data) => { ClosePopupUI(); });

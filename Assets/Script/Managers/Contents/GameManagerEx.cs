@@ -276,9 +276,16 @@ public class GameManagerEx
             foreach (PlayerInfo.StatisticsDataKey key in SaveDataKeys)
                 PlayerData.UpdateData(key, Managers.Player.GetPlayer(PlayerId));
 #if ENABLE_LOG
+            foreach(PlayerInfo.StatisticsDataKey key in SaveDataKeys)
+            {
+                PlayFab.ClientModels.StatisticValue _findValue = Managers.Player.GetPlayer(PlayerId).Payload.PlayerStatistics.Where(x=>x.StatisticName == key.ToString()).FirstOrDefault();
+                if(_findValue != null)
+                {
+                    PlayerPrefs.SetInt(key.ToString(), _findValue.Value);
+                }
+            }
+            PlayerPrefs.Save();
 
-            PlayerInfo.StatisticsDataKey[] _filteringSaveDataKeys = SaveDataKeys.Where(x => x != PlayerInfo.StatisticsDataKey.MaxClearStage).ToArray();
-            Managers.Network.UpdateStatisticsData(_filteringSaveDataKeys, Managers.Player.GetPlayer(PlayerId));
 #else
             Managers.Network.UpdateStatisticsData(SaveDataKeys, Managers.Player.GetPlayer(PlayerId));
 #endif
@@ -292,8 +299,18 @@ public class GameManagerEx
         {
             
             PlayerData.UpdateData(SaveDataKey, Managers.Player.GetPlayer(PlayerId));
+#if ENABLE_LOG
+            PlayFab.ClientModels.StatisticValue _findValue = Managers.Player.GetPlayer(PlayerId).Payload.PlayerStatistics.Where(x => x.StatisticName == SaveDataKey.ToString()).FirstOrDefault();
+            if (_findValue != null)
+            {
+                PlayerPrefs.SetInt(SaveDataKey.ToString(), _findValue.Value);
+            }
+            
+            PlayerPrefs.Save();
+#else
             Managers.Network.UpdateStatisticsData(new PlayerInfo.StatisticsDataKey[] { SaveDataKey }, Managers.Player.GetPlayer(PlayerId));
-        }
+#endif
+    }
     }
     public void Load()
     {
