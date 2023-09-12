@@ -207,6 +207,8 @@ public class PacketHandler
         {
             Managers.Player.GetPlayer(Managers.Game.PlayerId).DisplayName = _getPlayerProfile.InfoResultPayload.PlayerProfile.DisplayName;
             Managers.UI.ShowPopupUI<UI_Loading>();
+
+
             Managers.Network.GetSessionInfo((result) => {
 
                 PlayFab.ClientModels.GetUserDataResult _session = result as PlayFab.ClientModels.GetUserDataResult;
@@ -421,7 +423,9 @@ public class PacketHandler
                      
                     Managers.Shop.ProcessGiveToUser(grantedItem.ItemId);
                 }
-                else if (Managers.Shop.Database.Seasonpass.Item.ItemId == grantedItem.ItemId || Managers.Shop.Database.Seasonpass2.Item.ItemId == grantedItem.ItemId)
+                else if (Managers.Shop.Database.Seasonpass.Item.ItemId == grantedItem.ItemId 
+                    || Managers.Shop.Database.Seasonpass2.Item.ItemId == grantedItem.ItemId
+                     || Managers.Shop.Database.Seasonpass3.Item.ItemId == grantedItem.ItemId)
                     Managers.Shop.ProcessGiveToUser(grantedItem.ItemId);
             }
         }
@@ -676,6 +680,8 @@ public class PacketHandler
 
 
     }
+
+    
     public static void Init()
     {
         _handlers = new Dictionary<NetworkManager.Command, Action<PlayFabResultCommon>>();

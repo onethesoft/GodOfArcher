@@ -21,11 +21,12 @@ public class UI_CharacterInfo : UI_Popup
         Bind<Button>(typeof(Buttons));
         Bind<GameObject>(typeof(GameObjects));
 
-        GameObject.FindObjectOfType<GameData>().OpenPopup(this);
+        GameData _playerData = FindObjectOfType<GameData>();
+        _playerData.OpenPopup(this);
 
         UI_CharacterInfoItem _Rating = Util.GetOrAddComponent<UI_CharacterInfoItem>(Managers.Resource.Instantiate("UI/SubItem/CharacterInfoPopup/UI_CharacterInfoItem", Get<GameObject>((int)GameObjects.ContentPanel).transform));
         _Rating.HeadText = "등급";
-        _Rating.ContentText = Managers.Game.GetDisplayRank();
+        _Rating.ContentText = $"{Managers.Game.GetDisplayRank()} + {_playerData.ReviveLevel}";
 
         UI_CharacterInfoItem _Damage = Util.GetOrAddComponent<UI_CharacterInfoItem>(Managers.Resource.Instantiate("UI/SubItem/CharacterInfoPopup/UI_CharacterInfoItem", Get<GameObject>((int)GameObjects.ContentPanel).transform));
         _Damage.HeadText = "공격력 증가";

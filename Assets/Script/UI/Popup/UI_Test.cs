@@ -9,6 +9,11 @@ using PlayFab.ClientModels;
 
 public class UI_Test : UI_Popup
 {
+    public enum PlayerPrefsKey
+    {
+        TestOn
+    }
+        
     enum Buttons
     {
         Exit,
@@ -32,13 +37,18 @@ public class UI_Test : UI_Popup
         ShopQuestReset,
         GambleQuestComplete,
         GambleQuestCompleteBefore100,
-        ManualSave
+        TestOnOff,
+        ReviveLevel
     }
 
     enum InputFields
     {
         StageInput,
         SkillCoolTimeInput
+    }
+    enum Texts
+    {
+        TestOnOffText
     }
 
     string _stageInput;
@@ -48,11 +58,13 @@ public class UI_Test : UI_Popup
         base.Init();
 
         Bind<Button>(typeof(Buttons));
+        Bind<Text>(typeof(Texts));
         Bind<InputField>(typeof(InputFields));
 
 #if ENABLE_LOG
-
-
+        // 테스트 중이면 테스트 Off 를 테스트 중이 아니면 테스트 On 으로 표출한다
+        GetText((int)Texts.TestOnOffText).text = PlayerPrefs.HasKey(PlayerPrefsKey.TestOn.ToString()) && PlayerPrefs.GetInt(PlayerPrefsKey.TestOn.ToString()) == 1 ? "테스트 Off" : "테스트 ON";
+        
         Get<InputField>((int)InputFields.StageInput).onValueChanged.AddListener((text) => {
             _stageInput = text;
         });
@@ -265,22 +277,82 @@ public class UI_Test : UI_Popup
 
 
         });
-        AddUIEvent(GetButton((int)Buttons.ManualSave).gameObject, (data) => { 
-            foreach(PlayerInfo.StatisticsDataKey key in Enum.GetValues(typeof(PlayerInfo.StatisticsDataKey)))
+        AddUIEvent(GetButton((int)Buttons.TestOnOff).gameObject, (data) => {
+
+        if (PlayerPrefs.HasKey(PlayerPrefsKey.TestOn.ToString()) && PlayerPrefs.GetInt(PlayerPrefsKey.TestOn.ToString()) == 1)
+        {
+            Managers.UI.ShowPopupUI<UI_LoadingBlock>();
+            foreach (PlayerInfo.StatisticsDataKey key in Enum.GetValues(typeof(PlayerInfo.StatisticsDataKey)))
             {
-                
                 PlayFab.ClientModels.StatisticValue _find = Managers.Player.GetPlayer(Managers.Game.PlayerId).Payload.PlayerStatistics.Where(x => x.StatisticName == key.ToString()).FirstOrDefault();
                 if (_find != null)
-                    PlayerPrefs.SetInt(key.ToString(), _find.Value);
-                
-
+                    PlayerPrefs.DeleteKey(key.ToString());
             }
+
+
+            PlayerPrefs.DeleteKey(PlayerInfo.UserDataKey.DPS.ToString());
+            PlayerPrefs.DeleteKey(PlayerInfo.UserDataKey.Rune.ToString());
+                PlayerPrefs.DeleteKey(PlayerInfo.UserDataKey.Pet.ToString());
+                PlayerPrefs.DeleteKey(PlayerInfo.UserDataKey.Bow.ToString());
+                PlayerPrefs.DeleteKey(PlayerInfo.UserDataKey.Helmet.ToString());
+                PlayerPrefs.DeleteKey(PlayerInfo.UserDataKey.Armor.ToString());
+                PlayerPrefs.DeleteKey(PlayerInfo.UserDataKey.Cloak.ToString());
+                PlayerPrefs.DeleteKey(PlayerInfo.UserDataKey.PlayerStat.ToString());
+
+
+                PlayerPrefs.SetInt(PlayerPrefsKey.TestOn.ToString(), 0);
             PlayerPrefs.Save();
+
+#if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+#else
+                Application.Quit();
+#endif
+            }
+            else
+            {
+                foreach (PlayerInfo.StatisticsDataKey key in Enum.GetValues(typeof(PlayerInfo.StatisticsDataKey)))
+                {
+                    PlayFab.ClientModels.StatisticValue _find = Managers.Player.GetPlayer(Managers.Game.PlayerId).Payload.PlayerStatistics.Where(x => x.StatisticName == key.ToString()).FirstOrDefault();
+                    if (_find != null)
+                        PlayerPrefs.SetInt(key.ToString(), _find.Value);
+                }
+               
+                GameData _playerData = FindObjectOfType<GameData>();
+                PlayerPrefs.SetString(PlayerInfo.UserDataKey.DPS.ToString(), Managers.Game.DPS.ToString());
+                PlayerPrefs.SetString(PlayerInfo.UserDataKey.Rune.ToString(), JsonUtility.ToJson(_playerData.Rune.ToSaveData()));
+                PlayerPrefs.SetString(PlayerInfo.UserDataKey.Pet.ToString(), JsonUtility.ToJson(_playerData.Pet.ToSaveData()));
+                PlayerPrefs.SetString(PlayerInfo.UserDataKey.Bow.ToString(), JsonUtility.ToJson(_playerData.Bow.ToSaveData()));
+                PlayerPrefs.SetString(PlayerInfo.UserDataKey.Helmet.ToString(), JsonUtility.ToJson(_playerData.Helmet.ToSaveData()));
+                PlayerPrefs.SetString(PlayerInfo.UserDataKey.Armor.ToString(), JsonUtility.ToJson(_playerData.Armor.ToSaveData()));
+                PlayerPrefs.SetString(PlayerInfo.UserDataKey.Cloak.ToString(), JsonUtility.ToJson(_playerData.Cloak.ToSaveData()));
+                PlayerPrefs.SetString(PlayerInfo.UserDataKey.PlayerStat.ToString(), JsonUtility.ToJson(_playerData.PlayerStat.ToSaveData()));
+                PlayerPrefs.SetInt(PlayerPrefsKey.TestOn.ToString(), 1);
+                PlayerPrefs.Save();
+                
+            }
+            GetText((int)Texts.TestOnOffText).text = PlayerPrefs.HasKey(PlayerPrefsKey.TestOn.ToString()) && PlayerPrefs.GetInt(PlayerPrefsKey.TestOn.ToString()) == 1 ? "테스트 Off" : "테스트 ON";
+
+
+
+        });
+        AddUIEvent(GetButton((int)Buttons.ReviveLevel).gameObject, (data) => {
+            if(PlayerPrefs.HasKey(PlayerPrefsKey.TestOn.ToString()) && PlayerPrefs.GetInt(PlayerPrefsKey.TestOn.ToString()) == 1 )
+            {
+                GameData _playerData = FindObjectOfType<GameData>();
+                _playerData.ReviveLevel += 100;
+                _playerData.Rune.OnUpdateSlot(0);
+                _playerData.Pet.OnUpdateSlot(0);
+                Managers.Game.OnRevived?.Invoke();
+                Managers.Game.Save(PlayerInfo.StatisticsDataKey.ReviveLevel);
+            }
+
+
         });
         AddUIEvent(GetButton((int)Buttons.Exit).gameObject, (data) => { ClosePopupUI(); });
         AddUIEvent(GetButton((int)Buttons.Close).gameObject, (data) => { ClosePopupUI(); });
 #endif
-    }
+            }
 
     IEnumerator AllResetCharacter()
     {

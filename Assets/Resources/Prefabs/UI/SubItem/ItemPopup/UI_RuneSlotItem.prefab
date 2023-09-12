@@ -160,6 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 67014212297095495}
   - component: {fileID: 1661449900919572278}
+  - component: {fileID: 4045286242289445985}
   m_Layer: 5
   m_Name: UI_RuneSlotItem
   m_TagString: Untagged
@@ -214,6 +215,26 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &4045286242289445985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194863370432110012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8724a781a0e698d42bd13d16466bc207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Selected: {fileID: 1065788780759065690}
+  fx_background: {fileID: 415379967335975137}
+  CurrencyImage: {fileID: 8572006046277586265}
+  CurrencyText: {fileID: 3910538469621715376}
+  AmountText: {fileID: 4527009953305502499}
+  EquipPosition: {fileID: 2989921075505056875}
+  Description: {fileID: 8877667336330968754}
+  SlotBackground: {fileID: 7058354001539732324}
 --- !u!1 &2059656721162566794
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

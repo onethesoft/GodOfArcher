@@ -201,7 +201,7 @@ public class QuestManager
 
             PlayerInfo.UserDataKey _key;
 
-            QuestFinder.TryGetQuestKey(_resetableQuests.First().Category, out _key);
+            QuestFinder.TryGetQuestKey(_resetableQuests.FirstOrDefault(), out _key);
             if (_questKey.Any(x => x == _key) == false)
                 _questKey.Add(_key);
         }
@@ -259,14 +259,13 @@ public class QuestManager
             _saveCompletedQuests.Clear();
 
             foreach (Quest quest in _activeQuests)
-                if (QuestFinder.IsContain(quest.Category, key))
+                if (QuestFinder.IsContain(quest, key))
                 {
-                   
                     _saveActiveQuests.Add(quest);
                 }
 
             foreach (Quest quest in _completedQuests)
-                if (QuestFinder.IsContain(quest.Category, key))
+                if (QuestFinder.IsContain(quest, key))
                 {
 
                     _saveCompletedQuests.Add(quest);
@@ -304,11 +303,11 @@ public class QuestManager
             if (QuestFinder.FindKeys().Any(x => x== saveKey))
             {
                 foreach (Quest quest in _activeQuests)
-                    if (QuestFinder.IsContain(quest.Category, saveKey))
+                    if (QuestFinder.IsContain(quest, saveKey))
                         _saveActiveQuests.Add(quest);
 
                 foreach (Quest quest in _completedQuests)
-                    if (QuestFinder.IsContain(quest.Category, saveKey))
+                    if (QuestFinder.IsContain(quest, saveKey))
                         _saveCompletedQuests.Add(quest);
 
                 var root = new JObject();
@@ -361,8 +360,7 @@ public class QuestManager
                     LoadSaveDatas(root[kActiveQuestsSavePath], _questDatabase, LoadActiveQuest);
                     LoadSaveDatas(root[kCompletedQuestsSavePath], _questDatabase, LoadCompletedQuest);
                 }
-                else
-                    Debug.LogError("QuestManager.Load : not Find QuestKey from TitleData");
+                
                
                
                 

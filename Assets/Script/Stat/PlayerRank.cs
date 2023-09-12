@@ -16,7 +16,9 @@ public class PlayerRank : ScriptableObject
         S,
         L,
         M,
-        I
+        I,
+        U,
+        G
     }
     [SerializeField]
     Rank _rank;

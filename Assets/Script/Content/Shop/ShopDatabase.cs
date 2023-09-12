@@ -25,4 +25,8 @@ public class ShopDatabase : ScriptableObject
     [SerializeField]
     IAPData _seasonpass2;
     public IAPData Seasonpass2 => _seasonpass2;
+
+    [SerializeField]
+    IAPData _seasonpass3;
+    public IAPData Seasonpass3 => _seasonpass3;
 }

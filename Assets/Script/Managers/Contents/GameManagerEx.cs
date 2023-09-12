@@ -52,6 +52,11 @@ public class GameManagerEx
     public delegate void PlayerLevelChangedHandler();
     public PlayerLevelChangedHandler OnLevelChanged = null;
 
+    public delegate void PlayerReviveEventHandler();
+    public PlayerReviveEventHandler OnRevived = null;
+
+
+
     public delegate void ResetStageHander();
     public ResetStageHander OnResetScene = null;
 
@@ -371,8 +376,8 @@ public class GameManagerEx
         Managers.UI.ShowPopupUI<UI_RankupNotice>();
 
         PlayerData.PlayerStat.OnPlayerLevelChanged(PlayerData.Level);
-        PlayerData.Rune.OnPlayerLevelChanged(PlayerData.Level);
-        PlayerData.Pet.OnPlayerLevelChanged(PlayerData.Level);
+        PlayerData.Rune.OnUpdateSlot(PlayerData.Level);
+        PlayerData.Pet.OnUpdateSlot(PlayerData.Level);
         Managers.Game.Save(new PlayerInfo.UserDataKey[] { PlayerInfo.UserDataKey.PlayerStat , PlayerInfo.UserDataKey.Rune, PlayerInfo.UserDataKey.Pet });
 
 
@@ -787,7 +792,7 @@ public class GameManagerEx
     {
         get
         {
-            return PlayerData.ItemStat.GetStatValue(Define.StatID.AllAttackAmp.ToString()) + PlayerData.RuneStat.GetStatValue(Define.StatID.AllAttackAmp.ToString());
+            return PlayerData.ItemStat.GetStatValue(Define.StatID.AllAttackAmp.ToString()) + PlayerData.RuneStat.GetStatValue(Define.StatID.AllAttackAmp.ToString()) + PlayerData.ReviveLevel;
         }
     }
     public int GetSkillMultipier
@@ -943,11 +948,16 @@ public class GameManagerEx
     {
         StageTask _mainStageTask = StageDataBase.StageList.Where(x => x.type == Define.Dongeon.Main).FirstOrDefault();
 
+        int CurrentStage = Managers.Game.Stage;
         // 광고 스킵 패키지가 있는지 체크
         if (IsAdSkipped == true)
         {
-            AddCurrency(Define.CurrencyID.CP.ToString(), _mainStageTask.GetMonsterHP(Managers.Game.Stage) , IsApplyDropRate: true);
-            AddCurrency(Define.CurrencyID.Ruby.ToString(), PlayerData.GetReviveRubyAmount(), IsUpdate: Managers.Network.IS_ENABLE_NETWORK);
+            // 환생전에 스텟과 스테이지가 초기화되므로 그전에 유저에게 보상을 제공한다
+            AddCurrency(Define.CurrencyID.CP.ToString(), _mainStageTask.GetMonsterHP(CurrentStage) , IsApplyDropRate: true);
+            AddCurrency(Define.CurrencyID.Ruby.ToString(), PlayerData.GetReviveRubyAmount(CurrentStage), IsUpdate: Managers.Network.IS_ENABLE_NETWORK);
+            PlayerData.Revive(CurrentStage);
+
+            // 스텟과 스테이지 초기화
             ResetStat();
             ResetStage();
             ResetCurrency(Define.CurrencyID.Gold.ToString());
@@ -958,10 +968,14 @@ public class GameManagerEx
         {
             if(IsAdReward)
                 Managers.Item.GrantItemToUser(Buff.Id.Buff_CPDropRate_AD.ToString());
-            
-                
-            AddCurrency(Define.CurrencyID.CP.ToString(),_mainStageTask.GetMonsterHP(Managers.Game.Stage) , IsApplyDropRate: true);
-            AddCurrency(Define.CurrencyID.Ruby.ToString(), PlayerData.GetReviveRubyAmount(), IsUpdate: Managers.Network.IS_ENABLE_NETWORK);
+
+            // 환생전에 스텟과 스테이지가 초기화되므로 그전에 유저에게 보상을 제공한다    
+            AddCurrency(Define.CurrencyID.CP.ToString(),_mainStageTask.GetMonsterHP(CurrentStage) , IsApplyDropRate: true);
+            AddCurrency(Define.CurrencyID.Ruby.ToString(), PlayerData.GetReviveRubyAmount(CurrentStage), IsUpdate: Managers.Network.IS_ENABLE_NETWORK);
+            PlayerData.Revive(CurrentStage);
+
+
+            // 스텟과 스테이지 초기화
             ResetStat();
             ResetStage();
             GetInventory().RemoveItem(Buff.Id.Buff_CPDropRate_AD.ToString());
@@ -970,15 +984,18 @@ public class GameManagerEx
             
 
         }
+        PlayerData.Rune.OnUpdateSlot(0);
+        PlayerData.Pet.OnUpdateSlot(0);
 
-        PlayerData.ReviveInfo.DoRevive();
 
 
         if (Managers.Network.IS_ENABLE_NETWORK == true)
         {
-            Save(new PlayerInfo.StatisticsDataKey[] { PlayerInfo.StatisticsDataKey.Stage, PlayerInfo.StatisticsDataKey.ClearStage, PlayerInfo.StatisticsDataKey.MaxClearStage });
+            Save(new PlayerInfo.StatisticsDataKey[] { PlayerInfo.StatisticsDataKey.Stage, PlayerInfo.StatisticsDataKey.ClearStage, PlayerInfo.StatisticsDataKey.MaxClearStage , PlayerInfo.StatisticsDataKey.ReviveLevel });
             Save(new PlayerInfo.UserDataKey[] { PlayerInfo.UserDataKey.PlayerStat, PlayerInfo.UserDataKey.Gold, PlayerInfo.UserDataKey.CP , PlayerInfo.UserDataKey.ReviveInfo });
         }
+
+        OnRevived?.Invoke();
     }
 
     public StatSystem GetArtifactStat()

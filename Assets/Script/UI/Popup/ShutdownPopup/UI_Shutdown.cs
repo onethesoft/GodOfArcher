@@ -62,7 +62,7 @@ public class UI_Shutdown : UI_Popup
         _time = GlobalTime.Now.ToLocalTime();
         _gold = Managers.Game.GetCurrency(Define.CurrencyID.Gold.ToString());
         _Stage = Managers.Game.Stage;
-        _ruby = (Managers.Game.Stage / 10) + Managers.Game.PlyaerDataBase.GetReviveBonus(Managers.Game.Stage);
+        _ruby = (Managers.Game.Stage / 10) + Managers.Game.PlyaerDataBase.GetReviveRubyBonus(Managers.Game.Stage);
         _mainStageTask = Managers.Game.StageDataBase.StageList.Where(x => x.type == Define.Dongeon.Main).FirstOrDefault();
         clicked = 0;
         OnDemandRendering.renderFrameInterval = 3;
@@ -104,7 +104,7 @@ public class UI_Shutdown : UI_Popup
 
         GetText((int)Texts.GoldText).text = $"{Util.GetBigIntegerUnit(Managers.Game.GetCurrency(Define.CurrencyID.Gold.ToString()) - _gold)}";
         GetText((int)Texts.CPText).text = $"{Util.GetBigIntegerUnit(Managers.Game.CalculateDropRateAmount(Define.CurrencyID.CP, _mainStageTask.GetMonsterHP(Managers.Game.Stage)))}";
-        GetText((int)Texts.RubyText).text = $"환생 시 얻는 루비 : {Util.GetBigIntegerUnit(_playerData.GetReviveRubyAmount())}";
+        GetText((int)Texts.RubyText).text = $"환생 시 얻는 루비 : {Util.GetBigIntegerUnit(_playerData.GetReviveRubyAmount(Managers.Game.Stage))}";
     }
 
     public override void ClosePopupUI()
@@ -146,7 +146,7 @@ public class UI_Shutdown : UI_Popup
         GetText((int)Texts.StageText).text = Managers.Game.Stage.ToString();
         GetText((int)Texts.GoldText).text = $"{Util.GetBigIntegerUnit(Managers.Game.GetCurrency(Define.CurrencyID.Gold.ToString()) - _gold)}";
         GetText((int)Texts.CPText).text = $"{Util.GetBigIntegerUnit(Managers.Game.CalculateDropRateAmount(Define.CurrencyID.CP, _mainStageTask.GetMonsterHP(Managers.Game.Stage)))}";
-        GetText((int)Texts.RubyText).text = $"환생 시 얻는 루비 : {Util.GetBigIntegerUnit(_playerData.GetReviveRubyAmount())}";
+        GetText((int)Texts.RubyText).text = $"환생 시 얻는 루비 : {Util.GetBigIntegerUnit(_playerData.GetReviveRubyAmount(Managers.Game.Stage))}";
     }
 
 

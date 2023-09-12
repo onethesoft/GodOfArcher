@@ -55,9 +55,12 @@ public class UI_Revive : UI_Popup
 
          _mode = EvaluateMode();
         string _rubyBonusText = string.Empty;
-        foreach(PlayerDatabase.ReviveBonusData rubyBonus in Managers.Game.PlyaerDataBase.ListRubyBonus)
+        foreach(PlayerDatabase.ReviveBonusData reviveBonus in Managers.Game.PlyaerDataBase.ListRubyBonus)
         {
-            _rubyBonusText += $"{Util.GetBigIntegerUnit(rubyBonus.Stage)}층 이상 +{Util.GetBigIntegerUnit(rubyBonus.RubyBonusCount)} 루비{System.Environment.NewLine}";
+            if(reviveBonus.IncrementReviveLevel == 0)
+                _rubyBonusText += $"{Util.GetBigIntegerUnit(reviveBonus.Stage)}층 이상 +{Util.GetBigIntegerUnit(reviveBonus.RubyBonusCount)} 루비{System.Environment.NewLine}";
+            else
+                _rubyBonusText += $"{Util.GetBigIntegerUnit(reviveBonus.Stage)}층 이상 +{Util.GetBigIntegerUnit(reviveBonus.RubyBonusCount)} 루비/ 칭호 +{reviveBonus.IncrementReviveLevel} (모든피해 {reviveBonus.IncrementReviveLevel}%){System.Environment.NewLine}";
         }
         GetText((int)Texts.RubyBonusText).text = _rubyBonusText;
 
@@ -164,7 +167,7 @@ public class UI_Revive : UI_Popup
             StageTask _mainStageTask = Managers.Game.StageDataBase.StageList.Where(x => x.type == Define.Dongeon.Main).FirstOrDefault();
 
             GetText((int)Texts.CPText).text = Util.GetBigIntegerUnit(Managers.Game.CalculateDropRateAmount(Define.CurrencyID.CP, _mainStageTask.GetMonsterHP(Managers.Game.Stage)));
-            GetText((int)Texts.RubyText).text = Util.GetBigIntegerUnit(_playerData.GetReviveRubyAmount());
+            GetText((int)Texts.RubyText).text = Util.GetBigIntegerUnit(_playerData.GetReviveRubyAmount(Managers.Game.Stage));
 
             //무한 패키지 구매 확인 후 광고 보상 버튼 안보이도록 수정할것
             if (Managers.Game.IsAdSkipped)

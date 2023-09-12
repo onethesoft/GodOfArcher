@@ -28,6 +28,9 @@ public class UI_PetPopup : UI_Popup
 
     [SerializeField]
     List<UI_PetItemData> _petItemViewDataList;
+
+    [SerializeField]
+    List<int> _slotIndexList;
     public void SetupItemViewData(List<UI_PetItemData> itemList)
     {
         _petItemViewDataList = itemList;
@@ -47,6 +50,19 @@ public class UI_PetPopup : UI_Popup
 
         _isUpdateKey = JsonUtility.ToJson(Managers.Game.GetEquipment("Pet").ToSaveData());
 
+        foreach(int index in _slotIndexList)
+        {
+            UI_EquipmentSlot _slot = Util.GetOrAddComponent<UI_EquipmentSlot>(Managers.Resource.Instantiate($"UI/SubItem/ItemPopup/UI_PetSlotItem", Get<GameObject>((int)GameObjects.SlotLayout).transform));
+            EquipmentSlot slot = Managers.Game.GetEquipment("Pet").SlotList[index];
+            _slot.Setup(slot);
+            _slot.OnSelect -= OnSelectSlot;
+            _slot.OnSelect += OnSelectSlot;
+            _slotItems.Add(_slot);
+
+            slot.OnUnlock += SaveEquipment;
+        }
+        /*
+
         foreach (EquipmentSlot slot in Managers.Game.GetEquipment("Pet").SlotList) 
         {
 
@@ -58,6 +74,7 @@ public class UI_PetPopup : UI_Popup
 
             slot.OnUnlock += SaveEquipment;
         }
+        */
 
         int ItemCount = 0;
         GameObject ItemPanel = null;

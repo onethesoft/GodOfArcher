@@ -12,7 +12,8 @@ public class UI_Seasonpass : UI_Popup
     public enum Mode
     {
         PASS ,
-        PASS2
+        PASS2,
+        PASS3
     }
     enum Buttons
     {
@@ -49,6 +50,7 @@ public class UI_Seasonpass : UI_Popup
     List<UI_SeasonpassItem> _seasonpassItemList;
     const int PageSize = 20;
     int PageIndex = 0;
+    int PageIndexMax;
     
    
     public override void Init()
@@ -58,9 +60,16 @@ public class UI_Seasonpass : UI_Popup
         Bind<GameObject>(typeof(GameObjects));
         Bind<Text>(typeof(Texts));
 
-        GetText((int)Texts.TitleText).text = mode.ToString() + " 이벤트";
+        
+        if(mode == Mode.PASS3)
+        {
+            GetText((int)Texts.TitleText).text = "Premium" + System.Environment.NewLine + mode.ToString() + " 이벤트";
+            GetText((int)Texts.TitleText).fontSize = 35;
+        }
+        else
+            GetText((int)Texts.TitleText).text = mode.ToString() + " 이벤트";
 
-       
+
         List<Quest> _SeasonPassQuests = Managers.Quest.FindQuestByCategory(Define.QuestType.Seasonpass.ToString());
      
         
@@ -74,7 +83,7 @@ public class UI_Seasonpass : UI_Popup
             _freeQuest = _SeasonPassQuests.Where(x => x.CodeName.Contains("free")).ToList();
             _passQuest = _SeasonPassQuests.Where(x => x.CodeName.Contains("pass_")).ToList();
         }
-        else
+        else if(mode == Mode.PASS2)
         {
             GetText((int)Texts.SubTitleText_0).text = "PASS 보상";
             GetText((int)Texts.SubTitleText_1).text = "PASS 보상";
@@ -84,6 +93,17 @@ public class UI_Seasonpass : UI_Popup
             _freeQuest = _SeasonPassQuests.Where(x => x.CodeName.Contains("pass2_")).ToList();
             _passQuest = _SeasonPassQuests.Where(x => x.CodeName.Contains("pass3_")).ToList();
         }
+        else
+        {
+            GetText((int)Texts.SubTitleText_0).text = "PASS 보상";
+            GetText((int)Texts.SubTitleText_1).text = "PASS 보상";
+            GetText((int)Texts.SubTitleText_2).text = "PASS 보상";
+            GetText((int)Texts.SubTitleText_3).text = "PASS 보상";
+
+            _freeQuest = _SeasonPassQuests.Where(x => x.CodeName.Contains("pass4_")).ToList();
+            _passQuest = _SeasonPassQuests.Where(x => x.CodeName.Contains("pass5_")).ToList();
+        }
+        PageIndexMax = (_freeQuest.Count / PageSize) - 1;
      
 
         _seasonpassItemList = new List<UI_SeasonpassItem>();
@@ -116,7 +136,7 @@ public class UI_Seasonpass : UI_Popup
             }
         });
         AddUIEvent(GetButton((int)Buttons.RightButton).gameObject, (data) => {
-            if (PageIndex < 2)
+            if (PageIndex < PageIndexMax)
             {
                 PageIndex++;
                 UpdateItems();
@@ -134,7 +154,7 @@ public class UI_Seasonpass : UI_Popup
           
                 UpdatePurchasePanel();
             }
-            else
+            else if( mode == Mode.PASS2)
             {
                 if (!Managers.Game.GetInventory().IsFindItem(Managers.Shop.Database.Seasonpass.Item.ItemId))
                 {
@@ -148,6 +168,30 @@ public class UI_Seasonpass : UI_Popup
 
                 Managers.Shop.BuyProductId(Managers.Shop.Database.Seasonpass2.Item.ItemId);
            
+                UpdatePurchasePanel();
+            }
+            else
+            {
+                if (!Managers.Game.GetInventory().IsFindItem(Managers.Shop.Database.Seasonpass.Item.ItemId))
+                {
+                    UI_Messagebox _popup = Managers.UI.ShowPopupUI<UI_Messagebox>();
+                    _popup.mode = UI_Messagebox.Mode.OK;
+                    _popup.Title = "시즌패스";
+                    _popup.Text = "Pass 이벤트를 먼저 구매해주세요";
+                    return;
+                }
+                else if( !Managers.Game.GetInventory().IsFindItem(Managers.Shop.Database.Seasonpass2.Item.ItemId))
+                {
+                    UI_Messagebox _popup = Managers.UI.ShowPopupUI<UI_Messagebox>();
+                    _popup.mode = UI_Messagebox.Mode.OK;
+                    _popup.Title = "시즌패스";
+                    _popup.Text = "Pass2 이벤트를 먼저 구매해주세요";
+                    return;
+                }
+
+
+                Managers.Shop.BuyProductId(Managers.Shop.Database.Seasonpass3.Item.ItemId);
+
                 UpdatePurchasePanel();
             }
 
@@ -203,11 +247,17 @@ public class UI_Seasonpass : UI_Popup
             GetText((int)Texts.PurchaseText).text = "총 스테이지 클리어 시 약 100만 루비 획득";
             ItemId = Managers.Shop.Database.Seasonpass.Item.ItemId;
         }
-        else
+        else if( mode == Mode.PASS2)
         {
             GetText((int)Texts.PriceText).text = Managers.Shop.GetPrice(Managers.Shop.Database.Seasonpass2.Item.ItemId);
             GetText((int)Texts.PurchaseText).text = "총 스테이지 클리어 시 약 650만 루비 획득";
             ItemId = Managers.Shop.Database.Seasonpass2.Item.ItemId;
+        }
+        else
+        {
+            GetText((int)Texts.PriceText).text = Managers.Shop.GetPrice(Managers.Shop.Database.Seasonpass2.Item.ItemId);
+            GetText((int)Texts.PurchaseText).text = "총 스테이지 클리어 시 약 730만 루비 획득";
+            ItemId = Managers.Shop.Database.Seasonpass3.Item.ItemId;
         }
 
 

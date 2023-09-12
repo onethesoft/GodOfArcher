@@ -335,37 +335,26 @@ public class UI_RankingItem : UI_Base, ICell
     {
         if (_mode == Mode.RankerItem)
         {
-            if (_entry.Profile.Statistics.Any(x => x.Name == PlayerInfo.StatisticsDataKey.Level.ToString()) == false)
-            {
-                for (int i = 0; i < RankItem.transform.childCount; i++)
-                {
-                    Managers.Resource.Destroy(RankItem.transform.GetChild(i).gameObject);
-                }
-                RankItem.transform.DetachChildren();
-                Managers.Resource.Instantiate(Managers.Game.PlyaerDataBase.RankDic[0].Icon, RankItem.transform);
-                RankText.text = Managers.Game.PlyaerDataBase.RankDic[0].RankText;
-                /*
+            int PlayerRank = 0;
+            if (_entry.Profile.Statistics.Any(x => x.Name == PlayerInfo.StatisticsDataKey.Level.ToString()))
+                PlayerRank = _entry.Profile.Statistics.Where(x => x.Name == PlayerInfo.StatisticsDataKey.Level.ToString()).First().Value;
 
-                Managers.Resource.Instantiate(Managers.Game.PlyaerDataBase.RankDic[0].Icon, Get<GameObject>((int)GameObjects.RankItem).transform);
-                GetText((int)Texts.RankText).text = Managers.Game.PlyaerDataBase.RankDic[0].RankText;
-                */
+            for (int i = 0; i < RankItem.transform.childCount; i++)
+            {
+                Managers.Resource.Destroy(RankItem.transform.GetChild(i).gameObject);
             }
+            RankItem.transform.DetachChildren();
+            Managers.Resource.Instantiate(Managers.Game.PlyaerDataBase.RankDic[PlayerRank].Icon, RankItem.transform);
+
+            if (_entry.Profile.Statistics.Any(x => x.Name == PlayerInfo.StatisticsDataKey.ReviveLevel.ToString()) == false)
+                RankText.text = Managers.Game.PlyaerDataBase.RankDic[PlayerRank].RankText;
+            else if (_entry.Profile.Statistics.Where(x => x.Name == PlayerInfo.StatisticsDataKey.ReviveLevel.ToString()).FirstOrDefault().Value == 0)
+                RankText.text = Managers.Game.PlyaerDataBase.RankDic[PlayerRank].RankText;
             else
             {
-                int PlayerRank = _entry.Profile.Statistics.Where(x => x.Name == PlayerInfo.StatisticsDataKey.Level.ToString()).First().Value;
-                for (int i = 0; i < RankItem.transform.childCount; i++)
-                {
-                    Managers.Resource.Destroy(RankItem.transform.GetChild(i).gameObject);
-                }
-                RankItem.transform.DetachChildren();
-                Managers.Resource.Instantiate(Managers.Game.PlyaerDataBase.RankDic[PlayerRank].Icon, RankItem.transform);
-                RankText.text = Managers.Game.PlyaerDataBase.RankDic[PlayerRank].RankText;
-                /*
-                int PlayerRank = _entry.Profile.Statistics.Where(x => x.Name == PlayerInfo.StatisticsDataKey.Level.ToString()).First().Value;
-                Managers.Resource.Instantiate(Managers.Game.PlyaerDataBase.RankDic[PlayerRank].Icon, Get<GameObject>((int)GameObjects.RankItem).transform);
-                GetText((int)Texts.RankText).text = Managers.Game.PlyaerDataBase.RankDic[PlayerRank].RankText;
-                */
+                RankText.text = $"{Managers.Game.PlyaerDataBase.RankDic[PlayerRank].RankText}+{_entry.Profile.Statistics.Where(x => x.Name == PlayerInfo.StatisticsDataKey.ReviveLevel.ToString()).FirstOrDefault().Value}";
             }
+
         }
         else
         {
@@ -377,7 +366,11 @@ public class UI_RankingItem : UI_Base, ICell
 
             GameData _player = FindObjectOfType<GameData>();
             Managers.Resource.Instantiate(Managers.Game.PlyaerDataBase.RankDic[_player.Level].Icon, RankItem.transform);
-            RankText.text = Managers.Game.PlyaerDataBase.RankDic[_player.Level].RankText;
+            if (_player.ReviveLevel == 0)
+                RankText.text = Managers.Game.PlyaerDataBase.RankDic[_player.Level].RankText;
+            else
+                RankText.text = $"{Managers.Game.PlyaerDataBase.RankDic[_player.Level].RankText}+{_player.ReviveLevel}";
+
             /*
             GameData _player = FindObjectOfType<GameData>();
             Managers.Resource.Instantiate(Managers.Game.PlyaerDataBase.RankDic[_player.Level].Icon, Get<GameObject>((int)GameObjects.RankItem).transform);

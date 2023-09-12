@@ -145,7 +145,7 @@ public class EquipmentSlot : BaseItem, IEquipmentSlot
                 
                 */
             }
-            else if (_category == "Rating")
+            else if (_category == "Rating" || _category == "ReviveLevel")
             {
                 _IsLock = false;
                 OnUnlock?.Invoke();
@@ -161,7 +161,7 @@ public class EquipmentSlot : BaseItem, IEquipmentSlot
 
     public void UpdateUnlock()
     {
-        if (category == "Rating")
+        if (category == "Rating" || category == "ReviveLevel")
             UnLock();
     }
     
@@ -189,7 +189,15 @@ public class EquipmentSlot : BaseItem, IEquipmentSlot
             if (_isEquip )
             {
                 _item = Managers.Game.GetInventory().Find(x => x.ItemId == data.ItemId) as EquipableItem;
-                _item.Equipped();
+                if (_item != null && _item.GetUsableCount() > 0)
+                {
+                    _item.Equipped();
+                }
+                else
+                {
+                    _isEquip = false;
+
+                }
             }
         }
        

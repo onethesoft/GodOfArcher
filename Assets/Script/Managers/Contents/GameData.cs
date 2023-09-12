@@ -83,6 +83,11 @@ public class GameData : MonoBehaviour
     public int TrollStage;
 
     [SerializeField]
+    public int ReviveLevel;
+
+
+
+    [SerializeField]
     public ReviveInfo ReviveInfo;
 
     public RouletteInfo RouletteInfo;
@@ -131,6 +136,7 @@ public class GameData : MonoBehaviour
     public void Load(GameSaveData data)
     {
         Level = data.Level;
+      
         
         //Managers.Game.LevelChanged();
 
@@ -138,6 +144,7 @@ public class GameData : MonoBehaviour
         ClearStage = data.ClearStage;
         MaxClearStage = data.MaxClearStage;
         TrollStage = data.TrollStage;
+        ReviveLevel = data.ReviveLevel;
         DailyQuestLastClearTime = data.DailyQuestLastClearTime;
         DailyCheckoutQuestLastClearTime = data.DailyCheckoutQuestLastClearTime;
 
@@ -164,176 +171,152 @@ public class GameData : MonoBehaviour
 
     public void UpdateData(PlayerInfo.StatisticsDataKey key , PlayerInfo data)
     {
-        PlayFab.ClientModels.StatisticValue _get = data.Payload.PlayerStatistics.Where(x => x.StatisticName == key.ToString()).FirstOrDefault();
-
-        if(key == PlayerInfo.StatisticsDataKey.Level)
-        {
-            if (_get == null)
-            {
-                _get = new PlayFab.ClientModels.StatisticValue { StatisticName = key.ToString(), Value = Level };
-                data.Payload.PlayerStatistics.Add(_get);
-            }
-            else
-                _get.Value = Level;
-        }
-        else if(key == PlayerInfo.StatisticsDataKey.Stage)
-        {
-            if (_get == null)
-            {
-                _get = new PlayFab.ClientModels.StatisticValue { StatisticName = key.ToString(), Value = Stage };
-                data.Payload.PlayerStatistics.Add(_get);
-            }
-            else
-                _get.Value = Stage;
-        }
+        
+        int updatedValue = 0;
+        if (key == PlayerInfo.StatisticsDataKey.Level)
+            updatedValue = Level;
+        else if (key == PlayerInfo.StatisticsDataKey.Stage)
+            updatedValue = Stage;
         else if (key == PlayerInfo.StatisticsDataKey.ClearStage)
-        {
-            if (_get == null)
-            {
-                _get = new PlayFab.ClientModels.StatisticValue { StatisticName = key.ToString(), Value = ClearStage };
-                data.Payload.PlayerStatistics.Add(_get);
-            }
-            else
-                _get.Value = ClearStage;
-        }
+            updatedValue = ClearStage;
         else if (key == PlayerInfo.StatisticsDataKey.MaxClearStage)
-        {
-            if (_get == null)
-            {
-                _get = new PlayFab.ClientModels.StatisticValue { StatisticName = key.ToString(), Value = MaxClearStage };
-                data.Payload.PlayerStatistics.Add(_get);
-            }
-            else
-                _get.Value = MaxClearStage;
-        }
+            updatedValue = MaxClearStage;
         else if (key == PlayerInfo.StatisticsDataKey.PlayTime)
-        {
-            if (_get == null)
-            {
-                _get = new PlayFab.ClientModels.StatisticValue { StatisticName = key.ToString(), Value = PlayTime };
-                data.Payload.PlayerStatistics.Add(_get);
-            }
-            else
-                _get.Value = PlayTime;
-        }
+            updatedValue = PlayTime;
         else if (key == PlayerInfo.StatisticsDataKey.TrollStage)
+            updatedValue = TrollStage;
+        else if (key == PlayerInfo.StatisticsDataKey.ItemEquipment)
+            updatedValue = Managers.Item.EncodingItemEquipment();
+        else if (key == PlayerInfo.StatisticsDataKey.ReviveLevel)
+            updatedValue = ReviveLevel;
+        else
+            return;
+
+#if ENABLE_LOG
+        if(PlayerPrefs.HasKey(UI_Test.PlayerPrefsKey.TestOn.ToString()) && PlayerPrefs.GetInt(UI_Test.PlayerPrefsKey.TestOn.ToString()) == 1)
         {
-            if (_get == null)
-            {
-                _get = new PlayFab.ClientModels.StatisticValue { StatisticName = key.ToString(), Value = TrollStage };
-                data.Payload.PlayerStatistics.Add(_get);
-            }
-            else
-                _get.Value = TrollStage;
+            PlayerPrefs.SetInt(key.ToString(), updatedValue);
+            return;
         }
-        else if(key == PlayerInfo.StatisticsDataKey.ItemEquipment)
+#endif
+        PlayFab.ClientModels.StatisticValue _get = data.Payload.PlayerStatistics.Where(x => x.StatisticName == key.ToString()).FirstOrDefault();
+        if (_get == null)
         {
-            if (_get == null)
-            {
-                _get = new PlayFab.ClientModels.StatisticValue { StatisticName = key.ToString(), Value = Managers.Item.EncodingItemEquipment() };
-                data.Payload.PlayerStatistics.Add(_get);
-            }
-            else
-                _get.Value = Managers.Item.EncodingItemEquipment();
+            _get = new PlayFab.ClientModels.StatisticValue { StatisticName = key.ToString(), Value = updatedValue };
+            data.Payload.PlayerStatistics.Add(_get);
         }
+        else
+            _get.Value = updatedValue;
 
 
     }
 
     public void UpdateData(PlayerInfo.UserDataKey key , PlayerInfo data)
     {
-        if(key == PlayerInfo.UserDataKey.DailyCheckoutQuestLastClearTime )
+        string updatedValue;
+        if (key == PlayerInfo.UserDataKey.DailyCheckoutQuestLastClearTime)
         {
             DateTime? time = DailyCheckoutQuestLastClearTime;
-            
-            if (data.Payload.UserData.ContainsKey(key.ToString()) == false)
-                data.Payload.UserData.Add(key.ToString(),
-                    new PlayFab.ClientModels.UserDataRecord { Value = Util.GetTimeString(time) });
-            else
-                data.Payload.UserData[key.ToString()].Value = Util.GetTimeString(time);
-            
+            updatedValue = Util.GetTimeString(time);
         }
-        else if(key == PlayerInfo.UserDataKey.DailyQuestLastClearTime)
+        else if (key == PlayerInfo.UserDataKey.DailyQuestLastClearTime)
         {
             DateTime? time = DailyQuestLastClearTime;
-            
-            if (data.Payload.UserData.ContainsKey(key.ToString()) == false)
-                data.Payload.UserData.Add(key.ToString(),
-                    new PlayFab.ClientModels.UserDataRecord { Value = Util.GetTimeString(time) });
-            else
-                data.Payload.UserData[key.ToString()].Value = Util.GetTimeString(time);
-            
+            updatedValue = Util.GetTimeString(time);
         }
-        else if(key == PlayerInfo.UserDataKey.Gold || key == PlayerInfo.UserDataKey.CP)
+        else if (key == PlayerInfo.UserDataKey.Gold || key == PlayerInfo.UserDataKey.CP)
         {
-            if (data.Payload.UserData.ContainsKey(key.ToString()) == false)
-                data.Payload.UserData.Add(key.ToString(), new PlayFab.ClientModels.UserDataRecord { Value = Currency[key.ToString()].Amount.ToString() });
-            else
-                data.Payload.UserData[key.ToString()].Value = Currency[key.ToString()].Amount.ToString();
+            updatedValue = Currency[key.ToString()].Amount.ToString();
         }
-        else if(key == PlayerInfo.UserDataKey.Rune || key == PlayerInfo.UserDataKey.Pet || key == PlayerInfo.UserDataKey.Bow || key == PlayerInfo.UserDataKey.Helmet || key == PlayerInfo.UserDataKey.Armor || key == PlayerInfo.UserDataKey.Cloak)
+        else if (key == PlayerInfo.UserDataKey.Rune || key == PlayerInfo.UserDataKey.Pet || key == PlayerInfo.UserDataKey.Bow || key == PlayerInfo.UserDataKey.Helmet || key == PlayerInfo.UserDataKey.Armor || key == PlayerInfo.UserDataKey.Cloak)
         {
-            if (data.Payload.UserData.ContainsKey(key.ToString()) == false)
-                data.Payload.UserData.Add(key.ToString(), new PlayFab.ClientModels.UserDataRecord
-                {
-                    Value = JsonUtility.ToJson(
-                        key == PlayerInfo.UserDataKey.Rune ? Rune.ToSaveData() :
-                        key == PlayerInfo.UserDataKey.Pet ? Pet.ToSaveData() :
-                        key == PlayerInfo.UserDataKey.Bow ? Bow.ToSaveData() :
-                        key == PlayerInfo.UserDataKey.Helmet ? Helmet.ToSaveData() :
-                        key == PlayerInfo.UserDataKey.Armor ? Armor.ToSaveData() :
-                        Cloak.ToSaveData()),
-                    Permission = PlayFab.ClientModels.UserDataPermission.Public
-                });
-            else
-                data.Payload.UserData[key.ToString()].Value = JsonUtility.ToJson(
-                        key == PlayerInfo.UserDataKey.Rune ? Rune.ToSaveData() :
-                        key == PlayerInfo.UserDataKey.Pet ? Pet.ToSaveData() :
-                        key == PlayerInfo.UserDataKey.Bow ? Bow.ToSaveData() :
-                        key == PlayerInfo.UserDataKey.Helmet ? Helmet.ToSaveData() :
-                        key == PlayerInfo.UserDataKey.Armor ? Armor.ToSaveData() :
-                        Cloak.ToSaveData());
+            updatedValue = JsonUtility.ToJson(
+                       key == PlayerInfo.UserDataKey.Rune ? Rune.ToSaveData() :
+                       key == PlayerInfo.UserDataKey.Pet ? Pet.ToSaveData() :
+                       key == PlayerInfo.UserDataKey.Bow ? Bow.ToSaveData() :
+                       key == PlayerInfo.UserDataKey.Helmet ? Helmet.ToSaveData() :
+                       key == PlayerInfo.UserDataKey.Armor ? Armor.ToSaveData() :
+                       Cloak.ToSaveData());
         }
-        else if( key == PlayerInfo.UserDataKey.PlayerStat)
+        else if (key == PlayerInfo.UserDataKey.PlayerStat)
         {
-            if (data.Payload.UserData.ContainsKey(key.ToString()) == false)
-                data.Payload.UserData.Add(key.ToString(), new PlayFab.ClientModels.UserDataRecord { Value = JsonUtility.ToJson(PlayerStat.ToSaveData()) });
-            else
-                data.Payload.UserData[key.ToString()].Value = JsonUtility.ToJson(PlayerStat.ToSaveData());
+            updatedValue = JsonUtility.ToJson(PlayerStat.ToSaveData());
         }
-        else if( key == PlayerInfo.UserDataKey.DPS)
+        else if (key == PlayerInfo.UserDataKey.DPS)
         {
-            if (data.Payload.UserData.ContainsKey(key.ToString()) == false)
-                data.Payload.UserData.Add(key.ToString(), new PlayFab.ClientModels.UserDataRecord { Value = Managers.Game.DPS.ToString(), Permission = PlayFab.ClientModels.UserDataPermission.Public });
-            else
-            {
-                data.Payload.UserData[key.ToString()].Value = Managers.Game.DPS.ToString();
-                if (data.Payload.UserData[key.ToString()].Permission != PlayFab.ClientModels.UserDataPermission.Public)
-                    data.Payload.UserData[key.ToString()].Permission = PlayFab.ClientModels.UserDataPermission.Public;
-            }
-                
+            updatedValue = Managers.Game.DPS.ToString();
         }
-        else if( key == PlayerInfo.UserDataKey.StageInfo)
+        else if (key == PlayerInfo.UserDataKey.StageInfo)
         {
-            if (data.Payload.UserData.ContainsKey(key.ToString()) == false)
-                data.Payload.UserData.Add(key.ToString(), new PlayFab.ClientModels.UserDataRecord { Value = JsonUtility.ToJson(StageInfoList) });
-            else
-                data.Payload.UserData[key.ToString()].Value = JsonUtility.ToJson(StageInfoList);
+            updatedValue = JsonUtility.ToJson(StageInfoList);
+
         }
-        else if( key == PlayerInfo.UserDataKey.ReviveInfo)
+        else if (key == PlayerInfo.UserDataKey.ReviveInfo)
         {
-            if (data.Payload.UserData.ContainsKey(key.ToString()) == false)
-                data.Payload.UserData.Add(key.ToString(), new PlayFab.ClientModels.UserDataRecord { Value = ReviveInfo.ToJson() });
-            else
-                data.Payload.UserData[key.ToString()].Value = ReviveInfo.ToJson();
+            updatedValue = ReviveInfo.ToJson();
+
         }
         else if (key == PlayerInfo.UserDataKey.RouletteInfo)
         {
-            if (data.Payload.UserData.ContainsKey(key.ToString()) == false)
-                data.Payload.UserData.Add(key.ToString(), new PlayFab.ClientModels.UserDataRecord { Value = RouletteInfo.ToJson() });
-            else
-                data.Payload.UserData[key.ToString()].Value = RouletteInfo.ToJson();
+            updatedValue = RouletteInfo.ToJson();
         }
+        else
+            return;
+#if ENABLE_LOG
+        if (PlayerPrefs.HasKey(UI_Test.PlayerPrefsKey.TestOn.ToString()) && PlayerPrefs.GetInt(UI_Test.PlayerPrefsKey.TestOn.ToString()) == 1)
+        {
+            if (key == PlayerInfo.UserDataKey.DPS)
+                return;
+            else if(key == PlayerInfo.UserDataKey.PlayerStat)
+            {
+                PlayerPrefs.SetString(PlayerInfo.UserDataKey.PlayerStat.ToString(), updatedValue);
+                PlayerPrefs.Save();
+                return;
+            }
+            else if(key == PlayerInfo.UserDataKey.Rune ||
+                    key == PlayerInfo.UserDataKey.Pet ||
+                    key == PlayerInfo.UserDataKey.Bow ||
+                    key == PlayerInfo.UserDataKey.Helmet ||
+                    key == PlayerInfo.UserDataKey.Armor ||
+                    key == PlayerInfo.UserDataKey.Cloak )
+            {
+                PlayerPrefs.SetString(key.ToString(), updatedValue);
+                PlayerPrefs.Save();
+                return;
+            }
+
+        }
+        
+#endif
+
+        PlayFab.ClientModels.UserDataPermission _permission = PlayFab.ClientModels.UserDataPermission.Private;
+
+        if(key == PlayerInfo.UserDataKey.Rune || 
+            key == PlayerInfo.UserDataKey.Pet || 
+            key == PlayerInfo.UserDataKey.Bow || 
+            key == PlayerInfo.UserDataKey.Helmet || 
+            key == PlayerInfo.UserDataKey.Armor || 
+            key == PlayerInfo.UserDataKey.Cloak ||
+            key == PlayerInfo.UserDataKey.DPS 
+            )
+        {
+            _permission = PlayFab.ClientModels.UserDataPermission.Public;
+        }
+
+        if (data.Payload.UserData.ContainsKey(key.ToString()) == false)
+        {
+
+            data.Payload.UserData.Add(key.ToString(),
+                    new PlayFab.ClientModels.UserDataRecord { Value = updatedValue, Permission = _permission });
+        }
+        else
+        {
+            data.Payload.UserData[key.ToString()].Value = updatedValue;
+            if (data.Payload.UserData[key.ToString()].Permission != _permission)
+                data.Payload.UserData[key.ToString()].Permission = _permission;
+        }
+
+        
 
 
 
@@ -369,21 +352,33 @@ public class GameData : MonoBehaviour
         if (data.Payload.PlayerStatistics.Any(x => x.StatisticName == PlayerInfo.StatisticsDataKey.TrollStage.ToString()))
             TrollStage = data.Payload.PlayerStatistics.Where(x => x.StatisticName == PlayerInfo.StatisticsDataKey.TrollStage.ToString()).First().Value;
 
+
+        if (data.Payload.PlayerStatistics.Any(x => x.StatisticName == PlayerInfo.StatisticsDataKey.ReviveLevel.ToString()))
+            ReviveLevel = data.Payload.PlayerStatistics.Where(x => x.StatisticName == PlayerInfo.StatisticsDataKey.ReviveLevel.ToString()).First().Value;
+
+
 #if ENABLE_LOG
-        if (PlayerPrefs.HasKey(PlayerInfo.StatisticsDataKey.Level.ToString()))
-            Level = PlayerPrefs.GetInt(PlayerInfo.StatisticsDataKey.Level.ToString());
+        if(PlayerPrefs.HasKey(UI_Test.PlayerPrefsKey.TestOn.ToString()) && PlayerPrefs.GetInt(UI_Test.PlayerPrefsKey.TestOn.ToString()) == 1)
+        {
+            if (PlayerPrefs.HasKey(PlayerInfo.StatisticsDataKey.Level.ToString()))
+                Level = PlayerPrefs.GetInt(PlayerInfo.StatisticsDataKey.Level.ToString());
 
-        if (PlayerPrefs.HasKey(PlayerInfo.StatisticsDataKey.Stage.ToString()))
-            Stage = PlayerPrefs.GetInt(PlayerInfo.StatisticsDataKey.Stage.ToString());
+            if (PlayerPrefs.HasKey(PlayerInfo.StatisticsDataKey.Stage.ToString()))
+                Stage = PlayerPrefs.GetInt(PlayerInfo.StatisticsDataKey.Stage.ToString());
 
-        if (PlayerPrefs.HasKey(PlayerInfo.StatisticsDataKey.ClearStage.ToString()))
-            ClearStage = PlayerPrefs.GetInt(PlayerInfo.StatisticsDataKey.ClearStage.ToString());
+            if (PlayerPrefs.HasKey(PlayerInfo.StatisticsDataKey.ClearStage.ToString()))
+                ClearStage = PlayerPrefs.GetInt(PlayerInfo.StatisticsDataKey.ClearStage.ToString());
 
-        if (PlayerPrefs.HasKey(PlayerInfo.StatisticsDataKey.MaxClearStage.ToString()))
-            MaxClearStage = PlayerPrefs.GetInt(PlayerInfo.StatisticsDataKey.MaxClearStage.ToString());
+            if (PlayerPrefs.HasKey(PlayerInfo.StatisticsDataKey.MaxClearStage.ToString()))
+                MaxClearStage = PlayerPrefs.GetInt(PlayerInfo.StatisticsDataKey.MaxClearStage.ToString());
 
-        if (PlayerPrefs.HasKey(PlayerInfo.StatisticsDataKey.TrollStage.ToString()))
-            TrollStage = PlayerPrefs.GetInt(PlayerInfo.StatisticsDataKey.TrollStage.ToString());
+            if (PlayerPrefs.HasKey(PlayerInfo.StatisticsDataKey.TrollStage.ToString()))
+                TrollStage = PlayerPrefs.GetInt(PlayerInfo.StatisticsDataKey.TrollStage.ToString());
+
+            if (PlayerPrefs.HasKey(PlayerInfo.StatisticsDataKey.ReviveLevel.ToString()))
+                ReviveLevel = PlayerPrefs.GetInt(PlayerInfo.StatisticsDataKey.ReviveLevel.ToString());
+        }
+        
 #endif
 
         if (data.Payload.UserData.ContainsKey(PlayerInfo.UserDataKey.DailyCheckoutQuestLastClearTime.ToString()))
@@ -422,6 +417,8 @@ public class GameData : MonoBehaviour
         if (data.Payload.UserData.ContainsKey(PlayerInfo.UserDataKey.PlayerStat.ToString()))
             PlayerStat.Load(CharacterStatSystemSaveData.FromJson(data.Payload.UserData[PlayerInfo.UserDataKey.PlayerStat.ToString()].Value));
 
+
+
         if (data.Payload.UserInventory.Count > 0)
             Inventory.Load(data.Payload.UserInventory);
 
@@ -433,6 +430,7 @@ public class GameData : MonoBehaviour
             data.Payload.UserData.Add(PlayerInfo.UserDataKey.Rune.ToString(), new PlayFab.ClientModels.UserDataRecord { Value = data.Payload.TitleData[PlayerInfo.TitleDataKey.Rune.ToString()] });
             Rune.Load(EquipmentSaveData.FromJson(data.Payload.UserData[PlayerInfo.UserDataKey.Rune.ToString()].Value));
         }
+
 
 
         if (data.Payload.UserData.ContainsKey(PlayerInfo.UserDataKey.Pet.ToString()))
@@ -518,6 +516,21 @@ public class GameData : MonoBehaviour
             RouletteInfo = new RouletteInfo { PlayRouletteCount = 0 };
         }
 
+#if ENABLE_LOG
+        if (PlayerPrefs.HasKey(UI_Test.PlayerPrefsKey.TestOn.ToString()) && PlayerPrefs.GetInt(UI_Test.PlayerPrefsKey.TestOn.ToString()) == 1)
+        {
+           
+            Rune.Load(EquipmentSaveData.FromJson(PlayerPrefs.GetString(PlayerInfo.UserDataKey.Rune.ToString())));
+            Pet.Load(EquipmentSaveData.FromJson(PlayerPrefs.GetString(PlayerInfo.UserDataKey.Pet.ToString())));
+            Bow.Load(EquipmentSaveData.FromJson(PlayerPrefs.GetString(PlayerInfo.UserDataKey.Bow.ToString())));
+            Helmet.Load(EquipmentSaveData.FromJson(PlayerPrefs.GetString(PlayerInfo.UserDataKey.Helmet.ToString())));
+            Armor.Load(EquipmentSaveData.FromJson(PlayerPrefs.GetString(PlayerInfo.UserDataKey.Armor.ToString())));
+            Cloak.Load(EquipmentSaveData.FromJson(PlayerPrefs.GetString(PlayerInfo.UserDataKey.Cloak.ToString())));
+            PlayerStat.Load(CharacterStatSystemSaveData.FromJson(PlayerPrefs.GetString(PlayerInfo.UserDataKey.PlayerStat.ToString())));
+        }
+           
+      
+#endif
         OnLoaded();
        
 
@@ -588,6 +601,8 @@ public class GameData : MonoBehaviour
         ClearStage = 0;
         MaxClearStage = 0;
         TrollStage = 0;
+        ReviveLevel = 0;
+        
 
 
         Inventory = new Inventory();
@@ -802,9 +817,14 @@ public class GameData : MonoBehaviour
     {
         OnUpgradeStat?.Invoke(target, count);
     }
-    public int GetReviveRubyAmount()
+    public int GetReviveRubyAmount(int stage)
     {
-        return Math.Max(1, Stage / 10) + Managers.Game.PlyaerDataBase.GetReviveBonus(Stage);
+        return Math.Max(1, stage / 10) + Managers.Game.PlyaerDataBase.GetReviveRubyBonus(stage);
+    }
+    public void Revive(int stage)
+    {
+        ReviveInfo.DoRevive();
+        ReviveLevel += Managers.Game.PlyaerDataBase.GetReviveLevelBonus(stage);
     }
     public void OnLoaded()
     {
@@ -883,6 +903,9 @@ public class GameData : MonoBehaviour
         
         if(Inventory.IsFindItem(Managers.Shop.Database.Seasonpass2.Item.ItemId))
             PurchaseItemId(Managers.Shop.Database.Seasonpass2.Item.ItemId, 1);
+
+        if (Inventory.IsFindItem(Managers.Shop.Database.Seasonpass3.Item.ItemId))
+            PurchaseItemId(Managers.Shop.Database.Seasonpass3.Item.ItemId, 1);
 
 
         Managers.Game.OnItemChanged();

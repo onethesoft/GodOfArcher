@@ -356,8 +356,14 @@ public class GameReporter : MonoBehaviour
             if (string.IsNullOrEmpty(parseItemId))
                 _seasonpassList[0].DoReport();
             else
-                _seasonpassList[1].DoReport();
-
+            {
+                int number;
+                if(int.TryParse(parseItemId, out number))
+                {
+                    if(number > 0)
+                        _seasonpassList[number - 1].DoReport();
+                }
+            }
         }
     }
 

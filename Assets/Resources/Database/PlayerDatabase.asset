@@ -23,6 +23,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 449b394714eefc444a0765359cbed345, type: 2}
   - {fileID: 11400000, guid: 948dca339705bc648807b8bb59fb824c, type: 2}
   - {fileID: 11400000, guid: 7bad6b1c18ee34e4598fea6dbd361824, type: 2}
+  - {fileID: 11400000, guid: 58eabd94fa880d345994442b39af0034, type: 2}
+  - {fileID: 11400000, guid: f9bdaeb1c8468e84cb634ad4b940cd16, type: 2}
   _listCurrency:
   - {fileID: 11400000, guid: 3c55cf8fb3a8daa4b811c81c20bdbb36, type: 2}
   - {fileID: 11400000, guid: 15661936a8a47e846956f3191f0cca60, type: 2}
@@ -100,10 +102,14 @@ MonoBehaviour:
   _listReviveBonus:
   - Stage: 300000
     RubyBonusCount: 10000
+    IncrementReviveLevel: 0
   - Stage: 350000
     RubyBonusCount: 20000
+    IncrementReviveLevel: 1
   - Stage: 400000
     RubyBonusCount: 30000
+    IncrementReviveLevel: 2
   - Stage: 450000
     RubyBonusCount: 50000
+    IncrementReviveLevel: 3
   _reviveCountLimit: 10

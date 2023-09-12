@@ -38,7 +38,7 @@ public class QuestDataBase : ScriptableObject
             _dictQuestGroup.Add(key, new List<Quest>());
         
         foreach(var Quest in _quests)
-            _dictQuestGroup[_dictQuestGroup.Keys.Where(x => QuestFinder.IsContain(Quest.Category, x)).First()].Add(Quest);
+            _dictQuestGroup[_dictQuestGroup.Keys.Where(x => QuestFinder.IsContain(Quest, x)).First()].Add(Quest);
         
         foreach(KeyValuePair<PlayerInfo.UserDataKey, List<Quest>> pair in _dictQuestGroup)
         {
@@ -56,6 +56,40 @@ public class QuestDataBase : ScriptableObject
         }
 
        
+    }
+
+    [ContextMenu("CreateSeasonpass3TitleData")]
+    private void CreateSeasonpass3File()
+    {
+        Dictionary<PlayerInfo.UserDataKey, List<Quest>> _dictQuestGroup = new Dictionary<PlayerInfo.UserDataKey, List<Quest>>();
+        string _savePath = Application.persistentDataPath;
+
+     
+
+        List<Quest> _Seasonpass3 = new List<Quest>();
+
+        foreach (var Quest in _quests)
+        {
+            if(Quest.CodeName.Contains("pass4") || Quest.CodeName.Contains("pass5"))
+                _Seasonpass3.Add(Quest);
+            
+        }
+
+        var root = new JObject();
+        var _activeArray = new JArray();
+
+        foreach (Quest quest in _Seasonpass3)
+        {
+            _activeArray.Add(JObject.FromObject(quest.ToSaveData()));
+            
+        }
+        root.Add(QuestManager.kActiveQuestsSavePath, _activeArray);
+        root.Add(QuestManager.kCompletedQuestsSavePath, new JArray());
+
+        System.IO.File.WriteAllText($"{_savePath}/Seasonpass3.json", root.ToString(), System.Text.Encoding.UTF8);
+
+
+
     }
 
 

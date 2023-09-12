@@ -123,6 +123,7 @@ public class PlayfabSender
                 PlayFabClientAPI.ExecuteCloudScript(request as PlayFab.ClientModels.ExecuteCloudScriptRequest, result => OnHandle(command, result), error => OnHandleError(error));
                 
                 break;
+           
 
         }
 

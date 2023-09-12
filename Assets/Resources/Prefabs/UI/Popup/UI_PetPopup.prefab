@@ -1692,6 +1692,7 @@ MonoBehaviour:
       type: 3}
     DescriptionBackgroundSprite: {fileID: 21300000, guid: 0a913556d6d8fae44bd6072c8fbe4966,
       type: 3}
+  _slotIndexList: 00000000010000000200000003000000040000000500000008000000090000000600000007000000
 --- !u!1 &6861020061992601835
 GameObject:
   m_ObjectHideFlags: 0

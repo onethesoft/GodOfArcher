@@ -20,7 +20,9 @@ public class UI_RunePopup : UI_Popup
         RandomboxButton,
         TotalUpgradeButton,
         HelpButton,
-        ConvertButton
+        ConvertButton,
+        RuneSlotButton1,
+        RuneSlotButton2
     }
 
     List<UI_RuneItem> _runeItems;
@@ -33,6 +35,9 @@ public class UI_RunePopup : UI_Popup
 
     [SerializeField]
     List<UI_RuneItemData> _runeItemViewDataList;
+
+    [SerializeField]
+    int runeSlotCount;
     public void SetupItemViewData(List<UI_RuneItemData> itemList)
     {
         _runeItemViewDataList = itemList;
@@ -51,6 +56,22 @@ public class UI_RunePopup : UI_Popup
        
         _isUpdateKey = JsonUtility.ToJson(Managers.Game.GetEquipment("Rune").ToSaveData());
 
+        for(int i=0; i< Managers.Game.GetEquipment("Rune").SlotList.Count; i++)
+        {
+            EquipmentSlot slot = Managers.Game.GetEquipment("Rune").SlotList[i];
+            if (i < runeSlotCount)
+            {
+                UI_EquipmentSlot _slot = Util.GetOrAddComponent<UI_EquipmentSlot>(Managers.Resource.Instantiate($"UI/SubItem/ItemPopup/UI_RuneSlotItem", Get<GameObject>((int)GameObjects.SlotLayout).transform));
+
+                _slot.Setup(slot);
+                _slot.OnSelect -= OnSelectSlot;
+                _slot.OnSelect += OnSelectSlot;
+                _slotItems.Add(_slot);
+            }
+
+            slot.OnUnlock += SaveEquipment;
+        }
+        /*
         foreach (EquipmentSlot slot in Managers.Game.GetEquipment("Rune").SlotList)
         {
 
@@ -63,6 +84,7 @@ public class UI_RunePopup : UI_Popup
             slot.OnUnlock += SaveEquipment;
             
         }
+        */
 
         int ItemCount = 0;
         GameObject ItemPanel = null;
@@ -128,6 +150,41 @@ public class UI_RunePopup : UI_Popup
         AddUIEvent(GetButton((int)Buttons.ConvertButton).gameObject, (data) =>
         {
             Managers.UI.ShowPopupUI<UI_Convert>().ConvertItemType = UI_Convert.ItemType.Rune;
+        }); 
+
+        AddUIEvent(GetButton((int)Buttons.RuneSlotButton1).gameObject, (data) =>
+        {
+            _selected = null;
+            int i = 0;
+            foreach(UI_EquipmentSlot _slot in _slotItems)
+            {
+                EquipmentSlot slot = Managers.Game.GetEquipment("Rune").SlotList[i];
+                if (i < runeSlotCount)
+                {
+                    //_slot.Slot = slot;
+                    _slot.Setup(slot);
+                
+                }
+                i++;
+
+            }
+            
+        });
+        AddUIEvent(GetButton((int)Buttons.RuneSlotButton2).gameObject, (data) =>
+        {
+            _selected = null;
+            int i = runeSlotCount;
+            foreach (UI_EquipmentSlot _slot in _slotItems)
+            {
+                EquipmentSlot slot = Managers.Game.GetEquipment("Rune").SlotList[i];
+                if (i < Managers.Game.GetEquipment("Rune").SlotList.Count)
+                {
+                    //_slot.Slot = slot;
+                    _slot.Setup(slot);
+                }
+                i++;
+
+            }
         });
     }
 
@@ -212,17 +269,19 @@ public class UI_RunePopup : UI_Popup
         SaveEquipment();
 
         base.ClosePopupUI();
+        
+        for (int i = 0; i < Managers.Game.GetEquipment("Rune").SlotList.Count; i++)
+        {
+            EquipmentSlot slot = Managers.Game.GetEquipment("Rune").SlotList[i];
+            slot.OnUnlock -= SaveEquipment;
+        }
         foreach (UI_EquipmentSlot _slot in _slotItems)
         {
-            _slot.Slot.OnUnlock -= SaveEquipment;
+            _slot.OnSelect -= OnSelectSlot;
         }
         _slotItems.Clear();
-
-      
         _runeItems.Clear();
 
-        
-        
        
     }
 

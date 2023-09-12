@@ -63,7 +63,7 @@ public class EquipmentSystem : ScriptableObject
             _slots.ForEach(x => x.Load(slotdata));
     }
 
-    public void OnPlayerLevelChanged(int playerRank)
+    public void OnUpdateSlot(int playerRank)
     {
         foreach (EquipmentSlot slot in _slots)
         {

@@ -32,7 +32,8 @@ public class PlayerInfo
         DPS,
         StageInfo,
         ReviveInfo,
-        RouletteInfo
+        RouletteInfo,
+        Seasonpass3Quest,    // 시즌패스3 퀘스트
 
     }
 
@@ -49,9 +50,13 @@ public class PlayerInfo
         Helmet,     // 투구 장착 정보
         Armor,      // 갑옷 장착 정보
         Cloak,      // 망토 장착 정보
-        IsBeginner  // 처음 접속 시 초보자 버프 부여
+        IsBeginner,  // 처음 접속 시 초보자 버프 부여
+        EventNotice, // 이벤트 안내 공지
+        Notice,       // 공지
+        Seasonpass3Quest
     }
 
+    
     public enum StatisticsDataKey
     {
         Level,
@@ -61,6 +66,7 @@ public class PlayerInfo
         TrollStage,
         PlayTime,
         ItemEquipment,   // 랭킹패널에서 아이템 장착정보를 표시하기 위함
+        ReviveLevel
     }
 
     public enum CurrencyKey

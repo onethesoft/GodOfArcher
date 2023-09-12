@@ -88,6 +88,7 @@ public class UI_Setting : UI_Popup
                 "________" +
                 "Device Model : " + SystemInfo.deviceModel + "\n\n" +
                 "Device OS : " + SystemInfo.operatingSystem + "\n\n" +
+                "Title Name : " + "활과 함께" + "\n\n" +
                 "________"
                );
 

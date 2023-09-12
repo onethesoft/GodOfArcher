@@ -83,7 +83,7 @@ public class QuestUpdater : MonoBehaviour
             
 
             PlayerInfo.UserDataKey _getQuestKey;
-            if(QuestFinder.TryGetQuestKey(quest.Category, out _getQuestKey))
+            if(QuestFinder.TryGetQuestKey(quest, out _getQuestKey))
             {
                 if (_updateKeys.Any(x => x == _getQuestKey) == false)
                     _updateKeys.Add(_getQuestKey);

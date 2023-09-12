@@ -5691,6 +5691,7 @@ MonoBehaviour:
   ClearStage: 0
   MaxClearStage: 0
   TrollStage: 0
+  ReviveLevel: 0
   ReviveInfo:
     ReviveCount: 0
   RouletteInfo:
@@ -5864,6 +5865,9 @@ MonoBehaviour:
     _successCount: 1
   - _category: {fileID: 11400000, guid: 4b831f45898683049be79afa23ad4328, type: 2}
     _target: {fileID: 11400000, guid: 5f1ca585283bc124ba014913b70b0a77, type: 2}
+    _successCount: 1
+  - _category: {fileID: 11400000, guid: 4b831f45898683049be79afa23ad4328, type: 2}
+    _target: {fileID: 11400000, guid: e87316de47be8d546b8f66e17850cb48, type: 2}
     _successCount: 1
   _dailyCheckout:
     _category: {fileID: 11400000, guid: 4b30fb1ea4dfc0a4f9ec61e917d682ed, type: 2}

@@ -44,9 +44,8 @@ public class NetworkManager
         ConsumeItem,
         UpdateItemCustomData,
         GetCatalogItems,
-        DeletePlayer
+        DeletePlayer,
         
-
     }
 
     class CommandInfo
@@ -233,7 +232,7 @@ public class NetworkManager
             case Command.GetCatalogItems:
                 PlayFabClientAPI.GetCatalogItems(request as PlayFab.ClientModels.GetCatalogItemsRequest, result => OnHandle(command, result), error => OnHandleError(error));
                 break;
-
+         
         }
     }
     void OnHandle(Command command, PlayFabResultCommon result)
@@ -489,6 +488,7 @@ public class NetworkManager
                 {
                     GetTitleData = true,
                     GetPlayerProfile = true,
+                    
                 }
             });
             _executer.Execute(_sender);
@@ -525,7 +525,7 @@ public class NetworkManager
                 GetUserInventory = true,
                 GetUserData = true,
                 GetPlayerStatistics = true,
-                GetUserVirtualCurrency = true,
+                GetUserVirtualCurrency = true
             }
         });
 
@@ -906,6 +906,8 @@ public class NetworkManager
 
         _executer.Execute(_sender);
     }
+
+    
     public int GetWaitCommandQueueCount()
     {
         return _executer.GetWaitCommandQueueCount();

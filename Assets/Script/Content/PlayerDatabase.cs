@@ -24,6 +24,7 @@ public class PlayerDatabase : ScriptableObject
     {
         public int Stage;
         public int RubyBonusCount;
+        public int IncrementReviveLevel;
     }
 
     [Header("플레이어 등급")]
@@ -107,7 +108,7 @@ public class PlayerDatabase : ScriptableObject
 
 
     public List<ReviveBonusData> ListRubyBonus => _listReviveBonus;
-    public int GetReviveBonus(int Stage)
+    public int GetReviveRubyBonus(int Stage)
     {
         if (_listReviveBonus.Count == 0)
             return 0;
@@ -126,7 +127,31 @@ public class PlayerDatabase : ScriptableObject
         return _orderedList.LastOrDefault().RubyBonusCount;
         
     }
-    
+
+    public int GetReviveLevelBonus(int Stage)
+    {
+        if (_listReviveBonus.Count == 0)
+            return 0;
+
+        List<ReviveBonusData> _orderedList = _listReviveBonus.OrderBy(x => x.Stage).ToList();
+      
+        if (_orderedList.FirstOrDefault().Stage > Stage)
+        {   
+            return 0;
+        }
+
+        for (int i = 0; i < _orderedList.Count; i++)
+        {
+            if (Stage < _orderedList[i].Stage)
+                return _orderedList[i - 1].IncrementReviveLevel;
+            
+        }
+        return _orderedList.LastOrDefault().IncrementReviveLevel;
+
+    }
+
+
+
 
 #if UNITY_EDITOR
     [ContextMenu("FindCharacterStats")]

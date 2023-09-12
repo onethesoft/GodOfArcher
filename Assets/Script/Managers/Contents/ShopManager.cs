@@ -41,6 +41,7 @@ public class ShopManager : IStoreListener
 
                     builder = builder.AddProduct(_dataBase.Seasonpass.Item.ItemId, ProductType.Consumable);
                     builder = builder.AddProduct(_dataBase.Seasonpass2.Item.ItemId, ProductType.Consumable);
+                    builder = builder.AddProduct(_dataBase.Seasonpass3.Item.ItemId, ProductType.Consumable);
 
                     UnityPurchasing.Initialize(this, builder);
                 };
@@ -70,7 +71,10 @@ public class ShopManager : IStoreListener
     {
         Debug.LogError($"OnInitializeFailed() error " + error);
     }
-
+    public void OnInitializeFailed(InitializationFailureReason error, string message)
+    {
+        Debug.LogError($"OnInitializeFailed() error " + message);
+    }
     public void OnPurchaseFailed(Product product, PurchaseFailureReason failureReason)
     {
         Debug.Log(failureReason);
@@ -365,6 +369,17 @@ public class ShopManager : IStoreListener
                 _seasonpass.SetActivePurchasePanel(false);
             }
         }
+        else if (_dataBase.Seasonpass3.Item.ItemId == ItemId)
+        {
+            _iapData = _dataBase.Seasonpass3;
+            UnityEngine.Object.FindObjectOfType<GameData>().PurchaseItemId(ItemId, 1);
+
+            UI_Seasonpass _seasonpass = Object.FindObjectOfType<UI_Seasonpass>();
+            if (_seasonpass != null)
+            {
+                _seasonpass.SetActivePurchasePanel(false);
+            }
+        }
         else
             throw new System.Exception("Find not ItemId : " + ItemId);
 
@@ -447,6 +462,8 @@ public class ShopManager : IStoreListener
             _playerData.PurchaseItemClass(_getdata.ItemClass, 1, _data.Price == 0 ? true : false);
 
     }
+
+    
 }
 
 

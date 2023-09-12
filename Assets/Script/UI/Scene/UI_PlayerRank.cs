@@ -18,20 +18,37 @@ public class UI_PlayerRank : UI_Base
         Bind<Text>(typeof(Texts));
 
         _iconObject = Managers.Game.GetRankIcon(gameObject.transform);
-        GetText((int)Texts.RankText).text = Managers.Game.PlyaerDataBase.RankDic[Managers.Game.Level].DisplayName;
-        if(Managers.Network.IS_ENABLE_NETWORK == true)
+
+        GameData _playerData = FindObjectOfType<GameData>();
+
+        if(_playerData.ReviveLevel == 0)
+            GetText((int)Texts.RankText).text = Managers.Game.PlyaerDataBase.RankDic[Managers.Game.Level].DisplayName;
+        else
+            GetText((int)Texts.RankText).text = $"{Managers.Game.PlyaerDataBase.RankDic[Managers.Game.Level].DisplayName}{System.Environment.NewLine}+{_playerData.ReviveLevel}";
+
+        if (Managers.Network.IS_ENABLE_NETWORK == true)
             GetText((int)Texts.DisplayNameText).text = Managers.Player.GetPlayer(Managers.Game.PlayerId).DisplayName;
         
 
         Managers.Game.OnLevelChanged -= UpdateRank;
         Managers.Game.OnLevelChanged += UpdateRank;
 
-        
+        Managers.Game.OnRevived -= UpdateRank;
+        Managers.Game.OnRevived += UpdateRank;
+
+
+
     }
     void UpdateRank()
     {
         _iconObject = Managers.Game.GetRankIcon(gameObject.transform);
-        GetText((int)Texts.RankText).text = Managers.Game.PlyaerDataBase.RankDic[Managers.Game.Level].DisplayName;
+
+        GameData _playerData = FindObjectOfType<GameData>();
+        if (_playerData.ReviveLevel == 0)
+            GetText((int)Texts.RankText).text = Managers.Game.PlyaerDataBase.RankDic[Managers.Game.Level].DisplayName;
+        else
+            GetText((int)Texts.RankText).text = $"{Managers.Game.PlyaerDataBase.RankDic[Managers.Game.Level].DisplayName}{System.Environment.NewLine}+{_playerData.ReviveLevel}";
+
 
         if (Managers.Network.IS_ENABLE_NETWORK == true)
             GetText((int)Texts.DisplayNameText).text = Managers.Player.GetPlayer(Managers.Game.PlayerId).DisplayName;
@@ -48,6 +65,7 @@ public class UI_PlayerRank : UI_Base
             Managers.Resource.Destroy(_iconObject);
         _iconObject = null;
         Managers.Game.OnLevelChanged -= UpdateRank;
+        Managers.Game.OnRevived -= UpdateRank;
     }
 
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 [System.Serializable]
 public class GameSaveData 
@@ -14,6 +15,7 @@ public class GameSaveData
     public int MaxClearStage;
     public int TrollStage;
     public int PlayTime;
+    public int ReviveLevel;
 
     public InventorySaveData Inventory;
     public List<CurrencySaveData> Currency;
@@ -47,6 +49,7 @@ public class GameSaveData
         MaxClearStage = data.MaxClearStage;
         TrollStage = data.TrollStage;
         PlayTime = data.PlayTime;
+        ReviveLevel = data.ReviveLevel;
 
         Inventory = data.Inventory.ToSaveData();
         PlayerStat = data.PlayerStat.ToSaveData();
@@ -83,6 +86,7 @@ public class GameSaveData
         saveObject.Add("MaxClearStage", MaxClearStage);
         saveObject.Add("TrollStage", TrollStage);
         saveObject.Add("PlayTime", PlayTime);
+        saveObject.Add("ReviveLevel", ReviveLevel);
 
         saveObject.Add("Inventory", JObject.FromObject(Inventory));
         saveObject.Add("Currency", JArray.FromObject(Currency));
@@ -185,7 +189,9 @@ public class ReviveInfo
     public static ReviveInfo FromJson(string json)
     {
         var obj = JObject.Parse(json);
-        ReviveInfo _info = new ReviveInfo { ReviveCount = obj["ReviveCount"].Value<int>(), ReviveTime = DateTime.Parse(obj["ReviveTime"].ToString(), null, System.Globalization.DateTimeStyles.RoundtripKind) };
+        ReviveInfo _info = new ReviveInfo { ReviveCount = obj["ReviveCount"].Value<int>(), 
+            ReviveTime = DateTime.Parse(obj["ReviveTime"].ToString(), null, System.Globalization.DateTimeStyles.RoundtripKind)
+        };
         return _info;
     }
 
@@ -212,6 +218,7 @@ public class ReviveInfo
     {
         ReviveCount++;
         ReviveTime = GlobalTime.Now;
+     
     }
 
     public bool CanRevive()
@@ -325,4 +332,30 @@ public class RouletteInfo
         RouletteInfo _info = new RouletteInfo { PlayRouletteCount = obj["PlayRouletteCount"].Value<int>() };
         return _info;
     }
+}
+
+[System.Serializable]
+public class NoticeData
+{
+    public List<string> TextList;
+
+    public static NoticeData FromJson(string json)
+    {
+        var data = JsonConvert.DeserializeObject<NoticeData>(json);
+       
+        return data;
+    }
+
+    public string GetNoticeText()
+    {
+        string _ret = "";
+        
+        foreach(string data in TextList)
+        {
+            _ret += data;
+        }
+
+        return _ret;
+    }
+
 }

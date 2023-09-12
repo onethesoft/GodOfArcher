@@ -834,6 +834,88 @@ public class DataTransformer : EditorWindow
        
     }
 
+    [MenuItem("Tools/½ÃÁðÆÐ½º3")]
+    static void CreateSeasonpassQuest3()
+    {
+
+        Category _category = (Category)AssetDatabase.LoadAssetAtPath($"Assets/Quests/Category/Seasonpass.asset", typeof(Category));
+        TaskAction _taskaction = (TaskAction)AssetDatabase.LoadAssetAtPath($"Assets/Quests/Action/SimpleSet.asset", typeof(TaskAction));
+        TaskTarget _tasktarget = (TaskTarget)AssetDatabase.LoadAssetAtPath($"Assets/Quests/Target/StringTarget/Target_MainStage.asset", typeof(TaskTarget));
+        Task _seasonpassTask = (Task)AssetDatabase.LoadAssetAtPath($"Assets/Quests/Task/SeasonPass/SeasonPassTask.asset", typeof(Task));
+        Task _seasonpassTask2 = (Task)AssetDatabase.LoadAssetAtPath($"Assets/Quests/Task/SeasonPass/SeasonPassTask2.asset", typeof(Task));
+        Task _seasonpassTask3 = (Task)AssetDatabase.LoadAssetAtPath($"Assets/Quests/Task/SeasonPass/SeasonPassTask3.asset", typeof(Task));
+
+
+        Sprite _questIcon = (Sprite)AssetDatabase.LoadAssetAtPath($"Assets/Resources/Sprites/Currency/StatusBarIcon_Gem.png", typeof(Sprite));
+
+
+        int stage = 310000;
+        while (stage <= 500000)
+        {
+            int _seasonPassReward4;
+            int _seasonPassReward5;
+
+            _seasonPassReward4 = 150000;
+            _seasonPassReward5 = 150000;
+
+            if(stage == 470000)
+            {
+                _seasonPassReward4 = 200000;
+                _seasonPassReward5 = 200000;
+            }
+            else if(stage == 480000)
+            {
+                _seasonPassReward4 = 250000;
+                _seasonPassReward5 = 250000;
+            }
+            else if (stage == 490000)
+            {
+                _seasonPassReward4 = 300000;
+                _seasonPassReward5 = 300000;
+            }
+            else if (stage == 500000)
+            {
+                _seasonPassReward4 = 500000;
+                _seasonPassReward5 = 500000;
+            }
+
+
+
+            Reward _SeasonPassReward4 = (Reward)AssetDatabase.LoadAssetAtPath($"Assets/Quests/Reward/Ruby/{_seasonPassReward4}.asset", typeof(Reward));
+            Reward _SeasonPassReward5 = (Reward)AssetDatabase.LoadAssetAtPath($"Assets/Quests/Reward/Ruby/{_seasonPassReward5}.asset", typeof(Reward));
+
+            Task task = CreateInstance<Task>();
+            task.Init(_category, new TaskTarget[] { _tasktarget }, _taskaction, stage);
+
+           
+
+            TaskGroup _SeasonPassTaskGroup3 = new TaskGroup();
+            _SeasonPassTaskGroup3.Init(new Task[] { task, _seasonpassTask, _seasonpassTask2, _seasonpassTask3 });
+
+        
+            Quest _SeasonPassquest4 = CreateInstance<Quest>();
+            _SeasonPassquest4.Init($"pass4_{stage}", _category, new TaskGroup[] { _SeasonPassTaskGroup3 }, _questIcon, _SeasonPassReward4.Description, new Reward[] { _SeasonPassReward4 });
+
+            Quest _SeasonPassquest5 = CreateInstance<Quest>();
+            _SeasonPassquest5.Init($"pass5_{stage}", _category, new TaskGroup[] { _SeasonPassTaskGroup3 }, _questIcon, _SeasonPassReward5.Description, new Reward[] { _SeasonPassReward5 });
+
+           
+            AssetDatabase.CreateAsset(task, $"Assets/Quests/Task/SeasonPass/{stage}.asset");
+            AssetDatabase.CreateAsset(_SeasonPassquest4, $"Assets/Quests/Quest/SeasonPass/{stage}_pass4.asset");
+            AssetDatabase.CreateAsset(_SeasonPassquest5, $"Assets/Quests/Quest/SeasonPass/{stage}_pass5.asset");
+         
+
+            EditorUtility.SetDirty(task);
+            EditorUtility.SetDirty(_SeasonPassquest4);
+            EditorUtility.SetDirty(_SeasonPassquest5);
+
+            stage += 10000;
+        }
+
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+    }
+
 
 
 

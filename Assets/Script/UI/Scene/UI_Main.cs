@@ -27,6 +27,7 @@ public class UI_Main : UI_Scene
         RankPanel,
         SeasonPassButton,
         SeasonPass2Button,
+        SeasonPass3Button,
         RankHelp,
         RubyPurchaseButton,
         RouletteButton,
@@ -110,6 +111,9 @@ public class UI_Main : UI_Scene
         });
         AddUIEvent(GetButton((int)Buttons.SeasonPass2Button).gameObject, (data) => { 
             Managers.UI.ShowPopupUI<UI_Seasonpass>().mode = UI_Seasonpass.Mode.PASS2; 
+        });
+        AddUIEvent(GetButton((int)Buttons.SeasonPass3Button).gameObject, (data) => {
+            Managers.UI.ShowPopupUI<UI_Seasonpass>().mode = UI_Seasonpass.Mode.PASS3;
         });
         AddUIEvent(GetButton((int)Buttons.RankHelp).gameObject, (data) => { Managers.UI.ShowPopupUI<UI_RankHelp>(); });
         AddUIEvent(GetButton((int)Buttons.Shotdown).gameObject, (data) => { Managers.UI.ShowPopupUI<UI_Shutdown>(); });
