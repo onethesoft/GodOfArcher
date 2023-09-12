@@ -71,8 +71,10 @@ public class MainStageSpawner : Spawner
                 
                 _copymonster.transform.position = _monsterPos;
 
+
                 MonsterController _controller = Util.GetOrAddComponent<MonsterController>(_copymonster);
               
+
                 if (generateCount % 3 == 2)
                 {
                     _copymonster.transform.localScale = boss;

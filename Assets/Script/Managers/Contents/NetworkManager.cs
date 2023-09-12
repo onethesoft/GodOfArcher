@@ -90,6 +90,7 @@ public class NetworkManager
 
     private readonly string TestID = "AdminTest_4"; // 룬 슬롯 , 펫 슬롯 테스트 위한 신규 아이디
     //"AdminTest_3"; 기존에 사용하던 테스트 아이디
+    //AdminTest_4
     private const string TitleId = "E576D";
 
 

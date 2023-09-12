@@ -47,6 +47,8 @@ public class GameManagerEx
 
     List<Buff> _buffList = new List<Buff>();
 
+
+
     
 
     public delegate void PlayerLevelChangedHandler();
@@ -602,7 +604,7 @@ public class GameManagerEx
 
             System.Numerics.BigInteger _attackSpeedForDPS = (System.Numerics.BigInteger)_attSpeed;
 
-            Debug.Log(_attackSpeedForDPS);
+          
 
             _DPS *= (System.Numerics.BigInteger)_attackSpeedForDPS;
             _DPS /= 10;
@@ -1259,6 +1261,7 @@ public class GameManagerEx
                 _controller.OnStateChanged += OnStateChangedHandler;
                 _controller.OnDestroyed -= Despawn;
                 _controller.OnDestroyed += Despawn;
+              
                 _monster.Add(SpawnObj);
                 break;
             case Define.WorldObject.Pet:
@@ -1291,6 +1294,7 @@ public class GameManagerEx
                     _controller.OnStateChanged += OnStateChangedHandler;
                     _controller.OnDestroyed -= Despawn;
                     _controller.OnDestroyed += Despawn;
+               
                     _monster.Add(SpawnObj);
                 
                 break;
@@ -1337,9 +1341,10 @@ public class GameManagerEx
                         _hitPoolingList.AddRange(_hitList.FindAll(x => x.Target == go));
                         _hitList.RemoveAll(x => x.Target == go);
                     }
-                        
                     
+
                 }
+
                 //if(_hitQueue.Any(x=>x.Target.gameObject == go))
                     
                 break;
@@ -1396,7 +1401,16 @@ public class GameManagerEx
 
     public GameObject GetNextTarget()
     {
-        return _monster.Count == 0 ? null : _monster.First();
+        if (_monster.Count == 0)
+        {
+            
+            return null;
+        }
+        else
+        {
+            return _monster.First();
+        }
+       // return _monster.Count == 0 ? null : _monster.First();
     }
     public List<GameObject> GetTotalTarget()
     {
@@ -1484,8 +1498,8 @@ public class GameManagerEx
     {
         if(_hitList.Count > 0)
         {
-            HitInfo info = _hitList.First();
-            info.Target.OnHit(info.Damage, info.DamageType);
+
+
             /*
             if (info.DamageType == Define.DamageType.Normal)
                 info.Target.OnHit(info.Damage, Define.DamageType.Normal);
@@ -1501,25 +1515,31 @@ public class GameManagerEx
             }
 
             */
+            
+            HitInfo info = _hitList.First();
             if (info.Target.State == Define.State.Death)
             {
-                for(int i=0;i< _hitList.Count;i++)
+                for (int i = 0; i < _hitList.Count; i++)
                 {
                     if (_hitList[i].Target.gameObject == info.Target.gameObject)
                         _hitPoolingList.Add(_hitList[i]);
                 }
                 _hitList.RemoveAll(x => x.Target.gameObject == info.Target.gameObject);
+                
             }
             else
             {
                 _hitPoolingList.Add(info);
                 _hitList.Remove(info);
+                if(_monster.Contains(info.Target.gameObject))
+                    info.Target.OnHit(info.Damage, info.DamageType);
             }
-
-
-
             
-          
+            
+
+
+
+
         }
     }
 }
