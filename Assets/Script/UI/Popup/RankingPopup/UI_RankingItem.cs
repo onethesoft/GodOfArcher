@@ -348,12 +348,23 @@ public class UI_RankingItem : UI_Base, ICell
 
             if (_entry.Profile.Statistics.Any(x => x.Name == PlayerInfo.StatisticsDataKey.ReviveLevel.ToString()) == false)
                 RankText.text = Managers.Game.PlyaerDataBase.RankDic[PlayerRank].RankText;
-            else if (_entry.Profile.Statistics.Where(x => x.Name == PlayerInfo.StatisticsDataKey.ReviveLevel.ToString()).FirstOrDefault().Value == 0)
-                RankText.text = Managers.Game.PlyaerDataBase.RankDic[PlayerRank].RankText;
             else
             {
-                RankText.text = $"{Managers.Game.PlyaerDataBase.RankDic[PlayerRank].RankText}+{_entry.Profile.Statistics.Where(x => x.Name == PlayerInfo.StatisticsDataKey.ReviveLevel.ToString()).FirstOrDefault().Value}";
+                int reviveLevel = _entry.Profile.Statistics.Where(x => x.Name == PlayerInfo.StatisticsDataKey.ReviveLevel.ToString()).FirstOrDefault().Value;
+                if(reviveLevel == 0)
+                    RankText.text = Managers.Game.PlyaerDataBase.RankDic[PlayerRank].RankText;
+                else
+                {
+                    int fontSize = 35;
+                    if (reviveLevel >= 100)
+                        fontSize = 32;
+
+                    RankText.text = $"{Managers.Game.PlyaerDataBase.RankDic[PlayerRank].RankText}+{reviveLevel}";
+                    RankText.fontSize = fontSize;
+
+                }
             }
+           
 
         }
         else
@@ -369,7 +380,15 @@ public class UI_RankingItem : UI_Base, ICell
             if (_player.ReviveLevel == 0)
                 RankText.text = Managers.Game.PlyaerDataBase.RankDic[_player.Level].RankText;
             else
+            {
+                int fontSize = 35;
+                if (_player.ReviveLevel >= 100)
+                    fontSize = 32;
+
                 RankText.text = $"{Managers.Game.PlyaerDataBase.RankDic[_player.Level].RankText}+{_player.ReviveLevel}";
+                RankText.fontSize = fontSize;
+            }
+               
 
             /*
             GameData _player = FindObjectOfType<GameData>();

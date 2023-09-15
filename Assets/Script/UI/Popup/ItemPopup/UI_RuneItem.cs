@@ -100,6 +100,7 @@ public class UI_RuneItem : UI_Base
 
             OneUpgradeButton.onClick.RemoveAllListeners();
             OneUpgradeButton.onClick.AddListener(() => {
+
                 if (Managers.Item.UpgradeOneItem(Managers.Item.Database.ItemList.Where(x => x.ItemId == _itemData.ItemId).FirstOrDefault(), true) == true)
                 {
                     OnUprade?.Invoke();

@@ -178,6 +178,9 @@ public class UI_EquipItem : UI_Base, ICell
             UpgradeButton.onClick.RemoveAllListeners();
             UpgradeButton.onClick.AddListener(() =>
             {
+                if (Managers.Game.GetInventory().Find(x => x.ItemId == _itemData.ItemId) == null)
+                    return;
+
                 if (Managers.Item.UpgradeOneItem(Managers.Game.GetInventory().Find(x => x.ItemId == _itemData.ItemId), false))
                     OnUpgrade?.Invoke(this);
                 UpdateCountText();

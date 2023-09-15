@@ -104,7 +104,7 @@ public class UI_Shutdown : UI_Popup
 
         GetText((int)Texts.GoldText).text = $"{Util.GetBigIntegerUnit(Managers.Game.GetCurrency(Define.CurrencyID.Gold.ToString()) - _gold)}";
         GetText((int)Texts.CPText).text = $"{Util.GetBigIntegerUnit(Managers.Game.CalculateDropRateAmount(Define.CurrencyID.CP, _mainStageTask.GetMonsterHP(Managers.Game.Stage)))}";
-        GetText((int)Texts.RubyText).text = $"환생 시 얻는 루비 : {Util.GetBigIntegerUnit(_playerData.GetReviveRubyAmount(Managers.Game.Stage))}";
+        GetText((int)Texts.RubyText).text = $"{Util.GetBigIntegerUnit(_playerData.GetReviveRubyAmount(Managers.Game.Stage))}";
     }
 
     public override void ClosePopupUI()
@@ -146,7 +146,7 @@ public class UI_Shutdown : UI_Popup
         GetText((int)Texts.StageText).text = Managers.Game.Stage.ToString();
         GetText((int)Texts.GoldText).text = $"{Util.GetBigIntegerUnit(Managers.Game.GetCurrency(Define.CurrencyID.Gold.ToString()) - _gold)}";
         GetText((int)Texts.CPText).text = $"{Util.GetBigIntegerUnit(Managers.Game.CalculateDropRateAmount(Define.CurrencyID.CP, _mainStageTask.GetMonsterHP(Managers.Game.Stage)))}";
-        GetText((int)Texts.RubyText).text = $"환생 시 얻는 루비 : {Util.GetBigIntegerUnit(_playerData.GetReviveRubyAmount(Managers.Game.Stage))}";
+        GetText((int)Texts.RubyText).text = $"{Util.GetBigIntegerUnit(_playerData.GetReviveRubyAmount(Managers.Game.Stage))}";
     }
 
 
