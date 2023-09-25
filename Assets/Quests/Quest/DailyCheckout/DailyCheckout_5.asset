@@ -21,10 +21,11 @@ MonoBehaviour:
   - _tasks:
     - {fileID: 11400000, guid: a2b8bae0dfe6b8d4eb5beced11f85e51, type: 2}
   _rewards:
-  - {fileID: 11400000, guid: 7da19ff9664968b498d8d64347ec86fe, type: 2}
+  - {fileID: 11400000, guid: f0811007a586db544b633069a116eaf8, type: 2}
   _useAutoComplete: 0
   _isCancelable: 0
   _isSavable: 1
   _isRepeatable: 1
   _acceptionconditions: []
   _cancelconditions: []
+  _helper: {fileID: 0}

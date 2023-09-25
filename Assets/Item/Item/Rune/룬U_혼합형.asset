@@ -68,10 +68,6 @@ MonoBehaviour:
     _description: "\uD658\uC0DD P \uD68D\uB4DD\uB960 %s% \uC99D\uAC00"
     _value: 300
     _type: 0
-  - _codeName: JumpingCount
-    _description: "\uC810\uD551\uCE35 +1"
-    _value: 1
-    _type: 0
   - _codeName: AllAttackAmp
     _description: "\uBAA8\uB4E0 \uD53C\uD574 %s% \uC99D\uD3ED"
     _value: 20

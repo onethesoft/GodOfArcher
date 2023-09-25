@@ -783,11 +783,14 @@ public class GameManagerEx
             return PlayerData.ItemStat.GetStatValue(Define.StatID.CriticalHitAmp.ToString());
         }
     }
+
+    // 20230918
+    // 스텟으로 찍는 스킬 공격력을 스킬 증폭으로 대체한다.
     public int GetSkillAttackAmp
     {
         get
         {
-            return PlayerData.ItemStat.GetStatValue(Define.StatID.SkillAttackAmp.ToString());
+            return PlayerData.ItemStat.GetStatValue(Define.StatID.SkillAttackAmp.ToString()) + PlayerData.PlayerStat.GetStatValue(Define.StatID.SkillAttack.ToString()) ;
         }
     }
     public int GetAllAttackAmp
@@ -797,11 +800,14 @@ public class GameManagerEx
             return PlayerData.ItemStat.GetStatValue(Define.StatID.AllAttackAmp.ToString()) + PlayerData.RuneStat.GetStatValue(Define.StatID.AllAttackAmp.ToString()) + PlayerData.ReviveLevel;
         }
     }
+
+    // 20230918
+    // 스텟으로 찍는 스킬 공격력을 스킬 증폭으로 대체한다.
     public int GetSkillMultipier
     {
         get
         {
-            int GetSkillDamageStat = PlayerData.PlayerStat.GetStatValue(Define.StatID.SkillAttack.ToString()) + PlayerData.ItemStat.GetStatValue(Define.StatID.SkillAttack.ToString()) + PlayerData.PetStat.GetStatValue(Define.StatID.SkillAttack.ToString()) + PlayerData.RuneStat.GetStatValue(Define.StatID.SkillAttack.ToString()) + PlayerData.ArtifactStat.GetStatValue(Define.StatID.SkillAttack.ToString());
+            int GetSkillDamageStat =PlayerData.ItemStat.GetStatValue(Define.StatID.SkillAttack.ToString()) + PlayerData.PetStat.GetStatValue(Define.StatID.SkillAttack.ToString()) + PlayerData.RuneStat.GetStatValue(Define.StatID.SkillAttack.ToString()) + PlayerData.ArtifactStat.GetStatValue(Define.StatID.SkillAttack.ToString());
 
             return (100 + GetSkillDamageStat) * Math.Max( 1, PlayerData.BuffStat.GetStatValue(Define.StatID.SkillAttack.ToString()));
             
@@ -1143,13 +1149,14 @@ public class GameManagerEx
         {
             PlayerData.ClearStage = PlayerData.Stage;
 
+            // 플레이어 등급확장으로 인한 루틴 변경
+            // 업데이트 전 이미 등급이 달성했을 때를 반영해야 함
             if (PlayerData.MaxClearStage < PlayerData.ClearStage)
-            {
                 PlayerData.MaxClearStage = PlayerData.ClearStage;
-                PlayerRank _searchRank = _playerdatabase.RankList.Where(x => x.Condition <= PlayerData.MaxClearStage).LastOrDefault();
-                if (_searchRank.Level >  (PlayerRank.Rank)PlayerData.Level)
-                    Levelup();
-            }
+            
+            PlayerRank _searchRank = _playerdatabase.RankList.Where(x => x.Condition <= PlayerData.MaxClearStage).LastOrDefault();
+            if(_searchRank != null && _searchRank.Level > (PlayerRank.Rank)PlayerData.Level)
+                Levelup();
 
             if (IsJumping)
             {

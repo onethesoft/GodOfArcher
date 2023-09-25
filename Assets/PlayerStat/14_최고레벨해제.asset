@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: "14_\uCD5C\uACE0\uB808\uBCA8\uD574\uC81C"
   m_EditorClassIdentifier: 
   CodeName: SkillMaxLevelLimit
-  Description: "\uC2A4\uD0AC\uACF5\uACA9\uB825 \uCD5C\uACE0\uB808\uBCA8"
+  Description: "\uC2A4\uD0AC\uACF5\uACA9\uB825 \uC99D\uD3ED \uCD5C\uACE0\uB808\uBCA8"
   Value: 100
   _Type: 3
   _maxLevel: 10
+  _minLevel: 0
   _Level: 0
   _isUnlock: 0
   _unlockCondition: {fileID: 11400000, guid: 6f80a652277245244b3cfc30dae58d7f, type: 2}

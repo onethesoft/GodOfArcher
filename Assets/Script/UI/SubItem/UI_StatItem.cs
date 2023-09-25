@@ -137,7 +137,7 @@ public class UI_StatItem : UI_Base
     void ShowLevelText()
     {
         if (_stat.CodeName == Define.StatID.SkillAttack.ToString())
-            GetText((int)Texts.LevelText).text = $"{_stat.Description} 증가 : 레벨 {_stat.Level}";
+            GetText((int)Texts.LevelText).text = $"{_stat.Description} 증폭 : 레벨 {_stat.Level}";
         else if (_stat.CodeName == Define.StatID.SkillMaxLevelLimit.ToString())
         {
             GetText((int)Texts.LevelText).text = $"{_stat.Description} 해제 : 레벨 {_stat.Level}";
@@ -167,7 +167,7 @@ public class UI_StatItem : UI_Base
         else if (_stat.CodeName == Define.StatID.JumpingCount.ToString())
             GetText((int)Texts.IncrementStatText).text = $"{_stat.Description}량 : {_stat.IncrementValuePerLevel}층 증가";
         else if (_stat.CodeName == Define.StatID.SkillAttack.ToString())
-            GetText((int)Texts.IncrementStatText).text = $"{_stat.Description} : {_stat.IncrementValuePerLevel}% 증가";
+            GetText((int)Texts.IncrementStatText).text = $"{_stat.Description} 증폭 : {_stat.Value}% 증가";
         else if (_stat.CodeName == Define.StatID.SkillMaxLevelLimit.ToString())
             GetText((int)Texts.IncrementStatText).text = $"{_stat.Description} : {_stat.IncrementValuePerLevel}%";
         else if (_stat.CodeName == Define.StatID.CriticalHitRate.ToString() || _stat.CodeName == Define.StatID.CraftCriticalHitRate.ToString() )

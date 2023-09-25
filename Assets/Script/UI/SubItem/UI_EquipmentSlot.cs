@@ -151,44 +151,7 @@ public class UI_EquipmentSlot : UI_Base
             }
         });
 
-
-        AddUIEvent(GetButton((int)Buttons.SlotBackground).gameObject, (data) => {
-            if(_slot.IsLock == false )
-                Select();
-            else
-            {
-                if(_slot.category == "Buyable")
-                {
-                    Debug.Log(_slot.IsUnLockable);
-                    if(_slot.IsUnLockable)
-                    {
-                        // 구매팝업 창 띄움
-                        UI_Purchase _popup = Managers.UI.ShowPopupUI<UI_Purchase>();
-                        _popup.Title = "인벤토리 추가 구매";
-                        _popup.Currency = Define.CurrencyID.Ruby;
-                        _popup.Amount = (int)(_slot.UnitPrice);
-                        _popup.OnPurchase += () =>
-                        {
-                            _slot.UnLock();
-                        };
-                    }
-                    else
-                    {
-                        // 구매팝업 창 띄움
-                        UI_Messagebox _popup = Managers.UI.ShowPopupUI<UI_Messagebox>();
-                        _popup.mode = UI_Messagebox.Mode.OK;
-                        _popup.Title = "인벤토리 추가 구매";
-                        _popup.Text = _slot.UnLockableReson;
-                        _popup.TextSize = 40;
-
-
-                    }
-                }
-               
-                
-            }
-        });
-
+       
         if (_slot != null)
         {
             Description.text = _slot.Description;

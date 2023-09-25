@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rank: 11
   _conditionStage: 450000
-  _iconObject: {fileID: 7035259129703694614, guid: aaac64ccaba88f5499606b751f95b369,
+  _iconObject: {fileID: 7035259129703694614, guid: 58328ff37709df94b81180d746f116fa,
     type: 3}
   _statModifiers:
   - _codeName: JumpingRate

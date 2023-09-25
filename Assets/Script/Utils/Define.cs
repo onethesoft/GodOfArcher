@@ -6,7 +6,7 @@ public class Define
 {
     public static readonly ServiceVersion APPVersion = new ServiceVersion() 
     { 
-        Major = 2 , Minor = 8 , Patch = 0 
+        Major = 3 , Minor = 0 , Patch = 0 
     };
    
     public enum UIEvent

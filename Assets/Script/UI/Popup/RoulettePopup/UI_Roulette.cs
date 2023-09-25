@@ -10,6 +10,9 @@ public class UI_Roulette : UI_Popup
     Button ExitButton;
 
     [SerializeField]
+    Button CloseButton;
+
+    [SerializeField]
     Button button;
 
     [SerializeField]
@@ -63,7 +66,12 @@ public class UI_Roulette : UI_Popup
             UpdateToServer();
             ClosePopupUI();
         });
-        
+
+        AddUIEvent(CloseButton.gameObject, (data) => {
+
+            
+        });
+
     }
     private void Update()
     {

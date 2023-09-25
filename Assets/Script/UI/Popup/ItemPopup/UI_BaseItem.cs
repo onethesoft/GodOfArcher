@@ -54,6 +54,9 @@ public class UI_BaseItem : UI_Base
     TextMeshProUGUI LevelText;
 
     [SerializeField]
+    GameObject BottomSprite;
+
+    [SerializeField]
     GameObject IconBackground;
 
     [SerializeField]
@@ -81,6 +84,7 @@ public class UI_BaseItem : UI_Base
             Icon.GetComponent<Image>().sprite = rune.Icon;
 
             DisplayName.text = rune.DisplayName;
+            BottomSprite.SetActive(false);
             EquipableItem.Rank _itemRank = (EquipableItem.Rank)rune.Level;
             LevelText.text = $"{_itemRank.ToString()}등급";
 
@@ -94,8 +98,8 @@ public class UI_BaseItem : UI_Base
             }
             else if (rune.Level == (int)Rune.Rank.U)
             {
-                DisplayNameBackground.gameObject.SetActive(false);
-                DisplayName.gameObject.SetActive(false);
+                //DisplayNameBackground.gameObject.SetActive(false);
+                //DisplayName.gameObject.SetActive(false);
 
                 Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -65, y = -75 };
                 IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -45, y = -45 };
@@ -106,8 +110,9 @@ public class UI_BaseItem : UI_Base
             }
             else if (rune.Level == (int)Rune.Rank.G)
             {
-                DisplayNameBackground.GetComponent<Image>().sprite = Rune_G_Bottom;
-                DisplayName.gameObject.SetActive(false);
+                BottomSprite.GetComponent<Image>().sprite = Rune_G_Bottom;
+                BottomSprite.SetActive(true);
+                //DisplayName.gameObject.SetActive(false);
 
                 Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -65, y = -75 };
                 IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -45, y = -45 };
@@ -158,8 +163,8 @@ public class UI_BaseItem : UI_Base
             }
             else if (pet.Level == (int)Pet.Rank.U)
             {
-                DisplayNameBackground.gameObject.SetActive(false);
-                DisplayName.gameObject.SetActive(false);
+                //DisplayNameBackground.gameObject.SetActive(false);
+                //DisplayName.gameObject.SetActive(false);
 
                 Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -65, y = -75 };
                 IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -45, y = -45 };
@@ -171,8 +176,10 @@ public class UI_BaseItem : UI_Base
             }
             else if (pet.Level == (int)Pet.Rank.G)
             {
-                DisplayNameBackground.GetComponent<Image>().sprite = Rune_G_Bottom;
-                DisplayName.gameObject.SetActive(false);
+                BottomSprite.GetComponent<Image>().sprite = Rune_G_Bottom;
+                BottomSprite.SetActive(true);
+                //DisplayNameBackground.gameObject.SetActive(false);
+                //DisplayName.gameObject.SetActive(false);
 
                 Icon.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -65, y = -75 };
                 IconBackground.GetComponent<RectTransform>().sizeDelta = new Vector2 { x = -45, y = -45 };
@@ -210,6 +217,7 @@ public class UI_BaseItem : UI_Base
             Icon.GetComponent<Image>().sprite = bow.Icon;
 
             DisplayName.text = bow.DisplayName;
+            BottomSprite.SetActive(false);
             EquipableItem.Rank _itemRank = (EquipableItem.Rank)bow.Level;
             LevelText.text = $"{_itemRank.ToString()}등급";
 
@@ -249,6 +257,7 @@ public class UI_BaseItem : UI_Base
             Icon.GetComponent<Image>().sprite = armor.Icon;
 
             DisplayName.text = armor.DisplayName;
+            BottomSprite.SetActive(false);
             EquipableItem.Rank _itemRank = (EquipableItem.Rank)armor.Level;
             LevelText.text = $"{_itemRank.ToString()}등급";
 
@@ -272,6 +281,7 @@ public class UI_BaseItem : UI_Base
             Icon.GetComponent<Image>().sprite = helmet.Icon;
 
             DisplayName.text = helmet.DisplayName;
+            BottomSprite.SetActive(false);
             EquipableItem.Rank _itemRank = (EquipableItem.Rank)helmet.Level;
             LevelText.text = $"{_itemRank.ToString()}등급";
 
@@ -291,6 +301,7 @@ public class UI_BaseItem : UI_Base
             Icon.GetComponent<Image>().sprite = cloak.Icon;
 
             DisplayName.text = cloak.DisplayName;
+            BottomSprite.SetActive(false);
             EquipableItem.Rank _itemRank = (EquipableItem.Rank)cloak.Level;
             LevelText.text = $"{_itemRank.ToString()}등급";
 
@@ -314,6 +325,7 @@ public class UI_BaseItem : UI_Base
             Backround.GetComponent<Image>().color  = essence.BackgroundColor;
 
             DisplayName.text = essence.DisplayName;
+            BottomSprite.SetActive(false);
             LevelText.gameObject.SetActive(false);
           
 
@@ -334,6 +346,7 @@ public class UI_BaseItem : UI_Base
 
             DisplayName.text = heart.DisplayName;
             DisplayName.fontSize = 17;
+            BottomSprite.SetActive(false);
             LevelText.gameObject.SetActive(false);
             
             // GetText((int)Texts.DisplayName).text = heart.DisplayName;

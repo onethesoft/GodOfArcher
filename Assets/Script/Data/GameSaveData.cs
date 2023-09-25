@@ -318,7 +318,8 @@ public class RouletteInfo
 {
     public int PlayRouletteCount = 0;
 
-    public int GetCoinToPlayRoulette => (PlayRouletteCount / 10) + 1;
+    // ·ê·¿ ÄÚÀÎ »ç¿ë È½¼ö 50È¸ µ¹ÆÄ½Ã 1È¸´ç ·ê·¿ ÄÚÀÎ »ç¿ë ÀçÈ¸ 1·Î ÃÊ±âÈ­
+    public int GetCoinToPlayRoulette => ((PlayRouletteCount / 10)  % 50) + 1;
     public string ToJson()
     {
         JObject obj = new JObject();

@@ -67,7 +67,7 @@ public class MainScene : BaseScene
         {
             Managers.UI.ShowPopupUI<UI_DailyCheckout>();
         }
-        
+        //Managers.UI.ShowPopupUI<UI_NoticeBoard>();
         Managers.Item.GiveDailyRewardToUser();
 
 

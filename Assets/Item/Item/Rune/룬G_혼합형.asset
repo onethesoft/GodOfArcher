@@ -69,8 +69,8 @@ MonoBehaviour:
     _value: 900
     _type: 0
   - _codeName: JumpingCount
-    _description: "\uC810\uD551\uCE35 +2"
-    _value: 2
+    _description: "\uC810\uD551\uCE35 +1"
+    _value: 1
     _type: 0
   - _codeName: AllAttackAmp
     _description: "\uBAA8\uB4E0 \uD53C\uD574 %s% \uC99D\uD3ED"
