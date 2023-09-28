@@ -17,9 +17,12 @@ MonoBehaviour:
   _background: {fileID: 21300000, guid: 415c470e8eddc8c45a4354582a9ebc13, type: 3}
   _icon: {fileID: 21300000, guid: 0f41b4d729ae24e4c9f4ef2c60ba482a, type: 3}
   _subicon: {fileID: 0}
+  _itemIcon: []
   _backcurrencyIcon: {fileID: 21300000, guid: 365861fc1402da44f81bbee7a11d3263, type: 3}
   _currencyIcon: {fileID: 21300000, guid: 0f695343df521bc49b7ffcdb17f78710, type: 3}
   _item: {fileID: 11400000, guid: 624c69c755e9d2d4a82f2ee4f3fb16f0, type: 2}
   _description: "\uCCAB \uAD6C\uB9E4\uC2DC \uB8E8\uBE44 2\uBC30 \uC9C0\uAE09\\n\uB8E8\uBE44x400000"
   _descriptionColor: {r: 1, g: 0.72156864, b: 0, a: 1}
   _PriceText: "50,000\uC6D0"
+  _isBlock: 0
+  _limitedCount: -1

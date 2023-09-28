@@ -20,11 +20,15 @@ MonoBehaviour:
   _unitCurrency: 
   _unitPrice: 0
   _isStackable: 0
-  _background: {fileID: 21300000, guid: 365861fc1402da44f81bbee7a11d3263, type: 3}
-  _icon: {fileID: 21300000, guid: 624446b7fb5e64e46b08191176d9b310, type: 3}
+  _icons:
+  - {fileID: 21300000, guid: 624446b7fb5e64e46b08191176d9b310, type: 3}
   _grantedItems:
     Count: 1
+    Item: {fileID: 11400000, guid: 8a7402c62a019bb4c8036558a9df8d82, type: 2}
+  _grantedItemList:
+  - Count: 1
     Item: {fileID: 11400000, guid: 8a7402c62a019bb4c8036558a9df8d82, type: 2}
   _grantedCurreyncies:
     Count: 0
     Item: {fileID: 0}
+  _grantedCurreyncyList: []

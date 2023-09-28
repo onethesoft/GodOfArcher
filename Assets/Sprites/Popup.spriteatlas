@@ -58,6 +58,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: ee347a90b3d27824cb4935dc9b8e3846, type: 3}
   - {fileID: 21300000, guid: 2ed9ca905898d0545a075c69fc733c07, type: 3}
   - {fileID: 21300000, guid: 03625fd022166d641aa98ad12bab0f9f, type: 3}
+  - {fileID: 21300000, guid: b590b1e05cb355c40a90ae419e3ef683, type: 3}
   - {fileID: 21300000, guid: d699b7e0f85d8f047b1c881264507edc, type: 3}
   - {fileID: 21300000, guid: 39109ff0daf022a429df44464da1b773, type: 3}
   - {fileID: 21300000, guid: 5e080e01ea3aba04bafa544fbbc3a569, type: 3}
@@ -179,6 +180,7 @@ SpriteAtlas:
   - Pet_U
   - frame_stageframe_03_purple
   - slider_edgetype_02_frame_back
+  - RandomBoxIcon
   - Pet_G
   - Item_ShopIcon_Coin01
   - Icon_Gem04_Octagon_Yellow

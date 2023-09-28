@@ -370,7 +370,7 @@ public class PacketHandler
                 Debug.Log(item.ToJson());
                 if (Managers.Game.GetInventory().Find(x => x.ItemInstanceId == item.ItemInstanceId) == null)
                 {
-                    if(Managers.Item.Database.ItemList.Where(x=>x.ItemId == item.ItemId).FirstOrDefault().IsStackable)
+                    if (Managers.Item.Database.ItemList.Where(x => x.ItemId == item.ItemId).FirstOrDefault().IsStackable)
                     {
                         List<BaseItem> _added = Managers.Game.GetInventory().AddItem(item.ItemId, item.UsesIncrementedBy.GetValueOrDefault());
                         _added.ForEach(x =>
@@ -388,15 +388,23 @@ public class PacketHandler
                                 x.Setup(item);
                         });
                     }
-                    
+
                 }
                 else
+                {
+                    Managers.Game.GetInventory().AddItem(item.ItemId, item.UsesIncrementedBy.GetValueOrDefault());
                     Managers.Game.GetInventory().Find(x => x.ItemInstanceId == item.ItemInstanceId).Setup(item);
+               
+                }
 
             }
 
         if (UnityEngine.Object.FindObjectOfType<UI_LoadingBlock>() != null)
             Managers.UI.ClosePopupUI();
+
+
+        List<string> grantedItemList = new List<string>();
+        string iapItem = string.Empty;
 
 
         // ProcessGiveToUser 에서 유저 인벤토리에게 아이템을 생성 후 부여한다.
@@ -406,7 +414,7 @@ public class PacketHandler
             {
                 Managers.Player.GetPlayer(Managers.Game.PlayerId).AddItemInstance(grantedItem);
 
-                if (Managers.Shop.Database.IAPItems.Any(x => x.Item.ItemId == grantedItem.ItemId) || 
+                if (Managers.Shop.Database.IAPItems.Any(x => x.Item.ItemId == grantedItem.ItemId) ||
                     Managers.Shop.Database.RubyPackageItems.Any(x => x.Item.ItemId == grantedItem.ItemId))
                 {
                     IAPData _data = Managers.Shop.Database.IAPItems.Any(x => x.Item.ItemId == grantedItem.ItemId) ?
@@ -416,22 +424,30 @@ public class PacketHandler
 
                     foreach (BundleCurrencyContent currency in _data.Item.Currencies)
                     {
-                        Define.CurrencyID _codeName = (Define.CurrencyID)Enum.Parse(typeof(Define.CurrencyID) , currency.Currency.CodeName);
+                        Define.CurrencyID _codeName = (Define.CurrencyID)Enum.Parse(typeof(Define.CurrencyID), currency.Currency.CodeName);
                         Managers.Player.GetPlayer(Managers.Game.PlayerId).AddCurrency(_codeName, (System.Numerics.BigInteger)currency.Amount);
 
                     }
-                     
-                    Managers.Shop.ProcessGiveToUser(grantedItem.ItemId);
+
+                    iapItem = grantedItem.ItemId;
                 }
-                else if (Managers.Shop.Database.Seasonpass.Item.ItemId == grantedItem.ItemId 
+                else if (Managers.Shop.Database.Seasonpass.Item.ItemId == grantedItem.ItemId
                     || Managers.Shop.Database.Seasonpass2.Item.ItemId == grantedItem.ItemId
                      || Managers.Shop.Database.Seasonpass3.Item.ItemId == grantedItem.ItemId)
-                    Managers.Shop.ProcessGiveToUser(grantedItem.ItemId);
+                {
+                    iapItem = grantedItem.ItemId;
+
+                }
+                else
+                    grantedItemList.Add(grantedItem.ItemId);
+
+
             }
         }
+        Managers.Shop.ProcessGiveToUser(iapItem, grantedItemList);
 
-       
-              
+
+
 
 
 

@@ -14,25 +14,24 @@ public class Mail : BaseItem
         CompleteUnLocked
     }
 
-    [SerializeField]
-    Sprite _background;
-
-    public Sprite BackgroundIcon => _background;
+   
 
     [SerializeField]
-    Sprite _icon;
+    List<Sprite> _icons;
 
-    public Sprite Icon => _icon;
+    public List<Sprite> Icons => _icons;
 
-    [SerializeField]
-    Collection<BaseItem> _grantedItems;
-
-    public Collection<BaseItem> Items => _grantedItems;
+   
 
     [SerializeField]
-    Collection<Currency> _grantedCurreyncies;
+    List<Collection<BaseItem>> _grantedItemList;
+    public List<Collection<BaseItem>> GrantedItemList => _grantedItemList;
 
-    public Collection<Currency> Currencies => _grantedCurreyncies;
+  
+
+    [SerializeField]
+    List<Collection<Currency>> _grantedCurreyncyList;
+    public List<Collection<Currency>> GrantedCurrencyList => _grantedCurreyncyList;
 
 
     Status _status = Status.Normal;

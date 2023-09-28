@@ -101,9 +101,6 @@ public class ItemDatabase : ScriptableObject
     [SerializeField]
     List<Pet> _petList;
 
-    [Header("우편")]
-    [SerializeField]
-    List<Mail> _mailList;
 
     [Header("번들")]
     [SerializeField]
@@ -152,7 +149,6 @@ public class ItemDatabase : ScriptableObject
     public EquipmentSystem ArmorEquipment => _armorEquipment;
     public EquipmentSystem CloakEquipment => _cloakEquipment;
 
-    public IReadOnlyList<Mail> MailList => _mailList;
 
     public IReadOnlyList<Bundle> BundleList => _bundleList;
     public IReadOnlyList<BaseItem> ItemList => _itemList;
@@ -276,30 +272,36 @@ public class ItemDatabase : ScriptableObject
                 Mail _mailItem = item as Mail;
                 CatalogItemContainerInfo _consuminfo = new CatalogItemContainerInfo();
                 _consuminfo.ResultTableContents = new List<string>();
-                if ( _mailItem.Currencies.Item != null)
+                
+                if (_mailItem.GrantedCurrencyList != null && _mailItem.GrantedCurrencyList.Count > 0)
                 {
                     Dictionary<string, uint> _cur = new Dictionary<string, uint>();
-                    if(_mailItem.Currencies.Item.CodeName == Define.CurrencyID.Ruby.ToString())
-                        _cur.Add(_mailItem.Currencies.Item.ShortCodeName, (uint)_mailItem.Currencies.Count);
+                    foreach (Collection<Currency> grantedCurrency in _mailItem.GrantedCurrencyList)
+                    {
 
-                    _consuminfo.VirtualCurrencyContents = _cur;
+                        if (grantedCurrency.Item.CodeName == Define.CurrencyID.Ruby.ToString())
+                            _cur.Add(grantedCurrency.Item.ShortCodeName, (uint)grantedCurrency.Count);
+
+                        _consuminfo.VirtualCurrencyContents = _cur;
+                    }
                 }
-
-                if(_mailItem.Items.Item != null)
+                foreach (Collection<BaseItem> grantedItem in _mailItem.GrantedItemList)
                 {
-                   
-                    if(_mailItem.Items.Item is Table)
+                    if (grantedItem.Item != null)
                     {
-                        for (int i = 0; i < _mailItem.Items.Count; i++)
-                            _consuminfo.ResultTableContents.Add(_mailItem.Items.Item.ItemId);
+                        if (grantedItem.Item is Table)
+                        {
+                            for (int i = 0; i < grantedItem.Count; i++)
+                                _consuminfo.ResultTableContents.Add(grantedItem.Item.ItemId);
+                        }
+                        else
+                        {
+                            for (int i = 0; i < grantedItem.Count; i++)
+                                _consuminfo.ResultTableContents.Add(grantedItem.Item.ItemId);
+                        }
                     }
-                    else
-                    {
-                        for (int i = 0; i < _mailItem.Items.Count; i++)
-                            _consuminfo.ResultTableContents.Add(_mailItem.Items.Item.ItemId);
-                    }
-
                 }
+                
                 
                 _addedItem = new CatalogItem { ItemId = _mailItem.ItemId, ItemClass = _mailItem.ItemClass, CatalogVersion = "Main", Description = _mailItem.Description, DisplayName = _mailItem.DisplayName , Consumable = new CatalogItemConsumableInfo { UsageCount = 1 } , Container = _consuminfo };
             }
@@ -544,27 +546,8 @@ public class ItemDatabase : ScriptableObject
         }
     }
     
-    [ContextMenu("FindMail")]
-    private void FindMails()
-    {
-        FindMail();
-    }
-
-    void FindMail()
-    {
-        string[] guids = AssetDatabase.FindAssets($"t:{typeof(Mail)}");
-        foreach (var guid in guids)
-        {
-            string assetPath = AssetDatabase.GUIDToAssetPath(guid);
-            var item = AssetDatabase.LoadAssetAtPath<Mail>(assetPath);
-
-            if (item.GetType() == typeof(Mail))
-                _mailList.Add(item);
-
-            EditorUtility.SetDirty(this);
-            AssetDatabase.SaveAssets();
-        }
-    }
+    
+    
 
     [ContextMenu("Find Bundle")]
     private void FindBundles()

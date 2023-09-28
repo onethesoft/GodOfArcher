@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +14,9 @@ public class UI_IAPItem : UI_Base
         DisplayName,
         CurrencyText,
         Description,
-        PriceText
+        PriceText,
+        LimitedCountText,
+        PurchaseCountText
     }
     enum Images
     {
@@ -49,8 +52,11 @@ public class UI_IAPItem : UI_Base
             Get<GameObject>((int)GameObjects.ResourceIconPanel).SetActive(false);
 
         GetText((int)Texts.DisplayName).text = _iapdata.DisplayName;
+        GetText((int)Texts.DisplayName).fontSize = _iapdata.DisplayNameFontSize;
+
         GetText((int)Texts.Description).text = _iapdata.Description.Replace("\\n",System.Environment.NewLine);
         GetText((int)Texts.Description).color = _iapdata.DescriptionColor;
+        GetText((int)Texts.Description).fontSize = _iapdata.DescriptionFontSize;
         if (_iapdata.Icon != null)
             GetImage((int)Images.Icon).sprite = _iapdata.Icon;
         else
@@ -119,6 +125,7 @@ public class UI_IAPItem : UI_Base
     }
     void UpdateStatus()
     {
+        /*
         if(_iapdata.type == IAPData.Type.Ruby)
         {
             if (Managers.Game.GetInventory().IsFindItem(_iapdata.Item.ItemId))
@@ -127,7 +134,46 @@ public class UI_IAPItem : UI_Base
             }
 
         }
+        */
 
+        if(_iapdata.LimitedCount == -1)
+        {
+            GetText((int)Texts.LimitedCountText).gameObject.SetActive(false);
+            GetText((int)Texts.PurchaseCountText).gameObject.SetActive(false);
+            GetImage((int)Images.Blocker).gameObject.SetActive(false);
+        }
+        else
+        {
+            List<BaseItem> _iapItemsForLimitedCount = new List<BaseItem>();
+            if (Managers.Game.GetInventory().Find(x => x.ItemId == _iapdata.Item.ItemId) != null)
+                _iapItemsForLimitedCount.Add(Managers.Game.GetInventory().Find(x => x.ItemId == _iapdata.Item.ItemId));
+            if (_iapdata.SharedItems != null && _iapdata.SharedItems.Count > 0)
+                _iapItemsForLimitedCount.AddRange(Managers.Game.GetInventory().FindAll(_iapdata.SharedItems));
+
+            int LimitedCount = 0;
+            if(_iapItemsForLimitedCount.Count > 0)
+            {
+                LimitedCount += _iapItemsForLimitedCount.Select(x => x.RemainingUses.GetValueOrDefault()).Sum();
+                if (LimitedCount >= _iapdata.LimitedCount)
+                {
+                    if (GetImage((int)Images.Blocker).gameObject.activeSelf == false)
+                        GetImage((int)Images.Blocker).gameObject.SetActive(true);
+                }
+                else
+                {
+                    if (GetImage((int)Images.Blocker).gameObject.activeSelf == true)
+                        GetImage((int)Images.Blocker).gameObject.SetActive(false);
+                }
+            }
+            else
+                GetImage((int)Images.Blocker).gameObject.SetActive(false);
+           
+           
+
+            GetText((int)Texts.LimitedCountText).text = $"계정당 {_iapdata.LimitedCount}회 구매 제한";
+            GetText((int)Texts.PurchaseCountText).text = $"({LimitedCount} / {_iapdata.LimitedCount} ) 구매 완료";
+        }
+        /*
         if (_iapdata.IsBlock == true && Managers.Game.GetInventory().IsFindItem(x => x.ItemId == _iapdata.Item.ItemId) == true)
         {
             if (GetImage((int)Images.Blocker).gameObject.activeSelf == false)
@@ -135,6 +181,7 @@ public class UI_IAPItem : UI_Base
         }
         else
             GetImage((int)Images.Blocker).gameObject.SetActive(false);
+        */
 
 
 

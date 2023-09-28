@@ -28,3 +28,4 @@ MonoBehaviour:
   _descriptionColor: {r: 1, g: 0.72156864, b: 0, a: 1}
   _PriceText: "5000\uC6D0"
   _isBlock: 1
+  _limitedCount: 1

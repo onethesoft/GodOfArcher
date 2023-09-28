@@ -63,7 +63,7 @@ public class UI_Test : UI_Popup
 
 #if ENABLE_LOG
         // 테스트 중이면 테스트 Off 를 테스트 중이 아니면 테스트 On 으로 표출한다
-        GetText((int)Texts.TestOnOffText).text = PlayerPrefs.HasKey(PlayerPrefsKey.TestOn.ToString()) && PlayerPrefs.GetInt(PlayerPrefsKey.TestOn.ToString()) == 1 ? "테스트 Off" : "테스트 ON";
+        GetText((int)Texts.TestOnOffText).text = PlayerPrefs.HasKey(PlayerPrefsKey.TestOn.ToString()) && PlayerPrefs.GetInt(PlayerPrefsKey.TestOn.ToString()) == 1 ? $"테스트 종료{System.Environment.NewLine}(누를 시 테스트가 종료됨)" : $"테스트 시작{System.Environment.NewLine}(누를 시 테스트가 시작됨)";
         
         Get<InputField>((int)InputFields.StageInput).onValueChanged.AddListener((text) => {
             _stageInput = text;
@@ -331,7 +331,7 @@ public class UI_Test : UI_Popup
                 PlayerPrefs.Save();
                 
             }
-            GetText((int)Texts.TestOnOffText).text = PlayerPrefs.HasKey(PlayerPrefsKey.TestOn.ToString()) && PlayerPrefs.GetInt(PlayerPrefsKey.TestOn.ToString()) == 1 ? "테스트 Off" : "테스트 ON";
+            GetText((int)Texts.TestOnOffText).text = PlayerPrefs.HasKey(PlayerPrefsKey.TestOn.ToString()) && PlayerPrefs.GetInt(PlayerPrefsKey.TestOn.ToString()) == 1 ? $"테스트 종료{System.Environment.NewLine}(누를 시 테스트가 종료됨)" : $"테스트 시작{System.Environment.NewLine}(누를 시 테스트가 시작됨)";
 
 
 

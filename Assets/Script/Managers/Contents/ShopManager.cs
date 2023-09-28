@@ -277,7 +277,9 @@ public class ShopManager : IStoreListener
 
     }
 
-    public void ProcessGiveToUser(string ItemId)
+    // 랜덤으로 얻는 인앱 상품으로 인해 grantedItems 를 추가  20230925
+    
+    public void ProcessGiveToUser(string ItemId, List<string> grantedItems = null)
     {
         IAPData _iapData;
         // 루비 최초 구매 시 더블 보너스 적용
@@ -287,7 +289,9 @@ public class ShopManager : IStoreListener
             int Amount = Util.GetIntFromString(ItemId);
 
 
-#if UNITY_ANDROID    // Editor 의 경우 GrantItemsToUser 함수에서 Currency 가 반영되지만 안드로이드의 경우 iap 를 호출하므로 따로 Currency 가 반영되지 않는다.
+#if UNITY_ANDROID    
+            /*
+            // Editor 의 경우 GrantItemsToUser 함수에서 Currency 가 반영되지만 안드로이드의 경우 iap 를 호출하므로 따로 Currency 가 반영되지 않는다.
             if (Managers.Game.GetInventory().Find(x => x.ItemId == ItemId).RemainingUses > 1)
                 foreach (BundleCurrencyContent currency in _iapData.Item.Currencies)
                 {
@@ -309,7 +313,13 @@ public class ShopManager : IStoreListener
                    
                 }
             }
-               
+            */
+            // 첫 구매시 2배 보너스 적용 없어짐. 일괄적으로 4배 주는것으로 바뀜. 데이터 입력 시 IAPData 에 4배로 입력된다.
+            foreach (BundleCurrencyContent currency in _iapData.Item.Currencies)
+            {
+                Managers.Game.AddCurrency(currency.Currency.CodeName, (System.Numerics.BigInteger)currency.Amount, IsUpdate: false);
+            }
+
 #elif UNITY_EDITOR
             if (Managers.Game.GetInventory().IsFindItem(ItemId) == false)
                 Managers.Game.AddCurrency(Define.CurrencyID.Ruby.ToString(), (System.Numerics.BigInteger)Amount, IsUpdate: Managers.Network.IS_ENABLE_NETWORK);
@@ -326,6 +336,29 @@ public class ShopManager : IStoreListener
             foreach (BundleCurrencyContent currency in _iapData.Item.Currencies)
                 Managers.Game.AddCurrency(currency.Currency.CodeName, (System.Numerics.BigInteger)currency.Amount, IsUpdate: false);
 #endif
+            if(_iapData.type == IAPData.Type.Package)
+            {
+                List<BaseItem> grantedItemList = grantedItems.Select(x => Managers.Item.Database.ItemList.Where(y => y.ItemId == x).FirstOrDefault()).ToList();
+
+
+                if (grantedItemList.Any(x => x.ItemClass == "Rune" || x.ItemClass == "Pet"))
+                {
+                    UI_IAPConfirm _popup = Managers.UI.ShowPopupUI<UI_IAPConfirm>();
+                    _popup.TitleText = _iapData.DisplayName + " 구매 완료";
+                    _popup.DescriptionText = "룬,펫창으로 이동하여 룬,펫을 장착해 주세요";
+                    _popup.SetItems(grantedItemList);
+                }
+                else if(grantedItemList.Any(x => x.ItemClass == "Bow" || x.ItemClass == "Armor" || x.ItemClass == "Helmet" || x.ItemClass == "Cloak"))
+
+                {
+                    UI_IAPConfirm _popup = Managers.UI.ShowPopupUI<UI_IAPConfirm>();
+                    _popup.TitleText = _iapData.DisplayName + " 구매 완료";
+                    _popup.DescriptionText = "장비창으로 이동하여 장비를 장착해 주세요";
+                    _popup.SetItems(grantedItemList);
+                    
+                }
+            }
+            /*
             // 장비 , 룬 , 펫 패키지 구매 시 확인창
             if (_iapData.type == IAPData.Type.Package && _iapData.ItemIcons.Count != 0)
             {
@@ -334,17 +367,20 @@ public class ShopManager : IStoreListener
                     UI_IAPConfirm _popup = Managers.UI.ShowPopupUI<UI_IAPConfirm>();
                     _popup.TitleText = _iapData.DisplayName + " 구매 완료";
                     _popup.DescriptionText = "룬,펫창으로 이동하여 룬,펫을 장착해 주세요";
-                    _popup.SetIAPData(_iapData);
+                    _popup.SetItems(_iapData.ItemIcons.Select(x => x.ItemId).ToList());
+                    //_popup.SetIAPData(_iapData);
                 }
                 else
                 {
                     UI_IAPConfirm _popup = Managers.UI.ShowPopupUI<UI_IAPConfirm>();
                     _popup.TitleText = _iapData.DisplayName + " 구매 완료";
                     _popup.DescriptionText = "장비창으로 이동하여 장비를 장착해 주세요";
-                    _popup.SetIAPData(_iapData);
+                    _popup.SetItems(_iapData.ItemIcons.Select(x => x.ItemId).ToList());
+                    //_popup.SetIAPData(_iapData);
                 }
                
             }
+            */
         }
         else if (_dataBase.Seasonpass.Item.ItemId == ItemId)
         {

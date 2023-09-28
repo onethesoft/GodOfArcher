@@ -32,7 +32,16 @@ public class UI_MailBox : UI_Popup
         foreach (Mail mail in mails)
         {
             if (string.IsNullOrEmpty(mail.ItemInstanceId)) continue;
-            UI_Mail _mail = Util.GetOrAddComponent<UI_Mail>(Managers.Resource.Instantiate("UI/SubItem/MailBoxPopup/UI_Mail", Get<GameObject>((int)GameObjects.Content).transform));
+            UI_Mail _mail;
+            if (mail.ItemId.Contains("IAPReward"))
+            {
+                _mail = Util.GetOrAddComponent<UI_Mail>(Managers.Resource.Instantiate("UI/SubItem/MailBoxPopup/UI_RewardMail", Get<GameObject>((int)GameObjects.Content).transform));
+            }
+            else
+            {
+                _mail = Util.GetOrAddComponent<UI_Mail>(Managers.Resource.Instantiate("UI/SubItem/MailBoxPopup/UI_Mail", Get<GameObject>((int)GameObjects.Content).transform));
+            }
+          
             _mail.setData = mail;
             _mail.Setup(mail);
             //_mail.OnStatusChanged -= OnMailStatusChangedHandler;

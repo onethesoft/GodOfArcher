@@ -257,40 +257,47 @@ public class ItemManager
         List<BaseItem> _grantItems = new List<BaseItem>();
         Dictionary<string, int> _addedItem = new Dictionary<string, int>();
 
-        if (mail.Currencies.Item != null && mail.Currencies.Count != 0)
+        
+        if (mail.GrantedCurrencyList != null && mail.GrantedCurrencyList.Count > 0)
         {
-            Define.CurrencyID _currencyId = (Define.CurrencyID)mail.Currencies.Item.ID;
-            Managers.Game.AddCurrency(_currencyId.ToString(), mail.Currencies.Count);
-            
-        }
-
-        if(mail.Items != null && mail.Items.Count != 0)
-        {
-            BaseItem item = mail.Items.Item;
-
-            if (item is Table)
+            foreach (Collection<Currency> grantedCurrency in mail.GrantedCurrencyList)
             {
-                for (int i = 0; i < mail.Items.Count; i++)
-                {
-                    string id = ((Table)item).EvaluteTable();
-                    if (!_addedItem.ContainsKey(id))
-                        _addedItem.Add(id, 1);
-                    else
-                        _addedItem[id]++;
-                }
-            }
-            else
-            {
-                for (int i = 0; i < mail.Items.Count; i++)
-                {
-                    string id = item.ItemId;
-                    if (!_addedItem.ContainsKey(id))
-                        _addedItem.Add(id, 1);
-                    else
-                        _addedItem[id]++;
-                }
+                Define.CurrencyID _currencyId = (Define.CurrencyID)grantedCurrency.Item.ID;
+                Managers.Game.AddCurrency(_currencyId.ToString(), grantedCurrency.Count);
+
             }
         }
+        if (mail.GrantedItemList != null && mail.GrantedItemList.Count > 0)
+        {
+            foreach (Collection<BaseItem> grantedItem in mail.GrantedItemList)
+            {
+                BaseItem item = grantedItem.Item;
+                if (item is Table)
+                {
+                    for (int i = 0; i < grantedItem.Count; i++)
+                    {
+                        string id = ((Table)item).EvaluteTable();
+                        if (!_addedItem.ContainsKey(id))
+                            _addedItem.Add(id, 1);
+                        else
+                            _addedItem[id]++;
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < grantedItem.Count; i++)
+                    {
+                        string id = item.ItemId;
+                        if (!_addedItem.ContainsKey(id))
+                            _addedItem.Add(id, 1);
+                        else
+                            _addedItem[id]++;
+                    }
+                }
+            }
+        }
+
+       
 
         //Managers.Game.GetInventory().Find(x)
         List<BaseItem> _findAddedItem = new List<BaseItem>();
@@ -313,14 +320,18 @@ public class ItemManager
             callback?.Invoke(UnLockItems(mail));
         else
         {
-           
+            
             // Ruby 를 주는 Mail 의 경우 미리 반영
-            if (mail.Currencies.Item != null && mail.Currencies.Count != 0)
+            if (mail.GrantedCurrencyList != null && mail.GrantedCurrencyList.Count > 0)
             {
-                Define.CurrencyID _currencyId = (Define.CurrencyID)mail.Currencies.Item.ID;
-                Managers.Game.AddCurrency(_currencyId.ToString(), mail.Currencies.Count);
-
+                foreach (Collection<Currency> currency in mail.GrantedCurrencyList)
+                {
+                    Define.CurrencyID _currencyId = (Define.CurrencyID)currency.Item.ID;
+                    Managers.Game.AddCurrency(_currencyId.ToString(), currency.Count);
+                }
             }
+            
+           
 
             Managers.Network.UnlockContainerItem(ItemInstanceId : mail.ItemInstanceId , KeyInstanceId: null ,  (result) => {
                 PlayFab.ClientModels.UnlockContainerItemResult _result = result as PlayFab.ClientModels.UnlockContainerItemResult;
@@ -333,7 +344,9 @@ public class ItemManager
                     _grantedItems.Where(x => x.ItemId == item.ItemId).FirstOrDefault().Setup(item);
                 }
 
-                if(_result.GrantedItems.Any(x=>x.ItemClass == "Rune" || x.ItemClass == "Pet" || x.ItemClass == "Heart"))
+                if(_result.GrantedItems.Any(x=> x.ItemClass == "Rune" || x.ItemClass == "Pet" || 
+                       x.ItemClass == "Bow" ||  x.ItemClass == "Armor" || x.ItemClass == "Helmet" || x.ItemClass == "Cloak" 
+                    || x.ItemClass == "Heart"))
                 {
                     if (_grantedItems.Count > 0)
                         Managers.UI.ShowPopupUI<UI_RandomboxPopup>().Setup(_grantedItems);
@@ -346,58 +359,7 @@ public class ItemManager
         }
     }
 
-    public void UnlockItemsWithItemId(string ItemId , List<Mail> mail , Action<List<BaseItem>> callback = null)
-    {
-        List<Mail> _mailes = mail.Where(x => x.status == Mail.Status.Normal && x.ItemId == ItemId).ToList();
-
-        if (Managers.Network.IS_ENABLE_NETWORK == false)
-        {
-           
-        }
-        else
-        {
-            foreach(Mail it in _mailes)
-            {
-                // Ruby 를 주는 Mail 의 경우 미리 반영
-                if (it.Currencies.Item != null && it.Currencies.Count != 0)
-                {
-                    Define.CurrencyID _currencyId = (Define.CurrencyID)it.Currencies.Item.ID;
-                    Managers.Game.AddCurrency(_currencyId.ToString(), it.Currencies.Count);
-                }
-                it.UnLocking();
-            }
-
-            Managers.Network.UnlockContainerItemsWithItemId(ItemId , (result) => {
-                PlayFab.ClientModels.UnlockContainerItemResult _result = result as PlayFab.ClientModels.UnlockContainerItemResult;
-
-                List<BaseItem> _grantedItems = new List<BaseItem>();
-
-                foreach (ItemInstance item in _result.GrantedItems)
-                    _grantedItems.AddRange(Managers.Game.GetInventory().AddItem(item.ItemId, item.UsesIncrementedBy.GetValueOrDefault()));
-
-                if (_result.GrantedItems.Any(x => x.ItemClass == "Rune" || x.ItemClass == "Pet" || x.ItemClass == "Heart"))
-                {
-                    if (_grantedItems.Count > 0)
-                        Managers.UI.ShowPopupUI<UI_RandomboxPopup>().Setup(_grantedItems);
-                }
-
-                _mailes.ForEach(
-                    x => 
-                    { 
-                        x.CompleteUnLock();
-                        x.Consume(1);
-                    });
-               
-
-                callback?.Invoke(_grantedItems);
-            });
-
-
-
-
-
-        }
-    }
+    
 
 
     public List<BaseItem> GrantItemToUser(string ItemId , Dictionary<string , string> CustomData = null)

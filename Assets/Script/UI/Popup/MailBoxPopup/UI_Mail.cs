@@ -22,11 +22,7 @@ public class UI_Mail : UI_Base
 
 
 
-    enum Images
-    {
-        IconBackground,
-        Icon
-    }
+    
     enum Texts
     {
         DisplayName,
@@ -38,7 +34,8 @@ public class UI_Mail : UI_Base
     }
     enum GameObjects
     {
-        ButtonBlocker
+        ButtonBlocker,
+        IconPanel
     }
 
     Mail.Status _status = Mail.Status.Normal;
@@ -62,7 +59,7 @@ public class UI_Mail : UI_Base
     public override void Init()
     {
         Bind<Button>(typeof(Buttons));
-        Bind<Image>(typeof(Images));
+   
         Bind<Text>(typeof(Texts));
         Bind<GameObject>(typeof(GameObjects));
 
@@ -71,8 +68,13 @@ public class UI_Mail : UI_Base
             GetText((int)Texts.Description).text = _data.Description;
             GetText((int)Texts.DisplayName).text = _data.DisplayName;
 
-            GetImage((int)Images.Icon).sprite = _data.Icon;
-            GetImage((int)Images.IconBackground).sprite = _data.BackgroundIcon;
+            foreach(Sprite icon in _data.Icons)
+            {
+                Util.GetOrAddComponent<UI_MailIcon>(Managers.Resource.Instantiate("UI/SubItem/MailBoxPopup/UI_MailIcon", Get<GameObject>((int)GameObjects.IconPanel).transform)).Icon = icon;
+            }
+
+          
+           
 
             UpdateMail();
 

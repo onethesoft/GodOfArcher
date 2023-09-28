@@ -68,5 +68,24 @@ public class IAPData : ScriptableObject
     bool _isBlock;
     public bool IsBlock => _isBlock;
 
+    [SerializeField]
+    int _limitedCount;
+    public int LimitedCount => _limitedCount;
+
+    [SerializeField]
+    List<BaseItem> _sharedItems;
+    public List<BaseItem> SharedItems => _sharedItems;
+
+    [SerializeField]
+    int _displayNameFontSize = 45;
+
+    public int DisplayNameFontSize => _displayNameFontSize;
+
+    [SerializeField]
+    int _descriptionFontSize = 25;
+
+    public int DescriptionFontSize => _descriptionFontSize;
+
+
 
 }

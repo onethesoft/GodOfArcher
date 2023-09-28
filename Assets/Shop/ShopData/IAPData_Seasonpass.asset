@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e64865bbdac7a0b428504b26cf57cf90, type: 3}
   m_Name: IAPData_Seasonpass
   m_EditorClassIdentifier: 
+  _type: 0
   _displayName: "\uC2DC\uC98C\uD328\uC2A4"
   _background: {fileID: 0}
   _icon: {fileID: 0}
   _subicon: {fileID: 0}
+  _itemIcon: []
   _backcurrencyIcon: {fileID: 0}
   _currencyIcon: {fileID: 0}
   _item: {fileID: 11400000, guid: 840d16de44f23dc4c9d43a14961ba1fc, type: 2}
   _description: 
   _descriptionColor: {r: 0, g: 0, b: 0, a: 0}
   _PriceText: "20000\uC6D0"
+  _isBlock: 0
+  _limitedCount: 1

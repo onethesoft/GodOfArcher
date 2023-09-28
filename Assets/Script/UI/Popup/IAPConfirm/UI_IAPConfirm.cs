@@ -46,9 +46,14 @@ public class UI_IAPConfirm : UI_Popup
     }
 
     IAPData _data;
+    List<BaseItem> _itemIds;
     public void SetIAPData(IAPData data)
     {
         _data = data;
+    }
+    public void SetItems(List<BaseItem> itemIds )
+    {
+        _itemIds = itemIds;
     }
     public override void Init()
     {
@@ -61,26 +66,50 @@ public class UI_IAPConfirm : UI_Popup
         GetText((int)Texts.TitleText).text = _titleText;
         GetText((int)Texts.DescriptionText).text = _descriptionText;
 
-        Debug.Assert(_data != null && _data.ItemIcons != null, "Error");
 
-        if(_data.ItemIcons.Count == 2)
+        if (_data != null)
         {
-            Get<GameObject>((int)GameObjects.ItemIconPanel).GetComponent<GridLayoutGroup>().cellSize = new Vector2(150, 150);
-            foreach(BaseItem item in _data.ItemIcons)
+            if (_data.ItemIcons.Count == 2)
             {
-                UI_BaseItem _item = Util.GetOrAddComponent<UI_BaseItem>(Managers.Resource.Instantiate("UI/SubItem/ShopPopup/UI_ShopBaseItem_Big", Get<GameObject>((int)GameObjects.ItemIconPanel).transform));
-                _item.Setup(item, UI_BaseItem.Mode.ShopPopup);
-                
+                Get<GameObject>((int)GameObjects.ItemIconPanel).GetComponent<GridLayoutGroup>().cellSize = new Vector2(150, 150);
+                foreach (BaseItem item in _data.ItemIcons)
+                {
+                    UI_BaseItem _item = Util.GetOrAddComponent<UI_BaseItem>(Managers.Resource.Instantiate("UI/SubItem/ShopPopup/UI_ShopBaseItem_Big", Get<GameObject>((int)GameObjects.ItemIconPanel).transform));
+                    _item.Setup(item, UI_BaseItem.Mode.ShopPopup);
+
+                }
             }
-        }   
-        else if(_data.ItemIcons.Count == 4)
+            else if (_data.ItemIcons.Count == 4)
+            {
+                Get<GameObject>((int)GameObjects.ItemIconPanel).GetComponent<GridLayoutGroup>().cellSize = new Vector2(100, 100);
+                foreach (BaseItem item in _data.ItemIcons)
+                {
+                    UI_BaseItem _item = Util.GetOrAddComponent<UI_BaseItem>(Managers.Resource.Instantiate("UI/SubItem/ShopPopup/UI_ShopBaseItem_Middle", Get<GameObject>((int)GameObjects.ItemIconPanel).transform));
+                    _item.Setup(item, UI_BaseItem.Mode.ShopPopup);
+                }
+            }
+        }
+        else if (_itemIds != null)
         {
-            Get<GameObject>((int)GameObjects.ItemIconPanel).GetComponent<GridLayoutGroup>().cellSize = new Vector2(100, 100);
-            foreach (BaseItem item in _data.ItemIcons)
+            if (_itemIds.Count <= 2)
             {
-                UI_BaseItem _item = Util.GetOrAddComponent<UI_BaseItem>(Managers.Resource.Instantiate("UI/SubItem/ShopPopup/UI_ShopBaseItem_Middle", Get<GameObject>((int)GameObjects.ItemIconPanel).transform));
-                _item.Setup(item, UI_BaseItem.Mode.ShopPopup);
+                Get<GameObject>((int)GameObjects.ItemIconPanel).GetComponent<GridLayoutGroup>().cellSize = new Vector2(150, 150);
+                foreach (BaseItem item in _itemIds)
+                {
+                    UI_BaseItem _item = Util.GetOrAddComponent<UI_BaseItem>(Managers.Resource.Instantiate("UI/SubItem/ShopPopup/UI_ShopBaseItem_Big", Get<GameObject>((int)GameObjects.ItemIconPanel).transform));
+                    _item.Setup(item, UI_BaseItem.Mode.ShopPopup);
+                }
             }
+            else if (_itemIds.Count <= 4)
+            {
+                Get<GameObject>((int)GameObjects.ItemIconPanel).GetComponent<GridLayoutGroup>().cellSize = new Vector2(100, 100);
+                foreach (BaseItem item in _itemIds)
+                {
+                    UI_BaseItem _item = Util.GetOrAddComponent<UI_BaseItem>(Managers.Resource.Instantiate("UI/SubItem/ShopPopup/UI_ShopBaseItem_Middle", Get<GameObject>((int)GameObjects.ItemIconPanel).transform));
+                    _item.Setup(item, UI_BaseItem.Mode.ShopPopup);
+                }
+            }
+            
         }
        
 

@@ -2498,7 +2498,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD14C\uC2A4\uD2B8 ON"
+  m_Text: "\uD14C\uC2A4\uD2B8 \uC2DC\uC791\n( \uB204\uB97C \uC2DC \uD14C\uC2A4\uD2B8\uAC00
+    \uC2DC\uC791\uB428)"
 --- !u!1 &3217091584816233095
 GameObject:
   m_ObjectHideFlags: 0
